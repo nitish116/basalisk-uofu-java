@@ -27,7 +27,7 @@ public class WordCounter {
 			System.out.println(e.getMessage());
 		}
 		
-		
+		//Please work
 		return wordCount;
 	}
 
