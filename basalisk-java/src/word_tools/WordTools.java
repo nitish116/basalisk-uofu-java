@@ -5,6 +5,7 @@ import java.util.Hashtable;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,22 +18,7 @@ public class WordTools {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Hashtable<String, Integer> mucCount = countWordsInDocs("muc3-listfile");
-		
-		ArrayList<Integer> counts = new ArrayList<Integer>();
-		for(Integer i: mucCount.values()){
-			counts.add(i);
-		}
-		Collections.sort(counts);
-		
-		ArrayList<String> words = new ArrayList<String>();
-		for(String s: mucCount.keySet()){
-			words.add(s);
-		}
-		Collections.sort(words);
-		
-		System.out.println("First sorted word: " + words.get(words.size() - 1));
-		System.out.println("Word Count: " + counts.get(counts.size() - 1));
+
 		
 	}
 	
