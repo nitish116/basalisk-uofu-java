@@ -1,0 +1,325 @@
+%TEXT% DEV-MUC3-0017 U
+
+
+**********************************************
+Sentence: 1
+POLICE ARE CARRYING_OUT INTENSIVE OPERATIONS IN THE TOWN OF MOLINA IN THE SEVENTH REGION IN SEARCH OF A GANG OF ALLEGED EXTREMISTS SEARCH OF A GANG COULD BE LINKED TO A RECENTLY DISCOVERED ARSENAL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OPERATIONS_IN_99
+Trigger(s): (OPERATIONS)
+PP(IN)_Extraction = "THE TOWN OF MOLINA" [CITY]
+PP(IN)_Extraction = "THE SEVENTH REGION" [UNSPECIFIED-LOCATION]
+PP(IN)_Extraction = "SEARCH OF A GANG" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__TOWN_OF_190
+Trigger(s): (TOWN)
+PP(OF)_Extraction = "MOLINA" [NEUTRAL-NAME,LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SEARCH_OF_191
+Trigger(s): (SEARCH)
+PP(OF)_Extraction = "A GANG OF ALLEGED EXTREMISTS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__GANG_OF_192
+Trigger(s): (GANG)
+PP(OF)_Extraction = "ALLEGED EXTREMISTS" [POLITICIAN,OTHER-CIVILIAN,VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__LINKED_27
+Trigger(s): (LINKED)
+SUBJ_Extraction = "SEARCH OF A GANG" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__LINKED_TO_55
+Trigger(s): (LINKED)
+PP(TO)_Extraction = "A RECENTLY DISCOVERED ARSENAL" [UNSPECIFIED-WEAPON]
+
+
+
+**********************************************
+Sentence: 2
+IT HAS BEEN REPORTED THAT CARABINEROS IN MOLINA RAIDED THE HOUSE OF 25-YEAR-OLD WORKER MARIO MUNOZ PARDO >COMMA WHERE THEY FOUND A FAL RIFLE >COMMA AMMUNITION CLIPS FOR VARIOUS WEAPONS >COMMA DETONATORS >COMMA AND MATERIAL FOR MAKING EXPLOSIVES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__REPORTED_5
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CARABINEROS_IN_193
+Trigger(s): (CARABINEROS)
+PP(IN)_Extraction = "MOLINA" [NEUTRAL-NAME,LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__RAIDED_HOUSE_158
+Trigger(s): (RAIDED,HOUSE)
+SUBJ_Extraction = "CARABINEROS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RAIDED_294
+Trigger(s): (RAIDED)
+SUBJ_Extraction = "CARABINEROS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__RAIDED_157
+Trigger(s): (RAIDED)
+DOBJ_Extraction = "THE HOUSE OF 25-YEAR-OLD WORKER MARIO MUNOZ PARDO" [CIVILIAN-RESIDENCE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__HOUSE_OF_194
+Trigger(s): (HOUSE)
+PP(OF)_Extraction = "25-YEAR-OLD WORKER MARIO MUNOZ PARDO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__FOUND_RIFLE_159
+Trigger(s): (FOUND,RIFLE)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FOUND_9
+Trigger(s): (FOUND)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__FOUND_4
+Trigger(s): (FOUND)
+DOBJ_Extraction = "A FAL RIFLE" [GUN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CLIPS_FOR_195
+Trigger(s): (CLIPS)
+PP(FOR)_Extraction = "VARIOUS WEAPONS >COMMA DETONATORS >COMMA AND MATERIAL" [UNSPECIFIED-PHYSOBJ]
+PP(FOR)_Extraction = "MAKING EXPLOSIVES" [EXPLOSIVE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MATERIAL_FOR_6
+Trigger(s): (MATERIAL)
+PP(FOR)_Extraction = "MAKING EXPLOSIVES" [EXPLOSIVE]
+
+
+
+**********************************************
+Sentence: 3
+IT SHOULD BE RECALLED THAT A GROUP OF ARMED INDIVIDUALS WEARING SKI MASKS ROBBED A BUSINESSMAN ON A RURAL ROAD NEAR MOLINA ON &&7 JANUARY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__RECALLED_76
+Trigger(s): (RECALLED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__GROUP_OF_125
+Trigger(s): (GROUP)
+PP(OF)_Extraction = "ARMED INDIVIDUALS WEARING SKI" [OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MASKS_296
+Trigger(s): (MASKS)
+SUBJ_Extraction = "A GROUP OF ARMED INDIVIDUALS WEARING SKI" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MASKS_NEAR_155
+Trigger(s): (MASKS)
+PP(NEAR)_Extraction = "MOLINA" [NEUTRAL-NAME,LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MASKS_ON_154
+Trigger(s): (MASKS)
+PP(ON)_Extraction = "A RURAL ROAD" [TRANSPORTATION-ROUTE]
+PP(ON)_Extraction = "&&7 JANUARY" [MONTH]
+
+
+
+**********************************************
+Sentence: 4
+THE BUSINESSMAN >COMMA ENRIQUE ORMAZABAL ORMAZABAL >COMMA TRIED TO RESIST >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__TRIED_RESIST_17
+Trigger(s): (TRIED,RESIST)
+SUBJ_Extraction = "THE BUSINESSMAN" [OCCUPATION,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TRIED_49
+Trigger(s): (TRIED)
+SUBJ_Extraction = "THE BUSINESSMAN" [OCCUPATION,OTHER-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 5
+THE MEN SHOT HIM AND THE MEN LEFT HIM HIM SERIOUSLY WOUNDED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SHOT_HIM_160
+Trigger(s): (SHOT,HIM)
+SUBJ_Extraction = "THE MEN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SHOT_298
+Trigger(s): (SHOT)
+SUBJ_Extraction = "THE MEN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SHOT_159
+Trigger(s): (SHOT)
+DOBJ_Extraction = "HIM" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LEFT_HIM_161
+Trigger(s): (LEFT,HIM)
+SUBJ_Extraction = "THE MEN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEFT_68
+Trigger(s): (LEFT)
+SUBJ_Extraction = "THE MEN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LEFT_50
+Trigger(s): (LEFT)
+DOBJ_Extraction = "HIM" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WOUNDED_300
+Trigger(s): (WOUNDED)
+SUBJ_Extraction = "HIM" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 6
+HE WAS LATER HOSPITALIZED IN CURICO >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__HOSPITALIZED_77
+Trigger(s): (HOSPITALIZED)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__HOSPITALIZED_IN_56
+Trigger(s): (HOSPITALIZED)
+PP(IN)_Extraction = "CURICO" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 7
+CARABINEROS CARRIED_OUT SEVERAL OPERATIONS >COMMA INCLUDING THE RAID ON MUNOZ >SQUOTE HOME >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCLUDING_23
+Trigger(s): (INCLUDING)
+DOBJ_Extraction = "THE RAID" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__INCLUDING_ON_156
+Trigger(s): (INCLUDING)
+PP(ON)_Extraction = "MUNOZ" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 8
+THE POLICE ARE CONTINUING TO PATROL THE AREA IN SEARCH OF THE ALLEGED TERRORIST COMMAND >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__CONTINUING_PATROL_18
+Trigger(s): (CONTINUING,PATROL)
+SUBJ_Extraction = "THE POLICE" [LAW-ENFORCEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUING_302
+Trigger(s): (CONTINUING)
+SUBJ_Extraction = "THE POLICE" [LAW-ENFORCEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__CONTINUING_PATROL_15
+Trigger(s): (CONTINUING,PATROL)
+DOBJ_Extraction = "THE AREA" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__PATROL_IN_24
+Trigger(s): (PATROL)
+PP(IN)_Extraction = "SEARCH OF THE ALLEGED TERRORIST COMMAND" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__PATROL_49
+Trigger(s): (PATROL)
+DOBJ_Extraction = "THE AREA" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SEARCH_OF_191
+Trigger(s): (SEARCH)
+PP(OF)_Extraction = "THE ALLEGED TERRORIST COMMAND" [OTHER-STATEMENT]
+
+

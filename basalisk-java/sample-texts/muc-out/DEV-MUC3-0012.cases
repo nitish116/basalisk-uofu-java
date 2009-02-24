@@ -1,0 +1,139 @@
+%TEXT% DEV-MUC3-0012 U
+
+
+**********************************************
+Sentence: 1
+HERE IS AN OFFICIAL DEFENSE MINISTRY COMMUNIQUE >COLON &&1 >PERIOD <EOS
+
+**********************************************
+Sentence: 2
+AT &&0945 THIS MORNING >COMMA A GROUP OF SUBVERSIVES CONDUCTED AN ARMED TERRORIST ATTACK AGAINST FORMER DEFENSE_MINISTER DIVISON GENERAL ENRIQUE LOPEZ ALBUJAR >COMMA A GROUP OF SUBVERSIVES RETIRED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__GROUP_OF_125
+Trigger(s): (GROUP)
+PP(OF)_Extraction = "SUBVERSIVES" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CONDUCTED_ATTACK_117
+Trigger(s): (CONDUCTED,ATTACK)
+SUBJ_Extraction = "A GROUP OF SUBVERSIVES" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONDUCTED_220
+Trigger(s): (CONDUCTED)
+SUBJ_Extraction = "A GROUP OF SUBVERSIVES" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CONDUCTED_116
+Trigger(s): (CONDUCTED)
+DOBJ_Extraction = "AN ARMED TERRORIST ATTACK" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ATTACK_AGAINST_151
+Trigger(s): (ATTACK)
+PP(AGAINST)_Extraction = "FORMER DEFENSE_MINISTER DIVISON GENERAL ENRIQUE LOPEZ ALBUJAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RETIRED_221
+Trigger(s): (RETIRED)
+SUBJ_Extraction = "A GROUP OF SUBVERSIVES" [TERRORIST-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 3
+&&2 >PERIOD <EOS
+
+**********************************************
+Sentence: 4
+THE VICTIM WAS TAKEN TO THE AIR_FORCE HOSPITAL WHERE HE UNFORTUNATELY PASSED_AWAY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__TAKEN_2
+Trigger(s): (TAKEN)
+SUBJ_Extraction = "THE VICTIM" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__TAKEN_TO_3
+Trigger(s): (TAKEN)
+PP(TO)_Extraction = "THE AIR_FORCE HOSPITAL" [OTHER-BUILDING]
+
+
+
+**********************************************
+Sentence: 5
+&&3 >PERIOD <EOS
+
+**********************************************
+Sentence: 6
+THE AUTHORITIES ARE INVESTIGATING THE ATTACK >COMMA AND THEY ARE CONDUCTING THE APPROPRIATE OPERATIONS TO CAPTURE THE CRIMINALS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__INVESTIGATING_ATTACK_118
+Trigger(s): (INVESTIGATING,ATTACK)
+SUBJ_Extraction = "THE AUTHORITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INVESTIGATING_223
+Trigger(s): (INVESTIGATING)
+SUBJ_Extraction = "THE AUTHORITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INVESTIGATING_117
+Trigger(s): (INVESTIGATING)
+DOBJ_Extraction = "THE ATTACK" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CONDUCTING_OPERATIONS_119
+Trigger(s): (CONDUCTING,OPERATIONS)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONDUCTING_224
+Trigger(s): (CONDUCTING)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CONDUCTING_118
+Trigger(s): (CONDUCTING)
+DOBJ_Extraction = "THE APPROPRIATE OPERATIONS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__CAPTURE_36
+Trigger(s): (CAPTURE)
+DOBJ_Extraction = "THE CRIMINALS" [VIOLENT-CRIMINAL]
+
+
+
+**********************************************
+Sentence: 7
+>LBRACKET DATED AND SIGNED >RBRACKET LIMA >COMMA &&9 JANUARY &&1990 >PERIOD <EOS
+
+**********************************************
+Sentence: 8
+DEFENSE MINISTRY COMMUNICATIONS OFFICE >PERIOD <EOS

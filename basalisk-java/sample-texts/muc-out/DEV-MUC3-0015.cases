@@ -1,0 +1,296 @@
+%TEXT% DEV-MUC3-0015 U
+
+
+**********************************************
+Sentence: 1
+ON &&10 JANUARY AT &&1030 >COMMA ON THE 10TH ANNIVERSARY OF RADIO VENCEREMOS >COMMA AN FMLN UNIT COMMEMORATED THIS OCCASION BY AMBUSHING A MILITARY VEHICLE A MILITARY VEHICLE TRANSPORTING NATIONAL GUARDSMEN FROM SESORI TO SAN MIGUEL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__JANUARY_AT_67
+Trigger(s): (JANUARY)
+PP(AT)_Extraction = "&&1030" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__&&1030_ON_178
+Trigger(s): (&&1030)
+PP(ON)_Extraction = "THE 10TH ANNIVERSARY OF RADIO VENCEREMOS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ANNIVERSARY_OF_179
+Trigger(s): (ANNIVERSARY)
+PP(OF)_Extraction = "RADIO VENCEREMOS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__COMMEMORATED_OCCASION_147
+Trigger(s): (COMMEMORATED,OCCASION)
+SUBJ_Extraction = "AN FMLN UNIT" [UNSPECIFIED-MEASURE,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COMMEMORATED_279
+Trigger(s): (COMMEMORATED)
+SUBJ_Extraction = "AN FMLN UNIT" [UNSPECIFIED-MEASURE,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__COMMEMORATED_148
+Trigger(s): (COMMEMORATED)
+DOBJ_Extraction = "THIS OCCASION" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__COMMEMORATED_BY_143
+Trigger(s): (COMMEMORATED)
+PP(BY)_Extraction = "AMBUSHING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__TRANSPORTING_GUARDSMEN_148
+Trigger(s): (TRANSPORTING,GUARDSMEN)
+SUBJ_Extraction = "A MILITARY VEHICLE" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TRANSPORTING_280
+Trigger(s): (TRANSPORTING)
+SUBJ_Extraction = "A MILITARY VEHICLE" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__TRANSPORTING_149
+Trigger(s): (TRANSPORTING)
+DOBJ_Extraction = "NATIONAL GUARDSMEN" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRANSPORTING_FROM_144
+Trigger(s): (TRANSPORTING)
+PP(FROM)_Extraction = "SESORI" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRANSPORTING_TO_145
+Trigger(s): (TRANSPORTING)
+PP(TO)_Extraction = "SAN MIGUEL" [LOCATION]
+
+
+
+**********************************************
+Sentence: 2
+THE AMBUSH TOOK_PLACE AT EL BOTIJON >COMMA IN SAN SEBASTIAN CANTON >COMMA SESORI >COMMA AND THE AMBUSH WAS CARRIED_OUT USING EXPLOSIVES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__AMBUSH_IN_184
+Trigger(s): (AMBUSH)
+PP(IN)_Extraction = "SAN SEBASTIAN CANTON" [LOCATION]
+
+
+
+**********************************************
+Sentence: 3
+A FEW MINUTES AFTER THE FIGHTING BEGAN OUR TROOPS OUR TROOPS GAINED CONTROL OF THE SITUATION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MINUTES_AFTER_180
+Trigger(s): (MINUTES)
+PP(AFTER)_Extraction = "THE FIGHTING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__BEGAN_TROOPS_150
+Trigger(s): (BEGAN,TROOPS)
+SUBJ_Extraction = "A FEW MINUTES" [OTHER-TIME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BEGAN_282
+Trigger(s): (BEGAN)
+SUBJ_Extraction = "A FEW MINUTES" [OTHER-TIME]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BEGAN_151
+Trigger(s): (BEGAN)
+DOBJ_Extraction = "OUR TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__GAINED_CONTROL_151
+Trigger(s): (GAINED,CONTROL)
+SUBJ_Extraction = "OUR TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GAINED_283
+Trigger(s): (GAINED)
+SUBJ_Extraction = "OUR TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__GAINED_152
+Trigger(s): (GAINED)
+DOBJ_Extraction = "CONTROL OF THE SITUATION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CONTROL_OF_181
+Trigger(s): (CONTROL)
+PP(OF)_Extraction = "THE SITUATION" [EVENT]
+
+
+
+**********************************************
+Sentence: 4
+ATTENTION >COMMA YOUR ATTENTION >COLON THE MILITARY VEHICLE WAS DESTROYED DURING THE AMBUSH AND &&5 NATIONAL_GUARD SOLDIERS &&5 NATIONAL_GUARD SOLDIERS WERE KILLED >COMMA INCLUDING A SERGEANT A SERGEANT WAS IN CHARGE OF THE NATIONAL_GUARD TROOPS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__DESTROYED_69
+Trigger(s): (DESTROYED)
+SUBJ_Extraction = "ATTENTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__DESTROYED_DURING_52
+Trigger(s): (DESTROYED)
+PP(DURING)_Extraction = "THE AMBUSH AND &&5 NATIONAL_GUARD SOLDIERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KILLED_3
+Trigger(s): (KILLED)
+SUBJ_Extraction = "&&5 NATIONAL_GUARD SOLDIERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCLUDING_23
+Trigger(s): (INCLUDING)
+DOBJ_Extraction = "A SERGEANT" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SERGEANT_IN_182
+Trigger(s): (SERGEANT)
+PP(IN)_Extraction = "CHARGE OF THE NATIONAL_GUARD TROOPS" [UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CHARGE_OF_172
+Trigger(s): (CHARGE)
+PP(OF)_Extraction = "THE NATIONAL_GUARD TROOPS" [MILITARY]
+
+
+
+**********************************************
+Sentence: 5
+DURING THIS SUCCESSFUL AMBUSH IN SESORI >COMMA WE SEIZED FROM THE ENEMY >DASH THE REPRESSIVE NATIONAL_GUARD >DASH &&3 G3-A3 RIFLES >COMMA &&3 SETS OF MILITARY >COMMA OVER &&1,000 BULLETS FOR G3-A3 RIFLES >COMMA BOOTS >COMMA VESTS >COMMA AND OTHER MILITARY MATERIEL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__AMBUSH_IN_184
+Trigger(s): (AMBUSH)
+PP(IN)_Extraction = "SESORI" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SEIZED_121
+Trigger(s): (SEIZED)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__SEIZED_FROM_69
+Trigger(s): (SEIZED)
+PP(FROM)_Extraction = "THE ENEMY" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__SEIZED_OVER_149
+Trigger(s): (SEIZED)
+PP(OVER)_Extraction = "&&1,000 BULLETS" [PROJECTILE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SETS_OF_185
+Trigger(s): (SETS)
+PP(OF)_Extraction = "MILITARY" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BULLETS_FOR_186
+Trigger(s): (BULLETS)
+PP(FOR)_Extraction = "G3-A3 RIFLES >COMMA BOOTS >COMMA VESTS >COMMA AND OTHER MILITARY MATERIEL" [UNSPECIFIED-PHYSOBJ]
+
+
+
+**********************************************
+Sentence: 6
+&&2 G3-A3 RIFLES AND A PRC-77 MILITARY COMMUNICATIONS RADIO WERE DESTROYED AT THE SITE OF THE AMBUSH >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__DESTROYED_69
+Trigger(s): (DESTROYED)
+SUBJ_Extraction = "&&2 G3-A3 RIFLES AND A PRC-77 MILITARY COMMUNICATIONS RADIO" [MACHINE]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__DESTROYED_AT_53
+Trigger(s): (DESTROYED)
+PP(AT)_Extraction = "THE SITE OF THE AMBUSH" [SITE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SITE_OF_175
+Trigger(s): (SITE)
+PP(OF)_Extraction = "THE AMBUSH" [ATTACK]
+
+
+
+**********************************************
+Sentence: 7
+OUR PEOPLE WITHDREW WITH NO PROBLEMS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WITHDREW_285
+Trigger(s): (WITHDREW)
+SUBJ_Extraction = "OUR PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__WITHDREW_WITH_150
+Trigger(s): (WITHDREW)
+PP(WITH)_Extraction = "NO PROBLEMS" [OTHER-CONCEPTUAL]
+
+

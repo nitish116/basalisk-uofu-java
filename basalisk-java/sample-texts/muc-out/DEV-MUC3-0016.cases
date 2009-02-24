@@ -1,0 +1,116 @@
+%TEXT% DEV-MUC3-0016 U
+
+
+**********************************************
+Sentence: 1
+A UCR >LBRACKET RADICAL CIVIC UNION >RBRACKET BUENOS_AIRES PROVINCE COMMITTEE SPOKESMAN TODAY REPORTED THAT A UCR DISTRICT HEADQUARTERS IN BUENOS_AIRES PROVINCE WAS COMPLETELY DESTROYED BY A BOMB_EXPLOSION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "A UCR" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__DESTROYED_69
+Trigger(s): (DESTROYED)
+SUBJ_Extraction = "A UCR DISTRICT HEADQUARTERS" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__DESTROYED_BY_54
+Trigger(s): (DESTROYED)
+PP(BY)_Extraction = "A BOMB_EXPLOSION" [ATTACK]
+
+
+
+**********************************************
+Sentence: 2
+THE DESTROYED UCR HEADQUARTERS IS IN THE MORENO DISTRICT OF BUENOS_AIRES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DISTRICT_OF_189
+Trigger(s): (DISTRICT)
+PP(OF)_Extraction = "BUENOS_AIRES" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 3
+THE SPOKESMAN ADDED THAT NO_ONE WAS INJURED AND THAT LEOPOLDO MOREAU >COMMA THE UCR BUENOS_AIRES PROVINCE LEADER >COMMA HAS TRAVELLED TO MORENO >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADDED_5
+Trigger(s): (ADDED)
+SUBJ_Extraction = "THE SPOKESMAN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INJURED_72
+Trigger(s): (INJURED)
+SUBJ_Extraction = "NO_ONE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TRAVELLED_290
+Trigger(s): (TRAVELLED)
+SUBJ_Extraction = "LEOPOLDO MOREAU" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRAVELLED_TO_152
+Trigger(s): (TRAVELLED)
+PP(TO)_Extraction = "MORENO" [LOCATION]
+
+
+
+**********************************************
+Sentence: 4
+IT IS EXPECTED THAT UCR BUENOS_AIRES PROVINCE BOARD WILL MEET AND THAT THEY WILL ASK THE PROVINCIAL GOVERNMENT AND THE INTERIOR MINISTRY TO INVESTIGATE THE INCIDENT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__EXPECTED_73
+Trigger(s): (EXPECTED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MEET_163
+Trigger(s): (MEET)
+SUBJ_Extraction = "UCR BUENOS_AIRES PROVINCE BOARD" [OTHER-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ASK_MINISTRY_156
+Trigger(s): (ASK,MINISTRY)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ASK_154
+Trigger(s): (ASK)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ASK_155
+Trigger(s): (ASK)
+DOBJ_Extraction = "THE PROVINCIAL GOVERNMENT AND THE INTERIOR MINISTRY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__INVESTIGATE_48
+Trigger(s): (INVESTIGATE)
+DOBJ_Extraction = "THE INCIDENT" [OTHER-EVENT]
+
+
