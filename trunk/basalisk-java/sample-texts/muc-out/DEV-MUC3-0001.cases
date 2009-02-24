@@ -1,0 +1,602 @@
+%TEXT% DEV-MUC3-0001 U
+
+
+**********************************************
+Sentence: 1
+THE ARCE BATTALION COMMAND HAS REPORTED THAT ABOUT &&50 PEASANTS OF VARIOUS AGES HAVE BEEN KIDNAPPED BY TERRORISTS OF THE FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT >LBRACKET FMLN >RBRACKET IN SAN MIGUEL DEPARTMENT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "THE ARCE BATTALION COMMAND" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PEASANTS_OF_1
+Trigger(s): (PEASANTS)
+PP(OF)_Extraction = "VARIOUS AGES" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KIDNAPPED_1
+Trigger(s): (KIDNAPPED)
+SUBJ_Extraction = "ABOUT &&50 PEASANTS OF VARIOUS AGES" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KIDNAPPED_BY_1
+Trigger(s): (KIDNAPPED)
+PP(BY)_Extraction = "TERRORISTS OF THE FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KIDNAPPED_IN_2
+Trigger(s): (KIDNAPPED)
+PP(IN)_Extraction = "SAN MIGUEL DEPARTMENT" [OTHER-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__TERRORISTS_OF_2
+Trigger(s): (TERRORISTS)
+PP(OF)_Extraction = "THE FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT" [TERRORIST-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 2
+ACCORDING_TO THAT GARRISON >COMMA THE MASS KIDNAPPING TOOK_PLACE ON &&30 DECEMBER IN SAN LUIS DE LA REINA >PERIOD <EOS
+
+**********************************************
+Sentence: 3
+THE SOURCE ADDED THAT THE TERRORISTS FORCED THE INDIVIDUALS >COMMA THE INDIVIDUALS WERE TAKEN TO AN UNKNOWN LOCATION >COMMA OUT OF THEIR RESIDENCES >COMMA PRESUMABLY TO INCORPORATE THEM AGAINST THEIR WILL INTO CLANDESTINE GROUPS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADDED_5
+Trigger(s): (ADDED)
+SUBJ_Extraction = "THE SOURCE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__FORCED_INDIVIDUALS_3
+Trigger(s): (FORCED,INDIVIDUALS)
+SUBJ_Extraction = "THE TERRORISTS" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FORCED_6
+Trigger(s): (FORCED)
+SUBJ_Extraction = "THE TERRORISTS" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__FORCED_3
+Trigger(s): (FORCED)
+DOBJ_Extraction = "THE INDIVIDUALS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__TAKEN_2
+Trigger(s): (TAKEN)
+SUBJ_Extraction = "THE INDIVIDUALS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__TAKEN_TO_3
+Trigger(s): (TAKEN)
+PP(TO)_Extraction = "AN UNKNOWN LOCATION" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__INCORPORATE_INTO_1
+Trigger(s): (INCORPORATE)
+PP(INTO)_Extraction = "CLANDESTINE GROUPS" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__INCORPORATE_1
+Trigger(s): (INCORPORATE)
+DOBJ_Extraction = "THEM" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 4
+MEANWHILE >COMMA &&3 SUBVERSIVES WERE KILLED AND &&7 OTHERS &&7 OTHERS WERE WOUNDED DURING CLASHES YESTERDAY IN USULUTAN AND MORAZAN DEPARTMENTS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KILLED_3
+Trigger(s): (KILLED)
+SUBJ_Extraction = "&&3 SUBVERSIVES" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__WOUNDED_4
+Trigger(s): (WOUNDED)
+SUBJ_Extraction = "&&7 OTHERS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__WOUNDED_DURING_4
+Trigger(s): (WOUNDED)
+PP(DURING)_Extraction = "CLASHES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__WOUNDED_IN_5
+Trigger(s): (WOUNDED)
+PP(IN)_Extraction = "USULUTAN AND MORAZAN DEPARTMENTS" [OTHER-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 5
+THE ATONAL BATTALION REPORTED THAT ONE EXTREMIST WAS KILLED AND &&5 OTHERS &&5 OTHERS WERE WOUNDED DURING A CLASH YESTERDAY AFTERNOON NEAR LA ESPERANZA FARM >COMMA SANTA ELENA JURISDICTION >COMMA USULUTAN DEPARTMENT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "THE ATONAL BATTALION" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KILLED_3
+Trigger(s): (KILLED)
+SUBJ_Extraction = "ONE EXTREMIST" [POLITICIAN,OTHER-CIVILIAN,VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__WOUNDED_4
+Trigger(s): (WOUNDED)
+SUBJ_Extraction = "&&5 OTHERS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__WOUNDED_DURING_4
+Trigger(s): (WOUNDED)
+PP(DURING)_Extraction = "A CLASH" [OTHER-EVENT,ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__WOUNDED_NEAR_6
+Trigger(s): (WOUNDED)
+PP(NEAR)_Extraction = "LA ESPERANZA FARM" [SITE]
+
+
+
+**********************************************
+Sentence: 6
+IT WAS ALSO REPORTED THAT A SOLDIER WAS WOUNDED AND A SOLDIER TAKEN TO THE MILITARY HOSPITAL IN THIS CAPITAL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__REPORTED_5
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__WOUNDED_4
+Trigger(s): (WOUNDED)
+SUBJ_Extraction = "A SOLDIER" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TAKEN_7
+Trigger(s): (TAKEN)
+SUBJ_Extraction = "A SOLDIER" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TAKEN_IN_5
+Trigger(s): (TAKEN)
+PP(IN)_Extraction = "THIS CAPITAL" [CITY,UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TAKEN_TO_4
+Trigger(s): (TAKEN)
+PP(TO)_Extraction = "THE MILITARY HOSPITAL" [OTHER-BUILDING]
+
+
+
+**********************************************
+Sentence: 7
+THE SAME MILITARY UNIT REPORTED THAT THERE WAS ANOTHER CLASH ANOTHER CLASH RESULTED IN ONE DEAD TERRORIST AND THE SEIZURE OF VARIOUS KINDS OF WAR MATERIEL NEAR SAN RAFAEL FARM IN THE SAME TOWN >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "THE SAME MILITARY UNIT" [UNSPECIFIED-MEASURE,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_CLASH_1
+Trigger(s): (BE,CLASH)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "ANOTHER CLASH" [OTHER-EVENT,ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RESULTED_8
+Trigger(s): (RESULTED)
+SUBJ_Extraction = "ANOTHER CLASH" [OTHER-EVENT,ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RESULTED_IN_6
+Trigger(s): (RESULTED)
+PP(IN)_Extraction = "ONE DEAD TERRORIST AND THE SEIZURE OF VARIOUS KINDS" [SYMPTOM]
+PP(IN)_Extraction = "THE SAME TOWN" [CITY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RESULTED_NEAR_7
+Trigger(s): (RESULTED)
+PP(NEAR)_Extraction = "SAN RAFAEL FARM" [SITE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SEIZURE_OF_3
+Trigger(s): (SEIZURE)
+PP(OF)_Extraction = "VARIOUS KINDS OF WAR MATERIEL" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__KINDS_OF_4
+Trigger(s): (KINDS)
+PP(OF)_Extraction = "WAR MATERIEL" [UNSPECIFIED-PHYSOBJ]
+
+
+
+**********************************************
+Sentence: 8
+IN THE @COUNTRY@S EASTERN REGION >COMMA MILITARY DETACHMENT NO. &&4 REPORTED THAT A TERRORIST WAS KILLED AND &&2 OTHERS &&2 OTHERS WERE WOUNDED DURING A CLASH IN LA RANERA STREAM >COMMA SAN CARLOS >COMMA MORAZAN DEPARTMENT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__REGION_1
+Trigger(s): (REGION)
+possessive_agent_Extraction = "COUNTRY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "MILITARY DETACHMENT NO. &&4" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KILLED_3
+Trigger(s): (KILLED)
+SUBJ_Extraction = "A TERRORIST" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__WOUNDED_4
+Trigger(s): (WOUNDED)
+SUBJ_Extraction = "&&2 OTHERS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__WOUNDED_DURING_4
+Trigger(s): (WOUNDED)
+PP(DURING)_Extraction = "A CLASH" [OTHER-EVENT,ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__WOUNDED_IN_5
+Trigger(s): (WOUNDED)
+PP(IN)_Extraction = "LA RANERA STREAM" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 9
+AN M-16 RIFLE >COMMA CARTRIDGE CLIPS >COMMA AND AMMUNITION WERE SEIZED THERE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__SEIZED_6
+Trigger(s): (SEIZED)
+SUBJ_Extraction = "AN M-16 RIFLE >COMMA CARTRIDGE CLIPS >COMMA AND AMMUNITION" [OTHER-WEAPON]
+
+
+
+**********************************************
+Sentence: 10
+MEANWHILE >COMMA THE 3D INFANTRY BRIGADE REPORTED THAT PONCE BATTALION UNITS FOUND THE DECOMPOSED BODY OF A SUBVERSIVE IN LA FINCA HILL >COMMA SAN MIGUEL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "THE 3D INFANTRY BRIGADE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__FOUND_BODY_4
+Trigger(s): (FOUND,BODY)
+SUBJ_Extraction = "PONCE BATTALION UNITS" [UNSPECIFIED-MEASURE,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FOUND_9
+Trigger(s): (FOUND)
+SUBJ_Extraction = "PONCE BATTALION UNITS" [UNSPECIFIED-MEASURE,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__FOUND_4
+Trigger(s): (FOUND)
+DOBJ_Extraction = "THE DECOMPOSED BODY OF A SUBVERSIVE" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__FOUND_IN_8
+Trigger(s): (FOUND)
+PP(IN)_Extraction = "LA FINCA HILL" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BODY_OF_5
+Trigger(s): (BODY)
+PP(OF)_Extraction = "A SUBVERSIVE" [VIOLENT-CRIMINAL]
+
+
+
+**********************************************
+Sentence: 11
+AN M-16 RIFLE >COMMA &&5 GRENADES >COMMA AND MATERIAL FOR THE PRODUCTION OF EXPLOSIVES WERE FOUND IN THE SAME PLACE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MATERIAL_FOR_6
+Trigger(s): (MATERIAL)
+PP(FOR)_Extraction = "THE PRODUCTION OF EXPLOSIVES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PRODUCTION_OF_7
+Trigger(s): (PRODUCTION)
+PP(OF)_Extraction = "EXPLOSIVES" [EXPLOSIVE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__FOUND_7
+Trigger(s): (FOUND)
+SUBJ_Extraction = "AN M-16 RIFLE >COMMA &&5 GRENADES >COMMA AND MATERIAL" [UNSPECIFIED-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__FOUND_IN_7
+Trigger(s): (FOUND)
+PP(IN)_Extraction = "THE SAME PLACE" [UNSPECIFIED-LOCATION]
+
+
+
+**********************************************
+Sentence: 12
+THE BRIGADE IS HEADQUARTERED IN SAN MIGUEL >COMMA THE BRIGADE ADDED THAT THE SEIZURE WAS MADE YESTERDAY MORNING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__HEADQUARTERED_8
+Trigger(s): (HEADQUARTERED)
+SUBJ_Extraction = "THE BRIGADE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__HEADQUARTERED_IN_8
+Trigger(s): (HEADQUARTERED)
+PP(IN)_Extraction = "SAN MIGUEL" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADDED_5
+Trigger(s): (ADDED)
+SUBJ_Extraction = "THE BRIGADE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__MADE_9
+Trigger(s): (MADE)
+SUBJ_Extraction = "THE SEIZURE" [SYMPTOM]
+
+
+
+**********************************************
+Sentence: 13
+NATIONAL_GUARD UNITS GUARDING THE LAS CANAS BRIDGE >COMMA THE LAS CANAS BRIDGE IS ON THE NORTHERN TRUNK HIGHWAY IN APOPA >COMMA THIS MORNING THIS MORNING REPELLED A TERRORIST ATTACK A TERRORIST ATTACK RESULTED IN NO CASUALTIES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__GUARDING_BRIDGE_5
+Trigger(s): (GUARDING,BRIDGE)
+SUBJ_Extraction = "NATIONAL_GUARD UNITS" [UNSPECIFIED-MEASURE,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GUARDING_10
+Trigger(s): (GUARDING)
+SUBJ_Extraction = "NATIONAL_GUARD UNITS" [UNSPECIFIED-MEASURE,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__GUARDING_5
+Trigger(s): (GUARDING)
+DOBJ_Extraction = "THE LAS CANAS BRIDGE" [TRANSPORTATION-ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BRIDGE_ON_8
+Trigger(s): (BRIDGE)
+PP(ON)_Extraction = "THE NORTHERN TRUNK HIGHWAY" [TRANSPORTATION-ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__HIGHWAY_IN_9
+Trigger(s): (HIGHWAY)
+PP(IN)_Extraction = "APOPA" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REPELLED_ATTACK_6
+Trigger(s): (REPELLED,ATTACK)
+SUBJ_Extraction = "THIS MORNING" [OTHER-TIME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPELLED_11
+Trigger(s): (REPELLED)
+SUBJ_Extraction = "THIS MORNING" [OTHER-TIME]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REPELLED_6
+Trigger(s): (REPELLED)
+DOBJ_Extraction = "A TERRORIST ATTACK" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RESULTED_8
+Trigger(s): (RESULTED)
+SUBJ_Extraction = "A TERRORIST ATTACK" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RESULTED_IN_6
+Trigger(s): (RESULTED)
+PP(IN)_Extraction = "NO CASUALTIES" [UNSPECIFIED-HUMAN]
+
+
+
+**********************************************
+Sentence: 14
+THE ARMED CLASH INVOLVED MORTAR AND RIFLE FIRE AND THE ARMED CLASH LASTED &&30 MINUTES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__INVOLVED_FIRE_7
+Trigger(s): (INVOLVED,FIRE)
+SUBJ_Extraction = "THE ARMED CLASH" [OTHER-EVENT,ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INVOLVED_12
+Trigger(s): (INVOLVED)
+SUBJ_Extraction = "THE ARMED CLASH" [OTHER-EVENT,ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INVOLVED_7
+Trigger(s): (INVOLVED)
+DOBJ_Extraction = "MORTAR AND RIFLE FIRE" [FIRE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LASTED_13
+Trigger(s): (LASTED)
+SUBJ_Extraction = "THE ARMED CLASH" [OTHER-EVENT,ATTACK]
+
+
+
+**********************************************
+Sentence: 15
+MEMBERS OF THAT SECURITY GROUP ARE COMBING THE AREA TO DETERMINE THE FINAL OUTCOME OF THE FIGHTING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MEMBERS_OF_10
+Trigger(s): (MEMBERS)
+PP(OF)_Extraction = "THAT SECURITY GROUP" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__COMBING_AREA_8
+Trigger(s): (COMBING,AREA)
+SUBJ_Extraction = "MEMBERS OF THAT SECURITY GROUP" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COMBING_14
+Trigger(s): (COMBING)
+SUBJ_Extraction = "MEMBERS OF THAT SECURITY GROUP" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__COMBING_8
+Trigger(s): (COMBING)
+DOBJ_Extraction = "THE AREA" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__DETERMINE_2
+Trigger(s): (DETERMINE)
+DOBJ_Extraction = "THE FINAL OUTCOME OF THE FIGHTING" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OUTCOME_OF_11
+Trigger(s): (OUTCOME)
+PP(OF)_Extraction = "THE FIGHTING" [NO_ATTRIBUTES]
+
+

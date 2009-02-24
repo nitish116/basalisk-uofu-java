@@ -1,0 +1,840 @@
+%TEXT% DEV-MUC3-0002 U
+
+
+**********************************************
+Sentence: 1
+ACCORDING_TO STATEMENTS STATEMENTS MADE BY A SALVADORAN OFFICER TODAY >COMMA DESPITE THE CHANGE IN THE LEADERSHIP OF THE SALVADORAN AIR_FORCE >COMMA THE AIR_FORCE THE AIR_FORCE WILL CONTINUE ITS NORMAL ACTIVITIES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MADE_16
+Trigger(s): (MADE)
+SUBJ_Extraction = "STATEMENTS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MADE_BY_10
+Trigger(s): (MADE)
+PP(BY)_Extraction = "A SALVADORAN OFFICER" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MADE_DESPITE_11
+Trigger(s): (MADE)
+PP(DESPITE)_Extraction = "THE CHANGE" [OTHER-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MADE_IN_12
+Trigger(s): (MADE)
+PP(IN)_Extraction = "THE LEADERSHIP OF THE SALVADORAN AIR_FORCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__LEADERSHIP_OF_12
+Trigger(s): (LEADERSHIP)
+PP(OF)_Extraction = "THE SALVADORAN AIR_FORCE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CONTINUE_ACTIVITIES_9
+Trigger(s): (CONTINUE,ACTIVITIES)
+SUBJ_Extraction = "THE AIR_FORCE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUE_17
+Trigger(s): (CONTINUE)
+SUBJ_Extraction = "THE AIR_FORCE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CONTINUE_9
+Trigger(s): (CONTINUE)
+DOBJ_Extraction = "ITS NORMAL ACTIVITIES" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 2
+THE SALVADORAN AIR_FORCE MAINTAINS THE SAME OPERATIONAL LEVEL IT IT HAS HAD FOR THE LAST &&10 YEARS >COMMA DESPITE THE REMOVAL OF ITS TOP COMMANDER >COMMA JAUN RAFAEL BUSTILLOS >COMMA THIS WEEK >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MAINTAINS_IT_10
+Trigger(s): (MAINTAINS,IT)
+SUBJ_Extraction = "THE SALVADORAN AIR_FORCE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MAINTAINS_18
+Trigger(s): (MAINTAINS)
+SUBJ_Extraction = "THE SALVADORAN AIR_FORCE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MAINTAINS_10
+Trigger(s): (MAINTAINS)
+DOBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__YEARS_DESPITE_13
+Trigger(s): (YEARS)
+PP(DESPITE)_Extraction = "THE REMOVAL OF ITS TOP COMMANDER" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__REMOVAL_OF_14
+Trigger(s): (REMOVAL)
+PP(OF)_Extraction = "ITS TOP COMMANDER" [MILITARY]
+
+
+
+**********************************************
+Sentence: 3
+PARATROOPER BATTALION COMMANDER MAJOR RENE RODRIGUEZ HURTADO SAID TODAY THAT THE AIR_FORCE WILL CONTINUE TO OBEY THE ORDERS OF THE GENERAL STAFF AND TO MAINTAIN A SIMILAR OPERATIONAL LEVEL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "PARATROOPER BATTALION COMMANDER MAJOR RENE RODRIGUEZ HURTADO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__CONTINUE_OBEY_1
+Trigger(s): (CONTINUE,OBEY)
+SUBJ_Extraction = "THE AIR_FORCE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUE_17
+Trigger(s): (CONTINUE)
+SUBJ_Extraction = "THE AIR_FORCE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__CONTINUE_OBEY_1
+Trigger(s): (CONTINUE,OBEY)
+DOBJ_Extraction = "THE ORDERS OF THE GENERAL STAFF" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__OBEY_3
+Trigger(s): (OBEY)
+DOBJ_Extraction = "THE ORDERS OF THE GENERAL STAFF" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ORDERS_OF_15
+Trigger(s): (ORDERS)
+PP(OF)_Extraction = "THE GENERAL STAFF" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__MAINTAIN_4
+Trigger(s): (MAINTAIN)
+DOBJ_Extraction = "A SIMILAR OPERATIONAL LEVEL" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 4
+>LBRACKET RODRIGUEZ >RBRACKET WE KNOW GENERAL VILLAMARIONA >LBRACKET NEW AIR_FORCE COMMANDER >RBRACKET ENOUGH TO KNOW THAT WE WILL CONTINUE WITH OUR @BATTALION@S ATTACKS ON ALL THE TERRORIST @CRIMINALS@ REDOUBTS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__KNOW_VILLAMARIONA_11
+Trigger(s): (KNOW,VILLAMARIONA)
+SUBJ_Extraction = "RODRIGUEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__KNOW_20
+Trigger(s): (KNOW)
+SUBJ_Extraction = "RODRIGUEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__KNOW_11
+Trigger(s): (KNOW)
+DOBJ_Extraction = "GENERAL VILLAMARIONA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUE_17
+Trigger(s): (CONTINUE)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CONTINUE_ON_14
+Trigger(s): (CONTINUE)
+PP(ON)_Extraction = "ALL" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CONTINUE_WITH_13
+Trigger(s): (CONTINUE)
+PP(WITH)_Extraction = "OUR @BATTALION@S ATTACKS" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__ATTACKS_2
+Trigger(s): (ATTACKS)
+possessive_agent_Extraction = "BATTALION" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ATTACKS_ON_83
+Trigger(s): (ATTACKS)
+PP(ON)_Extraction = "ALL" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__REDOUBTS_3
+Trigger(s): (REDOUBTS)
+possessive_agent_Extraction = "CRIMINALS" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 5
+WE DEPEND DIRECTLY ON THE GENERAL STAFF >COMMA SINCE IT IT IS THE STRATEGIC HEAD OF THE ENTIRE ARMY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DEPEND_21
+Trigger(s): (DEPEND)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__DEPEND_ON_15
+Trigger(s): (DEPEND)
+PP(ON)_Extraction = "THE GENERAL STAFF" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__DEPEND_SINCE_16
+Trigger(s): (DEPEND)
+PP(SINCE)_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_HEAD_2
+Trigger(s): (BE,HEAD)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_IT_2
+Trigger(s): (BE,IT)
+DOBJ_Extraction = "THE STRATEGIC HEAD OF THE ENTIRE ARMY" [ANATOMY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__HEAD_OF_16
+Trigger(s): (HEAD)
+PP(OF)_Extraction = "THE ENTIRE ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+
+**********************************************
+Sentence: 6
+THE GENERAL STAFF GIVES US OUR ORDERS TO LAUNCH OUR OPERATIONS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__GIVES_ORDERS_12
+Trigger(s): (GIVES,ORDERS)
+SUBJ_Extraction = "THE GENERAL STAFF" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GIVES_22
+Trigger(s): (GIVES)
+SUBJ_Extraction = "THE GENERAL STAFF" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__GIVES_12
+Trigger(s): (GIVES)
+DOBJ_Extraction = "US OUR ORDERS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__LAUNCH_5
+Trigger(s): (LAUNCH)
+DOBJ_Extraction = "OUR OPERATIONS" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 7
+MAJOR RODRIGUEZ HURTADO TODAY DENIED THAT SALVADORAN AIR_FORCE PLANES HAD ENTERED NICARAGUAN TERRITORY AS THE SANDINIST GOVERNMENT THE SANDINIST GOVERNMENT SAID LAST WEEK >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DENIED_23
+Trigger(s): (DENIED)
+SUBJ_Extraction = "MAJOR RODRIGUEZ HURTADO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ENTERED_TERRITORY_13
+Trigger(s): (ENTERED,TERRITORY)
+SUBJ_Extraction = "SALVADORAN AIR_FORCE PLANES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ENTERED_24
+Trigger(s): (ENTERED)
+SUBJ_Extraction = "SALVADORAN AIR_FORCE PLANES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ENTERED_13
+Trigger(s): (ENTERED)
+DOBJ_Extraction = "NICARAGUAN TERRITORY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ENTERED_AS_17
+Trigger(s): (ENTERED)
+PP(AS)_Extraction = "THE SANDINIST GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "THE SANDINIST GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 8
+MAJ RODRIGUEZ HURTADO SAID THAT SALVADORAN AIR_FORCE PLANES HAVE NEVER ENTERED THE NEIGHBORING TERITORY OF NICARAGUA >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "MAJ RODRIGUEZ HURTADO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ENTERED_TERITORY_14
+Trigger(s): (ENTERED,TERITORY)
+SUBJ_Extraction = "SALVADORAN AIR_FORCE PLANES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ENTERED_24
+Trigger(s): (ENTERED)
+SUBJ_Extraction = "SALVADORAN AIR_FORCE PLANES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ENTERED_13
+Trigger(s): (ENTERED)
+DOBJ_Extraction = "THE NEIGHBORING TERITORY OF NICARAGUA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__TERITORY_OF_17
+Trigger(s): (TERITORY)
+PP(OF)_Extraction = "NICARAGUA" [COUNTRY]
+
+
+
+**********************************************
+Sentence: 9
+>LBRACKET RODRIGUEZ >RBRACKET I CAN TELL YOU THAT THOSE WERE NEITHER SALVADORAN NOR HONDURAN PLANES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__TELL_YOU_15
+Trigger(s): (TELL,YOU)
+SUBJ_Extraction = "RODRIGUEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TELL_25
+Trigger(s): (TELL)
+SUBJ_Extraction = "RODRIGUEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__TELL_14
+Trigger(s): (TELL)
+DOBJ_Extraction = "YOU" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_PLANES_3
+Trigger(s): (BE,PLANES)
+SUBJ_Extraction = "THOSE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 10
+IN MY OPINION >COMMA THE SANDINISTS WANT TO INVENT AN EXCUSE TO CONTINUE HELPING THE FMLN >LBRACKET FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT >RBRACKET >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__WANT_INVENT_2
+Trigger(s): (WANT,INVENT)
+SUBJ_Extraction = "THE SANDINISTS" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WANT_26
+Trigger(s): (WANT)
+SUBJ_Extraction = "THE SANDINISTS" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__WANT_INVENT_2
+Trigger(s): (WANT,INVENT)
+DOBJ_Extraction = "AN EXCUSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__INVENT_6
+Trigger(s): (INVENT)
+DOBJ_Extraction = "AN EXCUSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__CONTINUE_7
+Trigger(s): (CONTINUE)
+DOBJ_Extraction = "HELPING" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 11
+OURS AND THE HONDURAN PLANES ARE SMALL PLANES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_PLANES_3
+Trigger(s): (BE,PLANES)
+SUBJ_Extraction = "OURS AND THE HONDURAN PLANES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_PLANES_3
+Trigger(s): (BE,PLANES)
+DOBJ_Extraction = "SMALL PLANES" [VEHICLE]
+
+
+
+**********************************************
+Sentence: 12
+I DO NOT THINK THAT HONDURAN PLANES ENTERED NICARAGUAN TERRITORY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__THINK_27
+Trigger(s): (THINK)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ENTERED_TERRITORY_13
+Trigger(s): (ENTERED,TERRITORY)
+SUBJ_Extraction = "HONDURAN PLANES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ENTERED_24
+Trigger(s): (ENTERED)
+SUBJ_Extraction = "HONDURAN PLANES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ENTERED_13
+Trigger(s): (ENTERED)
+DOBJ_Extraction = "NICARAGUAN TERRITORY" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 13
+THOSE COMMUNISTS ARE TRYING TO INVENT AN EXCUSE TO CONTINUE HELPING THE FMLN TERRORIST CRIMINALS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__TRYING_INVENT_3
+Trigger(s): (TRYING,INVENT)
+SUBJ_Extraction = "THOSE COMMUNISTS" [OTHER-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TRYING_28
+Trigger(s): (TRYING)
+SUBJ_Extraction = "THOSE COMMUNISTS" [OTHER-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__TRYING_INVENT_3
+Trigger(s): (TRYING,INVENT)
+DOBJ_Extraction = "AN EXCUSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__INVENT_6
+Trigger(s): (INVENT)
+DOBJ_Extraction = "AN EXCUSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__CONTINUE_7
+Trigger(s): (CONTINUE)
+DOBJ_Extraction = "HELPING" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 14
+MAJ. RODRIGUEZ MADE THESE STATEMENTS DURING THE PRESENTATION OF A NUMBER OF WEAPONS THE PRESENTATION OF A NUMBER CONFISCATED BY THE PARATROOPERS BATTALION ON &&4 JANUARY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MADE_STATEMENTS_16
+Trigger(s): (MADE,STATEMENTS)
+SUBJ_Extraction = "MAJ. RODRIGUEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MADE_16
+Trigger(s): (MADE)
+SUBJ_Extraction = "MAJ. RODRIGUEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MADE_15
+Trigger(s): (MADE)
+DOBJ_Extraction = "THESE STATEMENTS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MADE_DURING_18
+Trigger(s): (MADE)
+PP(DURING)_Extraction = "THE PRESENTATION OF A NUMBER" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PRESENTATION_OF_18
+Trigger(s): (PRESENTATION)
+PP(OF)_Extraction = "A NUMBER OF WEAPONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__NUMBER_OF_19
+Trigger(s): (NUMBER)
+PP(OF)_Extraction = "WEAPONS" [UNSPECIFIED-WEAPON]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONFISCATED_29
+Trigger(s): (CONFISCATED)
+SUBJ_Extraction = "THE PRESENTATION OF A NUMBER" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CONFISCATED_BY_19
+Trigger(s): (CONFISCATED)
+PP(BY)_Extraction = "THE PARATROOPERS BATTALION" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CONFISCATED_ON_20
+Trigger(s): (CONFISCATED)
+PP(ON)_Extraction = "&&4 JANUARY" [MONTH]
+
+
+
+**********************************************
+Sentence: 15
+>LBRACKET RODRIGUEZ >RBRACKET HERE WE HAVE &&12 RIFLES >COMMA &&11 AR-15 RIFLES AND &&1 AK-47 RIFLE >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__HAVE_RIFLES_4
+Trigger(s): (HAVE,RIFLES)
+SUBJ_Extraction = "RODRIGUEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__HAVE_RODRIGUEZ_4
+Trigger(s): (HAVE,RODRIGUEZ)
+DOBJ_Extraction = "&&12 RIFLES" [GUN]
+
+
+
+**********************************************
+Sentence: 16
+&&4,000 CARTRIDGES >COMMA OF WHICH &&2,000 ARE FOR M-16 MACHINE_GUNS AND &&2,000 FOR AK-47 RIFLES >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__&&2,000_FOR_20
+Trigger(s): (&&2,000)
+PP(FOR)_Extraction = "M-16 MACHINE_GUNS AND &&2,000" [NO_ATTRIBUTES]
+PP(FOR)_Extraction = "AK-47 RIFLES" [GUN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__&&2,000_FOR_20
+Trigger(s): (&&2,000)
+PP(FOR)_Extraction = "AK-47 RIFLES" [GUN]
+
+
+
+**********************************************
+Sentence: 17
+&&36 CARTRIDGES OF AN UNKNOWN CALIBER >DASH MILITARY INTELLIGENCE HAS ALREADY BEEN INFORMED OF THIS DISCOVERY >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CARTRIDGES_OF_21
+Trigger(s): (CARTRIDGES)
+PP(OF)_Extraction = "AN UNKNOWN CALIBER" [OTHER-MEASURE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INFORMED_10
+Trigger(s): (INFORMED)
+SUBJ_Extraction = "&&36 CARTRIDGES OF AN UNKNOWN CALIBER" [OTHER-PHYSOBJ,OTHER-WEAPON]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__INFORMED_OF_9
+Trigger(s): (INFORMED)
+PP(OF)_Extraction = "THIS DISCOVERY" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 18
+AND I >LPAREN ICON >RPAREN RADIO OF THE TYPE USED BY THE LEADERS OF THE TERRORIST GROUPS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__RADIO_OF_22
+Trigger(s): (RADIO)
+PP(OF)_Extraction = "THE TYPE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__USED_31
+Trigger(s): (USED)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__USED_BY_21
+Trigger(s): (USED)
+PP(BY)_Extraction = "THE LEADERS OF THE TERRORIST GROUPS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__LEADERS_OF_23
+Trigger(s): (LEADERS)
+PP(OF)_Extraction = "THE TERRORIST GROUPS" [TERRORIST-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 19
+THE WEAPONS WERE FOUND AT EL NISPERO CREEK NEAR THE SACAMIL NEIGHBORHOOD >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__FOUND_7
+Trigger(s): (FOUND)
+SUBJ_Extraction = "THE WEAPONS" [UNSPECIFIED-WEAPON]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__FOUND_AT_10
+Trigger(s): (FOUND)
+PP(AT)_Extraction = "EL NISPERO CREEK" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__FOUND_NEAR_11
+Trigger(s): (FOUND)
+PP(NEAR)_Extraction = "THE SACAMIL NEIGHBORHOOD" [OTHER-LOCATION]
+
+
+
+**********************************************
+Sentence: 20
+AMONG THE CONFISCATED WEAPONS THE CONFISCATED WEAPONS WERE CARTRIDGES OF UNKNOWN CARTRIDGES MAKE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_CARTRIDGES_5
+Trigger(s): (BE,CARTRIDGES)
+SUBJ_Extraction = "THE CONFISCATED WEAPONS" [UNSPECIFIED-WEAPON]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_WEAPONS_5
+Trigger(s): (BE,WEAPONS)
+DOBJ_Extraction = "CARTRIDGES" [OTHER-PHYSOBJ,OTHER-WEAPON]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MAKE_32
+Trigger(s): (MAKE)
+SUBJ_Extraction = "CARTRIDGES" [OTHER-PHYSOBJ,OTHER-WEAPON]
+
+
+
+**********************************************
+Sentence: 21
+THIS IS APPPARENTLY THE FIRST TIME THE ARMY THE ARMY HAS FOUND THAT TYPE OF CARTRIDGE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_ARMY_6
+Trigger(s): (BE,ARMY)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THIS_6
+Trigger(s): (BE,THIS)
+DOBJ_Extraction = "THE ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FOUND_9
+Trigger(s): (FOUND)
+SUBJ_Extraction = "THE ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__TYPE_OF_24
+Trigger(s): (TYPE)
+PP(OF)_Extraction = "CARTRIDGE" [OTHER-PHYSOBJ,OTHER-WEAPON]
+
+
+
+**********************************************
+Sentence: 22
+MAJ RODRIGUEZ HURTADO SAID THAT MILITARY INTELLIGENCE WILL PROCEED TO ESTABLISH THE ORIGIN OF THESE CARTRIDGES AND THE WEAPONS FOR WHICH THEY ARE INTENDED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "MAJ RODRIGUEZ HURTADO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__PROCEED_ESTABLISH_4
+Trigger(s): (PROCEED,ESTABLISH)
+SUBJ_Extraction = "MILITARY INTELLIGENCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PROCEED_34
+Trigger(s): (PROCEED)
+SUBJ_Extraction = "MILITARY INTELLIGENCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__PROCEED_ESTABLISH_4
+Trigger(s): (PROCEED,ESTABLISH)
+DOBJ_Extraction = "THE ORIGIN OF THESE CARTRIDGES AND THE WEAPONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__ESTABLISH_8
+Trigger(s): (ESTABLISH)
+DOBJ_Extraction = "THE ORIGIN OF THESE CARTRIDGES AND THE WEAPONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ORIGIN_OF_25
+Trigger(s): (ORIGIN)
+PP(OF)_Extraction = "THESE CARTRIDGES AND THE WEAPONS" [UNSPECIFIED-WEAPON]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INTENDED_12
+Trigger(s): (INTENDED)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
