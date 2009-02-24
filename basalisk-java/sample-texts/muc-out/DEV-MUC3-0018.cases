@@ -1,0 +1,273 @@
+%TEXT% DEV-MUC3-0018 U
+
+
+**********************************************
+Sentence: 1
+OFFICIAL SOURCES HAVE REPORTED THAT SEVERAL GUERRILLA ATTACKS AND HEAVY FIGHTING TOOK_PLACE THE EVENING OF &&9 JANUARY AND THIS MORNING THROUGHOUT THE COUNTRY >COMMA AND AS A RESULT >COMMA &&3 SOLDIERS &&3 SOLDIERS WERE KILLED AND &&3 OTHERS &&3 OTHERS INJURED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "OFFICIAL SOURCES" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EVENING_OF_198
+Trigger(s): (EVENING)
+PP(OF)_Extraction = "&&9 JANUARY AND THIS MORNING" [OTHER-TIME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KILLED_3
+Trigger(s): (KILLED)
+SUBJ_Extraction = "&&3 SOLDIERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INJURED_306
+Trigger(s): (INJURED)
+SUBJ_Extraction = "&&3 OTHERS" [OTHER]
+
+
+
+**********************************************
+Sentence: 2
+ALLEGED GUERRILLA URBAN COMMANDOS LAUNCHED &&2 HIGHPOWER BOMBS AGAINST A CAR DEALERSHIP IN DOWNTOWN SAN_SALVADOR THIS MORNING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LAUNCHED_BOMBS_164
+Trigger(s): (LAUNCHED,BOMBS)
+SUBJ_Extraction = "ALLEGED GUERRILLA URBAN COMMANDOS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LAUNCHED_61
+Trigger(s): (LAUNCHED)
+SUBJ_Extraction = "ALLEGED GUERRILLA URBAN COMMANDOS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LAUNCHED_164
+Trigger(s): (LAUNCHED)
+DOBJ_Extraction = "&&2 HIGHPOWER BOMBS" [EXPLOSIVE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LAUNCHED_IN_159
+Trigger(s): (LAUNCHED)
+PP(IN)_Extraction = "DOWNTOWN SAN_SALVADOR" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BOMBS_AGAINST_199
+Trigger(s): (BOMBS)
+PP(AGAINST)_Extraction = "A CAR DEALERSHIP" [SITE]
+
+
+
+**********************************************
+Sentence: 3
+A POLICE REPORT SAID THAT THE ATTACK SET THE BUILDING ON FIRE >COMMA BUT THE ATTACK SET DID NOT RESULT IN ANY CASUALTIES ALTHOUGH ECONOMIC LOSSES ARE HEAVY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "A POLICE REPORT" [MEDIA-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BUILDING_ON_200
+Trigger(s): (BUILDING)
+PP(ON)_Extraction = "FIRE" [FIRE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RESULT_309
+Trigger(s): (RESULT)
+SUBJ_Extraction = "THE ATTACK SET" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RESULT_IN_160
+Trigger(s): (RESULT)
+PP(IN)_Extraction = "ANY CASUALTIES" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_HEAVY_13
+Trigger(s): (BE,HEAVY)
+SUBJ_Extraction = "ECONOMIC LOSSES" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 4
+DURING THE EVENING OF &&9 JANUARY >COMMA GUERRILLA URBAN COMMANDOS BOMBED &&2 ELECTRICITY FACILITIES IN DIFFERENT PLACES IN SAN_SALVADOR >COMMA SAN_SALVADOR CAUSED POWER OUTAGES IN SOME AREAS OF THE CAPITAL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EVENING_OF_198
+Trigger(s): (EVENING)
+PP(OF)_Extraction = "&&9 JANUARY" [MONTH]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__BOMBED_FACILITIES_165
+Trigger(s): (BOMBED,FACILITIES)
+SUBJ_Extraction = "GUERRILLA URBAN COMMANDOS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BOMBED_130
+Trigger(s): (BOMBED)
+SUBJ_Extraction = "GUERRILLA URBAN COMMANDOS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BOMBED_71
+Trigger(s): (BOMBED)
+DOBJ_Extraction = "&&2 ELECTRICITY FACILITIES" [UNSPECIFIED-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BOMBED_IN_161
+Trigger(s): (BOMBED)
+PP(IN)_Extraction = "DIFFERENT PLACES" [UNSPECIFIED-LOCATION]
+PP(IN)_Extraction = "SAN_SALVADOR" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CAUSED_OUTAGES_166
+Trigger(s): (CAUSED,OUTAGES)
+SUBJ_Extraction = "SAN_SALVADOR" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CAUSED_311
+Trigger(s): (CAUSED)
+SUBJ_Extraction = "SAN_SALVADOR" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CAUSED_166
+Trigger(s): (CAUSED)
+DOBJ_Extraction = "POWER OUTAGES" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CAUSED_IN_162
+Trigger(s): (CAUSED)
+PP(IN)_Extraction = "SOME AREAS OF THE CAPITAL" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__AREAS_OF_201
+Trigger(s): (AREAS)
+PP(OF)_Extraction = "THE CAPITAL" [CITY,UNSPECIFIED-MONEY]
+
+
+
+**********************************************
+Sentence: 5
+MEANWHILE >COMMA THE ARMED_FORCES PRESS COMMITTEE >LPAREN COPREFA >RPAREN REPORTED TODAY THAT &&3 ARMY SOLDIERS WERE KILLED RECENTLY IN CLASHES AGAINST MEMBERS OF THE FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT >LPAREN FMLN >RPAREN IN DIFFERENT PARTS OF THE CENTRAL AND EASTERN REGIONS OF THE COUNTRY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "THE ARMED_FORCES PRESS COMMITTEE" [OTHER-ORGANIZATION,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KILLED_3
+Trigger(s): (KILLED)
+SUBJ_Extraction = "&&3 ARMY SOLDIERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KILLED_IN_57
+Trigger(s): (KILLED)
+PP(IN)_Extraction = "CLASHES" [NO_ATTRIBUTES]
+PP(IN)_Extraction = "DIFFERENT PARTS OF THE CENTRAL AND EASTERN REGIONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CLASHES_AGAINST_202
+Trigger(s): (CLASHES)
+PP(AGAINST)_Extraction = "MEMBERS OF THE FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MEMBERS_OF_10
+Trigger(s): (MEMBERS)
+PP(OF)_Extraction = "THE FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PARTS_OF_82
+Trigger(s): (PARTS)
+PP(OF)_Extraction = "THE CENTRAL AND EASTERN REGIONS OF THE COUNTRY" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__REGIONS_OF_205
+Trigger(s): (REGIONS)
+PP(OF)_Extraction = "THE COUNTRY" [LOCATION]
+
+
+
+**********************************************
+Sentence: 6
+THE WAR BULLETIN BY COPREFA STATED THAT THE CLASHES >COMMA IN WHICH &&3 MEMBERS OF THE GENERAL JUAN RAMON BELLOSO BATTALION WERE INJURED >COMMA &&3 MEMBERS OF THE GENERAL JUAN RAMON BELLOSO BATTALION TOOK_PLACE IN SAN JOSE GUAYABAL >COMMA IN THE CENTRAL CUSCATLAN DEPARTMENT >COMMA AND IN SANTA ELENA IN THE EASTERN USULUTAN DEPARTMENT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BULLETIN_BY_206
+Trigger(s): (BULLETIN)
+PP(BY)_Extraction = "COPREFA" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__STATED_206
+Trigger(s): (STATED)
+SUBJ_Extraction = "THE WAR BULLETIN" [MEDIA-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MEMBERS_OF_10
+Trigger(s): (MEMBERS)
+PP(OF)_Extraction = "THE GENERAL JUAN RAMON BELLOSO BATTALION" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INJURED_72
+Trigger(s): (INJURED)
+SUBJ_Extraction = "&&3 MEMBERS OF THE GENERAL JUAN RAMON BELLOSO BATTALION" [UNSPECIFIED-HUMAN]
+
+

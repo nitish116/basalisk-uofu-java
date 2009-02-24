@@ -1,0 +1,1034 @@
+%TEXT% DEV-MUC3-0020 U
+
+
+**********************************************
+Sentence: 1
+>LBRACKET TEXT >RBRACKET REGARDING THE @JESUITS@ CASE >COMMA THE FMLN STATES THE FMLN STATES >COLON &&1 >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REGARDING_CASE_173
+Trigger(s): (REGARDING,CASE)
+SUBJ_Extraction = "TEXT" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REGARDING_228
+Trigger(s): (REGARDING)
+SUBJ_Extraction = "TEXT" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REGARDING_121
+Trigger(s): (REGARDING)
+DOBJ_Extraction = "THE @JESUITS@ CASE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__CASE_24
+Trigger(s): (CASE)
+possessive_agent_Extraction = "JESUITS" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 2
+THE FMLN AND SEVERAL SECTORS >COMMA INCLUDING YOUNG ARMED_FORCES OFFICERS >COMMA THE FMLN AND SEVERAL SECTORS WERE RIGHT IN POINTING TO THE ARMY AS BEING RESPONSIBLE FOR THIS HORRIBLE CRIME >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__INCLUDING_OFFICERS_174
+Trigger(s): (INCLUDING,OFFICERS)
+SUBJ_Extraction = "THE FMLN AND SEVERAL SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INCLUDING_44
+Trigger(s): (INCLUDING)
+SUBJ_Extraction = "THE FMLN AND SEVERAL SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCLUDING_23
+Trigger(s): (INCLUDING)
+DOBJ_Extraction = "YOUNG ARMED_FORCES OFFICERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_RIGHT_37
+Trigger(s): (BE,RIGHT)
+SUBJ_Extraction = "THE FMLN AND SEVERAL SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_SECTORS_30
+Trigger(s): (BE,SECTORS)
+DOBJ_Extraction = "RIGHT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__RIGHT_IN_214
+Trigger(s): (RIGHT)
+PP(IN)_Extraction = "POINTING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__POINTING_TO_215
+Trigger(s): (POINTING)
+PP(TO)_Extraction = "THE ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ARMY_AS_216
+Trigger(s): (ARMY)
+PP(AS)_Extraction = "BEING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ARMY_FOR_217
+Trigger(s): (ARMY)
+PP(FOR)_Extraction = "THIS HORRIBLE CRIME" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 3
+THE RESPONSIBILITY OF THE ARMED INSTITUTION FOR THIS CASE AND THE CASES INVOLVING FENASTRAS >LBRACKET SALVADORAN WORKERS NATIONAL UNION FEDERATION >RBRACKET >COMMA MONSIGNOR ROMERO >COMMA THE NUNS >COMMA AND THE U.S. AGRARIAN EXPERTS >COMMA AS_WELL_AS FOR THE BOMBINGS IN THE CITIES AND MASSACRES IN THE RURAL SECTOR >COMMA THE RESPONSIBILITY OF THE ARMED INSTITUTION SHOW THAT WE WERE RIGHT WHEN WE MENTIONED IN OUR LAST PEACE PROPOSAL THE NEED TO CLEAN UP THE ARMY AND WE REFORM THE JUDICIAL SYSTEM >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__RESPONSIBILITY_OF_218
+Trigger(s): (RESPONSIBILITY)
+PP(OF)_Extraction = "THE ARMED INSTITUTION" [UNSPECIFIED-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__INSTITUTION_FOR_219
+Trigger(s): (INSTITUTION)
+PP(FOR)_Extraction = "THIS CASE AND THE CASES INVOLVING FENASTRAS" [OTHER-ORGANIZATION]
+PP(FOR)_Extraction = "THE BOMBINGS" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EXPERTS_FOR_220
+Trigger(s): (EXPERTS)
+PP(FOR)_Extraction = "THE BOMBINGS" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BOMBINGS_IN_221
+Trigger(s): (BOMBINGS)
+PP(IN)_Extraction = "THE CITIES" [CITY]
+PP(IN)_Extraction = "THE RURAL SECTOR" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MASSACRES_326
+Trigger(s): (MASSACRES)
+SUBJ_Extraction = "THE RESPONSIBILITY OF THE ARMED INSTITUTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MASSACRES_IN_171
+Trigger(s): (MASSACRES)
+PP(IN)_Extraction = "THE RURAL SECTOR" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SHOW_327
+Trigger(s): (SHOW)
+SUBJ_Extraction = "THE RESPONSIBILITY OF THE ARMED INSTITUTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_RIGHT_37
+Trigger(s): (BE,RIGHT)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_WE_31
+Trigger(s): (BE,WE)
+DOBJ_Extraction = "RIGHT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MENTIONED_NEED_175
+Trigger(s): (MENTIONED,NEED)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MENTIONED_328
+Trigger(s): (MENTIONED)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MENTIONED_175
+Trigger(s): (MENTIONED)
+DOBJ_Extraction = "THE NEED" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MENTIONED_IN_172
+Trigger(s): (MENTIONED)
+PP(IN)_Extraction = "OUR LAST PEACE PROPOSAL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__CLEAN_UP_25
+Trigger(s): (CLEAN)
+PP(UP)_Extraction = "THE ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REFORM_SYSTEM_176
+Trigger(s): (REFORM,SYSTEM)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REFORM_329
+Trigger(s): (REFORM)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REFORM_176
+Trigger(s): (REFORM)
+DOBJ_Extraction = "THE JUDICIAL SYSTEM" [OTHER-CONCEPTUAL,OTHER-PHYSOBJ]
+
+
+
+**********************************************
+Sentence: 4
+&&2 >PERIOD <EOS
+
+**********************************************
+Sentence: 5
+TO ADVANCE IN THE @COUNTRY@S DEMOCRATIZATION >COMMA IT IS NOT ENOUGH TO SOLVE THIS CASE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__ADVANCE_IN_26
+Trigger(s): (ADVANCE)
+PP(IN)_Extraction = "THE @COUNTRY@S DEMOCRATIZATION" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__DEMOCRATIZATION_25
+Trigger(s): (DEMOCRATIZATION)
+possessive_agent_Extraction = "COUNTRY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_ENOUGH_14
+Trigger(s): (BE,ENOUGH)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__SOLVE_30
+Trigger(s): (SOLVE)
+DOBJ_Extraction = "THIS CASE" [OTHER]
+
+
+
+**********************************************
+Sentence: 6
+THE OTHER CASES NEED TO BE SOLVED AND THOSE GUILTY FOR THEM THEM SHOULD BE PUNISHED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__SOLVED_54
+Trigger(s): (SOLVED)
+SUBJ_Extraction = "THE OTHER CASES" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__THOSE_FOR_222
+Trigger(s): (THOSE)
+PP(FOR)_Extraction = "THEM" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__PUNISHED_30
+Trigger(s): (PUNISHED)
+SUBJ_Extraction = "THEM" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 7
+THE ESTABLISHMENT OF RESPONSIBILITIES CANNOT REMAIN AT THE LEVEL OF OFFICERS AND TROOPS THE LEVEL OF OFFICERS AND TROOPS ONLY CARRIED_OUT ORDERS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ESTABLISHMENT_OF_223
+Trigger(s): (ESTABLISHMENT)
+PP(OF)_Extraction = "RESPONSIBILITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REMAIN_330
+Trigger(s): (REMAIN)
+SUBJ_Extraction = "THE ESTABLISHMENT OF RESPONSIBILITIES" [COMMERCIAL-BUILDING,UNSPECIFIED-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__REMAIN_AT_173
+Trigger(s): (REMAIN)
+PP(AT)_Extraction = "THE LEVEL OF OFFICERS AND TROOPS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__LEVEL_OF_224
+Trigger(s): (LEVEL)
+PP(OF)_Extraction = "OFFICERS AND TROOPS" [MILITARY]
+
+
+
+**********************************************
+Sentence: 8
+MOST IMPORTANT IS TO ESTABLISH RESPONSIBILITY AMONG HIGHER-RANKING OFFICERS BECAUSE A DECISION OF THIS SORT COULD NOT BE BEYOND THE RESPONSIBILITY OF THE TOP COMMAND >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__ESTABLISH_AMONG_27
+Trigger(s): (ESTABLISH)
+PP(AMONG)_Extraction = "HIGHER-RANKING OFFICERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__ESTABLISH_8
+Trigger(s): (ESTABLISH)
+DOBJ_Extraction = "RESPONSIBILITY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DECISION_OF_225
+Trigger(s): (DECISION)
+PP(OF)_Extraction = "THIS SORT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SORT_BEYOND_226
+Trigger(s): (SORT)
+PP(BEYOND)_Extraction = "THE RESPONSIBILITY OF THE TOP COMMAND" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__RESPONSIBILITY_OF_218
+Trigger(s): (RESPONSIBILITY)
+PP(OF)_Extraction = "THE TOP COMMAND" [OTHER-STATEMENT]
+
+
+
+**********************************************
+Sentence: 9
+&&3 >PERIOD <EOS
+
+**********************************************
+Sentence: 10
+IT IS ALSO NECESSARY TO COMPLY WITH THE ESQUIPULAS II AGREEMENTS CONCERNING DEMOCRATIZATION >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_NECESSARY_15
+Trigger(s): (BE,NECESSARY)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__COMPLY_WITH_28
+Trigger(s): (COMPLY)
+PP(WITH)_Extraction = "THE ESQUIPULAS II AGREEMENTS CONCERNING DEMOCRATIZATION" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 11
+REFORMING THE JUDICIAL SYSTEM >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REFORMING_177
+Trigger(s): (REFORMING)
+DOBJ_Extraction = "THE JUDICIAL SYSTEM" [OTHER-CONCEPTUAL,OTHER-PHYSOBJ]
+
+
+
+**********************************************
+Sentence: 12
+LIFTING THE STATE OF EMERGENCY >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LIFTING_178
+Trigger(s): (LIFTING)
+DOBJ_Extraction = "THE STATE OF EMERGENCY" [STATE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__STATE_OF_227
+Trigger(s): (STATE)
+PP(OF)_Extraction = "EMERGENCY" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 13
+REESTABLISHING FREEDOM OF EXPRESSION >COMMA MOBILIZATION >COMMA AND ORGANIZATION >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__FREEDOM_OF_228
+Trigger(s): (FREEDOM)
+PP(OF)_Extraction = "EXPRESSION >COMMA MOBILIZATION >COMMA AND ORGANIZATION" [UNSPECIFIED-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 14
+RELEASING THE MORE_THAN &&3,000 POLITICAL PRISONERS >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__RELEASING_179
+Trigger(s): (RELEASING)
+DOBJ_Extraction = "THE MORE_THAN &&3,000 POLITICAL PRISONERS" [UNSPECIFIED-CRIMINAL,OTHER-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 15
+AND STOPPING THE REPRESSION AGAINST THE CHURCH AND OTHER SECTORS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__STOPPING_180
+Trigger(s): (STOPPING)
+DOBJ_Extraction = "THE REPRESSION" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__REPRESSION_AGAINST_64
+Trigger(s): (REPRESSION)
+PP(AGAINST)_Extraction = "THE CHURCH AND OTHER SECTORS" [OTHER-LOCATION]
+
+
+
+**********************************************
+Sentence: 16
+&&4 >PERIOD <EOS
+
+**********************************************
+Sentence: 17
+THE ANNOUNCEMENT BY CRISTIANI IS AN EFFORT TO RESOLVE COMPLICATED DISCUSSIONS ON U.S. AID FOR EL_SALVADOR AND THE ANNOUNCEMENT TO CONTINUE TO BENEFIT FROM THIS THIS AID TO MAINTAIN THE WAR >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ANNOUNCEMENT_BY_230
+Trigger(s): (ANNOUNCEMENT)
+PP(BY)_Extraction = "CRISTIANI" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_EFFORT_38
+Trigger(s): (BE,EFFORT)
+SUBJ_Extraction = "THE ANNOUNCEMENT" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_ANNOUNCEMENT_32
+Trigger(s): (BE,ANNOUNCEMENT)
+DOBJ_Extraction = "AN EFFORT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__RESOLVE_ON_29
+Trigger(s): (RESOLVE)
+PP(ON)_Extraction = "U.S. AID" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__RESOLVE_53
+Trigger(s): (RESOLVE)
+DOBJ_Extraction = "COMPLICATED DISCUSSIONS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__AID_FOR_231
+Trigger(s): (AID)
+PP(FOR)_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__BENEFIT_FROM_30
+Trigger(s): (BENEFIT)
+PP(FROM)_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__AID_MAINTAIN_19
+Trigger(s): (AID,MAINTAIN)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__AID_332
+Trigger(s): (AID)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__AID_MAINTAIN_16
+Trigger(s): (AID,MAINTAIN)
+DOBJ_Extraction = "THE WAR" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__MAINTAIN_4
+Trigger(s): (MAINTAIN)
+DOBJ_Extraction = "THE WAR" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 18
+IT WOULD BE A MISTAKE TO INCREASE AID TO THE SALVADORAN ARMY BECAUSE_OF THIS ANNOUNCEMENT OR BECAUSE THE CASE MAY BE RESOLVED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_MISTAKE_39
+Trigger(s): (BE,MISTAKE)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_IT_2
+Trigger(s): (BE,IT)
+DOBJ_Extraction = "A MISTAKE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__INCREASE_BECAUSE_OF_32
+Trigger(s): (INCREASE)
+PP(BECAUSE_OF)_Extraction = "THIS ANNOUNCEMENT" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__INCREASE_TO_31
+Trigger(s): (INCREASE)
+PP(TO)_Extraction = "THE SALVADORAN ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__INCREASE_55
+Trigger(s): (INCREASE)
+DOBJ_Extraction = "AID" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RESOLVED_333
+Trigger(s): (RESOLVED)
+SUBJ_Extraction = "THE CASE" [OTHER]
+
+
+
+**********************************************
+Sentence: 19
+SUCH AID WOULD LEAVE OPEN THE POSSIBILITY OF SEEING A CASE A CASE LIKE THAT OF THE JESUIT PRIESTS HAPPENING AGAIN >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__OPEN_POSSIBILITY_177
+Trigger(s): (OPEN,POSSIBILITY)
+SUBJ_Extraction = "SUCH AID" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__OPEN_334
+Trigger(s): (OPEN)
+SUBJ_Extraction = "SUCH AID" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__OPEN_181
+Trigger(s): (OPEN)
+DOBJ_Extraction = "THE POSSIBILITY OF SEEING" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__POSSIBILITY_OF_232
+Trigger(s): (POSSIBILITY)
+PP(OF)_Extraction = "SEEING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LIKE_63
+Trigger(s): (LIKE)
+SUBJ_Extraction = "A CASE" [OTHER]
+
+
+
+**********************************************
+Sentence: 20
+THE BEST WAY TO CONTRIBUTE TO A NEGOTIATED SOLUTION IS TO CEASE AID >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__CONTRIBUTE_TO_33
+Trigger(s): (CONTRIBUTE)
+PP(TO)_Extraction = "A NEGOTIATED SOLUTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__CEASE_56
+Trigger(s): (CEASE)
+DOBJ_Extraction = "AID" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 21
+WE APPEAL TO THE U.S. CONGRESS TO MAKE THIS DECISION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__APPEAL_336
+Trigger(s): (APPEAL)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__APPEAL_TO_174
+Trigger(s): (APPEAL)
+PP(TO)_Extraction = "THE U.S. CONGRESS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__MAKE_50
+Trigger(s): (MAKE)
+DOBJ_Extraction = "THIS DECISION" [OTHER-STATEMENT]
+
+
+
+**********************************************
+Sentence: 22
+IF THIS IS DONE >COMMA THE FMLN THE FMLN WOULD COMMIT ITSELF TO MAKING EFFORTS TO REACH AN IMMEDIATE CEASEFIRE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DONE_337
+Trigger(s): (DONE)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__COMMIT_ITSELF_178
+Trigger(s): (COMMIT,ITSELF)
+SUBJ_Extraction = "THE FMLN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COMMIT_114
+Trigger(s): (COMMIT)
+SUBJ_Extraction = "THE FMLN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__COMMIT_59
+Trigger(s): (COMMIT)
+DOBJ_Extraction = "ITSELF" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__COMMIT_TO_175
+Trigger(s): (COMMIT)
+PP(TO)_Extraction = "MAKING EFFORTS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__REACH_58
+Trigger(s): (REACH)
+DOBJ_Extraction = "AN IMMEDIATE CEASEFIRE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 23
+&&5 >PERIOD <EOS
+
+**********************************************
+Sentence: 24
+FAVORABLE CONDITIONS FOR NEGOTIATIONS DEPEND ON JUSTICE-MAKING PROGRESS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CONDITIONS_FOR_233
+Trigger(s): (CONDITIONS)
+PP(FOR)_Extraction = "NEGOTIATIONS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DEPEND_21
+Trigger(s): (DEPEND)
+SUBJ_Extraction = "FAVORABLE CONDITIONS" [UNSPECIFIED-CONDITION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__DEPEND_ON_15
+Trigger(s): (DEPEND)
+PP(ON)_Extraction = "JUSTICE-MAKING PROGRESS" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 25
+IF THE ARMY IS THOROUGHLY PURGED BECAUSE_OF THIS CASE >COMMA PEACE PEACE COULD BE REACHED EARLIER >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__PURGED_88
+Trigger(s): (PURGED)
+SUBJ_Extraction = "THE ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__PURGED_BECAUSE_OF_65
+Trigger(s): (PURGED)
+PP(BECAUSE_OF)_Extraction = "THIS CASE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__REACHED_89
+Trigger(s): (REACHED)
+SUBJ_Extraction = "PEACE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 26
+&&6 >PERIOD <EOS
+
+**********************************************
+Sentence: 27
+TO CONTRIBUTE TOWARD A PROMPT PEACE >COMMA WE WILL ASK THE OFFICE OF THE UN SECRETARY_GENERAL TO MEDIATE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__CONTRIBUTE_TO_33
+Trigger(s): (CONTRIBUTE)
+PP(TO)_Extraction = "MEDIATE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__CONTRIBUTE_TOWARD_34
+Trigger(s): (CONTRIBUTE)
+PP(TOWARD)_Extraction = "A PROMPT PEACE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ASK_OFFICE_179
+Trigger(s): (ASK,OFFICE)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ASK_154
+Trigger(s): (ASK)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ASK_155
+Trigger(s): (ASK)
+DOBJ_Extraction = "THE OFFICE OF THE UN SECRETARY_GENERAL" [COMMERCIAL-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ASK_TO_177
+Trigger(s): (ASK)
+PP(TO)_Extraction = "MEDIATE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OFFICE_OF_234
+Trigger(s): (OFFICE)
+PP(OF)_Extraction = "THE UN SECRETARY_GENERAL" [GOVT-OFFICIAL]
+
+
+
+**********************************************
+Sentence: 28
+WE URGE THE GOVERNMENT TO JOINTLY MEET WITH US AND WITH MR JAVIER PEREZ DE CUELLAR WITHIN THE NEXT &&30 DAYS TO RENEW THE DIALOGUE-NEGOTIATION PROCESS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__URGE_GOVERNMENT_180
+Trigger(s): (URGE,GOVERNMENT)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__URGE_341
+Trigger(s): (URGE)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__URGE_184
+Trigger(s): (URGE)
+DOBJ_Extraction = "THE GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__MEET_WITH_35
+Trigger(s): (MEET)
+PP(WITH)_Extraction = "US" [UNSPECIFIED-HUMAN]
+PP(WITH)_Extraction = "MR JAVIER PEREZ DE CUELLAR" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__MEET_WITHIN_36
+Trigger(s): (MEET)
+PP(WITHIN)_Extraction = "THE NEXT &&30 DAYS" [DAY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__RENEW_59
+Trigger(s): (RENEW)
+DOBJ_Extraction = "THE DIALOGUE-NEGOTIATION PROCESS" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 29
+&&7 >PERIOD <EOS
+
+**********************************************
+Sentence: 30
+THE FMLN WILL BE WATCHING HOW THE SITUATION THE SITUATION DEVELOPS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__WATCHING_SITUATION_181
+Trigger(s): (WATCHING,SITUATION)
+SUBJ_Extraction = "THE FMLN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WATCHING_342
+Trigger(s): (WATCHING)
+SUBJ_Extraction = "THE FMLN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__WATCHING_185
+Trigger(s): (WATCHING)
+DOBJ_Extraction = "THE SITUATION" [EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DEVELOPS_343
+Trigger(s): (DEVELOPS)
+SUBJ_Extraction = "THE SITUATION" [EVENT]
+
+
+
+**********************************************
+Sentence: 31
+IT URGES NATIONAL AND INTERNATIONAL FORCES TO EXERT PRESSURE SO THAT THE INVESTIGATION PROCESS DOES NOT END WITH A DECLARATION OF INTENTION OR WITH STATEMENTS STATEMENTS BLAMING LOW-RANKING SOLDIERS TO PROTECT THOSE THOSE ARE MOST RESPONSIBLE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__URGES_FORCES_45
+Trigger(s): (URGES,FORCES)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__URGES_85
+Trigger(s): (URGES)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__URGES_42
+Trigger(s): (URGES)
+DOBJ_Extraction = "NATIONAL AND INTERNATIONAL FORCES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__EXERT_60
+Trigger(s): (EXERT)
+DOBJ_Extraction = "PRESSURE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__END_345
+Trigger(s): (END)
+SUBJ_Extraction = "THE INVESTIGATION PROCESS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__END_WITH_178
+Trigger(s): (END)
+PP(WITH)_Extraction = "A DECLARATION OF INTENTION" [OTHER-STATEMENT]
+PP(WITH)_Extraction = "STATEMENTS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DECLARATION_OF_235
+Trigger(s): (DECLARATION)
+PP(OF)_Extraction = "INTENTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__BLAMING_SOLDIERS_183
+Trigger(s): (BLAMING,SOLDIERS)
+SUBJ_Extraction = "STATEMENTS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BLAMING_346
+Trigger(s): (BLAMING)
+SUBJ_Extraction = "STATEMENTS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BLAMING_187
+Trigger(s): (BLAMING)
+DOBJ_Extraction = "LOW-RANKING SOLDIERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__PROTECT_61
+Trigger(s): (PROTECT)
+DOBJ_Extraction = "THOSE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_MOST_16
+Trigger(s): (BE,MOST)
+SUBJ_Extraction = "THOSE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 32
+THIS WOULD PUSH AWAY THE POSSIBILTIY OF A POLITICAL SOLUTION TO THE SALVADORAN CONFLICT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__PUSH_POSSIBILTIY_184
+Trigger(s): (PUSH,POSSIBILTIY)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PUSH_347
+Trigger(s): (PUSH)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__PUSH_188
+Trigger(s): (PUSH)
+DOBJ_Extraction = "THE POSSIBILTIY OF A POLITICAL SOLUTION" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PUSH_TO_179
+Trigger(s): (PUSH)
+PP(TO)_Extraction = "THE SALVADORAN CONFLICT" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__POSSIBILTIY_OF_236
+Trigger(s): (POSSIBILTIY)
+PP(OF)_Extraction = "A POLITICAL SOLUTION" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 33
+>LBRACKET SIGNED >RBRACKET FMLN GENERAL COMMAND >COLON COMMANDERS SALVADOR SANCHEZ >COMMA SHAFICK JORGE HANDAL >COMMA EDUARDO SANCHO >COMMA JOAQUIN VILLALOBOS >COMMA AND FRANCISCO JOVEL >PERIOD <EOS
