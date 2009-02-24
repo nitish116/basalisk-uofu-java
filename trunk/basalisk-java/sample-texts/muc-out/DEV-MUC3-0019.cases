@@ -1,0 +1,374 @@
+%TEXT% DEV-MUC3-0019 U
+
+
+**********************************************
+Sentence: 1
+GARY ELLIOT KENT JR >COMMA A U.S. CITIZEN BEING HELD IN PRISON WHILE PRISON AWAITING TRIAL ON DRUG-TRAFFICKING CHARGES >COMMA PRISON HAS BEEN STABBED TO DEATH IN THE PAVON PRISON CAMP >COMMA &&18 KM SOUTHEAST OF THIS CAPITAL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__HELD_80
+Trigger(s): (HELD)
+SUBJ_Extraction = "GARY ELLIOT KENT JR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__HELD_IN_58
+Trigger(s): (HELD)
+PP(IN)_Extraction = "PRISON" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__AWAITING_TRIAL_168
+Trigger(s): (AWAITING,TRIAL)
+SUBJ_Extraction = "PRISON" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__AWAITING_314
+Trigger(s): (AWAITING)
+SUBJ_Extraction = "PRISON" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__AWAITING_168
+Trigger(s): (AWAITING)
+DOBJ_Extraction = "TRIAL" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__AWAITING_ON_164
+Trigger(s): (AWAITING)
+PP(ON)_Extraction = "DRUG-TRAFFICKING CHARGES" [UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__STABBED_81
+Trigger(s): (STABBED)
+SUBJ_Extraction = "PRISON" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__STABBED_IN_60
+Trigger(s): (STABBED)
+PP(IN)_Extraction = "THE PAVON PRISON CAMP" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__STABBED_TO_59
+Trigger(s): (STABBED)
+PP(TO)_Extraction = "DEATH" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SOUTHEAST_OF_207
+Trigger(s): (SOUTHEAST)
+PP(OF)_Extraction = "THIS CAPITAL" [CITY,UNSPECIFIED-MONEY]
+
+
+
+**********************************************
+Sentence: 2
+KENT JR >COMMA AND ANOTHER PERSON WHOSE NAME AND NATIONALITY THE POLICE HAVE NOT REVEALED >COMMA KENT JR >COMMA AND ANOTHER PERSON WHOSE NAME AND NATIONALITY WERE ARRESTED IN JULY &&1989 ALONG THE SOUTHERN COAST OF GUATEMALA WHEN THE LIGHT PLANE IN WHICH THE &&2 WERE TRAVELING HAD TO MAKE AN EMERGENCY LANDING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REVEALED_237
+Trigger(s): (REVEALED)
+SUBJ_Extraction = "KENT JR >COMMA AND ANOTHER PERSON WHOSE NAME AND NATIONALITY" [NATIONALITY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__ARRESTED_82
+Trigger(s): (ARRESTED)
+SUBJ_Extraction = "KENT JR >COMMA AND ANOTHER PERSON WHOSE NAME AND NATIONALITY" [NATIONALITY]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__ARRESTED_ALONG_62
+Trigger(s): (ARRESTED)
+PP(ALONG)_Extraction = "THE SOUTHERN COAST OF GUATEMALA" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__ARRESTED_IN_61
+Trigger(s): (ARRESTED)
+PP(IN)_Extraction = "JULY &&1989" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__COAST_OF_208
+Trigger(s): (COAST)
+PP(OF)_Extraction = "GUATEMALA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassInfVp__HAD_MAKE_3
+Trigger(s): (HAD,MAKE)
+SUBJ_Extraction = "THE &&2" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassInfVp_<dobj>__HAD_MAKE_2
+Trigger(s): (HAD,MAKE)
+DOBJ_Extraction = "AN EMERGENCY LANDING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__MAKE_50
+Trigger(s): (MAKE)
+DOBJ_Extraction = "AN EMERGENCY LANDING" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 3
+ACCORDING_TO THE INVESTIGATIONS THE INVESTIGATIONS FOLLOWED >COMMA THE PLANE THE PLANE WAS TRANSPORTING COCAINE FROM COLOMBIA TO THE UNITED_STATES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FOLLOWED_316
+Trigger(s): (FOLLOWED)
+SUBJ_Extraction = "THE INVESTIGATIONS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__TRANSPORTING_COCAINE_169
+Trigger(s): (TRANSPORTING,COCAINE)
+SUBJ_Extraction = "THE PLANE" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TRANSPORTING_280
+Trigger(s): (TRANSPORTING)
+SUBJ_Extraction = "THE PLANE" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__TRANSPORTING_149
+Trigger(s): (TRANSPORTING)
+DOBJ_Extraction = "COCAINE" [DRUG]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRANSPORTING_FROM_144
+Trigger(s): (TRANSPORTING)
+PP(FROM)_Extraction = "COLOMBIA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRANSPORTING_TO_145
+Trigger(s): (TRANSPORTING)
+PP(TO)_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+
+**********************************************
+Sentence: 4
+OFFICIAL SOURCES HAVE REPORTED THAT KENT JR WAS UNEXPECTEDLY ATTACKED BY &&3 OTHER PAVON PRISON INMATES &&3 OTHER PAVON PRISON INMATES WIELDING KNIVES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "OFFICIAL SOURCES" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__ATTACKED_83
+Trigger(s): (ATTACKED)
+SUBJ_Extraction = "KENT JR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__ATTACKED_BY_63
+Trigger(s): (ATTACKED)
+PP(BY)_Extraction = "&&3 OTHER PAVON PRISON INMATES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__WIELDING_KNIVES_170
+Trigger(s): (WIELDING,KNIVES)
+SUBJ_Extraction = "&&3 OTHER PAVON PRISON INMATES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WIELDING_319
+Trigger(s): (WIELDING)
+SUBJ_Extraction = "&&3 OTHER PAVON PRISON INMATES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__WIELDING_170
+Trigger(s): (WIELDING)
+DOBJ_Extraction = "KNIVES" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 5
+PRISON GUARDS CAPTURED BUT THE ATTACKERS DID NOT REPORT THEIR NAMES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GUARDS_320
+Trigger(s): (GUARDS)
+SUBJ_Extraction = "PRISON" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REPORT_NAMES_171
+Trigger(s): (REPORT,NAMES)
+SUBJ_Extraction = "THE ATTACKERS" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORT_1
+Trigger(s): (REPORT)
+SUBJ_Extraction = "THE ATTACKERS" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REPORT_47
+Trigger(s): (REPORT)
+DOBJ_Extraction = "THEIR NAMES" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 6
+PRISON SYSTEM DIRECTOR LEONEL FRANCO STATED TODAY THAT THE AMERICAN HAD NOT BEEN SENTENCED AND THAT HIS CASE WAS BEING PROCESSED BY A COURT OF JUSTICE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__STATED_206
+Trigger(s): (STATED)
+SUBJ_Extraction = "PRISON SYSTEM DIRECTOR LEONEL FRANCO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__SENTENCED_84
+Trigger(s): (SENTENCED)
+SUBJ_Extraction = "THE AMERICAN" [NATIONALITY,UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__PROCESSED_85
+Trigger(s): (PROCESSED)
+SUBJ_Extraction = "HIS CASE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__PROCESSED_BY_64
+Trigger(s): (PROCESSED)
+PP(BY)_Extraction = "A COURT OF JUSTICE" [OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__COURT_OF_209
+Trigger(s): (COURT)
+PP(OF)_Extraction = "JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+
+**********************************************
+Sentence: 7
+ON &&28 SEPTEMBER >COMMA THE U.S. EMBASSY IN GUATEMALA HAD REQUESTED THE EXTRADITION OF KENT JR FOR HIS INVOLVEMENT IN DRUG-TRAFFICKING ACTIVITIES AND BECAUSE_OF HIS POSSIBLE LINKS WITH THE MEDELLIN_CARTEL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EMBASSY_IN_210
+Trigger(s): (EMBASSY)
+PP(IN)_Extraction = "GUATEMALA" [COUNTRY]
+PP(IN)_Extraction = "DRUG-TRAFFICKING ACTIVITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REQUESTED_EXTRADITION_172
+Trigger(s): (REQUESTED,EXTRADITION)
+SUBJ_Extraction = "THE U.S. EMBASSY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REQUESTED_323
+Trigger(s): (REQUESTED)
+SUBJ_Extraction = "THE U.S. EMBASSY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REQUESTED_172
+Trigger(s): (REQUESTED)
+DOBJ_Extraction = "THE EXTRADITION OF KENT JR" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__REQUESTED_BECAUSE_OF_169
+Trigger(s): (REQUESTED)
+PP(BECAUSE_OF)_Extraction = "HIS POSSIBLE LINKS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__REQUESTED_IN_168
+Trigger(s): (REQUESTED)
+PP(IN)_Extraction = "DRUG-TRAFFICKING ACTIVITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__REQUESTED_WITH_170
+Trigger(s): (REQUESTED)
+PP(WITH)_Extraction = "THE MEDELLIN_CARTEL" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EXTRADITION_OF_211
+Trigger(s): (EXTRADITION)
+PP(OF)_Extraction = "KENT JR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__JR_FOR_212
+Trigger(s): (JR)
+PP(FOR)_Extraction = "HIS INVOLVEMENT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__INVOLVEMENT_IN_144
+Trigger(s): (INVOLVEMENT)
+PP(IN)_Extraction = "DRUG-TRAFFICKING ACTIVITIES" [OTHER-CONCEPTUAL]
+
+
