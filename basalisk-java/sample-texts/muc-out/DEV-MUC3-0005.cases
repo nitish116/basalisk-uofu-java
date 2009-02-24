@@ -1,0 +1,108 @@
+%TEXT% DEV-MUC3-0005 U
+
+
+**********************************************
+Sentence: 1
+A WAR BULLETIN INDICATES THAT ON &&6 JANUARY AT &&1625 >COMMA FMLN >LBRACKET FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT >RBRACKET TROOPS CLASHED WITH THE CAVALRY COMPANY IN FINCA SANTA ELENA >COMMA SANTA TECLA >COMMA NEAR SAN_SALVADOR >COMMA KILLING &&3 AND WOUNDING &&4 ENEMY TROOPS >COMMA INCLUDING THE PATROL LEADER THE PATROL LEADER WAS AMONG THOSE THOSE KILLED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INDICATES_118
+Trigger(s): (INDICATES)
+SUBJ_Extraction = "A WAR BULLETIN" [MEDIA-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__JANUARY_AT_67
+Trigger(s): (JANUARY)
+PP(AT)_Extraction = "&&1625" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CLASHED_119
+Trigger(s): (CLASHED)
+SUBJ_Extraction = "FMLN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CLASHED_IN_67
+Trigger(s): (CLASHED)
+PP(IN)_Extraction = "FINCA SANTA ELENA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CLASHED_NEAR_68
+Trigger(s): (CLASHED)
+PP(NEAR)_Extraction = "SAN_SALVADOR" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CLASHED_WITH_66
+Trigger(s): (CLASHED)
+PP(WITH)_Extraction = "THE CAVALRY COMPANY" [CORPORATE-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCLUDING_23
+Trigger(s): (INCLUDING)
+DOBJ_Extraction = "THE PATROL LEADER" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__LEADER_AMONG_68
+Trigger(s): (LEADER)
+PP(AMONG)_Extraction = "THOSE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__KILLED_120
+Trigger(s): (KILLED)
+SUBJ_Extraction = "THOSE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 2
+OUR TROOPS SEIZED AN M-14 RIFLE FROM THE ENEMY >COMMA &&3,000 CARTRIDGES FOR A 7.62-MM RIFLE >COMMA &&5 KNAPSACKS >COMMA &&6 GRENADES >COMMA AND FIELD EQUIPMENT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SEIZED_RIFLE_66
+Trigger(s): (SEIZED,RIFLE)
+SUBJ_Extraction = "OUR TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SEIZED_121
+Trigger(s): (SEIZED)
+SUBJ_Extraction = "OUR TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SEIZED_63
+Trigger(s): (SEIZED)
+DOBJ_Extraction = "AN M-14 RIFLE" [GUN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__SEIZED_FROM_69
+Trigger(s): (SEIZED)
+PP(FROM)_Extraction = "THE ENEMY" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CARTRIDGES_FOR_69
+Trigger(s): (CARTRIDGES)
+PP(FOR)_Extraction = "A 7.62-MM RIFLE >COMMA &&5 KNAPSACKS >COMMA &&6 GRENADES >COMMA AND FIELD EQUIPMENT" [UNSPECIFIED-PHYSOBJ]
+
+

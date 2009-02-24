@@ -1,0 +1,882 @@
+%TEXT% DEV-MUC3-0010 U
+
+
+**********************************************
+Sentence: 1
+PRESIDENT ALAN GARCIA HAS CONFIRMED THAT THE U.S. TROOPS THE U.S. TROOPS SURROUNDED OUR DIPLOMATIC MISSION IN PANAMA PANAMA WERE WITHDRAWN AFTER A FORMER MINISTER A FORMER MINISTER SURNAMED CORDOVA CORDOVA LEFT THE EMBASSY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONFIRMED_192
+Trigger(s): (CONFIRMED)
+SUBJ_Extraction = "PRESIDENT ALAN GARCIA" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SURROUNDED_MISSION_102
+Trigger(s): (SURROUNDED,MISSION)
+SUBJ_Extraction = "THE U.S. TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SURROUNDED_193
+Trigger(s): (SURROUNDED)
+SUBJ_Extraction = "THE U.S. TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SURROUNDED_100
+Trigger(s): (SURROUNDED)
+DOBJ_Extraction = "OUR DIPLOMATIC MISSION" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__SURROUNDED_IN_108
+Trigger(s): (SURROUNDED)
+PP(IN)_Extraction = "PANAMA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__WITHDRAWN_37
+Trigger(s): (WITHDRAWN)
+SUBJ_Extraction = "PANAMA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__WITHDRAWN_AFTER_31
+Trigger(s): (WITHDRAWN)
+PP(AFTER)_Extraction = "A FORMER MINISTER" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SURNAMED_CORDOVA_103
+Trigger(s): (SURNAMED,CORDOVA)
+SUBJ_Extraction = "A FORMER MINISTER" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SURNAMED_194
+Trigger(s): (SURNAMED)
+SUBJ_Extraction = "A FORMER MINISTER" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SURNAMED_101
+Trigger(s): (SURNAMED)
+DOBJ_Extraction = "CORDOVA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LEFT_EMBASSY_104
+Trigger(s): (LEFT,EMBASSY)
+SUBJ_Extraction = "CORDOVA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEFT_68
+Trigger(s): (LEFT)
+SUBJ_Extraction = "CORDOVA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LEFT_50
+Trigger(s): (LEFT)
+DOBJ_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+
+**********************************************
+Sentence: 2
+THE MILITARY MAN IS INVOLVED IN A MURDER TRIAL >COMMA THE MILITARY MAN LEFT THE PERUVIAN EMBASSY AS SOON AS HE HE LEARNED THAT THE EMBASSY CONSIDERED HIM PERSONA_NON_GRATA >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INVOLVED_36
+Trigger(s): (INVOLVED)
+SUBJ_Extraction = "THE MILITARY MAN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__INVOLVED_IN_28
+Trigger(s): (INVOLVED)
+PP(IN)_Extraction = "A MURDER TRIAL" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LEFT_EMBASSY_104
+Trigger(s): (LEFT,EMBASSY)
+SUBJ_Extraction = "THE MILITARY MAN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEFT_68
+Trigger(s): (LEFT)
+SUBJ_Extraction = "THE MILITARY MAN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LEFT_50
+Trigger(s): (LEFT)
+DOBJ_Extraction = "THE PERUVIAN EMBASSY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LEFT_AS_109
+Trigger(s): (LEFT)
+PP(AS)_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEARNED_196
+Trigger(s): (LEARNED)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONSIDERED_197
+Trigger(s): (CONSIDERED)
+SUBJ_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CONSIDERED_103
+Trigger(s): (CONSIDERED)
+DOBJ_Extraction = "HIM" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 3
+>LBRACKET BEGIN RECORDING >RBRACKET >LBRACKET GARCIA >RBRACKET I I THINK JOURNALISTS JOURNALISTS HAVE MAGNIFIED THE ISSUE A BIT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BEGIN_104
+Trigger(s): (BEGIN)
+DOBJ_Extraction = "RECORDING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__THINK_JOURNALISTS_106
+Trigger(s): (THINK,JOURNALISTS)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__THINK_27
+Trigger(s): (THINK)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__THINK_105
+Trigger(s): (THINK)
+DOBJ_Extraction = "JOURNALISTS" [MEDIA-WORKER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MAGNIFIED_BIT_107
+Trigger(s): (MAGNIFIED,BIT)
+SUBJ_Extraction = "JOURNALISTS" [MEDIA-WORKER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MAGNIFIED_199
+Trigger(s): (MAGNIFIED)
+SUBJ_Extraction = "JOURNALISTS" [MEDIA-WORKER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MAGNIFIED_106
+Trigger(s): (MAGNIFIED)
+DOBJ_Extraction = "A BIT" [OTHER]
+
+
+
+**********************************************
+Sentence: 4
+AS FAR AS WE WE KNOW >COMMA PEOPLE PEOPLE SOUGHT PROTECTION >ELLIPSES >PERIOD >LBRACKET PROTECTION CHANGES THOUGHT >RBRACKET SOMEONE SOMEONE ARRIVES AT THE DOOR OF THE EMBASSY AND SOMEONE ASKS FOR REFUGE IN VIEW OF A SITUATION OF FORCE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__KNOW_20
+Trigger(s): (KNOW)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SOUGHT_PROTECTION_108
+Trigger(s): (SOUGHT,PROTECTION)
+SUBJ_Extraction = "PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SOUGHT_201
+Trigger(s): (SOUGHT)
+SUBJ_Extraction = "PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SOUGHT_107
+Trigger(s): (SOUGHT)
+DOBJ_Extraction = "PROTECTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CHANGES_THOUGHT_109
+Trigger(s): (CHANGES,THOUGHT)
+SUBJ_Extraction = "PROTECTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CHANGES_202
+Trigger(s): (CHANGES)
+SUBJ_Extraction = "PROTECTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CHANGES_108
+Trigger(s): (CHANGES)
+DOBJ_Extraction = "THOUGHT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ARRIVES_203
+Trigger(s): (ARRIVES)
+SUBJ_Extraction = "SOMEONE" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ARRIVES_AT_110
+Trigger(s): (ARRIVES)
+PP(AT)_Extraction = "THE DOOR OF THE EMBASSY" [OTHER-PHYSOBJ,OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DOOR_OF_136
+Trigger(s): (DOOR)
+PP(OF)_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ASKS_113
+Trigger(s): (ASKS)
+SUBJ_Extraction = "SOMEONE" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ASKS_FOR_111
+Trigger(s): (ASKS)
+PP(FOR)_Extraction = "REFUGE" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ASKS_IN_112
+Trigger(s): (ASKS)
+PP(IN)_Extraction = "VIEW OF A SITUATION" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__VIEW_OF_137
+Trigger(s): (VIEW)
+PP(OF)_Extraction = "A SITUATION OF FORCE" [EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SITUATION_OF_138
+Trigger(s): (SITUATION)
+PP(OF)_Extraction = "FORCE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 5
+THE SITUATION IN PANAMA IS ABNORMAL >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SITUATION_IN_139
+Trigger(s): (SITUATION)
+PP(IN)_Extraction = "PANAMA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_ABNORMAL_9
+Trigger(s): (BE,ABNORMAL)
+SUBJ_Extraction = "THE SITUATION" [EVENT]
+
+
+
+**********************************************
+Sentence: 6
+IT HAS BEEN TOTALLY INVADED BY &&30,000 SOLDIERS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INVADED_39
+Trigger(s): (INVADED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__INVADED_BY_33
+Trigger(s): (INVADED)
+PP(BY)_Extraction = "&&30,000 SOLDIERS" [MILITARY]
+
+
+
+**********************************************
+Sentence: 7
+SOME PERSONS ENTERED THE EMBASSY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ENTERED_EMBASSY_110
+Trigger(s): (ENTERED,EMBASSY)
+SUBJ_Extraction = "SOME PERSONS" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ENTERED_24
+Trigger(s): (ENTERED)
+SUBJ_Extraction = "SOME PERSONS" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ENTERED_13
+Trigger(s): (ENTERED)
+DOBJ_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+
+**********************************************
+Sentence: 8
+AT_LEAST ONE OF THEM HAD BEEN ALLEGEDLY LINKED WITH THE DEATH OF A PANAMANIAN MINISTER >COMMA A MR SPADAFORA >COMMA A MR SPADAFORA WAS MURDERED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ONE_OF_140
+Trigger(s): (ONE)
+PP(OF)_Extraction = "THEM" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__LINKED_27
+Trigger(s): (LINKED)
+SUBJ_Extraction = "AT_LEAST ONE OF THEM" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__LINKED_WITH_21
+Trigger(s): (LINKED)
+PP(WITH)_Extraction = "THE DEATH OF A PANAMANIAN MINISTER" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DEATH_OF_141
+Trigger(s): (DEATH)
+PP(OF)_Extraction = "A PANAMANIAN MINISTER" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__MURDERED_34
+Trigger(s): (MURDERED)
+SUBJ_Extraction = "A MR SPADAFORA" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 9
+THE AUTHORITIES OF THE EMBASSY AND OF THE FOREIGN MINISTRY STATED THAT THIS @PERSON@S PRESENCE WAS UNDESIRABLE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__AUTHORITIES_OF_142
+Trigger(s): (AUTHORITIES)
+PP(OF)_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__STATED_206
+Trigger(s): (STATED)
+SUBJ_Extraction = "THE AUTHORITIES OF THE EMBASSY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__PRESENCE_22
+Trigger(s): (PRESENCE)
+possessive_agent_Extraction = "PERSON" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_UNDESIRABLE_10
+Trigger(s): (BE,UNDESIRABLE)
+SUBJ_Extraction = "THIS @PERSON@S PRESENCE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 10
+WE DO NOT REFUSE TO GRANT REFUGE >DASH A CONDITION A CONDITION IS GRANTED BEFORE GRANTING POLITICAL ASYLUM >DASH TO WHOMEVER WHOMEVER FEELS HARASSED OR WHOMEVER MISTREATED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__REFUSE_GRANT_15
+Trigger(s): (REFUSE,GRANT)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REFUSE_207
+Trigger(s): (REFUSE)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__REFUSE_GRANT_13
+Trigger(s): (REFUSE,GRANT)
+DOBJ_Extraction = "REFUGE" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__GRANT_34
+Trigger(s): (GRANT)
+DOBJ_Extraction = "REFUGE" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__GRANTED_42
+Trigger(s): (GRANTED)
+SUBJ_Extraction = "A CONDITION" [UNSPECIFIED-CONDITION]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__GRANTED_BEFORE_35
+Trigger(s): (GRANTED)
+PP(BEFORE)_Extraction = "GRANTING POLITICAL ASYLUM" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__GRANTED_TO_36
+Trigger(s): (GRANTED)
+PP(TO)_Extraction = "WHOMEVER" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FEELS_208
+Trigger(s): (FEELS)
+SUBJ_Extraction = "WHOMEVER" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MISTREATED_209
+Trigger(s): (MISTREATED)
+SUBJ_Extraction = "WHOMEVER" [UNSPECIFIED-HUMAN]
+
+
+
+**********************************************
+Sentence: 11
+IN A CASE A CASE LIKE THIS >COMMA HOWEVER >COMMA IN WHICH THERE WAS AN ALLEGED INVOLVEMENT IN A MURDER A MURDER WAS COMMITTED YEARS AGO >COMMA THIS PERSON >DASH I I BELIEVE HE IS A MAN A MAN SURNAMED CORDOVA >COMMA APPARENTLY A HIGHRANKING PANAMANIAN GUARD OFFICER >DASH CORDOVA WAS TOLD THAT HIS PRESENCE WAS NOT WANTED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LIKE_THIS_111
+Trigger(s): (LIKE,THIS)
+SUBJ_Extraction = "A CASE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LIKE_63
+Trigger(s): (LIKE)
+SUBJ_Extraction = "A CASE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LIKE_31
+Trigger(s): (LIKE)
+DOBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_INVOLVEMENT_29
+Trigger(s): (BE,INVOLVEMENT)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "AN ALLEGED INVOLVEMENT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__INVOLVEMENT_IN_144
+Trigger(s): (INVOLVEMENT)
+PP(IN)_Extraction = "A MURDER" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__COMMITTED_43
+Trigger(s): (COMMITTED)
+SUBJ_Extraction = "A MURDER" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BELIEVE_211
+Trigger(s): (BELIEVE)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_MAN_30
+Trigger(s): (BE,MAN)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_HE_26
+Trigger(s): (BE,HE)
+DOBJ_Extraction = "A MAN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SURNAMED_CORDOVA_103
+Trigger(s): (SURNAMED,CORDOVA)
+SUBJ_Extraction = "A MAN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SURNAMED_194
+Trigger(s): (SURNAMED)
+SUBJ_Extraction = "A MAN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SURNAMED_101
+Trigger(s): (SURNAMED)
+DOBJ_Extraction = "CORDOVA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__TOLD_44
+Trigger(s): (TOLD)
+SUBJ_Extraction = "CORDOVA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__WANTED_45
+Trigger(s): (WANTED)
+SUBJ_Extraction = "HIS PRESENCE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 12
+HE LEFT THE EMBASSY OF HIS OWN THE EMBASSY WILL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LEFT_EMBASSY_104
+Trigger(s): (LEFT,EMBASSY)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEFT_68
+Trigger(s): (LEFT)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LEFT_50
+Trigger(s): (LEFT)
+DOBJ_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+
+**********************************************
+Sentence: 13
+THERE ARE OTHER PANAMANIAN DEFENSE OTHER PANAMANIAN DEFENSE FORCES OFFICERS AT THE EMBASSY >COMMA OTHER PANAMANIAN DEFENSE INCLUDING MR @NORIEGA@S SECRETARY >COMMA BUT THEIR STATUS SHOULD BE ESTABLISHED BY PERU >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_DEFENSE_31
+Trigger(s): (BE,DEFENSE)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "OTHER PANAMANIAN DEFENSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__FORCES_OFFICERS_112
+Trigger(s): (FORCES,OFFICERS)
+SUBJ_Extraction = "OTHER PANAMANIAN DEFENSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FORCES_212
+Trigger(s): (FORCES)
+SUBJ_Extraction = "OTHER PANAMANIAN DEFENSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__FORCES_111
+Trigger(s): (FORCES)
+DOBJ_Extraction = "OFFICERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__FORCES_AT_113
+Trigger(s): (FORCES)
+PP(AT)_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__INCLUDING_SECRETARY_113
+Trigger(s): (INCLUDING,SECRETARY)
+SUBJ_Extraction = "OTHER PANAMANIAN DEFENSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INCLUDING_44
+Trigger(s): (INCLUDING)
+SUBJ_Extraction = "OTHER PANAMANIAN DEFENSE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCLUDING_23
+Trigger(s): (INCLUDING)
+DOBJ_Extraction = "MR @NORIEGA@S SECRETARY" [OCCUPATION,GOVT-OFFICIAL,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__SECRETARY_23
+Trigger(s): (SECRETARY)
+possessive_agent_Extraction = "NORIEGA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__ESTABLISHED_46
+Trigger(s): (ESTABLISHED)
+SUBJ_Extraction = "THEIR STATUS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__ESTABLISHED_BY_37
+Trigger(s): (ESTABLISHED)
+PP(BY)_Extraction = "PERU" [COUNTRY]
+
+
+
+**********************************************
+Sentence: 14
+AN INCIDENT WAS REPORTED YESTERDAY >COMMA AS THE U.S. TROOPS THE U.S. TROOPS SURROUNDED THE EMBASSY >COMMA THE U.S. TROOPS DEPLOYING BARRIERS AND BARBED WIRE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__REPORTED_5
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "AN INCIDENT" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__REPORTED_AS_38
+Trigger(s): (REPORTED)
+PP(AS)_Extraction = "THE U.S. TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SURROUNDED_EMBASSY_114
+Trigger(s): (SURROUNDED,EMBASSY)
+SUBJ_Extraction = "THE U.S. TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SURROUNDED_193
+Trigger(s): (SURROUNDED)
+SUBJ_Extraction = "THE U.S. TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SURROUNDED_100
+Trigger(s): (SURROUNDED)
+DOBJ_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__DEPLOYING_WIRE_115
+Trigger(s): (DEPLOYING,WIRE)
+SUBJ_Extraction = "THE U.S. TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DEPLOYING_214
+Trigger(s): (DEPLOYING)
+SUBJ_Extraction = "THE U.S. TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DEPLOYING_113
+Trigger(s): (DEPLOYING)
+DOBJ_Extraction = "BARRIERS AND BARBED WIRE" [OTHER-PHYSOBJ]
+
+
+
+**********************************************
+Sentence: 15
+THERE WAS AN ATTEMPT TO DEPICT A DRAMATIC AND SPECTACULAR PICTURE OF A SIEGE OR PERHAPS OF AN INVASION OF THE EMBASSY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_ATTEMPT_32
+Trigger(s): (BE,ATTEMPT)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "AN ATTEMPT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__DEPICT_35
+Trigger(s): (DEPICT)
+DOBJ_Extraction = "A DRAMATIC AND SPECTACULAR PICTURE OF A SIEGE" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PICTURE_OF_145
+Trigger(s): (PICTURE)
+PP(OF)_Extraction = "A SIEGE" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__INVASION_OF_88
+Trigger(s): (INVASION)
+PP(OF)_Extraction = "THE EMBASSY" [OTHER-BUILDING]
+
+
+
+**********************************************
+Sentence: 16
+FORTUNATELY >COMMA THE FOREIGN MINISTRY RESORTED TO DIPLOMATIC CHANNELS AND THE TROOPS THE TROOPS WERE SOON WITHDRAWN >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RESORTED_215
+Trigger(s): (RESORTED)
+SUBJ_Extraction = "THE FOREIGN MINISTRY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RESORTED_TO_114
+Trigger(s): (RESORTED)
+PP(TO)_Extraction = "DIPLOMATIC CHANNELS AND THE TROOPS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__WITHDRAWN_37
+Trigger(s): (WITHDRAWN)
+SUBJ_Extraction = "THE TROOPS" [MILITARY]
+
+
+
+**********************************************
+Sentence: 17
+>LBRACKET END RECORDING >RBRACKET <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__END_114
+Trigger(s): (END)
+DOBJ_Extraction = "RECORDING" [NO_ATTRIBUTES]
+
+

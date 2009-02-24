@@ -1,0 +1,160 @@
+%TEXT% DEV-MUC3-0009 U
+
+
+**********************************************
+Sentence: 1
+THE NATIONAL ARMY WAS INVOLVED IN NEW CLASHES WITHIN THE PAST FEW HOURS WITH FARC >LBRACKET REVOLUTIONARY_ARMED_FORCES_OF_COLOMBIA >RBRACKET AND THE ELN >LBRACKET ARMY_OF_NATIONAL_LIBERATION >RBRACKET IN THE RURAL AREA OF YONDO IN @ANTIOQUIA@S MIDDLE MAGDALENA REGION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INVOLVED_36
+Trigger(s): (INVOLVED)
+SUBJ_Extraction = "THE NATIONAL ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__INVOLVED_IN_28
+Trigger(s): (INVOLVED)
+PP(IN)_Extraction = "NEW CLASHES" [NO_ATTRIBUTES]
+PP(IN)_Extraction = "THE RURAL AREA OF YONDO" [UNSPECIFIED-LOCATION]
+PP(IN)_Extraction = "@ANTIOQUIA@S MIDDLE MAGDALENA REGION" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__INVOLVED_WITH_30
+Trigger(s): (INVOLVED)
+PP(WITH)_Extraction = "FARC" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__INVOLVED_WITHIN_29
+Trigger(s): (INVOLVED)
+PP(WITHIN)_Extraction = "THE PAST FEW HOURS" [OTHER-TIME]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__AREA_OF_131
+Trigger(s): (AREA)
+PP(OF)_Extraction = "YONDO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__REGION_1
+Trigger(s): (REGION)
+possessive_agent_Extraction = "ANTIOQUIA" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 2
+SPOKESMEN FOR THE 5TH BRIGADE REPORTED &&5 SOLDIERS &&5 SOLDIERS KILLED >COMMA SEVERAL WOUNDED >COMMA AND AT_LEAST &&12 REBEL CASUALTIES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SPOKESMEN_FOR_132
+Trigger(s): (SPOKESMEN)
+PP(FOR)_Extraction = "THE 5TH BRIGADE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REPORTED_SOLDIERS_100
+Trigger(s): (REPORTED,SOLDIERS)
+SUBJ_Extraction = "SPOKESMEN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "SPOKESMEN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REPORTED_75
+Trigger(s): (REPORTED)
+DOBJ_Extraction = "&&5 SOLDIERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__KILLED_120
+Trigger(s): (KILLED)
+SUBJ_Extraction = "&&5 SOLDIERS" [MILITARY]
+
+
+
+**********************************************
+Sentence: 3
+THE EXODUS OF PEASANTS FROM THAT REGION CONTINUED TO INCREASE TODAY ACCORDING_TO OFFICIAL REPORTS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EXODUS_OF_133
+Trigger(s): (EXODUS)
+PP(OF)_Extraction = "PEASANTS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PEASANTS_FROM_134
+Trigger(s): (PEASANTS)
+PP(FROM)_Extraction = "THAT REGION" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__CONTINUED_INCREASE_14
+Trigger(s): (CONTINUED,INCREASE)
+SUBJ_Extraction = "THE EXODUS OF PEASANTS" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUED_139
+Trigger(s): (CONTINUED)
+SUBJ_Extraction = "THE EXODUS OF PEASANTS" [ENTITY,UNKNOWN]
+
+
+
+**********************************************
+Sentence: 4
+THE PEASANTS WALKED AWAY FROM THEIR PROPERTIES TO AVOID BECOMING VICTIMS OF THE CLASHES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PEASANTS_FROM_134
+Trigger(s): (PEASANTS)
+PP(FROM)_Extraction = "THEIR PROPERTIES" [UNSPECIFIED-PHYSOBJ,UNSPECIFIED-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WALKED_191
+Trigger(s): (WALKED)
+SUBJ_Extraction = "THE PEASANTS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__WALKED_FROM_107
+Trigger(s): (WALKED)
+PP(FROM)_Extraction = "THEIR PROPERTIES" [UNSPECIFIED-PHYSOBJ,UNSPECIFIED-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__AVOID_29
+Trigger(s): (AVOID)
+DOBJ_Extraction = "BECOMING VICTIMS OF THE CLASHES" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__VICTIMS_OF_135
+Trigger(s): (VICTIMS)
+PP(OF)_Extraction = "THE CLASHES" [NO_ATTRIBUTES]
+
+

@@ -1,0 +1,447 @@
+%TEXT% DEV-MUC3-0008 U
+
+
+**********************************************
+Sentence: 1
+RICARDO ALFONSO CASTELLAR >COMMA MAYOR OF ACHI >COMMA IN THE NORTHERN DEPARTMENT OF BOLIVAR >COMMA BOLIVAR WAS KIDNAPPED ON &&5 JANUARY >COMMA APPARENTLY BY ARMY_OF_NATIONAL_LIBERATION >LPAREN ELN >RPAREN GUERRILLAS >COMMA BOLIVAR WAS FOUND DEAD TODAY >COMMA ACCORDING_TO AUTHORITIES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MAYOR_OF_119
+Trigger(s): (MAYOR)
+PP(OF)_Extraction = "ACHI" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ACHI_IN_120
+Trigger(s): (ACHI)
+PP(IN)_Extraction = "THE NORTHERN DEPARTMENT OF BOLIVAR" [OTHER-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DEPARTMENT_OF_121
+Trigger(s): (DEPARTMENT)
+PP(OF)_Extraction = "BOLIVAR" [NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KIDNAPPED_1
+Trigger(s): (KIDNAPPED)
+SUBJ_Extraction = "BOLIVAR" [NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KIDNAPPED_BY_1
+Trigger(s): (KIDNAPPED)
+PP(BY)_Extraction = "ARMY_OF_NATIONAL_LIBERATION" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KIDNAPPED_ON_23
+Trigger(s): (KIDNAPPED)
+PP(ON)_Extraction = "&&5 JANUARY" [MONTH]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__FOUND_7
+Trigger(s): (FOUND)
+SUBJ_Extraction = "BOLIVAR" [NEUTRAL-NAME]
+
+
+
+**********************************************
+Sentence: 2
+CASTELLAR WAS KIDNAPPED ON &&5 JANUARY ON THE OUTSKIRTS OF ACHI >COMMA ABOUT &&850 KM NORTH OF BOGOTA >COMMA BY A GROUP OF ARMED MEN >COMMA ARMED MEN FORCED HIM TO ACCOMPANY THEM TO AN UNDISCLOSED LOCATION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KIDNAPPED_1
+Trigger(s): (KIDNAPPED)
+SUBJ_Extraction = "CASTELLAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KIDNAPPED_BY_1
+Trigger(s): (KIDNAPPED)
+PP(BY)_Extraction = "A GROUP OF ARMED MEN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KIDNAPPED_ON_23
+Trigger(s): (KIDNAPPED)
+PP(ON)_Extraction = "&&5 JANUARY" [MONTH]
+PP(ON)_Extraction = "THE OUTSKIRTS OF ACHI" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OUTSKIRTS_OF_76
+Trigger(s): (OUTSKIRTS)
+PP(OF)_Extraction = "ACHI" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__NORTH_OF_124
+Trigger(s): (NORTH)
+PP(OF)_Extraction = "BOGOTA" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__GROUP_OF_125
+Trigger(s): (GROUP)
+PP(OF)_Extraction = "ARMED MEN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__FORCED_HIM_97
+Trigger(s): (FORCED,HIM)
+SUBJ_Extraction = "ARMED MEN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FORCED_6
+Trigger(s): (FORCED)
+SUBJ_Extraction = "ARMED MEN" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__FORCED_3
+Trigger(s): (FORCED)
+DOBJ_Extraction = "HIM" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__ACCOMPANY_TO_18
+Trigger(s): (ACCOMPANY)
+PP(TO)_Extraction = "AN UNDISCLOSED LOCATION" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__ACCOMPANY_32
+Trigger(s): (ACCOMPANY)
+DOBJ_Extraction = "THEM" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 3
+POLICE SOURCES IN CARTAGENA REPORTED THAT @CASTELLAR@S BODY SHOWED SIGNS OF TORTURE AND SEVERAL BULLET_WOUNDS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SOURCES_IN_126
+Trigger(s): (SOURCES)
+PP(IN)_Extraction = "CARTAGENA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "POLICE SOURCES" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__BODY_19
+Trigger(s): (BODY)
+possessive_agent_Extraction = "CASTELLAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SHOWED_SIGNS_98
+Trigger(s): (SHOWED,SIGNS)
+SUBJ_Extraction = "@CASTELLAR@S BODY" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SHOWED_180
+Trigger(s): (SHOWED)
+SUBJ_Extraction = "@CASTELLAR@S BODY" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SHOWED_96
+Trigger(s): (SHOWED)
+DOBJ_Extraction = "SIGNS OF TORTURE AND SEVERAL BULLET_WOUNDS" [OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SIGNS_OF_127
+Trigger(s): (SIGNS)
+PP(OF)_Extraction = "TORTURE AND SEVERAL BULLET_WOUNDS" [ACQABN]
+
+
+
+**********************************************
+Sentence: 4
+CASTELLAR WAS KIDNAPPED BY ELN GUERRILLAS WHILE HE WAS TRAVELING IN A BOAT DOWN THE CAUCA RIVER TO THE TENCHE AREA >COMMA A REGION WITHIN HIS JURISDICTION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KIDNAPPED_1
+Trigger(s): (KIDNAPPED)
+SUBJ_Extraction = "CASTELLAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KIDNAPPED_BY_1
+Trigger(s): (KIDNAPPED)
+PP(BY)_Extraction = "ELN GUERRILLAS" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TRAVELING_181
+Trigger(s): (TRAVELING)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRAVELING_DOWN_98
+Trigger(s): (TRAVELING)
+PP(DOWN)_Extraction = "THE CAUCA RIVER" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRAVELING_IN_97
+Trigger(s): (TRAVELING)
+PP(IN)_Extraction = "A BOAT" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRAVELING_TO_99
+Trigger(s): (TRAVELING)
+PP(TO)_Extraction = "THE TENCHE AREA" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRAVELING_WITHIN_100
+Trigger(s): (TRAVELING)
+PP(WITHIN)_Extraction = "HIS JURISDICTION" [OTHER-LOCATION]
+
+
+
+**********************************************
+Sentence: 5
+IN CARTAGENA IT WAS REPORTED THAT CASTELLAR FACED A REVOLUTIONARY TRIAL BY THE ELN AND THAT HE WAS FOUND GUILTY AND EXECUTED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__REPORTED_5
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__FACED_TRIAL_99
+Trigger(s): (FACED,TRIAL)
+SUBJ_Extraction = "CASTELLAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FACED_182
+Trigger(s): (FACED)
+SUBJ_Extraction = "CASTELLAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__FACED_97
+Trigger(s): (FACED)
+DOBJ_Extraction = "A REVOLUTIONARY TRIAL" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__FACED_BY_101
+Trigger(s): (FACED)
+PP(BY)_Extraction = "THE ELN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__FOUND_7
+Trigger(s): (FOUND)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 6
+CASTELLAR IS THE SECOND MAYOR THE SECOND MAYOR HAS BEEN MURDERED IN COLOMBIA IN THE LAST &&3 DAYS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_MAYOR_28
+Trigger(s): (BE,MAYOR)
+SUBJ_Extraction = "CASTELLAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_CASTELLAR_24
+Trigger(s): (BE,CASTELLAR)
+DOBJ_Extraction = "THE SECOND MAYOR" [GOVT-OFFICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__MURDERED_34
+Trigger(s): (MURDERED)
+SUBJ_Extraction = "THE SECOND MAYOR" [GOVT-OFFICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__MURDERED_IN_25
+Trigger(s): (MURDERED)
+PP(IN)_Extraction = "COLOMBIA" [COUNTRY]
+PP(IN)_Extraction = "THE LAST &&3 DAYS" [DAY]
+
+
+
+**********************************************
+Sentence: 7
+ON &&5 JANUARY >COMMA CARLOS JULIO TORRADO >COMMA MAYOR OF ABREGO IN THE NORTHEASTERN DEPARTMENT OF SANTANDER >COMMA WAS KILLED APPARENTLY BY ANOTHER GUERILLA COLUMN >COMMA ALSO BELONGING TO THE ELN >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MAYOR_OF_119
+Trigger(s): (MAYOR)
+PP(OF)_Extraction = "ABREGO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ABREGO_IN_128
+Trigger(s): (ABREGO)
+PP(IN)_Extraction = "THE NORTHEASTERN DEPARTMENT OF SANTANDER" [OTHER-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DEPARTMENT_OF_121
+Trigger(s): (DEPARTMENT)
+PP(OF)_Extraction = "SANTANDER" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KILLED_3
+Trigger(s): (KILLED)
+SUBJ_Extraction = "CARLOS JULIO TORRADO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KILLED_BY_26
+Trigger(s): (KILLED)
+PP(BY)_Extraction = "ANOTHER GUERILLA COLUMN" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__KILLED_TO_27
+Trigger(s): (KILLED)
+PP(TO)_Extraction = "THE ELN" [TERRORIST-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 8
+@TORRADO@S SON >COMMA WILLIAM >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__SON_20
+Trigger(s): (SON)
+possessive_agent_Extraction = "TORRADO" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 9
+GUSTAVO JACOME QUINTERO >COMMA THE DEPARTMENTAL GOVERNMENT SECRETARY >SEMI <EOS
+
+**********************************************
+Sentence: 10
+AND BODYGUARD JAIRO ORTEGA >COMMA WERE ALSO KILLED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KILLED_3
+Trigger(s): (KILLED)
+SUBJ_Extraction = "BODYGUARD JAIRO ORTEGA" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+
+**********************************************
+Sentence: 11
+THE GROUP WAS TRAVELING IN A 4-WHEEL DRIVE VEHICLE BETWEEN CUCUTA AND THE RURAL AREA THE RURAL AREA KNOWN AS CAMPANARIO WHEN THEIR VEHICLE WAS BLOWN_UP BY &&4 EXPLOSIVE CHARGES &&4 EXPLOSIVE CHARGES DETONATED ON THE HIGHWAY LAST NIGHT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TRAVELING_181
+Trigger(s): (TRAVELING)
+SUBJ_Extraction = "THE GROUP" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRAVELING_BETWEEN_102
+Trigger(s): (TRAVELING)
+PP(BETWEEN)_Extraction = "CUCUTA AND THE RURAL AREA" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRAVELING_IN_97
+Trigger(s): (TRAVELING)
+PP(IN)_Extraction = "A 4-WHEEL DRIVE VEHICLE" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__KNOWN_183
+Trigger(s): (KNOWN)
+SUBJ_Extraction = "THE RURAL AREA" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__KNOWN_AS_103
+Trigger(s): (KNOWN)
+PP(AS)_Extraction = "CAMPANARIO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DETONATED_185
+Trigger(s): (DETONATED)
+SUBJ_Extraction = "&&4 EXPLOSIVE CHARGES" [UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__DETONATED_ON_105
+Trigger(s): (DETONATED)
+PP(ON)_Extraction = "THE HIGHWAY" [TRANSPORTATION-ROUTE]
+
+

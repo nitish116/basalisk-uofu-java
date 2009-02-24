@@ -1,0 +1,1898 @@
+%TEXT% DEV-MUC3-0004 U
+
+
+**********************************************
+Sentence: 1
+>LBRACKET TEXT >RBRACKET GOODBYE >LBRACKET AIR_FORCE COMMANDER >RBRACKET GENERAL RAFAEL BUSTILLO >COMMA FALSE HOPE FOR MASS KILLERS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GOODBYE_55
+Trigger(s): (GOODBYE)
+SUBJ_Extraction = "TEXT" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__HOPE_FOR_32
+Trigger(s): (HOPE)
+PP(FOR)_Extraction = "MASS KILLERS" [VIOLENT-CRIMINAL]
+
+
+
+**********************************************
+Sentence: 2
+GEN. BUSTILLO RESIGNS OR GEN. BUSTILLO IS MADE TO RESIGN AS THE AIR_FORCE CHIEF >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RESIGNS_57
+Trigger(s): (RESIGNS)
+SUBJ_Extraction = "GEN. BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassInfVp__MADE_RESIGN_1
+Trigger(s): (MADE,RESIGN)
+SUBJ_Extraction = "GEN. BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__MADE_9
+Trigger(s): (MADE)
+SUBJ_Extraction = "GEN. BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__RESIGN_AS_3
+Trigger(s): (RESIGN)
+PP(AS)_Extraction = "THE AIR_FORCE CHIEF" [OTHER-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 3
+BECAUSE_OF THIS >COMMA THE GENERAL IS ADMITTING THAT WITHOUT THE BOMBING ON @SAN_SALVADOR@S NEIGHBORHOODS THE FMLN >LBRACKET FARABUNDO_MARTI_NATIONAL_LIBERATION FRONT >RBRACKET WOULD HAVE DEFEATED THE SALVADORAN ARMED_FORCES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADMITTING_58
+Trigger(s): (ADMITTING)
+SUBJ_Extraction = "THE GENERAL" [JOB-TITLE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BOMBING_ON_33
+Trigger(s): (BOMBING)
+PP(ON)_Extraction = "@SAN_SALVADOR@S NEIGHBORHOODS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__NEIGHBORHOODS_5
+Trigger(s): (NEIGHBORHOODS)
+possessive_agent_Extraction = "SAN_SALVADOR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DEFEATED_59
+Trigger(s): (DEFEATED)
+SUBJ_Extraction = "THE FMLN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DEFEATED_29
+Trigger(s): (DEFEATED)
+DOBJ_Extraction = "THE SALVADORAN ARMED_FORCES" [MILITARY]
+
+
+
+**********************************************
+Sentence: 4
+@BUSTILLO@S RESIGNATION IS YET ANOTHER SIGN OF THE FAILURE OF &&10 YEARS OF THE U.S. COUNTERINSURGENCY POLICY IN EL_SALVADOR >COMMA AS EL_SALVADOR BECAME CLEAR WITH THE OFFENSIVE THE OFFENSIVE LAUNCHED ON &&10 NOVEMBER >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__RESIGNATION_6
+Trigger(s): (RESIGNATION)
+possessive_agent_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_SIGN_8
+Trigger(s): (BE,SIGN)
+SUBJ_Extraction = "@BUSTILLO@S RESIGNATION" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_RESIGNATION_8
+Trigger(s): (BE,RESIGNATION)
+DOBJ_Extraction = "ANOTHER SIGN OF THE FAILURE" [OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SIGN_OF_34
+Trigger(s): (SIGN)
+PP(OF)_Extraction = "THE FAILURE OF &&10 YEARS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__FAILURE_OF_35
+Trigger(s): (FAILURE)
+PP(OF)_Extraction = "&&10 YEARS OF THE U.S. COUNTERINSURGENCY POLICY" [YEAR]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__YEARS_OF_36
+Trigger(s): (YEARS)
+PP(OF)_Extraction = "THE U.S. COUNTERINSURGENCY POLICY" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__POLICY_IN_37
+Trigger(s): (POLICY)
+PP(IN)_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CLEAR_60
+Trigger(s): (CLEAR)
+SUBJ_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CLEAR_WITH_29
+Trigger(s): (CLEAR)
+PP(WITH)_Extraction = "THE OFFENSIVE" [ATTACK,OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LAUNCHED_61
+Trigger(s): (LAUNCHED)
+SUBJ_Extraction = "THE OFFENSIVE" [ATTACK,OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LAUNCHED_ON_30
+Trigger(s): (LAUNCHED)
+PP(ON)_Extraction = "&&10 NOVEMBER" [MONTH]
+
+
+
+**********************************************
+Sentence: 5
+FOR &&10 YEARS THE MILITARY AND THEIR U.S. SPONSORS BASED THEIR TRUST IN THE AIR POWER TO DROWN IN BLOOD THE ASPIRATION OF THE NATION TO ACHIEVE DEMOCRACY AND SOCIAL JUSTICE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SPONSORS_TRUST_31
+Trigger(s): (SPONSORS,TRUST)
+SUBJ_Extraction = "THE MILITARY AND THEIR U.S." [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SPONSORS_62
+Trigger(s): (SPONSORS)
+SUBJ_Extraction = "THE MILITARY AND THEIR U.S." [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SPONSORS_30
+Trigger(s): (SPONSORS)
+DOBJ_Extraction = "BASED THEIR TRUST" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__SPONSORS_IN_31
+Trigger(s): (SPONSORS)
+PP(IN)_Extraction = "THE AIR POWER" [ELECTRICITY,UNSPECIFIED-ENERGY-OR-RESOURCE]
+PP(IN)_Extraction = "BLOOD" [ANATOMY]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__DROWN_IN_4
+Trigger(s): (DROWN)
+PP(IN)_Extraction = "BLOOD" [ANATOMY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__DROWN_11
+Trigger(s): (DROWN)
+DOBJ_Extraction = "THE ASPIRATION OF THE NATION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ASPIRATION_OF_38
+Trigger(s): (ASPIRATION)
+PP(OF)_Extraction = "THE NATION" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__ACHIEVE_12
+Trigger(s): (ACHIEVE)
+DOBJ_Extraction = "DEMOCRACY AND SOCIAL JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+
+**********************************************
+Sentence: 6
+THIS FIRST HAPPENED IN THE INTERIOR OF THE COUNTRY >COMMA WITH THE DESTRUCTION OF DOZENS OF TOWNS LIKE TENANCINGO >COMMA BERLIN >COMMA TOROLA >COMMA SAN FERNANDO >COMMA AND SO MANY OTHERS MANY OTHERS TOOK_PLACE ALONG WITH THE GENOCIDE THE GENOCIDE CARRIED_OUT BY THE INFANTRY WITH THE MASS MURDERS OF CIVILIANS IN EL MOSOTO >COMMA SUNPUL >COMMA AND OCOTAPAYO >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__THIS_IN_39
+Trigger(s): (THIS)
+PP(IN)_Extraction = "THE INTERIOR OF THE COUNTRY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__INTERIOR_OF_40
+Trigger(s): (INTERIOR)
+PP(OF)_Extraction = "THE COUNTRY" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__COUNTRY_WITH_41
+Trigger(s): (COUNTRY)
+PP(WITH)_Extraction = "THE DESTRUCTION OF DOZENS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DESTRUCTION_OF_42
+Trigger(s): (DESTRUCTION)
+PP(OF)_Extraction = "DOZENS OF TOWNS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DOZENS_OF_43
+Trigger(s): (DOZENS)
+PP(OF)_Extraction = "TOWNS" [CITY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LIKE_TENANCINGO_32
+Trigger(s): (LIKE,TENANCINGO)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LIKE_63
+Trigger(s): (LIKE)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LIKE_31
+Trigger(s): (LIKE)
+DOBJ_Extraction = "TENANCINGO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MURDERS_OF_44
+Trigger(s): (MURDERS)
+PP(OF)_Extraction = "CIVILIANS" [UNSPECIFIED-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 7
+BUSTILLO IS LEAVING AS SO MANY GENERALS AND U.S. AMBASSADORS U.S. AMBASSADORS HAVE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEAVING_66
+Trigger(s): (LEAVING)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LEAVING_AS_36
+Trigger(s): (LEAVING)
+PP(AS)_Extraction = "MANY GENERALS AND U.S. AMBASSADORS" [GOVT-OFFICIAL,DIPLOMAT]
+
+
+
+**********************************************
+Sentence: 8
+AND LIKE ALL OF THEM HIS DEPARTURE HIS DEPARTURE REVEALS THE IMPERIALIST @POWER@S FAILURE TO CONSOLIDATE ITS COUNTERINSURGENCY PROGRAM IN EL_SALVADOR >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LIKE_31
+Trigger(s): (LIKE)
+DOBJ_Extraction = "ALL OF THEM" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ALL_OF_45
+Trigger(s): (ALL)
+PP(OF)_Extraction = "THEM" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REVEALS_FAILURE_33
+Trigger(s): (REVEALS,FAILURE)
+SUBJ_Extraction = "HIS DEPARTURE" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REVEALS_67
+Trigger(s): (REVEALS)
+SUBJ_Extraction = "HIS DEPARTURE" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REVEALS_32
+Trigger(s): (REVEALS)
+DOBJ_Extraction = "THE IMPERIALIST @POWER@S FAILURE" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__FAILURE_7
+Trigger(s): (FAILURE)
+possessive_agent_Extraction = "POWER" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__CONSOLIDATE_IN_5
+Trigger(s): (CONSOLIDATE)
+PP(IN)_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__CONSOLIDATE_13
+Trigger(s): (CONSOLIDATE)
+DOBJ_Extraction = "ITS COUNTERINSURGENCY PROGRAM" [DOCUMENT]
+
+
+
+**********************************************
+Sentence: 9
+AS ALL THE OTHERS ALL HAVE LEFT >COMMA BUSTILLO BUSTILLO ALSO SEEKS EXCUSES IN THE FACE OF HIS FAILURE >COMMA BY ACCUSING OTHERS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEFT_68
+Trigger(s): (LEFT)
+SUBJ_Extraction = "ALL" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SEEKS_EXCUSES_34
+Trigger(s): (SEEKS,EXCUSES)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SEEKS_69
+Trigger(s): (SEEKS)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SEEKS_33
+Trigger(s): (SEEKS)
+DOBJ_Extraction = "EXCUSES" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__SEEKS_BY_38
+Trigger(s): (SEEKS)
+PP(BY)_Extraction = "ACCUSING OTHERS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__SEEKS_IN_37
+Trigger(s): (SEEKS)
+PP(IN)_Extraction = "THE FACE OF HIS FAILURE" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__FACE_OF_46
+Trigger(s): (FACE)
+PP(OF)_Extraction = "HIS FAILURE" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 10
+HE ACCUSES >LBRACKET FORMER DEFENSE_MINISTER EUGENIO >RBRACKET VIDES CASANOVA OF BEING SOFT IN FIGHTING THE @PEOPLE@S PLAN >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ACCUSES_70
+Trigger(s): (ACCUSES)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ACCUSES_IN_39
+Trigger(s): (ACCUSES)
+PP(IN)_Extraction = "FIGHTING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CASANOVA_OF_47
+Trigger(s): (CASANOVA)
+PP(OF)_Extraction = "BEING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__PLAN_8
+Trigger(s): (PLAN)
+possessive_agent_Extraction = "PEOPLE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 11
+ONE WOULD HAVE TO ASK BUSTILLO IF THE AIR_FORCE >COMMA OF WHICH HE REPRESENTED ITS MOST ENCOURAGING PILLAR >COMMA HE WAS SOFT WHEN IT MURDERED &&70,000 SALVADORANS >COMMA MONSIGNOR ARNULFO ROMERO AND THE JESUIT PRIESTS THE JESUIT PRIESTS INCLUDED >COMMA AND EVEN WHEN IT MURDERED PATRIOT OFFICERS OF THAT SAME ARMY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__HAVE_ASK_6
+Trigger(s): (HAVE,ASK)
+SUBJ_Extraction = "ONE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__HAVE_ASK_6
+Trigger(s): (HAVE,ASK)
+DOBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__ASK_14
+Trigger(s): (ASK)
+DOBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REPRESENTED_PILLAR_35
+Trigger(s): (REPRESENTED,PILLAR)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPRESENTED_71
+Trigger(s): (REPRESENTED)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REPRESENTED_34
+Trigger(s): (REPRESENTED)
+DOBJ_Extraction = "ITS MOST ENCOURAGING PILLAR" [OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_SOFT_2
+Trigger(s): (BE,SOFT)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MURDERED_SALVADORANS_36
+Trigger(s): (MURDERED,SALVADORANS)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MURDERED_72
+Trigger(s): (MURDERED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MURDERED_35
+Trigger(s): (MURDERED)
+DOBJ_Extraction = "&&70,000 SALVADORANS" [NATIONALITY,UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INCLUDED_73
+Trigger(s): (INCLUDED)
+SUBJ_Extraction = "THE JESUIT PRIESTS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MURDERED_OFFICERS_37
+Trigger(s): (MURDERED,OFFICERS)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MURDERED_72
+Trigger(s): (MURDERED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MURDERED_35
+Trigger(s): (MURDERED)
+DOBJ_Extraction = "PATRIOT OFFICERS OF THAT SAME ARMY" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OFFICERS_OF_48
+Trigger(s): (OFFICERS)
+PP(OF)_Extraction = "THAT SAME ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+
+**********************************************
+Sentence: 12
+WAS THE U.S. PENTAGON SOFT WHEN IT GAVE >DOLLAR &&3 BILLION >COMMA WEAPONS >COMMA AND IT BOMBS FOR THE MOST COWARDLY ACT OF GENOCIDE LATIN_AMERICA THE MOST COWARDLY ACT OF GENOCIDE LATIN_AMERICA CAN RECALL THIS CENTURY >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__GAVE_BILLION_38
+Trigger(s): (GAVE,BILLION)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GAVE_74
+Trigger(s): (GAVE)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__GAVE_36
+Trigger(s): (GAVE)
+DOBJ_Extraction = ">DOLLAR &&3 BILLION" [DENOMINATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BOMBS_75
+Trigger(s): (BOMBS)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BOMBS_FOR_40
+Trigger(s): (BOMBS)
+PP(FOR)_Extraction = "THE MOST COWARDLY ACT OF GENOCIDE LATIN_AMERICA" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ACT_OF_49
+Trigger(s): (ACT)
+PP(OF)_Extraction = "GENOCIDE LATIN_AMERICA" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RECALL_76
+Trigger(s): (RECALL)
+SUBJ_Extraction = "THE MOST COWARDLY ACT OF GENOCIDE LATIN_AMERICA" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 13
+THE U.S. STRATEGY >COMMA IMPLEMENTED THROUGH THE TOP MILITARY COMMAND IN THE PAST &&10 YEARS WITH ALL ITS MIGHT ALL ITS MIGHT DID ALL IT IT COULD SO THAT THE PERMANENT REBELLION IN THE RURAL AREAS REACHED THE @COUNTRY@S VITAL CENTERS >COMMA AS INDEED HAPPENED AS OF THE &&10 NOVEMBER OFFENSIVE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__IMPLEMENTED_77
+Trigger(s): (IMPLEMENTED)
+SUBJ_Extraction = "THE U.S. STRATEGY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__IMPLEMENTED_IN_42
+Trigger(s): (IMPLEMENTED)
+PP(IN)_Extraction = "THE PAST &&10 YEARS" [YEAR]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__IMPLEMENTED_THROUGH_41
+Trigger(s): (IMPLEMENTED)
+PP(THROUGH)_Extraction = "THE TOP MILITARY COMMAND" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__IMPLEMENTED_WITH_43
+Trigger(s): (IMPLEMENTED)
+PP(WITH)_Extraction = "ALL ITS MIGHT" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__DID_IT_39
+Trigger(s): (DID,IT)
+SUBJ_Extraction = "ALL ITS MIGHT" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DID_78
+Trigger(s): (DID)
+SUBJ_Extraction = "ALL ITS MIGHT" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DID_37
+Trigger(s): (DID)
+DOBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__REBELLION_IN_50
+Trigger(s): (REBELLION)
+PP(IN)_Extraction = "THE RURAL AREAS" [UNSPECIFIED-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REACHED_CENTERS_40
+Trigger(s): (REACHED,CENTERS)
+SUBJ_Extraction = "THE PERMANENT REBELLION" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REACHED_79
+Trigger(s): (REACHED)
+SUBJ_Extraction = "THE PERMANENT REBELLION" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REACHED_38
+Trigger(s): (REACHED)
+DOBJ_Extraction = "THE @COUNTRY@S VITAL CENTERS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__CENTERS_9
+Trigger(s): (CENTERS)
+possessive_agent_Extraction = "COUNTRY" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 14
+BUSTILLO STATES IT CLEARLY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__STATES_IT_41
+Trigger(s): (STATES,IT)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__STATES_80
+Trigger(s): (STATES)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__STATES_39
+Trigger(s): (STATES)
+DOBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 15
+THE BOMBING TEMPORARILY HALTED THE DEFEAT OF THE TOP COMMAND >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__HALTED_DEFEAT_42
+Trigger(s): (HALTED,DEFEAT)
+SUBJ_Extraction = "THE BOMBING" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__HALTED_81
+Trigger(s): (HALTED)
+SUBJ_Extraction = "THE BOMBING" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__HALTED_40
+Trigger(s): (HALTED)
+DOBJ_Extraction = "THE DEFEAT OF THE TOP COMMAND" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DEFEAT_OF_51
+Trigger(s): (DEFEAT)
+PP(OF)_Extraction = "THE TOP COMMAND" [OTHER-STATEMENT]
+
+
+
+**********************************************
+Sentence: 16
+THROUGH AN ACT OF GENOCIDE >COMMA IT MANAGED TO REMOVE THE DISGRUNTLED PEOPLE FROM THE NEIGHBORHOODS WHERE THE GUERRILLA FORCES WERE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ACT_OF_49
+Trigger(s): (ACT)
+PP(OF)_Extraction = "GENOCIDE" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__MANAGED_REMOVE_7
+Trigger(s): (MANAGED,REMOVE)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MANAGED_82
+Trigger(s): (MANAGED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__MANAGED_REMOVE_7
+Trigger(s): (MANAGED,REMOVE)
+DOBJ_Extraction = "THE DISGRUNTLED PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__REMOVE_FROM_6
+Trigger(s): (REMOVE)
+PP(FROM)_Extraction = "THE NEIGHBORHOODS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__REMOVE_15
+Trigger(s): (REMOVE)
+DOBJ_Extraction = "THE DISGRUNTLED PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 17
+BUSTILLO ACKNOWLEDGES GENOCIDE GENOCIDE IS THE SOLE WAY THE ARMED_FORCES THE ARMED_FORCES CAN SURVIVE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ACKNOWLEDGES_GENOCIDE_43
+Trigger(s): (ACKNOWLEDGES,GENOCIDE)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ACKNOWLEDGES_83
+Trigger(s): (ACKNOWLEDGES)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ACKNOWLEDGES_41
+Trigger(s): (ACKNOWLEDGES)
+DOBJ_Extraction = "GENOCIDE" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_GENOCIDE_9
+Trigger(s): (BE,GENOCIDE)
+DOBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SURVIVE_84
+Trigger(s): (SURVIVE)
+SUBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+
+**********************************************
+Sentence: 18
+BUSTILLO ACKNOWLEDGES THE @FMLN@S STRENGTH AND BUSTILLO THEREFORE URGES THE ARMED_FORCES THE ARMED_FORCES TO BE TOUGHER AND INFLEXIBLE AND THE ARMED_FORCES REJECTS A POLITICAL SOLUTION TO THE CONFLICT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ACKNOWLEDGES_STRENGTH_44
+Trigger(s): (ACKNOWLEDGES,STRENGTH)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ACKNOWLEDGES_83
+Trigger(s): (ACKNOWLEDGES)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ACKNOWLEDGES_41
+Trigger(s): (ACKNOWLEDGES)
+DOBJ_Extraction = "THE @FMLN@S STRENGTH" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__STRENGTH_10
+Trigger(s): (STRENGTH)
+possessive_agent_Extraction = "FMLN" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__URGES_85
+Trigger(s): (URGES)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__URGES_42
+Trigger(s): (URGES)
+DOBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REJECTS_SOLUTION_46
+Trigger(s): (REJECTS,SOLUTION)
+SUBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REJECTS_86
+Trigger(s): (REJECTS)
+SUBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REJECTS_43
+Trigger(s): (REJECTS)
+DOBJ_Extraction = "A POLITICAL SOLUTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__REJECTS_TO_44
+Trigger(s): (REJECTS)
+PP(TO)_Extraction = "THE CONFLICT" [ATTACK]
+
+
+
+**********************************************
+Sentence: 19
+A POLITICAL SOLUTION WOULD EXPRESS THE CONSENSUS AMONG THE @COUNTRY@S MAJOR SECTORS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__EXPRESS_CONSENSUS_47
+Trigger(s): (EXPRESS,CONSENSUS)
+SUBJ_Extraction = "A POLITICAL SOLUTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__EXPRESS_87
+Trigger(s): (EXPRESS)
+SUBJ_Extraction = "A POLITICAL SOLUTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__EXPRESS_44
+Trigger(s): (EXPRESS)
+DOBJ_Extraction = "THE CONSENSUS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__EXPRESS_AMONG_45
+Trigger(s): (EXPRESS)
+PP(AMONG)_Extraction = "THE @COUNTRY@S MAJOR SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__SECTORS_11
+Trigger(s): (SECTORS)
+possessive_agent_Extraction = "COUNTRY" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 20
+OBVIOUSLY THE TOP COMMAND REPRESENTS A DECADENT MINORITY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REPRESENTS_MINORITY_48
+Trigger(s): (REPRESENTS,MINORITY)
+SUBJ_Extraction = "THE TOP COMMAND" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPRESENTS_88
+Trigger(s): (REPRESENTS)
+SUBJ_Extraction = "THE TOP COMMAND" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REPRESENTS_45
+Trigger(s): (REPRESENTS)
+DOBJ_Extraction = "A DECADENT MINORITY" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 21
+BUSTILLO SUPPORTS LAUNCHING A FASCIST CRUSADE AGAINST THE @PEOPLE@S WISH FOR DEMOCRACY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SUPPORTS_CRUSADE_49
+Trigger(s): (SUPPORTS,CRUSADE)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SUPPORTS_89
+Trigger(s): (SUPPORTS)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SUPPORTS_46
+Trigger(s): (SUPPORTS)
+DOBJ_Extraction = "A FASCIST CRUSADE" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CRUSADE_AGAINST_52
+Trigger(s): (CRUSADE)
+PP(AGAINST)_Extraction = "THE @PEOPLE@S WISH" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__WISH_12
+Trigger(s): (WISH)
+possessive_agent_Extraction = "PEOPLE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__WISH_FOR_53
+Trigger(s): (WISH)
+PP(FOR)_Extraction = "DEMOCRACY" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 22
+IN THIS EFFORT >COMMA HE LASHES OUT AT THE CATHOLIC CHURCH >COMMA ALL OPPOSITION SECTORS ALL OPPOSITION SECTORS REPORT HUMAN RIGHTS VIOLATIONS >COMMA AND ALL SECTORS HUMAN RIGHTS VIOLATIONS >COMMA AND ALL SECTORS SUPPORT DEMOCRATIZING THE COUNTRY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LASHES_90
+Trigger(s): (LASHES)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LASHES_AT_46
+Trigger(s): (LASHES)
+PP(AT)_Extraction = "THE CATHOLIC CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REPORT_SECTORS_50
+Trigger(s): (REPORT,SECTORS)
+SUBJ_Extraction = "ALL OPPOSITION SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORT_1
+Trigger(s): (REPORT)
+SUBJ_Extraction = "ALL OPPOSITION SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REPORT_47
+Trigger(s): (REPORT)
+DOBJ_Extraction = "HUMAN RIGHTS VIOLATIONS >COMMA AND ALL SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__DEMOCRATIZING_COUNTRY_51
+Trigger(s): (DEMOCRATIZING,COUNTRY)
+SUBJ_Extraction = "HUMAN RIGHTS VIOLATIONS >COMMA AND ALL SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DEMOCRATIZING_92
+Trigger(s): (DEMOCRATIZING)
+SUBJ_Extraction = "HUMAN RIGHTS VIOLATIONS >COMMA AND ALL SECTORS" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DEMOCRATIZING_48
+Trigger(s): (DEMOCRATIZING)
+DOBJ_Extraction = "THE COUNTRY" [LOCATION]
+
+
+
+**********************************************
+Sentence: 23
+IN CONCLUSION >COMMA WE SAY THAT BUSTILLO IS NOT RESIGNING OF HIS OWN VOLITION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAY_93
+Trigger(s): (SAY)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RESIGNING_94
+Trigger(s): (RESIGNING)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RESIGNING_OF_47
+Trigger(s): (RESIGNING)
+PP(OF)_Extraction = "HIS OWN VOLITION" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 24
+THE FMLN ACTION ELIMINATED BUSTILLO AS IT IT ELIMINATED GARCIA >COMMA VIDES >COMMA AND SO MANY OTHER MILITARY CHIEFS MANY OTHER MILITARY CHIEFS LEFT THEIR POSTS WITHOUT FULFILLING THE TASK THE TASK COMMISSIONED BY THE UNITED_STATES >COLON TO STOP THE FMLN >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ELIMINATED_BUSTILLO_52
+Trigger(s): (ELIMINATED,BUSTILLO)
+SUBJ_Extraction = "THE FMLN ACTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ELIMINATED_95
+Trigger(s): (ELIMINATED)
+SUBJ_Extraction = "THE FMLN ACTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ELIMINATED_49
+Trigger(s): (ELIMINATED)
+DOBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ELIMINATED_AS_48
+Trigger(s): (ELIMINATED)
+PP(AS)_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ELIMINATED_GARCIA_53
+Trigger(s): (ELIMINATED,GARCIA)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ELIMINATED_95
+Trigger(s): (ELIMINATED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ELIMINATED_49
+Trigger(s): (ELIMINATED)
+DOBJ_Extraction = "GARCIA" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LEFT_POSTS_54
+Trigger(s): (LEFT,POSTS)
+SUBJ_Extraction = "MANY OTHER MILITARY CHIEFS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEFT_68
+Trigger(s): (LEFT)
+SUBJ_Extraction = "MANY OTHER MILITARY CHIEFS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LEFT_50
+Trigger(s): (LEFT)
+DOBJ_Extraction = "THEIR POSTS" [OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LEFT_WITHOUT_49
+Trigger(s): (LEFT)
+PP(WITHOUT)_Extraction = "FULFILLING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COMMISSIONED_96
+Trigger(s): (COMMISSIONED)
+SUBJ_Extraction = "THE TASK" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__COMMISSIONED_BY_50
+Trigger(s): (COMMISSIONED)
+PP(BY)_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__STOP_16
+Trigger(s): (STOP)
+DOBJ_Extraction = "THE FMLN" [TERRORIST-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 25
+THE FMLN OFFENSIVE BARED THE GENOCIDAL >COMMA ANTIPOPULAR >COMMA AND FASCIST NATURE OF THE ALFREDO CRISTIANI REGIME TO SUCH AN EXTENT THAT IT PROMPTED A STRONG DEBATE IN THE UNITED_STATES ON CUTTING MILITARY AID >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__BARED_GENOCIDAL_55
+Trigger(s): (BARED,GENOCIDAL)
+SUBJ_Extraction = "THE FMLN OFFENSIVE" [ATTACK,OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BARED_97
+Trigger(s): (BARED)
+SUBJ_Extraction = "THE FMLN OFFENSIVE" [ATTACK,OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BARED_51
+Trigger(s): (BARED)
+DOBJ_Extraction = "THE GENOCIDAL" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BARED_TO_51
+Trigger(s): (BARED)
+PP(TO)_Extraction = "SUCH AN EXTENT" [UNSPECIFIED-MEASURE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__NATURE_OF_54
+Trigger(s): (NATURE)
+PP(OF)_Extraction = "THE ALFREDO CRISTIANI REGIME" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__PROMPTED_DEBATE_56
+Trigger(s): (PROMPTED,DEBATE)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PROMPTED_98
+Trigger(s): (PROMPTED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__PROMPTED_52
+Trigger(s): (PROMPTED)
+DOBJ_Extraction = "A STRONG DEBATE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PROMPTED_IN_52
+Trigger(s): (PROMPTED)
+PP(IN)_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PROMPTED_ON_53
+Trigger(s): (PROMPTED)
+PP(ON)_Extraction = "CUTTING MILITARY AID" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 26
+THE @JESUITS@ MURDERS AND THE BOMBINGS SO SHOOK THE INTERNATIONAL COMMUNITY THAT IT IS PRESSURING FOR PUNISHMENT OF THE OFFICERS PUNISHMENT OF THE OFFICERS INVOLVED IN THESE INCIDENTS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__BOMBINGS_13
+Trigger(s): (BOMBINGS)
+possessive_agent_Extraction = "JESUITS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__SHOOK_COMMUNITY_57
+Trigger(s): (SHOOK,COMMUNITY)
+SUBJ_Extraction = "THE @JESUITS@ MURDERS AND THE BOMBINGS" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SHOOK_99
+Trigger(s): (SHOOK)
+SUBJ_Extraction = "THE @JESUITS@ MURDERS AND THE BOMBINGS" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__SHOOK_53
+Trigger(s): (SHOOK)
+DOBJ_Extraction = "THE INTERNATIONAL COMMUNITY" [UNSPECIFIED-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PRESSURING_100
+Trigger(s): (PRESSURING)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PRESSURING_FOR_54
+Trigger(s): (PRESSURING)
+PP(FOR)_Extraction = "PUNISHMENT OF THE OFFICERS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PUNISHMENT_OF_55
+Trigger(s): (PUNISHMENT)
+PP(OF)_Extraction = "THE OFFICERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INVOLVED_12
+Trigger(s): (INVOLVED)
+SUBJ_Extraction = "PUNISHMENT OF THE OFFICERS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__INVOLVED_IN_55
+Trigger(s): (INVOLVED)
+PP(IN)_Extraction = "THESE INCIDENTS" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 27
+HOWEVER >COMMA THE BUSH ADMINISTRATION ACCEPTED THIS >COMMA SINCE COLONEL RENE EMILIO PONCE >LBRACKET CHAIRMAN OF THE JOINTS CHIEFS OF STAFF >RBRACKET AND HIS CLIQUE >COMMA EVEN CRISTIANI >COMMA THE BUSH ADMINISTRATION MUST SHOULDER THIS RESPONSIBILITY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ACCEPTED_THIS_58
+Trigger(s): (ACCEPTED,THIS)
+SUBJ_Extraction = "THE BUSH ADMINISTRATION" [UNSPECIFIED-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ACCEPTED_102
+Trigger(s): (ACCEPTED)
+SUBJ_Extraction = "THE BUSH ADMINISTRATION" [UNSPECIFIED-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ACCEPTED_54
+Trigger(s): (ACCEPTED)
+DOBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ACCEPTED_SINCE_56
+Trigger(s): (ACCEPTED)
+PP(SINCE)_Extraction = "COLONEL RENE EMILIO PONCE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CHAIRMAN_OF_56
+Trigger(s): (CHAIRMAN)
+PP(OF)_Extraction = "THE JOINTS CHIEFS OF STAFF" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CHIEFS_OF_57
+Trigger(s): (CHIEFS)
+PP(OF)_Extraction = "STAFF" [OTHER-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 28
+WE MUST NOT FORGET THAT IN COSTA_RICA THE SALVADORAN DEFENSE_MINISTER DISCLOSED CRISTIANI CRISTIANI AUTHORIZED THE BOMBINGS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FORGET_103
+Trigger(s): (FORGET)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__DISCLOSED_CRISTIANI_59
+Trigger(s): (DISCLOSED,CRISTIANI)
+SUBJ_Extraction = "THE SALVADORAN DEFENSE_MINISTER" [GOVT-OFFICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DISCLOSED_104
+Trigger(s): (DISCLOSED)
+SUBJ_Extraction = "THE SALVADORAN DEFENSE_MINISTER" [GOVT-OFFICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DISCLOSED_55
+Trigger(s): (DISCLOSED)
+DOBJ_Extraction = "CRISTIANI" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__AUTHORIZED_BOMBINGS_60
+Trigger(s): (AUTHORIZED,BOMBINGS)
+SUBJ_Extraction = "CRISTIANI" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__AUTHORIZED_105
+Trigger(s): (AUTHORIZED)
+SUBJ_Extraction = "CRISTIANI" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__AUTHORIZED_56
+Trigger(s): (AUTHORIZED)
+DOBJ_Extraction = "THE BOMBINGS" [ATTACK]
+
+
+
+**********************************************
+Sentence: 29
+BUSH NEEDED A SCAPEGOAT TO PLACE IT ON THE ALTAR OF THE DEBATES THE ALTAR OF THE DEBATES WILL BEGIN IN THE U.S. CONGRESS ON THE FATE OF MILITARY AID >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__NEEDED_SCAPEGOAT_61
+Trigger(s): (NEEDED,SCAPEGOAT)
+SUBJ_Extraction = "BUSH" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__NEEDED_106
+Trigger(s): (NEEDED)
+SUBJ_Extraction = "BUSH" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__NEEDED_57
+Trigger(s): (NEEDED)
+DOBJ_Extraction = "A SCAPEGOAT" [OTHER-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__PLACE_ON_7
+Trigger(s): (PLACE)
+PP(ON)_Extraction = "THE ALTAR OF THE DEBATES" [OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__PLACE_17
+Trigger(s): (PLACE)
+DOBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ALTAR_OF_58
+Trigger(s): (ALTAR)
+PP(OF)_Extraction = "THE DEBATES" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BEGIN_107
+Trigger(s): (BEGIN)
+SUBJ_Extraction = "THE ALTAR OF THE DEBATES" [OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BEGIN_IN_57
+Trigger(s): (BEGIN)
+PP(IN)_Extraction = "THE U.S. CONGRESS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BEGIN_ON_58
+Trigger(s): (BEGIN)
+PP(ON)_Extraction = "THE FATE OF MILITARY AID" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__FATE_OF_59
+Trigger(s): (FATE)
+PP(OF)_Extraction = "MILITARY AID" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 30
+BUSTILLO IS @BUSH@S SCAPEGOAT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_SCAPEGOAT_10
+Trigger(s): (BE,SCAPEGOAT)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_BUSTILLO_10
+Trigger(s): (BE,BUSTILLO)
+DOBJ_Extraction = "@BUSH@S SCAPEGOAT" [OTHER-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__SCAPEGOAT_14
+Trigger(s): (SCAPEGOAT)
+possessive_agent_Extraction = "BUSH" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 31
+HOWEVER >COMMA BUSTILLO WAS ALREADY A USELESS ELEMENT OF THE MURDEROUS MACHINERY A USELESS ELEMENT OF THE MURDEROUS MACHINERY REMAINS ACTIVE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_ELEMENT_11
+Trigger(s): (BE,ELEMENT)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_BUSTILLO_10
+Trigger(s): (BE,BUSTILLO)
+DOBJ_Extraction = "A USELESS ELEMENT OF THE MURDEROUS MACHINERY" [UNSPECIFIED-CHEMICAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ELEMENT_OF_60
+Trigger(s): (ELEMENT)
+PP(OF)_Extraction = "THE MURDEROUS MACHINERY" [MACHINE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REMAINS_108
+Trigger(s): (REMAINS)
+SUBJ_Extraction = "A USELESS ELEMENT OF THE MURDEROUS MACHINERY" [UNSPECIFIED-CHEMICAL]
+
+
+
+**********************************************
+Sentence: 32
+WILL THE U.S. PUBLIC AND CONGRESS CONGRESS BE APPEASED WITH THIS FOUL TASTING CANDY >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__APPEASED_17
+Trigger(s): (APPEASED)
+SUBJ_Extraction = "CONGRESS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__APPEASED_WITH_15
+Trigger(s): (APPEASED)
+PP(WITH)_Extraction = "THIS FOUL TASTING CANDY" [FOOD]
+
+
+
+**********************************************
+Sentence: 33
+TIME AND THE SPIRIT OF THE TIMES ARE OBVIOUSLY RUNNING AGAINST THE FASCIST PROGRAM IN EL_SALVADOR >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SPIRIT_OF_61
+Trigger(s): (SPIRIT)
+PP(OF)_Extraction = "THE TIMES" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RUNNING_109
+Trigger(s): (RUNNING)
+SUBJ_Extraction = "TIME AND THE SPIRIT OF THE TIMES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RUNNING_AGAINST_59
+Trigger(s): (RUNNING)
+PP(AGAINST)_Extraction = "THE FASCIST PROGRAM" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RUNNING_IN_60
+Trigger(s): (RUNNING)
+PP(IN)_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+
+**********************************************
+Sentence: 34
+WHILE PEOPLES OF THE WORLD TEAR DOWN DOGMAS >COMMA DICTATORSHIPS >COMMA AND WALLS >COMMA BUSTILLO >COMMA BUSTILLO LEAVES THROUGH THE DOOR OF THE DOOR DEFEAT >COMMA THE DOOR ASKS THE ARMED_FORCES THE ARMED_FORCES TO BE TOUGHER >COMMA THE ARMED_FORCES COMMIT MORE GENOCIDE >COMMA AND THE ARMED_FORCES BUILD MORE WALLS OF REPRESSION AGAINST THE CHURCH >COMMA THE PEOPLE >COMMA AND THE NATION AS A WHOLE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PEOPLES_OF_62
+Trigger(s): (PEOPLES)
+PP(OF)_Extraction = "THE WORLD" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TEAR_110
+Trigger(s): (TEAR)
+SUBJ_Extraction = "PEOPLES OF THE WORLD" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TEAR_DOWN_61
+Trigger(s): (TEAR)
+PP(DOWN)_Extraction = "DOGMAS >COMMA DICTATORSHIPS >COMMA AND WALLS" [OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEAVES_111
+Trigger(s): (LEAVES)
+SUBJ_Extraction = "BUSTILLO" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LEAVES_THROUGH_62
+Trigger(s): (LEAVES)
+PP(THROUGH)_Extraction = "THE DOOR" [OTHER-PHYSOBJ,OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DEFEAT_112
+Trigger(s): (DEFEAT)
+SUBJ_Extraction = "THE DOOR" [OTHER-PHYSOBJ,OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ASKS_113
+Trigger(s): (ASKS)
+SUBJ_Extraction = "THE DOOR" [OTHER-PHYSOBJ,OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ASKS_58
+Trigger(s): (ASKS)
+DOBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_TOUGHER_3
+Trigger(s): (BE,TOUGHER)
+SUBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__COMMIT_GENOCIDE_63
+Trigger(s): (COMMIT,GENOCIDE)
+SUBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COMMIT_114
+Trigger(s): (COMMIT)
+SUBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__COMMIT_59
+Trigger(s): (COMMIT)
+DOBJ_Extraction = "MORE GENOCIDE" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__BUILD_WALLS_64
+Trigger(s): (BUILD,WALLS)
+SUBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BUILD_115
+Trigger(s): (BUILD)
+SUBJ_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BUILD_60
+Trigger(s): (BUILD)
+DOBJ_Extraction = "MORE WALLS OF REPRESSION" [OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BUILD_AS_63
+Trigger(s): (BUILD)
+PP(AS)_Extraction = "A WHOLE" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__WALLS_OF_63
+Trigger(s): (WALLS)
+PP(OF)_Extraction = "REPRESSION" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__REPRESSION_AGAINST_64
+Trigger(s): (REPRESSION)
+PP(AGAINST)_Extraction = "THE CHURCH >COMMA THE PEOPLE >COMMA AND THE NATION" [LOCATION]
+
+
+
+**********************************************
+Sentence: 35
+GOODBYE >COMMA GEN. BUSTILLO >PERIOD <EOS
+
+**********************************************
+Sentence: 36
+WE CONTINUE WRITING HISTORY WITHOUT YOU >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CONTINUE_HISTORY_65
+Trigger(s): (CONTINUE,HISTORY)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUE_17
+Trigger(s): (CONTINUE)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CONTINUE_9
+Trigger(s): (CONTINUE)
+DOBJ_Extraction = "WRITING HISTORY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CONTINUE_WITHOUT_64
+Trigger(s): (CONTINUE)
+PP(WITHOUT)_Extraction = "YOU" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 37
+THE DECADE WE BEGIN IS OF DEMOCRACY >COMMA INDEPENDENCE >COMMA AND SELF-DETERMINATION >PERIOD <EOS
+
+**********************************************
+Sentence: 38
+THAT IS WHY FOREIGN INTERVENTION AND THE WALLS OF INTOLERANCE WHY FOREIGN INTERVENTION AND THE WALLS OF INTOLERANCE HAVE A SHORT LIFE SPAN IN THIS COUNTRY >COMMA WHERE THE PEOPLE GROW IN HEROISM AND THE STRUGGLE FOR SOCIAL CHANGE SOCIAL CHANGE IS NOT DETERRED BY BOMBINGS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_WALLS_12
+Trigger(s): (BE,WALLS)
+SUBJ_Extraction = "THAT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THAT_11
+Trigger(s): (BE,THAT)
+DOBJ_Extraction = "WHY FOREIGN INTERVENTION AND THE WALLS OF INTOLERANCE" [OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__WALLS_OF_63
+Trigger(s): (WALLS)
+PP(OF)_Extraction = "INTOLERANCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__HAVE_SPAN_13
+Trigger(s): (HAVE,SPAN)
+SUBJ_Extraction = "WHY FOREIGN INTERVENTION AND THE WALLS OF INTOLERANCE" [OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__HAVE_WALLS_12
+Trigger(s): (HAVE,WALLS)
+DOBJ_Extraction = "A SHORT LIFE SPAN" [LINEAR-MEASURE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SPAN_IN_65
+Trigger(s): (SPAN)
+PP(IN)_Extraction = "THIS COUNTRY" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GROW_117
+Trigger(s): (GROW)
+SUBJ_Extraction = "THE PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__GROW_IN_65
+Trigger(s): (GROW)
+PP(IN)_Extraction = "HEROISM AND THE STRUGGLE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__STRUGGLE_FOR_66
+Trigger(s): (STRUGGLE)
+PP(FOR)_Extraction = "SOCIAL CHANGE" [OTHER-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__DETERRED_18
+Trigger(s): (DETERRED)
+SUBJ_Extraction = "SOCIAL CHANGE" [OTHER-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__DETERRED_BY_16
+Trigger(s): (DETERRED)
+PP(BY)_Extraction = "BOMBINGS" [ATTACK]
+
+
