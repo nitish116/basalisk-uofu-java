@@ -1,0 +1,681 @@
+%TEXT% DEV-MUC3-0006 U
+
+
+**********************************************
+Sentence: 1
+THE SALVADORAN ARMY TODAY PREVENTED THE OCCUPATION OF CITIES IN THE EASTERN PART OF EL_SALVADOR >COMMA WAGING STRONG CLASHES BETWEEN MIDNIGHT AND DAWN >COMMA ACCORDING_TO REPORTS BY MILITARY SOURCES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__PREVENTED_OCCUPATION_67
+Trigger(s): (PREVENTED,OCCUPATION)
+SUBJ_Extraction = "THE SALVADORAN ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PREVENTED_122
+Trigger(s): (PREVENTED)
+SUBJ_Extraction = "THE SALVADORAN ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__PREVENTED_64
+Trigger(s): (PREVENTED)
+DOBJ_Extraction = "THE OCCUPATION OF CITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PREVENTED_IN_70
+Trigger(s): (PREVENTED)
+PP(IN)_Extraction = "THE EASTERN PART OF EL_SALVADOR" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OCCUPATION_OF_70
+Trigger(s): (OCCUPATION)
+PP(OF)_Extraction = "CITIES" [CITY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PART_OF_71
+Trigger(s): (PART)
+PP(OF)_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__WAGING_65
+Trigger(s): (WAGING)
+DOBJ_Extraction = "STRONG CLASHES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__WAGING_BETWEEN_71
+Trigger(s): (WAGING)
+PP(BETWEEN)_Extraction = "MIDNIGHT AND DAWN" [OTHER-TIME]
+
+
+
+**********************************************
+Sentence: 2
+THE ATTACKS >COMMA ACCORDING_TO THE REPORTS >COMMA TOOK_PLACE IN USULUTAN >COMMA USULUTAN DEPARTMENT >COMMA &&110 KM EAST OF THE CAPITAL >COMMA AND IN SANTA ELENA WHERE AS OF &&0700 CLASHES SANTA ELENA OF &&0700 CLASHES WERE STILL UNDER WAY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__USULUTAN_IN_77
+Trigger(s): (USULUTAN)
+PP(IN)_Extraction = "SANTA ELENA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EAST_OF_72
+Trigger(s): (EAST)
+PP(OF)_Extraction = "THE CAPITAL" [CITY,UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CLASHES_UNDER_73
+Trigger(s): (CLASHES)
+PP(UNDER)_Extraction = "WAY" [TRANSPORTATION-ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CLASHES_UNDER_73
+Trigger(s): (CLASHES)
+PP(UNDER)_Extraction = "WAY" [TRANSPORTATION-ROUTE]
+
+
+
+**********************************************
+Sentence: 3
+SANTA ELENA IS LOCATED &&119 KM EAST OF THE CAPITAL >COMMA AND BOTH CITIES BOTH CITIES ARE COFFEE REGIONS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__LOCATED_19
+Trigger(s): (LOCATED)
+SUBJ_Extraction = "SANTA ELENA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EAST_OF_72
+Trigger(s): (EAST)
+PP(OF)_Extraction = "THE CAPITAL >COMMA AND BOTH CITIES" [CITY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_REGIONS_14
+Trigger(s): (BE,REGIONS)
+SUBJ_Extraction = "BOTH CITIES" [CITY]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_CITIES_13
+Trigger(s): (BE,CITIES)
+DOBJ_Extraction = "COFFEE REGIONS" [UNSPECIFIED-LOCATION]
+
+
+
+**********************************************
+Sentence: 4
+IN USULUTAN >COMMA 6TH BRIGADE TROOPS AND RAPID DEPLOYMENT BATTALIONS REPELLED THE INCURSION WITH ARTILLERY FIRE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REPELLED_INCURSION_69
+Trigger(s): (REPELLED,INCURSION)
+SUBJ_Extraction = "6TH BRIGADE TROOPS AND RAPID DEPLOYMENT BATTALIONS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPELLED_11
+Trigger(s): (REPELLED)
+SUBJ_Extraction = "6TH BRIGADE TROOPS AND RAPID DEPLOYMENT BATTALIONS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REPELLED_6
+Trigger(s): (REPELLED)
+DOBJ_Extraction = "THE INCURSION" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__REPELLED_WITH_75
+Trigger(s): (REPELLED)
+PP(WITH)_Extraction = "ARTILLERY FIRE" [FIRE]
+
+
+
+**********************************************
+Sentence: 5
+DURING THE 2D WEEK OF DECEMBER >COMMA THERE HAD BEEN STRONG CLASHES ON THE OUTSKIRTS OF USULUTAN >COMMA IN WHAT THE GUERRILLAS THE GUERRILLAS CALLED THE BATTLE OF EL NISPERAL >COMMA IN THE CANTON THE CANTON BEARS THE SAME NAME >COMMA THE SAME NAME COST THE ARMY &&29 DEAD >COMMA ALTHOUGH IT HAS ONLY ADMITTED TO &&21 DEATHS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__WEEK_OF_74
+Trigger(s): (WEEK)
+PP(OF)_Extraction = "DECEMBER" [MONTH]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_CLASHES_15
+Trigger(s): (BE,CLASHES)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "STRONG CLASHES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CLASHES_ON_75
+Trigger(s): (CLASHES)
+PP(ON)_Extraction = "THE OUTSKIRTS OF USULUTAN" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OUTSKIRTS_OF_76
+Trigger(s): (OUTSKIRTS)
+PP(OF)_Extraction = "USULUTAN" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__USULUTAN_IN_77
+Trigger(s): (USULUTAN)
+PP(IN)_Extraction = "WHAT" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CALLED_BATTLE_70
+Trigger(s): (CALLED,BATTLE)
+SUBJ_Extraction = "THE GUERRILLAS" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CALLED_126
+Trigger(s): (CALLED)
+SUBJ_Extraction = "THE GUERRILLAS" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CALLED_68
+Trigger(s): (CALLED)
+DOBJ_Extraction = "THE BATTLE OF EL" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CALLED_IN_76
+Trigger(s): (CALLED)
+PP(IN)_Extraction = "THE CANTON" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__BATTLE_OF_78
+Trigger(s): (BATTLE)
+PP(OF)_Extraction = "EL" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__BEARS_NAME_71
+Trigger(s): (BEARS,NAME)
+SUBJ_Extraction = "THE CANTON" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BEARS_127
+Trigger(s): (BEARS)
+SUBJ_Extraction = "THE CANTON" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BEARS_69
+Trigger(s): (BEARS)
+DOBJ_Extraction = "THE SAME NAME" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__COST_DEAD_72
+Trigger(s): (COST,DEAD)
+SUBJ_Extraction = "THE SAME NAME" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COST_128
+Trigger(s): (COST)
+SUBJ_Extraction = "THE SAME NAME" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__COST_70
+Trigger(s): (COST)
+DOBJ_Extraction = "THE ARMY &&29 DEAD" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADMITTED_129
+Trigger(s): (ADMITTED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ADMITTED_TO_77
+Trigger(s): (ADMITTED)
+PP(TO)_Extraction = "&&21 DEATHS" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 6
+IN SANTA ELENA THE CLASHES WERE ALSO STRONG >COMMA BUT SO_FAR THERE HAVE BEEN NO REPORTS OF CASUALTIES ON EITHER SIDE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_STRONG_4
+Trigger(s): (BE,STRONG)
+SUBJ_Extraction = "THE CLASHES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_REPORTS_16
+Trigger(s): (BE,REPORTS)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "NO REPORTS OF CASUALTIES" [MEDIA-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__REPORTS_OF_79
+Trigger(s): (REPORTS)
+PP(OF)_Extraction = "CASUALTIES" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CASUALTIES_ON_80
+Trigger(s): (CASUALTIES)
+PP(ON)_Extraction = "EITHER SIDE" [OTHER]
+
+
+
+**********************************************
+Sentence: 7
+FROM SAN VICENTE >COMMA IN THE CENTRAL PART OF THE COUNTRY >COMMA WHERE THE CHICHONTEPEC VOLCANO IS LOCATED >COMMA STRONG CLASHES STRONG CLASHES WERE REPORTED >COMMA AND THE 5TH BRIGADE THE 5TH BRIGADE BOMBED REBEL REBEL POSITIONS ON THE COLCANO >COMMA WHERE THE FMLN HAS STRONG BASTIONS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__VICENTE_IN_81
+Trigger(s): (VICENTE)
+PP(IN)_Extraction = "THE CENTRAL PART OF THE COUNTRY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PART_OF_71
+Trigger(s): (PART)
+PP(OF)_Extraction = "THE COUNTRY" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__LOCATED_19
+Trigger(s): (LOCATED)
+SUBJ_Extraction = "THE CHICHONTEPEC VOLCANO" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__REPORTED_5
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "STRONG CLASHES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__BOMBED_REBEL_73
+Trigger(s): (BOMBED,REBEL)
+SUBJ_Extraction = "THE 5TH BRIGADE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BOMBED_130
+Trigger(s): (BOMBED)
+SUBJ_Extraction = "THE 5TH BRIGADE" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BOMBED_71
+Trigger(s): (BOMBED)
+DOBJ_Extraction = "REBEL" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__POSITIONS_131
+Trigger(s): (POSITIONS)
+SUBJ_Extraction = "REBEL" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__POSITIONS_ON_78
+Trigger(s): (POSITIONS)
+PP(ON)_Extraction = "THE COLCANO" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__HAVE_BASTIONS_17
+Trigger(s): (HAVE,BASTIONS)
+SUBJ_Extraction = "THE FMLN" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__HAVE_FMLN_15
+Trigger(s): (HAVE,FMLN)
+DOBJ_Extraction = "STRONG BASTIONS" [OTHER-LOCATION]
+
+
+
+**********************************************
+Sentence: 8
+THE 1ST INFANTRY BRIGADE IS CARRYING_OUT OPERATIONS IN NORTHERN SAN_SALVADOR >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OPERATIONS_IN_99
+Trigger(s): (OPERATIONS)
+PP(IN)_Extraction = "NORTHERN SAN_SALVADOR" [LOCATION]
+
+
+
+**********************************************
+Sentence: 9
+AND ON THE OUTSKIRTS OF THE CAPITAL THIS MORNING POWERFUL EXPLOSIONS >COMMA CHARACTERIZED AS MILITARY ACTIONS TO PREVENT REBELS FROM GATHERING >COMMA THIS MORNING POWERFUL EXPLOSIONS COULD BE HEARD >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OUTSKIRTS_OF_76
+Trigger(s): (OUTSKIRTS)
+PP(OF)_Extraction = "THE CAPITAL" [CITY,UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CHARACTERIZED_133
+Trigger(s): (CHARACTERIZED)
+SUBJ_Extraction = "THIS MORNING POWERFUL EXPLOSIONS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CHARACTERIZED_AS_80
+Trigger(s): (CHARACTERIZED)
+PP(AS)_Extraction = "MILITARY ACTIONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__PREVENT_FROM_8
+Trigger(s): (PREVENT)
+PP(FROM)_Extraction = "GATHERING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__PREVENT_18
+Trigger(s): (PREVENT)
+DOBJ_Extraction = "REBELS" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__HEARD_21
+Trigger(s): (HEARD)
+SUBJ_Extraction = "THIS MORNING POWERFUL EXPLOSIONS" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 10
+THE NIGHT BEFORE LAST >COMMA THERE WERE ATTEMPTS TO ENTER THE CAPITAL FROM THAT DIRECTION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__ATTEMPTS_ENTER_8
+Trigger(s): (ATTEMPTS,ENTER)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ATTEMPTS_134
+Trigger(s): (ATTEMPTS)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__ATTEMPTS_ENTER_8
+Trigger(s): (ATTEMPTS,ENTER)
+DOBJ_Extraction = "THE CAPITAL" [CITY,UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__ENTER_FROM_9
+Trigger(s): (ENTER)
+PP(FROM)_Extraction = "THAT DIRECTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__ENTER_19
+Trigger(s): (ENTER)
+DOBJ_Extraction = "THE CAPITAL" [CITY,UNSPECIFIED-MONEY]
+
+
+
+**********************************************
+Sentence: 11
+THE ARMY HAS INCREASED ITS SURVEILLANCE TO PREVENT MOBILIZATIONS >COMMA AND THROUGH CAREFUL SEARCHES VEHICLES CAREFUL SEARCHES VEHICLES ARE BEING CONTROLLED AT THE CAPITAL @CITY@S ENTRANCES AND CAREFUL SEARCHES VEHICLES EXITS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__INCREASED_SURVEILLANCE_75
+Trigger(s): (INCREASED,SURVEILLANCE)
+SUBJ_Extraction = "THE ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INCREASED_135
+Trigger(s): (INCREASED)
+SUBJ_Extraction = "THE ARMY" [MILITARY-ORGANIZATION,MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCREASED_73
+Trigger(s): (INCREASED)
+DOBJ_Extraction = "ITS SURVEILLANCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__PREVENT_THROUGH_10
+Trigger(s): (PREVENT)
+PP(THROUGH)_Extraction = "CAREFUL SEARCHES VEHICLES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__PREVENT_18
+Trigger(s): (PREVENT)
+DOBJ_Extraction = "MOBILIZATIONS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__CONTROLLED_22
+Trigger(s): (CONTROLLED)
+SUBJ_Extraction = "CAREFUL SEARCHES VEHICLES" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__CONTROLLED_AT_17
+Trigger(s): (CONTROLLED)
+PP(AT)_Extraction = "THE CAPITAL @CITY@S ENTRANCES" [OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__ENTRANCES_15
+Trigger(s): (ENTRANCES)
+possessive_agent_Extraction = "CITY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__EXITS_136
+Trigger(s): (EXITS)
+SUBJ_Extraction = "CAREFUL SEARCHES VEHICLES" [VEHICLE]
+
+
+
+**********************************************
+Sentence: 12
+IN OTHER ACTIONS >COMMA THE ARMED_FORCES PRESS COMMITTEE REPORTED AT_LEAST &&6 FMLN DEATHS IN VARIOUS PARTS OF THE COUNTRY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REPORTED_DEATHS_77
+Trigger(s): (REPORTED,DEATHS)
+SUBJ_Extraction = "THE ARMED_FORCES PRESS COMMITTEE" [OTHER-ORGANIZATION,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "THE ARMED_FORCES PRESS COMMITTEE" [OTHER-ORGANIZATION,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REPORTED_75
+Trigger(s): (REPORTED)
+DOBJ_Extraction = "AT_LEAST &&6 FMLN DEATHS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__REPORTED_IN_81
+Trigger(s): (REPORTED)
+PP(IN)_Extraction = "VARIOUS PARTS OF THE COUNTRY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PARTS_OF_82
+Trigger(s): (PARTS)
+PP(OF)_Extraction = "THE COUNTRY" [LOCATION]
+
+
+
+**********************************************
+Sentence: 13
+LAST NIGHT THERE WERE FEWER ATTACKS ON STORES AND ELECTRIC TOWERS IN THE CAPITAL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_ATTACKS_18
+Trigger(s): (BE,ATTACKS)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "FEWER ATTACKS" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ATTACKS_ON_83
+Trigger(s): (ATTACKS)
+PP(ON)_Extraction = "STORES AND ELECTRIC TOWERS" [OTHER-STRUCTURE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__TOWERS_IN_84
+Trigger(s): (TOWERS)
+PP(IN)_Extraction = "THE CAPITAL" [CITY,UNSPECIFIED-MONEY]
+
+
+
+**********************************************
+Sentence: 14
+THERE WERE ALSO THREATS OF POWER RATIONING IF THESE ACTIONS CONTINUED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_THREATS_19
+Trigger(s): (BE,THREATS)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "THREATS OF POWER RATIONING" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__THREATS_OF_85
+Trigger(s): (THREATS)
+PP(OF)_Extraction = "POWER RATIONING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUED_139
+Trigger(s): (CONTINUED)
+SUBJ_Extraction = "THESE ACTIONS" [OTHER-CONCEPTUAL]
+
+

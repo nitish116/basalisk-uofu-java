@@ -1,0 +1,1434 @@
+%TEXT% DEV-MUC3-0007 U
+
+
+**********************************************
+Sentence: 1
+THE DEPLOYMENT OF U.S. SHIPS >COMMA INCLUDING THE AIRCRAFT CARRIER JOHN F. KENNEDY AND THE CORVETTE VIRGINIA ALONG THE COLOMBIAN COAST YESTERDAY >COMMA SEEKING TO INTERCEPT DRUG TRAFFICKING ROUTES >COMMA THE DEPLOYMENT OF U.S. SHIPS COULD BE THE RESULT OF &&3 POLICIES >COLON FIRST >COMMA THAT THE UNITED_STATES NEEDS TO JUSTIFY THE INVASION OF PANAMA UNDER THE EXCUSE OF ITS FIGHT AGAINST DRUG TRAFFICKING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DEPLOYMENT_OF_86
+Trigger(s): (DEPLOYMENT)
+PP(OF)_Extraction = "U.S. SHIPS" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__INCLUDING_VIRGINIA_78
+Trigger(s): (INCLUDING,VIRGINIA)
+SUBJ_Extraction = "THE DEPLOYMENT OF U.S. SHIPS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INCLUDING_44
+Trigger(s): (INCLUDING)
+SUBJ_Extraction = "THE DEPLOYMENT OF U.S. SHIPS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCLUDING_23
+Trigger(s): (INCLUDING)
+DOBJ_Extraction = "THE AIRCRAFT CARRIER JOHN F. KENNEDY AND THE CORVETTE VIRGINIA" [STATE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__INCLUDING_ALONG_82
+Trigger(s): (INCLUDING)
+PP(ALONG)_Extraction = "THE COLOMBIAN COAST" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__INTERCEPT_20
+Trigger(s): (INTERCEPT)
+DOBJ_Extraction = "DRUG TRAFFICKING ROUTES" [ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_RESULT_20
+Trigger(s): (BE,RESULT)
+SUBJ_Extraction = "THE DEPLOYMENT OF U.S. SHIPS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__RESULT_OF_87
+Trigger(s): (RESULT)
+PP(OF)_Extraction = "&&3 POLICIES" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__NEEDS_JUSTIFY_9
+Trigger(s): (NEEDS,JUSTIFY)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__NEEDS_141
+Trigger(s): (NEEDS)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__NEEDS_JUSTIFY_9
+Trigger(s): (NEEDS,JUSTIFY)
+DOBJ_Extraction = "THE INVASION OF PANAMA" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__JUSTIFY_UNDER_11
+Trigger(s): (JUSTIFY)
+PP(UNDER)_Extraction = "THE EXCUSE OF ITS FIGHT" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__JUSTIFY_21
+Trigger(s): (JUSTIFY)
+DOBJ_Extraction = "THE INVASION OF PANAMA" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__INVASION_OF_88
+Trigger(s): (INVASION)
+PP(OF)_Extraction = "PANAMA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EXCUSE_OF_89
+Trigger(s): (EXCUSE)
+PP(OF)_Extraction = "ITS FIGHT" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__FIGHT_AGAINST_90
+Trigger(s): (FIGHT)
+PP(AGAINST)_Extraction = "DRUG TRAFFICKING" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 2
+SECOND >COMMA THAT BOTH THE DEPLOYMENT OF SHIPS AND THE INVASION OF PANAMA ARE PART OF A SERIOUS MILITARY PLAN TO END THE DRUG PLAGUE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DEPLOYMENT_OF_86
+Trigger(s): (DEPLOYMENT)
+PP(OF)_Extraction = "SHIPS AND THE INVASION OF PANAMA" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__INVASION_OF_88
+Trigger(s): (INVASION)
+PP(OF)_Extraction = "PANAMA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_PART_21
+Trigger(s): (BE,PART)
+SUBJ_Extraction = "BOTH" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_BOTH_17
+Trigger(s): (BE,BOTH)
+DOBJ_Extraction = "PART OF A SERIOUS MILITARY PLAN" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PART_OF_71
+Trigger(s): (PART)
+PP(OF)_Extraction = "A SERIOUS MILITARY PLAN" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__END_22
+Trigger(s): (END)
+DOBJ_Extraction = "THE DRUG PLAGUE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 3
+THIRD >COMMA THAT THE UNITED_STATES MUST SOMEHOW JUSTIFY THE INVASION OF PANAMA AND THE NEED TO RECOVER ITS INTERNATIONAL IMAGE ITS INTERNATIONAL IMAGE HAS PROVIDED A REAL OPPORTUNITY TO PUT AN END TO DRUG TRAFFICKING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__JUSTIFY_INVASION_79
+Trigger(s): (JUSTIFY,INVASION)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__JUSTIFY_142
+Trigger(s): (JUSTIFY)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__JUSTIFY_77
+Trigger(s): (JUSTIFY)
+DOBJ_Extraction = "THE INVASION OF PANAMA AND THE NEED" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__INVASION_OF_88
+Trigger(s): (INVASION)
+PP(OF)_Extraction = "PANAMA AND THE NEED" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__RECOVER_23
+Trigger(s): (RECOVER)
+DOBJ_Extraction = "ITS INTERNATIONAL IMAGE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__PROVIDED_OPPORTUNITY_80
+Trigger(s): (PROVIDED,OPPORTUNITY)
+SUBJ_Extraction = "ITS INTERNATIONAL IMAGE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PROVIDED_143
+Trigger(s): (PROVIDED)
+SUBJ_Extraction = "ITS INTERNATIONAL IMAGE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__PROVIDED_78
+Trigger(s): (PROVIDED)
+DOBJ_Extraction = "A REAL OPPORTUNITY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__PUT_TO_12
+Trigger(s): (PUT)
+PP(TO)_Extraction = "DRUG TRAFFICKING" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__PUT_24
+Trigger(s): (PUT)
+DOBJ_Extraction = "AN END" [OTHER]
+
+
+
+**********************************************
+Sentence: 4
+IF THE OBJECTIVE REALLY IS TO ELIMINATE DRUGS >COMMA THEN THE BATTLE THE BATTLE IS PRAISEWORTHY >COMMA BUT >DASH THE BATTLE LIKE IN PANAMA >DASH THE PROCEDURE THE PROCEDURE IS PAINFUL >COMMA OVERBEARING >COMMA IMPERIALISTIC >COMMA AND HUMILIATING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__ELIMINATE_25
+Trigger(s): (ELIMINATE)
+DOBJ_Extraction = "DRUGS" [DRUG]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_PRAISEWORTHY_22
+Trigger(s): (BE,PRAISEWORTHY)
+SUBJ_Extraction = "THE BATTLE" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_BATTLE_18
+Trigger(s): (BE,BATTLE)
+DOBJ_Extraction = "PRAISEWORTHY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LIKE_63
+Trigger(s): (LIKE)
+SUBJ_Extraction = "THE BATTLE" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LIKE_IN_83
+Trigger(s): (LIKE)
+PP(IN)_Extraction = "PANAMA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_PAINFUL_5
+Trigger(s): (BE,PAINFUL)
+SUBJ_Extraction = "THE PROCEDURE" [MEDICAL-TREATMENT]
+
+
+
+**********************************************
+Sentence: 5
+INSTEAD OF WINNING THE LATIN AMERICAN @COUNTRIES@ APPRECIATION AND SOLIDARITY WITH THIS LAUDABLE CAUSE >COMMA THE UNITED_STATES IS AGAIN PROVOKING ANGRY REACTIONS AND DEEP ANGRY REACTIONS DISTRUST >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__SOLIDARITY_16
+Trigger(s): (SOLIDARITY)
+possessive_agent_Extraction = "COUNTRIES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SOLIDARITY_WITH_92
+Trigger(s): (SOLIDARITY)
+PP(WITH)_Extraction = "THIS LAUDABLE CAUSE >COMMA THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__PROVOKING_REACTIONS_81
+Trigger(s): (PROVOKING,REACTIONS)
+SUBJ_Extraction = "THE LATIN AMERICAN @COUNTRIES@ APPRECIATION AND SOLIDARITY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PROVOKING_145
+Trigger(s): (PROVOKING)
+SUBJ_Extraction = "THE LATIN AMERICAN @COUNTRIES@ APPRECIATION AND SOLIDARITY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__PROVOKING_79
+Trigger(s): (PROVOKING)
+DOBJ_Extraction = "ANGRY REACTIONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DISTRUST_146
+Trigger(s): (DISTRUST)
+SUBJ_Extraction = "ANGRY REACTIONS" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 6
+THE SIDE EFFECTS OF THIS ACTION COULD BE VERY NEGATIVE FOR THE STRUGGLE AGAINST DRUG TRAFFICKING >COMMA IN WHICH ALL THE COUNTRIES OF THIS CONTINENT SHOULD BE COOPERATING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EFFECTS_OF_93
+Trigger(s): (EFFECTS)
+PP(OF)_Extraction = "THIS ACTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ACTION_FOR_94
+Trigger(s): (ACTION)
+PP(FOR)_Extraction = "THE STRUGGLE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_NEGATIVE_6
+Trigger(s): (BE,NEGATIVE)
+SUBJ_Extraction = "THE SIDE EFFECTS OF THIS ACTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__STRUGGLE_AGAINST_95
+Trigger(s): (STRUGGLE)
+PP(AGAINST)_Extraction = "DRUG TRAFFICKING" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__COUNTRIES_OF_96
+Trigger(s): (COUNTRIES)
+PP(OF)_Extraction = "THIS CONTINENT" [CONTINENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COOPERATING_147
+Trigger(s): (COOPERATING)
+SUBJ_Extraction = "ALL" [OTHER]
+
+
+
+**********************************************
+Sentence: 7
+ALTERNATIVELY >COMMA WOULD IT IT BE BETTER IF THEY DID NOT COOPERATE IN THIS PHASE >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_BETTER_7
+Trigger(s): (BE,BETTER)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COOPERATE_148
+Trigger(s): (COOPERATE)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__COOPERATE_IN_84
+Trigger(s): (COOPERATE)
+PP(IN)_Extraction = "THIS PHASE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 8
+COULD IT IT BE THAT WHAT WE HAVE CALLED IMPERIALISTIC CLUMSINESS >COMMA INSENSIBILITY >COMMA AND WHAT ABUSE >COMMA WHAT IS SIMPLY A DELIBERATE STRATEGY WITH WHICH >COMMA PERHAPS FOR WELL WELL FOUNDED REASONS AND EVEN AT THE RISK OF DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES THE RISK OF DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES SEEKS TO ISOLATE LATIN_AMERICA ON PURPOSE AND THE RISK OF DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES THUS ENSURE THE SUCCESS OF ITS OPERATION >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CALLED_CLUMSINESS_82
+Trigger(s): (CALLED,CLUMSINESS)
+SUBJ_Extraction = "WHAT" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CALLED_126
+Trigger(s): (CALLED)
+SUBJ_Extraction = "WHAT" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CALLED_68
+Trigger(s): (CALLED)
+DOBJ_Extraction = "IMPERIALISTIC CLUMSINESS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ABUSE_150
+Trigger(s): (ABUSE)
+SUBJ_Extraction = "WHAT" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_STRATEGY_23
+Trigger(s): (BE,STRATEGY)
+SUBJ_Extraction = "WHAT" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_WHAT_19
+Trigger(s): (BE,WHAT)
+DOBJ_Extraction = "A DELIBERATE STRATEGY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__FOUNDED_REASONS_83
+Trigger(s): (FOUNDED,REASONS)
+SUBJ_Extraction = "WELL" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FOUNDED_151
+Trigger(s): (FOUNDED)
+SUBJ_Extraction = "WELL" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__FOUNDED_81
+Trigger(s): (FOUNDED)
+DOBJ_Extraction = "REASONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__FOUNDED_AT_85
+Trigger(s): (FOUNDED)
+PP(AT)_Extraction = "THE RISK OF DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__RISK_OF_97
+Trigger(s): (RISK)
+PP(OF)_Extraction = "DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__SEEKS_ISOLATE_10
+Trigger(s): (SEEKS,ISOLATE)
+SUBJ_Extraction = "THE RISK OF DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SEEKS_69
+Trigger(s): (SEEKS)
+SUBJ_Extraction = "THE RISK OF DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__SEEKS_ISOLATE_10
+Trigger(s): (SEEKS,ISOLATE)
+DOBJ_Extraction = "LATIN_AMERICA" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__ISOLATE_ON_13
+Trigger(s): (ISOLATE)
+PP(ON)_Extraction = "PURPOSE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__ISOLATE_26
+Trigger(s): (ISOLATE)
+DOBJ_Extraction = "LATIN_AMERICA" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ENSURE_SUCCESS_84
+Trigger(s): (ENSURE,SUCCESS)
+SUBJ_Extraction = "THE RISK OF DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ENSURE_153
+Trigger(s): (ENSURE)
+SUBJ_Extraction = "THE RISK OF DIPLOMATIC CONFLICTS >COMMA THE UNITED_STATES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ENSURE_82
+Trigger(s): (ENSURE)
+DOBJ_Extraction = "THE SUCCESS OF ITS OPERATION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SUCCESS_OF_98
+Trigger(s): (SUCCESS)
+PP(OF)_Extraction = "ITS OPERATION" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 9
+IF THIS WERE THE CASE THEN WE MUST ASK >COMMA WHY >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_CASE_24
+Trigger(s): (BE,CASE)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THIS_6
+Trigger(s): (BE,THIS)
+DOBJ_Extraction = "THE CASE" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ASK_154
+Trigger(s): (ASK)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 10
+FROM ITS OPERATIONS IN PANAMA AND COLOMBIA >COMMA THE UNITED_STATES PANAMA AND COLOMBIA >COMMA THE UNITED_STATES IS TELLING US THAT IT IS NOT CONCERNED WITH THE DIPLOMATIC ASPECT FOR THE TIME BEING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__OPERATIONS_IN_99
+Trigger(s): (OPERATIONS)
+PP(IN)_Extraction = "PANAMA AND COLOMBIA >COMMA THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__TELLING_US_85
+Trigger(s): (TELLING,US)
+SUBJ_Extraction = "PANAMA AND COLOMBIA >COMMA THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TELLING_155
+Trigger(s): (TELLING)
+SUBJ_Extraction = "PANAMA AND COLOMBIA >COMMA THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__TELLING_83
+Trigger(s): (TELLING)
+DOBJ_Extraction = "US" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__CONCERNED_23
+Trigger(s): (CONCERNED)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__CONCERNED_WITH_18
+Trigger(s): (CONCERNED)
+PP(WITH)_Extraction = "THE DIPLOMATIC ASPECT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ASPECT_FOR_100
+Trigger(s): (ASPECT)
+PP(FOR)_Extraction = "THE TIME BEING" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 11
+THE UNITED_STATES WANTS ACTION AND EFFICIENCY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__WANTS_EFFICIENCY_86
+Trigger(s): (WANTS,EFFICIENCY)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WANTS_156
+Trigger(s): (WANTS)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__WANTS_84
+Trigger(s): (WANTS)
+DOBJ_Extraction = "ACTION AND EFFICIENCY" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 12
+THE UNITED_STATES IS LOSING ITS PATIENCE >COMMA AND PERHAPS ITS CONFIDENCE IN THE SERIOUSNESS AND CAPABILITY OF LATIN_AMERICA TO FACE THIS WAR >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LOSING_CONFIDENCE_87
+Trigger(s): (LOSING,CONFIDENCE)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LOSING_157
+Trigger(s): (LOSING)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LOSING_85
+Trigger(s): (LOSING)
+DOBJ_Extraction = "ITS PATIENCE >COMMA AND PERHAPS ITS CONFIDENCE" [MOOD]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__LOSING_IN_86
+Trigger(s): (LOSING)
+PP(IN)_Extraction = "THE SERIOUSNESS AND CAPABILITY OF LATIN_AMERICA" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CAPABILITY_OF_101
+Trigger(s): (CAPABILITY)
+PP(OF)_Extraction = "LATIN_AMERICA" [OTHER-LOCATION]
+
+
+
+**********************************************
+Sentence: 13
+IF THE ACTION IN COLOMBIA GOES FURTHER THAN A MERE SURVEILLANCE >COMMA THE UNITED_STATES A MERE SURVEILLANCE >COMMA THE UNITED_STATES WILL BE ESTABLISHING A PRECEDENT IN THIS THIS BATTLE AGAINST DRUG TRAFFICKING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ACTION_IN_102
+Trigger(s): (ACTION)
+PP(IN)_Extraction = "COLOMBIA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GOES_158
+Trigger(s): (GOES)
+SUBJ_Extraction = "THE ACTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ESTABLISHING_PRECEDENT_88
+Trigger(s): (ESTABLISHING,PRECEDENT)
+SUBJ_Extraction = "A MERE SURVEILLANCE >COMMA THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ESTABLISHING_159
+Trigger(s): (ESTABLISHING)
+SUBJ_Extraction = "A MERE SURVEILLANCE >COMMA THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ESTABLISHING_86
+Trigger(s): (ESTABLISHING)
+DOBJ_Extraction = "A PRECEDENT" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ESTABLISHING_IN_87
+Trigger(s): (ESTABLISHING)
+PP(IN)_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BATTLE_160
+Trigger(s): (BATTLE)
+SUBJ_Extraction = "THIS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BATTLE_AGAINST_88
+Trigger(s): (BATTLE)
+PP(AGAINST)_Extraction = "DRUG TRAFFICKING" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 14
+THIS MEANS THAT DURING A FIRST PHASE THE UNITED_STATES WILL CARRY_OUT A MILITARY OPERATION BY ITSELF >PERIOD <EOS
+
+**********************************************
+Sentence: 15
+DURING A SECOND PHASE IT WILL DISCUSS SECONDARY SUBJECTS BUT WITH LESS URGENCY IN THE WAR AGAINST DRUG TRAFFICKING >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__DISCUSS_SUBJECTS_90
+Trigger(s): (DISCUSS,SUBJECTS)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DISCUSS_162
+Trigger(s): (DISCUSS)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DISCUSS_88
+Trigger(s): (DISCUSS)
+DOBJ_Extraction = "SECONDARY SUBJECTS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__URGENCY_IN_103
+Trigger(s): (URGENCY)
+PP(IN)_Extraction = "THE WAR" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__WAR_AGAINST_104
+Trigger(s): (WAR)
+PP(AGAINST)_Extraction = "DRUG TRAFFICKING" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 16
+NEXT &&15 FEBRUARY >COMMA BUSH WILL MEET IN CARTAGENA DE INDIAS >COMMA COLOMBIA >COMMA WITH HIS COLOMBIAN >COMMA PERUVIAN >COMMA AND BOLIVIAN COUNTERPARTS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MEET_163
+Trigger(s): (MEET)
+SUBJ_Extraction = "BUSH" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MEET_IN_90
+Trigger(s): (MEET)
+PP(IN)_Extraction = "CARTAGENA DE INDIAS >COMMA COLOMBIA" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__MEET_WITH_91
+Trigger(s): (MEET)
+PP(WITH)_Extraction = "HIS COLOMBIAN" [NATIONALITY,OTHER-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 17
+PERHAPS ON THAT OCCASION THEY WILL TALK ABOUT THE OTHER ASPECTS OF THIS WAR >COLON THE REORGANIZATION OF THE LOCAL ECONOMIES TO END THE DEPENDENCY ON COCA PLANTATIONS >COMMA THE RECOVERY OF DRUG ADDICTS >COMMA AND THE CONSOLIDATION OF GOVERNMENTS >COMMA ETC. DURING THIS CURRENT PHASE >COMMA HOWEVER >COMMA THE UNITED_STATES THE UNITED_STATES WISHES TO ACT ALONE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TALK_164
+Trigger(s): (TALK)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TALK_ABOUT_92
+Trigger(s): (TALK)
+PP(ABOUT)_Extraction = "THE OTHER ASPECTS OF THIS WAR" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ASPECTS_OF_105
+Trigger(s): (ASPECTS)
+PP(OF)_Extraction = "THIS WAR" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__REORGANIZATION_OF_106
+Trigger(s): (REORGANIZATION)
+PP(OF)_Extraction = "THE LOCAL ECONOMIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__END_DURING_15
+Trigger(s): (END)
+PP(DURING)_Extraction = "THIS CURRENT PHASE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__END_ON_14
+Trigger(s): (END)
+PP(ON)_Extraction = "COCA PLANTATIONS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__END_22
+Trigger(s): (END)
+DOBJ_Extraction = "THE DEPENDENCY" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__RECOVERY_OF_107
+Trigger(s): (RECOVERY)
+PP(OF)_Extraction = "DRUG ADDICTS >COMMA AND THE CONSOLIDATION OF GOVERNMENTS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CONSOLIDATION_OF_108
+Trigger(s): (CONSOLIDATION)
+PP(OF)_Extraction = "GOVERNMENTS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__WISHES_ACT_11
+Trigger(s): (WISHES,ACT)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WISHES_165
+Trigger(s): (WISHES)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+
+**********************************************
+Sentence: 18
+WHO KNOWS IF IT IS BECAUSE_OF @LATIN_AMERICA@S LACK OF UNDERSTANDING >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__LACK_17
+Trigger(s): (LACK)
+possessive_agent_Extraction = "LATIN_AMERICA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__LACK_OF_109
+Trigger(s): (LACK)
+PP(OF)_Extraction = "UNDERSTANDING" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 19
+AS WE WE SAID A FEW DAYS AGO >COMMA THE DRUG TRAFFICKING PROBLEM THE DRUG TRAFFICKING PROBLEM IS CREATING NEW SITUATIONS IN INTERNATIONAL RELATIONS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__CREATING_SITUATIONS_91
+Trigger(s): (CREATING,SITUATIONS)
+SUBJ_Extraction = "THE DRUG TRAFFICKING PROBLEM" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CREATING_167
+Trigger(s): (CREATING)
+SUBJ_Extraction = "THE DRUG TRAFFICKING PROBLEM" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__CREATING_89
+Trigger(s): (CREATING)
+DOBJ_Extraction = "NEW SITUATIONS" [EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CREATING_IN_93
+Trigger(s): (CREATING)
+PP(IN)_Extraction = "INTERNATIONAL RELATIONS" [FAMILY-RELATION]
+
+
+
+**********************************************
+Sentence: 20
+THE U.S. PROPOSAL IS PROBABLY SOMETHING SOMETHING LIKE >COLON SOMETHING COULD A WORLD POWER A WORLD POWER LIKE THE UNITED_STATES THE UNITED_STATES CONTINUE TO IGNORE A SERIOUS PROBLEM A SERIOUS PROBLEM LIKE THE PRODUCTION >COMMA DISTRIBUTION >COMMA AND CONSUMPTION OF DRUGS >COMMA MERELY TO AVOID HARMING LATIN AMERICAN SENSIBILITIES >COMMA SENSIBILITIES OF COUNTRIES WHOSE GOVERNMENTS SENSIBILITIES OF COUNTRIES WHOSE GOVERNMENTS ARE ALWAYS MUDDLED UP IN USELESS DIPLOMATIC AND BUREAUCRATIC PROCEDURES AND FRUITLESS NEGOTIATIONS >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_SOMETHING_25
+Trigger(s): (BE,SOMETHING)
+SUBJ_Extraction = "THE U.S. PROPOSAL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_PROPOSAL_21
+Trigger(s): (BE,PROPOSAL)
+DOBJ_Extraction = "SOMETHING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LIKE_63
+Trigger(s): (LIKE)
+SUBJ_Extraction = "SOMETHING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LIKE_UNITED_STATES_92
+Trigger(s): (LIKE,UNITED_STATES)
+SUBJ_Extraction = "A WORLD POWER" [ELECTRICITY,UNSPECIFIED-ENERGY-OR-RESOURCE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LIKE_63
+Trigger(s): (LIKE)
+SUBJ_Extraction = "A WORLD POWER" [ELECTRICITY,UNSPECIFIED-ENERGY-OR-RESOURCE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LIKE_31
+Trigger(s): (LIKE)
+DOBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__CONTINUE_IGNORE_12
+Trigger(s): (CONTINUE,IGNORE)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUE_17
+Trigger(s): (CONTINUE)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__CONTINUE_IGNORE_11
+Trigger(s): (CONTINUE,IGNORE)
+DOBJ_Extraction = "A SERIOUS PROBLEM" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__IGNORE_28
+Trigger(s): (IGNORE)
+DOBJ_Extraction = "A SERIOUS PROBLEM" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LIKE_CONSUMPTION_93
+Trigger(s): (LIKE,CONSUMPTION)
+SUBJ_Extraction = "A SERIOUS PROBLEM" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LIKE_63
+Trigger(s): (LIKE)
+SUBJ_Extraction = "A SERIOUS PROBLEM" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LIKE_31
+Trigger(s): (LIKE)
+DOBJ_Extraction = "THE PRODUCTION >COMMA DISTRIBUTION >COMMA AND CONSUMPTION OF DRUGS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CONSUMPTION_OF_110
+Trigger(s): (CONSUMPTION)
+PP(OF)_Extraction = "DRUGS" [DRUG]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__AVOID_29
+Trigger(s): (AVOID)
+DOBJ_Extraction = "HARMING LATIN AMERICAN SENSIBILITIES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SENSIBILITIES_OF_111
+Trigger(s): (SENSIBILITIES)
+PP(OF)_Extraction = "COUNTRIES WHOSE GOVERNMENTS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__MUDDLED_24
+Trigger(s): (MUDDLED)
+SUBJ_Extraction = "SENSIBILITIES OF COUNTRIES WHOSE GOVERNMENTS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__MUDDLED_IN_19
+Trigger(s): (MUDDLED)
+PP(IN)_Extraction = "USELESS DIPLOMATIC AND BUREAUCRATIC PROCEDURES AND FRUITLESS NEGOTIATIONS" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 21
+AND ALL THIS WHILE A LARGE PART OF THE DEVELOPED @WORLD@S POPULATION IS BECOMING ADDICTED TO A DEADLY PRODUCT >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PART_OF_71
+Trigger(s): (PART)
+PP(OF)_Extraction = "THE DEVELOPED @WORLD@S POPULATION" [OTHER-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__POPULATION_18
+Trigger(s): (POPULATION)
+possessive_agent_Extraction = "WORLD" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__ADDICTED_25
+Trigger(s): (ADDICTED)
+SUBJ_Extraction = "A LARGE PART OF THE DEVELOPED @WORLD@S POPULATION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__ADDICTED_TO_20
+Trigger(s): (ADDICTED)
+PP(TO)_Extraction = "A DEADLY PRODUCT" [UNSPECIFIED-PHYSOBJ]
+
+
+
+**********************************************
+Sentence: 22
+THE UNITED_STATES COULD ALSO BE ASKING ITSELF >COLON THE UNITED_STATES HAVE THE LATIN AMERICAN GOVERNMENTS THE LATIN AMERICAN GOVERNMENTS BEEN ABLE TO SOLVE THIS SERIOUS PROBLEM BY THEMSELVES >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ASKING_ITSELF_94
+Trigger(s): (ASKING,ITSELF)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ASKING_169
+Trigger(s): (ASKING)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ASKING_91
+Trigger(s): (ASKING)
+DOBJ_Extraction = "ITSELF" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__HAVE_GOVERNMENTS_26
+Trigger(s): (HAVE,GOVERNMENTS)
+SUBJ_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__HAVE_UNITED_STATES_22
+Trigger(s): (HAVE,UNITED_STATES)
+DOBJ_Extraction = "THE LATIN AMERICAN GOVERNMENTS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_ABLE_8
+Trigger(s): (BE,ABLE)
+SUBJ_Extraction = "THE LATIN AMERICAN GOVERNMENTS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__SOLVE_BY_16
+Trigger(s): (SOLVE)
+PP(BY)_Extraction = "THEMSELVES" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__SOLVE_30
+Trigger(s): (SOLVE)
+DOBJ_Extraction = "THIS SERIOUS PROBLEM" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 23
+CAN THOSE GOVERNMENTS THOSE GOVERNMENTS STOP DRUG TRAFFICKING WHEN IT IS KNOWN THAT DRUGS AND CORRUPTION GO HAND IN HAND >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__STOP_TRAFFICKING_95
+Trigger(s): (STOP,TRAFFICKING)
+SUBJ_Extraction = "THOSE GOVERNMENTS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__STOP_170
+Trigger(s): (STOP)
+SUBJ_Extraction = "THOSE GOVERNMENTS" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__STOP_92
+Trigger(s): (STOP)
+DOBJ_Extraction = "DRUG TRAFFICKING" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__KNOWN_26
+Trigger(s): (KNOWN)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__HAND_171
+Trigger(s): (HAND)
+SUBJ_Extraction = "DRUGS AND CORRUPTION" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__HAND_IN_94
+Trigger(s): (HAND)
+PP(IN)_Extraction = "HAND" [ANATOMY]
+
+
+
+**********************************************
+Sentence: 24
+WHEN IN THE PAST AND PERHAPS IN THE PRESENT >COMMA HIGH RANKING GOVERNMENT OFFICIALS HAVE BEEN LINKED WITH THIS ILLEGAL TRADE AND HIGH RANKING GOVERNMENT OFFICIALS PROTECTING THE MEDELLIN_CARTEL CHIEFS >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PAST_IN_112
+Trigger(s): (PAST)
+PP(IN)_Extraction = "THE PRESENT" [UNSPECIFIED-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__LINKED_27
+Trigger(s): (LINKED)
+SUBJ_Extraction = "HIGH RANKING GOVERNMENT OFFICIALS" [GOVT-OFFICIAL,POLITICIAN,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__LINKED_WITH_21
+Trigger(s): (LINKED)
+PP(WITH)_Extraction = "THIS ILLEGAL TRADE" [OTHER-EVENT,UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__PROTECTING_CHIEFS_96
+Trigger(s): (PROTECTING,CHIEFS)
+SUBJ_Extraction = "HIGH RANKING GOVERNMENT OFFICIALS" [GOVT-OFFICIAL,POLITICIAN,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PROTECTING_172
+Trigger(s): (PROTECTING)
+SUBJ_Extraction = "HIGH RANKING GOVERNMENT OFFICIALS" [GOVT-OFFICIAL,POLITICIAN,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__PROTECTING_93
+Trigger(s): (PROTECTING)
+DOBJ_Extraction = "THE MEDELLIN_CARTEL CHIEFS" [OTHER-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 25
+WHY >COMMA FOR EXAMPLE >COMMA AFTER ALL THIS HAS NOT THE COLOMBIAN GOVERNMENT THE COLOMBIAN GOVERNMENT MANAGED TO EXTRADITE THE MAIN CHIEFS OF THAT CARTEL TO THE UNITED_STATES >QUESTION <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__WHY_FOR_113
+Trigger(s): (WHY)
+PP(FOR)_Extraction = "EXAMPLE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EXAMPLE_AFTER_114
+Trigger(s): (EXAMPLE)
+PP(AFTER)_Extraction = "ALL" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__HAVE_GOVERNMENT_27
+Trigger(s): (HAVE,GOVERNMENT)
+SUBJ_Extraction = "WHY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__HAVE_WHY_23
+Trigger(s): (HAVE,WHY)
+DOBJ_Extraction = "THE COLOMBIAN GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__MANAGED_EXTRADITE_13
+Trigger(s): (MANAGED,EXTRADITE)
+SUBJ_Extraction = "THE COLOMBIAN GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MANAGED_82
+Trigger(s): (MANAGED)
+SUBJ_Extraction = "THE COLOMBIAN GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__MANAGED_EXTRADITE_12
+Trigger(s): (MANAGED,EXTRADITE)
+DOBJ_Extraction = "THE MAIN CHIEFS OF THAT CARTEL" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__EXTRADITE_TO_17
+Trigger(s): (EXTRADITE)
+PP(TO)_Extraction = "THE UNITED_STATES" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__EXTRADITE_31
+Trigger(s): (EXTRADITE)
+DOBJ_Extraction = "THE MAIN CHIEFS OF THAT CARTEL" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CHIEFS_OF_57
+Trigger(s): (CHIEFS)
+PP(OF)_Extraction = "THAT CARTEL" [UNSPECIFIED-ORGANIZATION]
+
+
+
+**********************************************
+Sentence: 26
+LET US RECALL THE HORRIBLE EXPLOSION OF THE COLOMBIAN AIRLINER >COMMA IN WHICH MORE_THAN &&100 PEOPLE DIED >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LET_94
+Trigger(s): (LET)
+DOBJ_Extraction = "THE HORRIBLE EXPLOSION OF THE COLOMBIAN AIRLINER" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__EXPLOSION_OF_116
+Trigger(s): (EXPLOSION)
+PP(OF)_Extraction = "THE COLOMBIAN AIRLINER" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DIED_174
+Trigger(s): (DIED)
+SUBJ_Extraction = "MORE_THAN &&100 PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 27
+THE BOMB_EXPLOSION IN THE SECRET POLICE HEADQUARTERS IN BOGOTA >SEMI <EOS
+
+**********************************************
+Sentence: 28
+THE MURDER OF MANY JOURNALISTS THE MURDER OF MANY JOURNALISTS WERE ENGAGED IN AN HEROIC WAR AGAINST DRUG TRAFFICKING >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MURDER_OF_118
+Trigger(s): (MURDER)
+PP(OF)_Extraction = "MANY JOURNALISTS" [MEDIA-WORKER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__ENGAGED_28
+Trigger(s): (ENGAGED)
+SUBJ_Extraction = "THE MURDER OF MANY JOURNALISTS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__ENGAGED_IN_22
+Trigger(s): (ENGAGED)
+PP(IN)_Extraction = "AN HEROIC WAR" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__WAR_AGAINST_104
+Trigger(s): (WAR)
+PP(AGAINST)_Extraction = "DRUG TRAFFICKING" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 29
+AND MAINLY >COMMA LET US RECALL THE EVER-PRESENT DIFFICULTIES THE EVER-PRESENT DIFFICULTIES MUST BE FACED WHEN THE MEDELLIN_CARTEL CHIEFS MUST BE PUNISHED AND THE MEDELLIN_CARTEL CHIEFS EXTRADITED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LET_94
+Trigger(s): (LET)
+DOBJ_Extraction = "THE EVER-PRESENT DIFFICULTIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__FACED_29
+Trigger(s): (FACED)
+SUBJ_Extraction = "THE EVER-PRESENT DIFFICULTIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__PUNISHED_30
+Trigger(s): (PUNISHED)
+SUBJ_Extraction = "THE MEDELLIN_CARTEL CHIEFS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__EXTRADITED_176
+Trigger(s): (EXTRADITED)
+SUBJ_Extraction = "THE MEDELLIN_CARTEL CHIEFS" [OTHER-CIVILIAN]
+
+

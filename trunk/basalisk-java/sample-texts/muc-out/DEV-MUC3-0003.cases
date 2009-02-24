@@ -1,0 +1,504 @@
+%TEXT% DEV-MUC3-0003 U
+
+
+**********************************************
+Sentence: 1
+THE GOVERNMENT JUNTA YESTERDAY APPROVED A DRAFT BILL TO MODIFY LAW &&18314 >COMMA LAW &&18314 DEFINES TERRORIST ACTIVITIES AND LAW &&18314 ESTABLISHES PENALTIES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__APPROVED_BILL_17
+Trigger(s): (APPROVED,BILL)
+SUBJ_Extraction = "THE GOVERNMENT JUNTA" [UNSPECIFIED-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__APPROVED_35
+Trigger(s): (APPROVED)
+SUBJ_Extraction = "THE GOVERNMENT JUNTA" [UNSPECIFIED-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__APPROVED_16
+Trigger(s): (APPROVED)
+DOBJ_Extraction = "A DRAFT BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__MODIFY_9
+Trigger(s): (MODIFY)
+DOBJ_Extraction = "LAW &&18314" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__DEFINES_ACTIVITIES_18
+Trigger(s): (DEFINES,ACTIVITIES)
+SUBJ_Extraction = "LAW &&18314" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DEFINES_36
+Trigger(s): (DEFINES)
+SUBJ_Extraction = "LAW &&18314" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DEFINES_17
+Trigger(s): (DEFINES)
+DOBJ_Extraction = "TERRORIST ACTIVITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ESTABLISHES_PENALTIES_19
+Trigger(s): (ESTABLISHES,PENALTIES)
+SUBJ_Extraction = "LAW &&18314" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ESTABLISHES_37
+Trigger(s): (ESTABLISHES)
+SUBJ_Extraction = "LAW &&18314" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ESTABLISHES_18
+Trigger(s): (ESTABLISHES)
+DOBJ_Extraction = "PENALTIES" [OTHER-MONEY]
+
+
+
+**********************************************
+Sentence: 2
+THE BILL WILL RESTRICT THE APPLICATION OF THE LAW TO THE MOST SERIOUS CASES AND THE BILL WILL LEAVE OTHER CRIMES >COMMA OTHER CRIMES WERE FORMERLY CONSIDERED TERRORIST ACTIVITY >COMMA FOR TRIAL UNDER COMMON LAW >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__RESTRICT_APPLICATION_20
+Trigger(s): (RESTRICT,APPLICATION)
+SUBJ_Extraction = "THE BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RESTRICT_38
+Trigger(s): (RESTRICT)
+SUBJ_Extraction = "THE BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__RESTRICT_19
+Trigger(s): (RESTRICT)
+DOBJ_Extraction = "THE APPLICATION OF THE LAW" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RESTRICT_TO_22
+Trigger(s): (RESTRICT)
+PP(TO)_Extraction = "THE MOST SERIOUS CASES" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__APPLICATION_OF_26
+Trigger(s): (APPLICATION)
+PP(OF)_Extraction = "THE LAW" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LEAVE_CRIMES_21
+Trigger(s): (LEAVE,CRIMES)
+SUBJ_Extraction = "THE BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LEAVE_39
+Trigger(s): (LEAVE)
+SUBJ_Extraction = "THE BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LEAVE_20
+Trigger(s): (LEAVE)
+DOBJ_Extraction = "OTHER CRIMES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__CONSIDERED_13
+Trigger(s): (CONSIDERED)
+SUBJ_Extraction = "OTHER CRIMES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__CONSIDERED_UNDER_12
+Trigger(s): (CONSIDERED)
+PP(UNDER)_Extraction = "COMMON LAW" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ACTIVITY_FOR_27
+Trigger(s): (ACTIVITY)
+PP(FOR)_Extraction = "TRIAL" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 3
+THE NEW BILL ACCEPTS THE POSSIBILITY IN SOME CASES OF A PRISONER BEING SOME CASES OF A PRISONER BEING RELEASED ON BAIL OR SOME CASES OF A PRISONER BEING RECEIVING A PARDON OR AMNESTY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ACCEPTS_POSSIBILITY_22
+Trigger(s): (ACCEPTS,POSSIBILITY)
+SUBJ_Extraction = "THE NEW BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ACCEPTS_40
+Trigger(s): (ACCEPTS)
+SUBJ_Extraction = "THE NEW BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ACCEPTS_21
+Trigger(s): (ACCEPTS)
+DOBJ_Extraction = "THE POSSIBILITY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ACCEPTS_IN_23
+Trigger(s): (ACCEPTS)
+PP(IN)_Extraction = "SOME CASES OF A PRISONER BEING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CASES_OF_28
+Trigger(s): (CASES)
+PP(OF)_Extraction = "A PRISONER BEING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RELEASED_41
+Trigger(s): (RELEASED)
+SUBJ_Extraction = "SOME CASES OF A PRISONER BEING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__RELEASED_ON_24
+Trigger(s): (RELEASED)
+PP(ON)_Extraction = "BAIL" [OTHER-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__RECEIVING_AMNESTY_23
+Trigger(s): (RECEIVING,AMNESTY)
+SUBJ_Extraction = "SOME CASES OF A PRISONER BEING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RECEIVING_42
+Trigger(s): (RECEIVING)
+SUBJ_Extraction = "SOME CASES OF A PRISONER BEING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__RECEIVING_22
+Trigger(s): (RECEIVING)
+DOBJ_Extraction = "A PARDON OR AMNESTY" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 4
+THE BILL ALSO ESTABLISHES OTHER OTHER BENEFITS NOT CONTEMPLATED BY LAW &&18314 >COMMA OTHER INCLUDING A NEW PROCEEDINGS FOR SPEEDIER TRIALS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ESTABLISHES_OTHER_24
+Trigger(s): (ESTABLISHES,OTHER)
+SUBJ_Extraction = "THE BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ESTABLISHES_37
+Trigger(s): (ESTABLISHES)
+SUBJ_Extraction = "THE BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ESTABLISHES_18
+Trigger(s): (ESTABLISHES)
+DOBJ_Extraction = "OTHER" [ENTITY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTEMPLATED_43
+Trigger(s): (CONTEMPLATED)
+SUBJ_Extraction = "OTHER" [ENTITY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CONTEMPLATED_BY_25
+Trigger(s): (CONTEMPLATED)
+PP(BY)_Extraction = "LAW &&18314" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__INCLUDING_PROCEEDINGS_25
+Trigger(s): (INCLUDING,PROCEEDINGS)
+SUBJ_Extraction = "OTHER" [ENTITY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INCLUDING_44
+Trigger(s): (INCLUDING)
+SUBJ_Extraction = "OTHER" [ENTITY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCLUDING_23
+Trigger(s): (INCLUDING)
+DOBJ_Extraction = "A NEW PROCEEDINGS" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PROCEEDINGS_FOR_29
+Trigger(s): (PROCEEDINGS)
+PP(FOR)_Extraction = "SPEEDIER TRIALS" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 5
+>LBRACKET PASSAGE OMITTED >RBRACKET ACCORDING_TO RETIRED GENERAL FERNANDO TORRES SILVA >COMMA RETIRED GENERAL FERNANDO TORRES SILVA IS THE ARMY JUDGE ADVOCATE GENERAL >COMMA THE MODIFICATIONS THE MODIFICATIONS ESTABLISH LIGHTER SENTENCES >COMMA FREEDOM ON BAIL >COMMA AND POSSIBLE PARDONS OR AMNESTIES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__OMITTED_45
+Trigger(s): (OMITTED)
+SUBJ_Extraction = "PASSAGE" [ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_GENERAL_7
+Trigger(s): (BE,GENERAL)
+SUBJ_Extraction = "RETIRED GENERAL FERNANDO TORRES SILVA" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_SILVA_7
+Trigger(s): (BE,SILVA)
+DOBJ_Extraction = "THE ARMY JUDGE ADVOCATE GENERAL" [JOB-TITLE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ESTABLISH_SENTENCES_26
+Trigger(s): (ESTABLISH,SENTENCES)
+SUBJ_Extraction = "THE MODIFICATIONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ESTABLISH_47
+Trigger(s): (ESTABLISH)
+SUBJ_Extraction = "THE MODIFICATIONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ESTABLISH_24
+Trigger(s): (ESTABLISH)
+DOBJ_Extraction = "LIGHTER SENTENCES" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ESTABLISH_ON_26
+Trigger(s): (ESTABLISH)
+PP(ON)_Extraction = "BAIL >COMMA AND POSSIBLE PARDONS OR AMNESTIES" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 6
+THESE BENEFITS WERE NOT CONTEMPLATED UNDER THE FORMER ANTITERRORIST LAW >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__CONTEMPLATED_14
+Trigger(s): (CONTEMPLATED)
+SUBJ_Extraction = "THESE BENEFITS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__CONTEMPLATED_UNDER_13
+Trigger(s): (CONTEMPLATED)
+PP(UNDER)_Extraction = "THE FORMER ANTITERRORIST LAW" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 7
+AS AN EXAMPLE TORRES AN EXAMPLE TORRES CITED THAT SENTENCES OF INDIVIDUALS TRIED AS ACCOMPLICES ACCOMPLICES WILL BE LOWER >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CITED_48
+Trigger(s): (CITED)
+SUBJ_Extraction = "AN EXAMPLE TORRES" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SENTENCES_OF_30
+Trigger(s): (SENTENCES)
+PP(OF)_Extraction = "INDIVIDUALS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TRIED_49
+Trigger(s): (TRIED)
+SUBJ_Extraction = "SENTENCES OF INDIVIDUALS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__TRIED_AS_27
+Trigger(s): (TRIED)
+PP(AS)_Extraction = "ACCOMPLICES" [OTHER-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LOWER_50
+Trigger(s): (LOWER)
+SUBJ_Extraction = "ACCOMPLICES" [OTHER-HUMAN]
+
+
+
+**********************************************
+Sentence: 8
+THEY WILL RECEIVE LOWER SENTENCES THAN THEY PREVIOUSLY CONTEMPLATED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SENTENCES_51
+Trigger(s): (SENTENCES)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTEMPLATED_43
+Trigger(s): (CONTEMPLATED)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 9
+THE NEW BILL WILL ALSO ALLOW A GREAT NUMBER OF PEOPLE A GREAT NUMBER OF PEOPLE ARE BEING TRIED BY THE INTERIOR MINISTRY TO GO OUT ON BAIL >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ALLOW_NUMBER_27
+Trigger(s): (ALLOW,NUMBER)
+SUBJ_Extraction = "THE NEW BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ALLOW_52
+Trigger(s): (ALLOW)
+SUBJ_Extraction = "THE NEW BILL" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ALLOW_25
+Trigger(s): (ALLOW)
+DOBJ_Extraction = "A GREAT NUMBER OF PEOPLE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__NUMBER_OF_19
+Trigger(s): (NUMBER)
+PP(OF)_Extraction = "PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__TRIED_15
+Trigger(s): (TRIED)
+SUBJ_Extraction = "A GREAT NUMBER OF PEOPLE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__TRIED_BY_14
+Trigger(s): (TRIED)
+PP(BY)_Extraction = "THE INTERIOR MINISTRY" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__GO_ON_2
+Trigger(s): (GO)
+PP(ON)_Extraction = "BAIL" [OTHER-MONEY]
+
+
+
+**********************************************
+Sentence: 10
+ACCORDING THE GENERAL @ATTORNEY@S OFFICE >COMMA MORE_THAN &&1,000 PRISONERS MIGHT BENEFIT FROM THE MODIFICATIONS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: NP_has_<possessive>__OFFICE_4
+Trigger(s): (OFFICE)
+possessive_agent_Extraction = "ATTORNEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BENEFIT_53
+Trigger(s): (BENEFIT)
+SUBJ_Extraction = "MORE_THAN &&1,000 PRISONERS" [UNSPECIFIED-CRIMINAL,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BENEFIT_FROM_28
+Trigger(s): (BENEFIT)
+PP(FROM)_Extraction = "THE MODIFICATIONS" [OTHER-CONCEPTUAL]
+
+
