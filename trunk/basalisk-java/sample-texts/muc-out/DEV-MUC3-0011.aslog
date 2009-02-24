@@ -1,0 +1,148 @@
+CF: 
+Name: Np_Prep_<NP>__CONSEQUENCE_OF_148
+Anchor: NP1(CONSEQUENCE)
+Act_Fcns: noun_phrase_broad_p(NP1(CONSEQUENCE) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DIED_217
+Anchor: VP1(DIED)
+Act_Fcns: active_verb_broad_p(VP1(DIED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__DIED_IN_115
+Anchor: VP1(DIED)
+Act_Fcns: active_verb_narrow_p(VP1(DIED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DIED_AS_116
+Anchor: VP1(DIED)
+Act_Fcns: active_verb_narrow_p(VP1(DIED) )
+Slot: PP(AS)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DRIVING_219
+Anchor: VP1(DRIVING)
+Act_Fcns: active_verb_broad_p(VP1(DRIVING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__DRIVING_CAR_116
+Anchor: VP1(DRIVING)
+Act_Fcns: active_verb_narrow_p(VP1(DRIVING) )
+          has_dobj_following_r(VP1(DRIVING)  NP1(CAR) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DRIVING_115
+Anchor: VP1(DRIVING)
+Act_Fcns: active_verb_narrow_p(VP1(DRIVING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DRIVING_WITHOUT_119
+Anchor: VP1(DRIVING)
+Act_Fcns: active_verb_narrow_p(VP1(DRIVING) )
+Slot: PP(WITHOUT)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__GETTING_218
+Anchor: VP1(GETTING)
+Act_Fcns: active_verb_broad_p(VP1(GETTING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__GETTING_OF_117
+Anchor: VP1(GETTING)
+Act_Fcns: active_verb_narrow_p(VP1(GETTING) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__GETTING_IN_118
+Anchor: VP1(GETTING)
+Act_Fcns: active_verb_narrow_p(VP1(GETTING) )
+Slot: PP(IN)
+Stats: frequency = 3
+
+CF: 
+Name: Np_Prep_<NP>__NEIGHBORHOOD_OF_149
+Anchor: NP1(NEIGHBORHOOD)
+Act_Fcns: noun_phrase_broad_p(NP1(NEIGHBORHOOD) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_216
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__RIDDLED_48
+Anchor: VP1(RIDDLED)
+Act_Fcns: passive_verb_broad_p(VP1(RIDDLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__RIDDLED_WITH_39
+Anchor: VP1(RIDDLED)
+Act_Fcns: passive_verb_narrow_p(VP1(RIDDLED) )
+Slot: PP(WITH)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__RIDDLED_BY_40
+Anchor: VP1(RIDDLED)
+Act_Fcns: passive_verb_narrow_p(VP1(RIDDLED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__RIDDLED_AS_41
+Anchor: VP1(RIDDLED)
+Act_Fcns: passive_verb_narrow_p(VP1(RIDDLED) )
+Slot: PP(AS)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__RUSHED_50
+Anchor: VP1(RUSHED)
+Act_Fcns: passive_verb_broad_p(VP1(RUSHED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__RUSHED_TO_43
+Anchor: VP1(RUSHED)
+Act_Fcns: passive_verb_narrow_p(VP1(RUSHED) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__SHOT_49
+Anchor: VP1(SHOT)
+Act_Fcns: passive_verb_broad_p(VP1(SHOT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__SHOT_IN_42
+Anchor: VP1(SHOT)
+Act_Fcns: passive_verb_narrow_p(VP1(SHOT) )
+Slot: PP(IN)
+Stats: frequency = 1
+

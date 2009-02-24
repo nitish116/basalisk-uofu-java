@@ -1,0 +1,171 @@
+%TEXT% DEV-MUC3-0011 U
+
+
+**********************************************
+Sentence: 1
+AUTHORITIES HAVE REPORTED THAT FORMER PERUVIAN DEFENSE_MINISTER GENERAL ENRIQUE LOPEZ ALBUJAR DIED TODAY IN LIMA AS A CONSEQUENCE OF A TERRORIST ATTACK >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REPORTED_3
+Trigger(s): (REPORTED)
+SUBJ_Extraction = "AUTHORITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DIED_174
+Trigger(s): (DIED)
+SUBJ_Extraction = "FORMER PERUVIAN DEFENSE_MINISTER GENERAL ENRIQUE LOPEZ ALBUJAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__DIED_AS_116
+Trigger(s): (DIED)
+PP(AS)_Extraction = "A CONSEQUENCE OF A TERRORIST ATTACK" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__DIED_IN_115
+Trigger(s): (DIED)
+PP(IN)_Extraction = "LIMA" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CONSEQUENCE_OF_148
+Trigger(s): (CONSEQUENCE)
+PP(OF)_Extraction = "A TERRORIST ATTACK" [ATTACK]
+
+
+
+**********************************************
+Sentence: 2
+LOPEZ ALBUJAR >COMMA FORMER ARMY COMMANDER GENERAL AND DEFENSE_MINISTER UNTIL MAY &&1989 >COMMA LOPEZ ALBUJAR WAS RIDDLED WITH BULLETS BY &&3 YOUNG INDIVIDUALS AS HE HE WAS GETTING OUT OF HIS CAR IN AN OPEN PARKING_LOT IN A COMMERCIAL CENTER IN THE RESIDENTIAL NEIGHBORHOOD OF SAN ISIDRO >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__RIDDLED_48
+Trigger(s): (RIDDLED)
+SUBJ_Extraction = "LOPEZ ALBUJAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__RIDDLED_AS_41
+Trigger(s): (RIDDLED)
+PP(AS)_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__RIDDLED_BY_40
+Trigger(s): (RIDDLED)
+PP(BY)_Extraction = "&&3 YOUNG INDIVIDUALS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__RIDDLED_WITH_39
+Trigger(s): (RIDDLED)
+PP(WITH)_Extraction = "BULLETS" [PROJECTILE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GETTING_218
+Trigger(s): (GETTING)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__GETTING_IN_118
+Trigger(s): (GETTING)
+PP(IN)_Extraction = "AN OPEN PARKING_LOT" [OTHER-STRUCTURE]
+PP(IN)_Extraction = "A COMMERCIAL CENTER" [OTHER]
+PP(IN)_Extraction = "THE RESIDENTIAL NEIGHBORHOOD OF SAN ISIDRO" [OTHER-LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__NEIGHBORHOOD_OF_149
+Trigger(s): (NEIGHBORHOOD)
+PP(OF)_Extraction = "SAN ISIDRO" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 3
+LOPEZ ALBUJAR >COMMA &&63 >COMMA WAS DRIVING HIS OWN CAR WITHOUT AN ESCORT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__DRIVING_CAR_116
+Trigger(s): (DRIVING,CAR)
+SUBJ_Extraction = "LOPEZ ALBUJAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DRIVING_219
+Trigger(s): (DRIVING)
+SUBJ_Extraction = "LOPEZ ALBUJAR" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DRIVING_115
+Trigger(s): (DRIVING)
+DOBJ_Extraction = "HIS OWN CAR" [VEHICLE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__DRIVING_WITHOUT_119
+Trigger(s): (DRIVING)
+PP(WITHOUT)_Extraction = "AN ESCORT" [OTHER-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 4
+HE WAS SHOT &&8 TIMES IN THE CHEST >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__SHOT_49
+Trigger(s): (SHOT)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__SHOT_IN_42
+Trigger(s): (SHOT)
+PP(IN)_Extraction = "THE CHEST" [CONTAINER]
+
+
+
+**********************************************
+Sentence: 5
+THE FORMER MINISTER WAS RUSHED TO THE AIR_FORCE HOSPITAL WHERE HE DIED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__RUSHED_50
+Trigger(s): (RUSHED)
+SUBJ_Extraction = "THE FORMER MINISTER" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__RUSHED_TO_43
+Trigger(s): (RUSHED)
+PP(TO)_Extraction = "THE AIR_FORCE HOSPITAL" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DIED_174
+Trigger(s): (DIED)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+

@@ -1,0 +1,584 @@
+%TEXT% DEV-MUC3-0014 U
+
+
+**********************************************
+Sentence: 1
+A GOVERNMENT SPOKESMAN HAS ANNOUNCED THAT WITHIN THE NEXT &&72 HOURS THE SALVADORAN GOVERNMENT WILL DISCLOSE THE NAMES OF THE INDIVIDUALS THE NAMES OF THE INDIVIDUALS IMPLICATED IN THE MURDER OF &&6 JESUITS >COMMA IF THE INVESTIGATIONS ARE NOT HINDERED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ANNOUNCED_259
+Trigger(s): (ANNOUNCED)
+SUBJ_Extraction = "A GOVERNMENT SPOKESMAN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__DISCLOSE_NAMES_136
+Trigger(s): (DISCLOSE,NAMES)
+SUBJ_Extraction = "THE SALVADORAN GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DISCLOSE_260
+Trigger(s): (DISCLOSE)
+SUBJ_Extraction = "THE SALVADORAN GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__DISCLOSE_137
+Trigger(s): (DISCLOSE)
+DOBJ_Extraction = "THE NAMES OF THE INDIVIDUALS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__NAMES_OF_167
+Trigger(s): (NAMES)
+PP(OF)_Extraction = "THE INDIVIDUALS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__IMPLICATED_261
+Trigger(s): (IMPLICATED)
+SUBJ_Extraction = "THE NAMES OF THE INDIVIDUALS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__IMPLICATED_IN_129
+Trigger(s): (IMPLICATED)
+PP(IN)_Extraction = "THE MURDER OF &&6 JESUITS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MURDER_OF_118
+Trigger(s): (MURDER)
+PP(OF)_Extraction = "&&6 JESUITS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__HINDERED_63
+Trigger(s): (HINDERED)
+SUBJ_Extraction = "THE INVESTIGATIONS" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 2
+IN A BRIEF STATEMENT TO THE PRESS >COMMA MAURICIO SANDOVAL SAID THAT SALVADORAN PRESIDENT ALFREDO CRISTIANI WILL >COMMA WITHIN THE PERIOD THE PERIOD STATED >COMMA THE PERIOD ANNOUNCE THE NAMES OF THE INDIVIDUALS THE NAMES OF THE INDIVIDUALS PARTICIPATED IN THE MULTIPLE CRIME THE MULTIPLE CRIME PERPETRATED ON &&16 NOVEMBER AT THE CENTRAL AMERICAN UNIVERSITY IN SAN_SALVADOR >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__STATEMENT_TO_169
+Trigger(s): (STATEMENT)
+PP(TO)_Extraction = "THE PRESS" [MEDIA-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "MAURICIO SANDOVAL" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CRISTIANI_WITHIN_170
+Trigger(s): (CRISTIANI)
+PP(WITHIN)_Extraction = "THE PERIOD" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__STATED_206
+Trigger(s): (STATED)
+SUBJ_Extraction = "THE PERIOD" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ANNOUNCE_NAMES_137
+Trigger(s): (ANNOUNCE,NAMES)
+SUBJ_Extraction = "THE PERIOD" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ANNOUNCE_264
+Trigger(s): (ANNOUNCE)
+SUBJ_Extraction = "THE PERIOD" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ANNOUNCE_138
+Trigger(s): (ANNOUNCE)
+DOBJ_Extraction = "THE NAMES OF THE INDIVIDUALS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__NAMES_OF_167
+Trigger(s): (NAMES)
+PP(OF)_Extraction = "THE INDIVIDUALS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PARTICIPATED_265
+Trigger(s): (PARTICIPATED)
+SUBJ_Extraction = "THE NAMES OF THE INDIVIDUALS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PARTICIPATED_IN_130
+Trigger(s): (PARTICIPATED)
+PP(IN)_Extraction = "THE MULTIPLE CRIME" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PERPETRATED_266
+Trigger(s): (PERPETRATED)
+SUBJ_Extraction = "THE MULTIPLE CRIME" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PERPETRATED_AT_132
+Trigger(s): (PERPETRATED)
+PP(AT)_Extraction = "THE CENTRAL AMERICAN UNIVERSITY" [SITE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PERPETRATED_IN_133
+Trigger(s): (PERPETRATED)
+PP(IN)_Extraction = "SAN_SALVADOR" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PERPETRATED_ON_131
+Trigger(s): (PERPETRATED)
+PP(ON)_Extraction = "&&16 NOVEMBER" [MONTH]
+
+
+
+**********************************************
+Sentence: 3
+CRISTIANI ANNOUNCED ON SUNDAY THAT MEMBERS OF THE ARMED_FORCES PARTICIPATED IN THE CRIME >COMMA AND THAT HIS GOVERNMENT WILL BRING THOSE INDIVIDUALS TO JUSTICE IN EL_SALVADOR >COMMA REGARDLESS OF WHOM THEY MAY BE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ANNOUNCED_259
+Trigger(s): (ANNOUNCED)
+SUBJ_Extraction = "CRISTIANI" [GOVT-OFFICIAL,NEUTRAL-NAME]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ANNOUNCED_ON_134
+Trigger(s): (ANNOUNCED)
+PP(ON)_Extraction = "SUNDAY" [DAY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MEMBERS_OF_10
+Trigger(s): (MEMBERS)
+PP(OF)_Extraction = "THE ARMED_FORCES" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PARTICIPATED_265
+Trigger(s): (PARTICIPATED)
+SUBJ_Extraction = "MEMBERS OF THE ARMED_FORCES" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PARTICIPATED_IN_130
+Trigger(s): (PARTICIPATED)
+PP(IN)_Extraction = "THE CRIME" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__BRING_INDIVIDUALS_138
+Trigger(s): (BRING,INDIVIDUALS)
+SUBJ_Extraction = "HIS GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__BRING_267
+Trigger(s): (BRING)
+SUBJ_Extraction = "HIS GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BRING_139
+Trigger(s): (BRING)
+DOBJ_Extraction = "THOSE INDIVIDUALS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BRING_IN_136
+Trigger(s): (BRING)
+PP(IN)_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__BRING_TO_135
+Trigger(s): (BRING)
+PP(TO)_Extraction = "JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+
+**********************************************
+Sentence: 4
+SANDOVAL POINTED OUT THAT MORE_THAN &&7 PEOPLE WERE INVOLVED IN THE MURDER >COMMA AND &&2 &&2 PERPETRATED IT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INVOLVED_36
+Trigger(s): (INVOLVED)
+SUBJ_Extraction = "MORE_THAN &&7 PEOPLE" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__INVOLVED_IN_28
+Trigger(s): (INVOLVED)
+PP(IN)_Extraction = "THE MURDER >COMMA AND &&2" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__PERPETRATED_IT_139
+Trigger(s): (PERPETRATED,IT)
+SUBJ_Extraction = "&&2" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PERPETRATED_266
+Trigger(s): (PERPETRATED)
+SUBJ_Extraction = "&&2" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__PERPETRATED_140
+Trigger(s): (PERPETRATED)
+DOBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 5
+HE ADDED THAT &&2 DIFFERENT GROUPS ACTED >COMMA ONE ONE MURDERED THE CLERGYMEN AND ANOTHER THE CLERGYMEN MURDERED &&2 MAIDS >COMMA ACCORDING_TO PRELIMINARY RESULTS PRELIMINARY RESULTS ISSUED BY THE CRIME COMMISSION IN CHARGE OF SOLVING THE CASE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADDED_5
+Trigger(s): (ADDED)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ACTED_269
+Trigger(s): (ACTED)
+SUBJ_Extraction = "&&2 DIFFERENT GROUPS" [TERRORIST-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MURDERED_CLERGYMEN_140
+Trigger(s): (MURDERED,CLERGYMEN)
+SUBJ_Extraction = "ONE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MURDERED_72
+Trigger(s): (MURDERED)
+SUBJ_Extraction = "ONE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MURDERED_35
+Trigger(s): (MURDERED)
+DOBJ_Extraction = "THE CLERGYMEN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MURDERED_MAIDS_141
+Trigger(s): (MURDERED,MAIDS)
+SUBJ_Extraction = "THE CLERGYMEN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MURDERED_72
+Trigger(s): (MURDERED)
+SUBJ_Extraction = "THE CLERGYMEN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MURDERED_35
+Trigger(s): (MURDERED)
+DOBJ_Extraction = "&&2 MAIDS" [OCCUPATION,OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ISSUED_271
+Trigger(s): (ISSUED)
+SUBJ_Extraction = "PRELIMINARY RESULTS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ISSUED_BY_138
+Trigger(s): (ISSUED)
+PP(BY)_Extraction = "THE CRIME COMMISSION" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ISSUED_IN_139
+Trigger(s): (ISSUED)
+PP(IN)_Extraction = "CHARGE OF SOLVING" [UNSPECIFIED-MONEY]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CHARGE_OF_172
+Trigger(s): (CHARGE)
+PP(OF)_Extraction = "SOLVING" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 6
+THERE WAS NO TORTURE OR MISTREATMENT >COMMA BUT WORDS WERE EXCHANGED BETWEEN THE MURDERERS AND VICTIMS >COMMA THE SPOKESMAN THE SPOKESMAN SAID >COMMA ADDING THAT &&5 OF THE MURDERED JESUITS HAD RECEIVED FINISHING SHOTS >COMMA ACCORDING_TO AUTOPSIES AUTOPSIES CARRIED_OUT BY SALVADORAN FORENSIC DOCTORS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_MISTREATMENT_35
+Trigger(s): (BE,MISTREATMENT)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "NO TORTURE OR MISTREATMENT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__EXCHANGED_65
+Trigger(s): (EXCHANGED)
+SUBJ_Extraction = "WORDS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__EXCHANGED_BETWEEN_50
+Trigger(s): (EXCHANGED)
+PP(BETWEEN)_Extraction = "THE MURDERERS AND VICTIMS" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "THE SPOKESMAN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__&&5_OF_173
+Trigger(s): (&&5)
+PP(OF)_Extraction = "THE MURDERED JESUITS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__RECEIVED_SHOTS_142
+Trigger(s): (RECEIVED,SHOTS)
+SUBJ_Extraction = "&&5 OF THE MURDERED JESUITS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__RECEIVED_272
+Trigger(s): (RECEIVED)
+SUBJ_Extraction = "&&5 OF THE MURDERED JESUITS" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__RECEIVED_142
+Trigger(s): (RECEIVED)
+DOBJ_Extraction = "FINISHING SHOTS" [OTHER-PHYSOBJ]
+
+
+
+**********************************************
+Sentence: 7
+ACCORDING_TO TESTIMONY THE COMMISSION GATHERED FROM &&115 MEMBERS OF THE ARMY AND &&103 CIVILIANS >COMMA THE MURDER THE MURDER TOOK_PLACE BETWEEN &&0200 AND &&0300 >COMMA AND THERE THERE WERE EXPLOSIONS >COMMA MACHINE-GUN BLASTS >COMMA AND SHOTS >COMMA SANDOVAL EXPLOSIONS >COMMA MACHINE-GUN BLASTS >COMMA AND SHOTS SAID >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GATHERED_274
+Trigger(s): (GATHERED)
+SUBJ_Extraction = "THE COMMISSION" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__GATHERED_FROM_141
+Trigger(s): (GATHERED)
+PP(FROM)_Extraction = "&&115 MEMBERS OF THE ARMY AND &&103 CIVILIANS" [UNSPECIFIED-HUMAN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MEMBERS_OF_10
+Trigger(s): (MEMBERS)
+PP(OF)_Extraction = "THE ARMY AND &&103 CIVILIANS" [UNSPECIFIED-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__BE_SHOTS_36
+Trigger(s): (BE,SHOTS)
+SUBJ_Extraction = "THERE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__BE_THERE_1
+Trigger(s): (BE,THERE)
+DOBJ_Extraction = "EXPLOSIONS >COMMA MACHINE-GUN BLASTS >COMMA AND SHOTS" [OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "EXPLOSIONS >COMMA MACHINE-GUN BLASTS >COMMA AND SHOTS" [OTHER-PHYSOBJ]
+
+
+
+**********************************************
+Sentence: 8
+THE SPOKESMAN ADDED THAT &&2 OFFICERS AND &&45 SOLDIERS HAVE BEEN CONFINED IN VARIOUS HEADQUARTERS PENDING INVESTIGATION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADDED_5
+Trigger(s): (ADDED)
+SUBJ_Extraction = "THE SPOKESMAN" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__CONFINED_66
+Trigger(s): (CONFINED)
+SUBJ_Extraction = "&&2 OFFICERS AND &&45 SOLDIERS" [MILITARY]
+
+
+
+**********************************************
+Sentence: 9
+AT_LEAST &&230 CARTRIDGES OF VARIOUS CALIBER >COMMA INCLUDING SOME FOR SOVIET SOME MADE AK-47'S >COMMA M-79 ANTITANK WEAPONS >COMMA AND M-67 GRENADES >COMMA SOME WERE FOUND AT THE SITE OF THE MURDER >COMMA THE OFFICIAL THE OFFICIAL SAID >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CARTRIDGES_OF_21
+Trigger(s): (CARTRIDGES)
+PP(OF)_Extraction = "VARIOUS CALIBER" [OTHER-MEASURE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__INCLUDING_SOME_145
+Trigger(s): (INCLUDING,SOME)
+SUBJ_Extraction = "AT_LEAST &&230 CARTRIDGES OF VARIOUS CALIBER" [OTHER-PHYSOBJ,OTHER-WEAPON]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INCLUDING_44
+Trigger(s): (INCLUDING)
+SUBJ_Extraction = "AT_LEAST &&230 CARTRIDGES OF VARIOUS CALIBER" [OTHER-PHYSOBJ,OTHER-WEAPON]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__INCLUDING_23
+Trigger(s): (INCLUDING)
+DOBJ_Extraction = "SOME" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__MADE_GRENADES_146
+Trigger(s): (MADE,GRENADES)
+SUBJ_Extraction = "SOME" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__MADE_16
+Trigger(s): (MADE)
+SUBJ_Extraction = "SOME" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__MADE_15
+Trigger(s): (MADE)
+DOBJ_Extraction = "AK-47'S >COMMA M-79 ANTITANK WEAPONS >COMMA AND M-67 GRENADES" [EXPLOSIVE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__FOUND_7
+Trigger(s): (FOUND)
+SUBJ_Extraction = "SOME" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__FOUND_AT_10
+Trigger(s): (FOUND)
+PP(AT)_Extraction = "THE SITE OF THE MURDER" [SITE]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__SITE_OF_175
+Trigger(s): (SITE)
+PP(OF)_Extraction = "THE MURDER" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "THE OFFICIAL" [GOVT-OFFICIAL,POLITICIAN,OTHER-CIVILIAN]
+
+

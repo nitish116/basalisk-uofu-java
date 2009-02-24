@@ -1,0 +1,1075 @@
+%TEXT% DEV-MUC3-0013 U
+
+
+**********************************************
+Sentence: 1
+THE CATHOLIC CHURCH HAS EXPRESSED SATISFACTION WITH THE INVESTIGATIONS IN THE CASE OF THE MURDERED JESUITS AND THE CATHOLIC CHURCH IS ENCOURAGING THE GOVERNMENT THE GOVERNMENT TO CONTINUE TO SEARCH FOR THE PERPETRATORS OF THIS CRIME >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__EXPRESSED_SATISFACTION_120
+Trigger(s): (EXPRESSED,SATISFACTION)
+SUBJ_Extraction = "THE CATHOLIC CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__EXPRESSED_225
+Trigger(s): (EXPRESSED)
+SUBJ_Extraction = "THE CATHOLIC CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__EXPRESSED_119
+Trigger(s): (EXPRESSED)
+DOBJ_Extraction = "SATISFACTION" [MOOD]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__EXPRESSED_IN_121
+Trigger(s): (EXPRESSED)
+PP(IN)_Extraction = "THE CASE OF THE MURDERED JESUITS" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__EXPRESSED_WITH_120
+Trigger(s): (EXPRESSED)
+PP(WITH)_Extraction = "THE INVESTIGATIONS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CASE_OF_152
+Trigger(s): (CASE)
+PP(OF)_Extraction = "THE MURDERED JESUITS" [OTHER-CIVILIAN]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ENCOURAGING_GOVERNMENT_121
+Trigger(s): (ENCOURAGING,GOVERNMENT)
+SUBJ_Extraction = "THE CATHOLIC CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ENCOURAGING_226
+Trigger(s): (ENCOURAGING)
+SUBJ_Extraction = "THE CATHOLIC CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ENCOURAGING_120
+Trigger(s): (ENCOURAGING)
+DOBJ_Extraction = "THE GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__SEARCH_FOR_19
+Trigger(s): (SEARCH)
+PP(FOR)_Extraction = "THE PERPETRATORS OF THIS CRIME" [VIOLENT-CRIMINAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PERPETRATORS_OF_153
+Trigger(s): (PERPETRATORS)
+PP(OF)_Extraction = "THIS CRIME" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 2
+MONSIGNOR GREGORIO ROSA CHAVEZ TODAY STATED THAT THE CATHOLIC CHURCH IS PLEASED WITH THE PROGRESS OF THE INVESTIGATIONS THE PROGRESS OF THE INVESTIGATIONS REGARDING THE MURDER OF THE JESUIT PRIESTS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__STATED_206
+Trigger(s): (STATED)
+SUBJ_Extraction = "MONSIGNOR GREGORIO ROSA CHAVEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__PLEASED_52
+Trigger(s): (PLEASED)
+SUBJ_Extraction = "THE CATHOLIC CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__PLEASED_WITH_45
+Trigger(s): (PLEASED)
+PP(WITH)_Extraction = "THE PROGRESS OF THE INVESTIGATIONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PROGRESS_OF_154
+Trigger(s): (PROGRESS)
+PP(OF)_Extraction = "THE INVESTIGATIONS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REGARDING_MURDER_122
+Trigger(s): (REGARDING,MURDER)
+SUBJ_Extraction = "THE PROGRESS OF THE INVESTIGATIONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REGARDING_228
+Trigger(s): (REGARDING)
+SUBJ_Extraction = "THE PROGRESS OF THE INVESTIGATIONS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REGARDING_121
+Trigger(s): (REGARDING)
+DOBJ_Extraction = "THE MURDER OF THE JESUIT PRIESTS" [OTHER-EVENT]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MURDER_OF_118
+Trigger(s): (MURDER)
+PP(OF)_Extraction = "THE JESUIT PRIESTS" [OTHER-CIVILIAN]
+
+
+
+**********************************************
+Sentence: 3
+HE SAID THAT IF THE SOLDIERS INVOLVED IN THE KILLING THE KILLING ARE PUNISHED >COMMA THE GOVERNMENT THE GOVERNMENT WILL NOT ONLY EARN INTERNATIONAL PRESTIGE >COMMA BUT THE GOVERNMENT WILL LAY THE GROUNDWORK TO CONSOLIDATE THE ADMINISTRATION OF JUSTICE IN EL_SALVADOR >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__INVOLVED_12
+Trigger(s): (INVOLVED)
+SUBJ_Extraction = "THE SOLDIERS" [MILITARY]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__INVOLVED_IN_55
+Trigger(s): (INVOLVED)
+PP(IN)_Extraction = "THE KILLING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__PUNISHED_30
+Trigger(s): (PUNISHED)
+SUBJ_Extraction = "THE KILLING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__EARN_PRESTIGE_123
+Trigger(s): (EARN,PRESTIGE)
+SUBJ_Extraction = "THE GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__EARN_231
+Trigger(s): (EARN)
+SUBJ_Extraction = "THE GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__EARN_122
+Trigger(s): (EARN)
+DOBJ_Extraction = "INTERNATIONAL PRESTIGE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__LAY_GROUNDWORK_124
+Trigger(s): (LAY,GROUNDWORK)
+SUBJ_Extraction = "THE GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__LAY_232
+Trigger(s): (LAY)
+SUBJ_Extraction = "THE GOVERNMENT" [POLITICAL-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__LAY_123
+Trigger(s): (LAY)
+DOBJ_Extraction = "THE GROUNDWORK" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__CONSOLIDATE_IN_5
+Trigger(s): (CONSOLIDATE)
+PP(IN)_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__CONSOLIDATE_13
+Trigger(s): (CONSOLIDATE)
+DOBJ_Extraction = "THE ADMINISTRATION OF JUSTICE" [UNSPECIFIED-ORGANIZATION]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ADMINISTRATION_OF_156
+Trigger(s): (ADMINISTRATION)
+PP(OF)_Extraction = "JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+
+**********************************************
+Sentence: 4
+ROSA CHAVEZ SAID THAT IF THE KILLING IS SOLVED >COMMA THE PERIOD OF IMPUNITY THE PERIOD OF IMPUNITY HAS TARNISHED THE JUDICIAL SYSTEM AND THE PERIOD OF IMPUNITY COVERED UP A NUMBER OF CRIMES TO WHICH JUSTICE HAS NOT BEEN APPLIED WILL END >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "ROSA CHAVEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__SOLVED_54
+Trigger(s): (SOLVED)
+SUBJ_Extraction = "THE KILLING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__PERIOD_OF_157
+Trigger(s): (PERIOD)
+PP(OF)_Extraction = "IMPUNITY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__TARNISHED_SYSTEM_125
+Trigger(s): (TARNISHED,SYSTEM)
+SUBJ_Extraction = "THE PERIOD OF IMPUNITY" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__TARNISHED_233
+Trigger(s): (TARNISHED)
+SUBJ_Extraction = "THE PERIOD OF IMPUNITY" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__TARNISHED_124
+Trigger(s): (TARNISHED)
+DOBJ_Extraction = "THE JUDICIAL SYSTEM" [OTHER-CONCEPTUAL,OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__COVERED_234
+Trigger(s): (COVERED)
+SUBJ_Extraction = "THE PERIOD OF IMPUNITY" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__COVERED_UP_123
+Trigger(s): (COVERED)
+PP(UP)_Extraction = "A NUMBER OF CRIMES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__NUMBER_OF_19
+Trigger(s): (NUMBER)
+PP(OF)_Extraction = "CRIMES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__END_55
+Trigger(s): (END)
+SUBJ_Extraction = "JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+
+**********************************************
+Sentence: 5
+>LBRACKET BEGIN RECORDING >RBRACKET >LBRACKET ROSA CHAVEZ >RBRACKET IT IT SEEMS THAT THE PRESIDENT SHOULD BE RECOGNIZED FOR THE PRESIDENT HAVING HAD THE COURAGE TO KEEP HIS PROMISE TO CONDUCT A THOROUGH INVESTIGATION >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BEGIN_104
+Trigger(s): (BEGIN)
+DOBJ_Extraction = "RECORDING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SEEMS_235
+Trigger(s): (SEEMS)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__RECOGNIZED_56
+Trigger(s): (RECOGNIZED)
+SUBJ_Extraction = "THE PRESIDENT" [GOVT-OFFICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__HAVE_COURAGE_34
+Trigger(s): (HAVE,COURAGE)
+SUBJ_Extraction = "THE PRESIDENT" [GOVT-OFFICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__HAVE_PRESIDENT_28
+Trigger(s): (HAVE,PRESIDENT)
+DOBJ_Extraction = "THE COURAGE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Dobj__HAVE_COURAGE_34
+Trigger(s): (HAVE,COURAGE)
+SUBJ_Extraction = "THE PRESIDENT" [GOVT-OFFICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Subj_AuxVp_<dobj>__HAVE_PRESIDENT_28
+Trigger(s): (HAVE,PRESIDENT)
+DOBJ_Extraction = "THE COURAGE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__KEEP_38
+Trigger(s): (KEEP)
+DOBJ_Extraction = "HIS PROMISE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__CONDUCT_39
+Trigger(s): (CONDUCT)
+DOBJ_Extraction = "A THOROUGH INVESTIGATION" [OTHER-EVENT]
+
+
+
+**********************************************
+Sentence: 6
+WE UNDERSTAND THAT HE HAS NOT YET REVEALED THE DETAILS OF THIS CRIME BUT THAT HE WILL DO SO SOON >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__UNDERSTAND_236
+Trigger(s): (UNDERSTAND)
+SUBJ_Extraction = "WE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__REVEALED_DETAILS_126
+Trigger(s): (REVEALED,DETAILS)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__REVEALED_237
+Trigger(s): (REVEALED)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__REVEALED_126
+Trigger(s): (REVEALED)
+DOBJ_Extraction = "THE DETAILS OF THIS CRIME" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__DETAILS_OF_159
+Trigger(s): (DETAILS)
+PP(OF)_Extraction = "THIS CRIME" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__DO_238
+Trigger(s): (DO)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 7
+HOWEVER >COMMA I WANT TO SAY SOMETHING SOMETHING HAS NOT BEEN SAID >COLON THE CHURCH THE CHURCH IS NOT INTERESTED IN LEARNING WHO THE MURDERERS ARE JUST FOR THE TRUTH TO COME OUT >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActInfVp__WANT_SAY_16
+Trigger(s): (WANT,SAY)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WANT_26
+Trigger(s): (WANT)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActInfVp_<dobj>__WANT_SAY_14
+Trigger(s): (WANT,SAY)
+DOBJ_Extraction = "SOMETHING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__SAY_40
+Trigger(s): (SAY)
+DOBJ_Extraction = "SOMETHING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__SAID_57
+Trigger(s): (SAID)
+SUBJ_Extraction = "SOMETHING" [OTHER]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__INTERESTED_58
+Trigger(s): (INTERESTED)
+SUBJ_Extraction = "THE CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__INTERESTED_IN_46
+Trigger(s): (INTERESTED)
+PP(IN)_Extraction = "LEARNING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__MURDERERS_FOR_160
+Trigger(s): (MURDERERS)
+PP(FOR)_Extraction = "THE TRUTH" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 8
+THE CHURCH WANTS THIS PUNISHMENT TO MEAN THAT IMPUNITY HAS ENDED IN EL_SALVADOR >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__WANTS_PUNISHMENT_127
+Trigger(s): (WANTS,PUNISHMENT)
+SUBJ_Extraction = "THE CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__WANTS_156
+Trigger(s): (WANTS)
+SUBJ_Extraction = "THE CHURCH" [OTHER-BUILDING]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__WANTS_84
+Trigger(s): (WANTS)
+DOBJ_Extraction = "THIS PUNISHMENT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ENDED_241
+Trigger(s): (ENDED)
+SUBJ_Extraction = "IMPUNITY" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__ENDED_IN_124
+Trigger(s): (ENDED)
+PP(IN)_Extraction = "EL_SALVADOR" [COUNTRY]
+
+
+
+**********************************************
+Sentence: 9
+THAT THE POOR WILL FEEL CERTAIN THAT JUSTICE WILL PREVAIL FOR THEM >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FEEL_242
+Trigger(s): (FEEL)
+SUBJ_Extraction = "THAT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PREVAIL_243
+Trigger(s): (PREVAIL)
+SUBJ_Extraction = "JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PREVAIL_FOR_125
+Trigger(s): (PREVAIL)
+PP(FOR)_Extraction = "THEM" [NO_ATTRIBUTES]
+
+
+
+**********************************************
+Sentence: 10
+THAT SO MANY CRIMES THAT SO MANY CRIMES HAVE BEEN FORGOTTEN WILL BE SOLVED LITTLE BY LITTLE >SEMI <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__SOLVED_54
+Trigger(s): (SOLVED)
+SUBJ_Extraction = "THAT SO MANY CRIMES" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 11
+BUT MAINLY >COMMA THAT FROM NOW ON >COMMA CRIMES WILL NO_LONGER GO UNSOLVED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GO_244
+Trigger(s): (GO)
+SUBJ_Extraction = "CRIMES" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 12
+>LBRACKET END RECORDING >RBRACKET MSGR ROSA CHAVEZ MSGR ROSA CHAVEZ ADDED THAT THE TONE OF VERBAL VIOLENCE MUST BE LOWERED SINCE THIS ONLY RESULTS IN A USELESS CONFRONTATION AND THE TONE OF VERBAL VIOLENCE PROMOTES A POLARIZATION OF THE CONFLICT >COMMA AS_WELL_AS THE TONE OF VERBAL VIOLENCE HINDERS ANY EFFORT TO APPLY JUSTICE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__END_114
+Trigger(s): (END)
+DOBJ_Extraction = "RECORDING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADDED_5
+Trigger(s): (ADDED)
+SUBJ_Extraction = "MSGR ROSA CHAVEZ" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__TONE_OF_161
+Trigger(s): (TONE)
+PP(OF)_Extraction = "VERBAL VIOLENCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__LOWERED_59
+Trigger(s): (LOWERED)
+SUBJ_Extraction = "THE TONE OF VERBAL VIOLENCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__LOWERED_IN_48
+Trigger(s): (LOWERED)
+PP(IN)_Extraction = "A USELESS CONFRONTATION" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: PassVp_Prep_<NP>__LOWERED_SINCE_47
+Trigger(s): (LOWERED)
+PP(SINCE)_Extraction = "THIS ONLY RESULTS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__PROMOTES_POLARIZATION_128
+Trigger(s): (PROMOTES,POLARIZATION)
+SUBJ_Extraction = "THE TONE OF VERBAL VIOLENCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PROMOTES_246
+Trigger(s): (PROMOTES)
+SUBJ_Extraction = "THE TONE OF VERBAL VIOLENCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__PROMOTES_129
+Trigger(s): (PROMOTES)
+DOBJ_Extraction = "A POLARIZATION OF THE CONFLICT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__POLARIZATION_OF_162
+Trigger(s): (POLARIZATION)
+PP(OF)_Extraction = "THE CONFLICT" [ATTACK]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__HINDERS_EFFORT_129
+Trigger(s): (HINDERS,EFFORT)
+SUBJ_Extraction = "THE TONE OF VERBAL VIOLENCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__HINDERS_247
+Trigger(s): (HINDERS)
+SUBJ_Extraction = "THE TONE OF VERBAL VIOLENCE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__HINDERS_130
+Trigger(s): (HINDERS)
+DOBJ_Extraction = "ANY EFFORT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__APPLY_41
+Trigger(s): (APPLY)
+DOBJ_Extraction = "JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+
+**********************************************
+Sentence: 13
+HE SAID THAT THE VERBAL WAR IS AS HARMFUL AS IRRATIONAL VIOLENCE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__WAR_AS_163
+Trigger(s): (WAR)
+PP(AS)_Extraction = "IRRATIONAL VIOLENCE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 14
+HE SAID THAT IRRESPONSIBLE CHARGES AND ACCUSATIONS CONTINUE IN THE COUNTRY >COMMA AND THEY DO NOT HELP STRENGTHEN THE PEACE PROCESS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__SAID_19
+Trigger(s): (SAID)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONTINUE_17
+Trigger(s): (CONTINUE)
+SUBJ_Extraction = "IRRESPONSIBLE CHARGES AND ACCUSATIONS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CONTINUE_IN_126
+Trigger(s): (CONTINUE)
+PP(IN)_Extraction = "THE COUNTRY" [LOCATION]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__STRENGTHEN_PROCESS_130
+Trigger(s): (STRENGTHEN,PROCESS)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__STRENGTHEN_249
+Trigger(s): (STRENGTHEN)
+SUBJ_Extraction = "THEY" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__STRENGTHEN_131
+Trigger(s): (STRENGTHEN)
+DOBJ_Extraction = "THE PEACE PROCESS" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 15
+>LBRACKET BEGIN RECORDING >RBRACKET >LBRACKET ROSA CHAVEZ >RBRACKET IT IT IS IMPORTANT TO OVERCOME VERBAL VIOLENCE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__BEGIN_104
+Trigger(s): (BEGIN)
+DOBJ_Extraction = "RECORDING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_IMPORTANT_11
+Trigger(s): (BE,IMPORTANT)
+SUBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__OVERCOME_42
+Trigger(s): (OVERCOME)
+DOBJ_Extraction = "VERBAL VIOLENCE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 16
+THIS MEANS THAT A CALM CLIMATE >COMMA A CLIMATE A CLIMATE IS AS IMPARTIAL AS POSSIBLE >COMMA A CLIMATE MUST BE SOUGHT TO DISCUSS ISSUES >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassInfVp__SOUGHT_DISCUSS_2
+Trigger(s): (SOUGHT,DISCUSS)
+SUBJ_Extraction = "A CLIMATE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__SOUGHT_60
+Trigger(s): (SOUGHT)
+SUBJ_Extraction = "A CLIMATE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: PassInfVp_<dobj>__SOUGHT_DISCUSS_1
+Trigger(s): (SOUGHT,DISCUSS)
+DOBJ_Extraction = "ISSUES" [DOCUMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__DISCUSS_43
+Trigger(s): (DISCUSS)
+DOBJ_Extraction = "ISSUES" [DOCUMENT]
+
+
+
+**********************************************
+Sentence: 17
+WE RECALL THAT LAST YEAR >COMMA MANY VIOLENT STATEMENTS WERE MADE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__MADE_9
+Trigger(s): (MADE)
+SUBJ_Extraction = "MANY VIOLENT STATEMENTS" [OTHER-STATEMENT]
+
+
+
+**********************************************
+Sentence: 18
+MANY HARSH EXPRESSIONS WERE UTTERED >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_PassVp__UTTERED_62
+Trigger(s): (UTTERED)
+SUBJ_Extraction = "MANY HARSH EXPRESSIONS" [OTHER-STATEMENT]
+
+
+
+**********************************************
+Sentence: 19
+>LBRACKET WORDS INDISTINCT >RBRACKET TOO MANY HEATED STATEMENTS PRINTED IN SOME NEWSPAPERS >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__PRINTED_250
+Trigger(s): (PRINTED)
+SUBJ_Extraction = "WORDS" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__PRINTED_IN_127
+Trigger(s): (PRINTED)
+PP(IN)_Extraction = "SOME NEWSPAPERS" [MEDIA-STATEMENT]
+
+
+
+**********************************************
+Sentence: 20
+THE LANGUAGE USED THE LANGUAGE IS TOO HARSH >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__USED_31
+Trigger(s): (USED)
+SUBJ_Extraction = "THE LANGUAGE" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_AuxVp_Adjp__BE_HARSH_12
+Trigger(s): (BE,HARSH)
+SUBJ_Extraction = "THE LANGUAGE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 21
+I THINK I TO OBTAIN JUSTICE >COMMA WE NEED A CALMER CLIMATE >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__THINK_27
+Trigger(s): (THINK)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__OBTAIN_44
+Trigger(s): (OBTAIN)
+DOBJ_Extraction = "JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__NEED_CLIMATE_131
+Trigger(s): (NEED,CLIMATE)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__NEED_253
+Trigger(s): (NEED)
+SUBJ_Extraction = "I" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__NEED_132
+Trigger(s): (NEED)
+DOBJ_Extraction = "A CALMER CLIMATE" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 22
+>LBRACKET END RECORDING >RBRACKET HE HE ADDED THAT A CLIMATE OF SERENITY AND RESPECT WOULD FACILITATE THE RIGHT THE RIGHT CONDITIONS FOR A DIALOGUE A DIALOGUE WOULD GUARANTEE MECHANISMS TO RECONCILE OUR SOCIETY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__END_114
+Trigger(s): (END)
+DOBJ_Extraction = "RECORDING" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ADDED_5
+Trigger(s): (ADDED)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__CLIMATE_OF_164
+Trigger(s): (CLIMATE)
+PP(OF)_Extraction = "SERENITY AND RESPECT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__FACILITATE_RIGHT_132
+Trigger(s): (FACILITATE,RIGHT)
+SUBJ_Extraction = "A CLIMATE OF SERENITY AND RESPECT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__FACILITATE_254
+Trigger(s): (FACILITATE)
+SUBJ_Extraction = "A CLIMATE OF SERENITY AND RESPECT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__FACILITATE_133
+Trigger(s): (FACILITATE)
+DOBJ_Extraction = "THE RIGHT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__CONDITIONS_255
+Trigger(s): (CONDITIONS)
+SUBJ_Extraction = "THE RIGHT" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_Prep_<NP>__CONDITIONS_FOR_128
+Trigger(s): (CONDITIONS)
+PP(FOR)_Extraction = "A DIALOGUE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__GUARANTEE_MECHANISMS_133
+Trigger(s): (GUARANTEE,MECHANISMS)
+SUBJ_Extraction = "A DIALOGUE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__GUARANTEE_256
+Trigger(s): (GUARANTEE)
+SUBJ_Extraction = "A DIALOGUE" [OTHER-STATEMENT]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__GUARANTEE_134
+Trigger(s): (GUARANTEE)
+DOBJ_Extraction = "MECHANISMS" [MACHINE]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__RECONCILE_45
+Trigger(s): (RECONCILE)
+DOBJ_Extraction = "OUR SOCIETY" [OTHER-CONCEPTUAL]
+
+
+
+**********************************************
+Sentence: 23
+HE URGED THE GOVERNMENT AND THE JUDICIAL AUTHORITIES TO CONTINUE MAKING PROGRESS IN THE REVIEW OF THE JUDICIAL SYSTEM TO REORGANIZE IT IN A WAY A WAY WILL ALLOW THE HONEST ADMINSTRATION OF JUSTICE TO DO AWAY WITH IMPUNITY >PERIOD <EOS
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__URGED_AUTHORITIES_134
+Trigger(s): (URGED,AUTHORITIES)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__URGED_257
+Trigger(s): (URGED)
+SUBJ_Extraction = "HE" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__URGED_135
+Trigger(s): (URGED)
+DOBJ_Extraction = "THE GOVERNMENT AND THE JUDICIAL AUTHORITIES" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__CONTINUE_IN_21
+Trigger(s): (CONTINUE)
+PP(IN)_Extraction = "THE REVIEW OF THE JUDICIAL SYSTEM" [DOCUMENT]
+PP(IN)_Extraction = "A WAY" [TRANSPORTATION-ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__CONTINUE_7
+Trigger(s): (CONTINUE)
+DOBJ_Extraction = "MAKING PROGRESS" [OTHER-CONCEPTUAL]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__REVIEW_OF_165
+Trigger(s): (REVIEW)
+PP(OF)_Extraction = "THE JUDICIAL SYSTEM" [OTHER-CONCEPTUAL,OTHER-PHYSOBJ]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__REORGANIZE_IN_22
+Trigger(s): (REORGANIZE)
+PP(IN)_Extraction = "A WAY" [TRANSPORTATION-ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: infinitive_verb_<dobj>__REORGANIZE_47
+Trigger(s): (REORGANIZE)
+DOBJ_Extraction = "IT" [NO_ATTRIBUTES]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp_Dobj__ALLOW_ADMINSTRATION_135
+Trigger(s): (ALLOW,ADMINSTRATION)
+SUBJ_Extraction = "A WAY" [TRANSPORTATION-ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: <subj>_ActVp__ALLOW_52
+Trigger(s): (ALLOW)
+SUBJ_Extraction = "A WAY" [TRANSPORTATION-ROUTE]
+
+
+-----------------------------------------------
+
+CaseFrame: ActVp_<dobj>__ALLOW_25
+Trigger(s): (ALLOW)
+DOBJ_Extraction = "THE HONEST ADMINSTRATION OF JUSTICE" [ENTITY,UNKNOWN]
+
+
+-----------------------------------------------
+
+CaseFrame: Np_Prep_<NP>__ADMINSTRATION_OF_166
+Trigger(s): (ADMINSTRATION)
+PP(OF)_Extraction = "JUSTICE" [LEGAL-OR-JUDICIAL]
+
+
+-----------------------------------------------
+
+CaseFrame: InfVp_Prep_<NP>__DO_WITH_23
+Trigger(s): (DO)
+PP(WITH)_Extraction = "IMPUNITY" [OTHER-CONCEPTUAL]
+
+
