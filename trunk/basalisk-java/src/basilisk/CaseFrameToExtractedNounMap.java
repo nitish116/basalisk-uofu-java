@@ -41,7 +41,7 @@ public class CaseFrameToExtractedNounMap {
 		System.out.println(loadFromMultipleFiles("muc3-listfile.cases"));
 	}
 
-	private static HashMap<CaseFrame, HashMap<String, Integer>> loadFromMultipleFiles(String listFile) {
+	public static HashMap<CaseFrame, HashMap<String, Integer>> loadFromMultipleFiles(String listFile) {
 		HashMap<CaseFrame, HashMap<String, Integer>> result = new HashMap<CaseFrame, HashMap<String, Integer>>();
 		
 		File f = new File(listFile);
