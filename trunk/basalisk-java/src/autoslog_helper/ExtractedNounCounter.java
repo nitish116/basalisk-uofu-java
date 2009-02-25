@@ -16,7 +16,7 @@ import java.util.Vector;
 
 import word_tools.WordTools;
 
-public class NounListGenerator {
+public class ExtractedNounCounter {
 
 	/**
 	 * @param args
