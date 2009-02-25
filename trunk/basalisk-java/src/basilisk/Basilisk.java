@@ -2,6 +2,7 @@ package basilisk;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,6 +10,7 @@ import java.util.regex.Pattern;
 public class Basilisk {
 
 	private HashSet<CaseFrame> _caseFrameList;
+	private HashMap<CaseFrame, HashMap<String, Integer>> _caseFrameToNounMap;
 	
 	/**
 	 * @param args
