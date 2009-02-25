@@ -1,4 +1,4 @@
-package autoslog_helper;
+package basilisk;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -19,11 +19,10 @@ import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import basilisk.FileHelper;
 
 import word_tools.WordTools;
 
-public class ExtractedNounCounter {
+public class ExtractedNounFreqCounter {
 
 	/**
 	 * @param args

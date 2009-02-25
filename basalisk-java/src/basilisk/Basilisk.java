@@ -11,6 +11,7 @@ public class Basilisk {
 
 	private HashSet<CaseFrame> _caseFrameList;
 	private HashMap<CaseFrame, HashMap<String, Integer>> _caseFrameToNounMap;
+	private HashSet<String> _locations;
 	
 	/**
 	 * @param args
