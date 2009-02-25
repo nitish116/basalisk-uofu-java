@@ -29,8 +29,9 @@ public class CaseFrameLoader {
 		System.out.println(c1.equals(c2));
 	}
 	
-	public static HashSet<CaseFrame> loadFromFile(File caseFrameFile){
-		return loadFromString(FileHelper.fileToString(caseFrameFile));
+	public static HashSet<CaseFrame> loadFromFile(String caseFrameFileName){
+		File f = new File(caseFrameFileName);
+		return loadFromString(FileHelper.fileToString(f));
 	}
 	
 	public static HashSet<CaseFrame> loadFromString(String input){

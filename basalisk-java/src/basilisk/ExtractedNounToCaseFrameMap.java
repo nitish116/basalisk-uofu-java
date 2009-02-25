@@ -1,6 +1,7 @@
 package basilisk;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Scanner;
@@ -13,13 +14,13 @@ public class ExtractedNounToCaseFrameMap {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(mapNounsToCFsromString("CaseFrame: <subj>_ActVp__REPORTED_3\nTrigger(s): (REPORTED)\nSUBJ_Extraction = \"THE ARCE BATTALION COMMAND\" [OTHER-STATEMENT]"));
-		System.out.println(mapNounsToCFsFromFile("sample-texts/muc-out/DEV-MUC3-0001.cases"));
+		System.out.println(loadFromString("CaseFrame: <subj>_ActVp__REPORTED_3\nTrigger(s): (REPORTED)\nSUBJ_Extraction = \"THE ARCE BATTALION COMMAND\" [OTHER-STATEMENT]"));
+		System.out.println(loadFromFile("sample-texts/muc-out/DEV-MUC3-0001.cases"));
 	}
 	private static final String _cfNameLineRegex = "^CaseFrame:.+[0-9]+$";
 	
-	public static Hashtable<String, HashSet<CaseFrame>> mapNounsToCFsFromMultipleFiles(String listFileName){
-		Hashtable<String, HashSet<CaseFrame>> result = new Hashtable<String, HashSet<CaseFrame>>();
+	public static HashMap<String, HashSet<CaseFrame>> loadFromMultipleFiles(String listFileName){
+		HashMap<String, HashSet<CaseFrame>> result = new HashMap<String, HashSet<CaseFrame>>();
 		
 		File f = new File(listFileName);
 		
@@ -39,9 +40,9 @@ public class ExtractedNounToCaseFrameMap {
 		
 		while(in.hasNextLine()){
 			if(result.size() == 0)
-				result = mapNounsToCFsFromFile(in.nextLine());
+				result = loadFromFile(in.nextLine());
 			else{
-				result = combineNounMaps(result, mapNounsToCFsFromFile(in.nextLine()));
+				result = combineNounMaps(result, loadFromFile(in.nextLine()));
 			}
 		}
 		
@@ -50,10 +51,10 @@ public class ExtractedNounToCaseFrameMap {
 	}
 	
 
-	private static Hashtable<String, HashSet<CaseFrame>> combineNounMaps(Hashtable<String, HashSet<CaseFrame>> m1, Hashtable<String, HashSet<CaseFrame>> m2) {
-		Hashtable<String, HashSet<CaseFrame>> result = m1;
+	private static HashMap<String, HashSet<CaseFrame>> combineNounMaps(HashMap<String, HashSet<CaseFrame>> m1, HashMap<String, HashSet<CaseFrame>> m2) {
+		HashMap<String, HashSet<CaseFrame>> result = m1;
 		
-		//Iterate through the 2nd input, seeing if duplicates already exist in the hashtable
+		//Iterate through the 2nd input, seeing if duplicates already exist in the HashMap
 		for(String noun: m2.keySet()){
 			if(result.get(noun) != null){
 				result.get(noun).addAll(m2.get(noun));
@@ -67,7 +68,7 @@ public class ExtractedNounToCaseFrameMap {
 	}
 
 
-	public static Hashtable<String, HashSet<CaseFrame>> mapNounsToCFsFromFile(String fileName){
+	public static HashMap<String, HashSet<CaseFrame>> loadFromFile(String fileName){
 		File f = new File(fileName);
 		
 		if(!f.exists()){
@@ -76,11 +77,11 @@ public class ExtractedNounToCaseFrameMap {
 		}
 		
 		System.out.println("Mapping extracted nouns to caseframes in file: " + f.getAbsolutePath());
-		return (mapNounsToCFsromString(FileHelper.fileToString(f)));
+		return (loadFromString(FileHelper.fileToString(f)));
 	}
 	
-	public static Hashtable<String, HashSet<CaseFrame>> mapNounsToCFsromString(String input){
-		Hashtable<String, HashSet<CaseFrame>> result = new Hashtable<String, HashSet<CaseFrame>>();
+	public static HashMap<String, HashSet<CaseFrame>> loadFromString(String input){
+		HashMap<String, HashSet<CaseFrame>> result = new HashMap<String, HashSet<CaseFrame>>();
 		
 		Scanner in = new Scanner(input);
 		
