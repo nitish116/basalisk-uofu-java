@@ -7,7 +7,7 @@ package basilisk;
  *
  */
 
-public class CaseFrame {
+public class CaseFrame{
 
 	private String _caseFrame;
 	/**
@@ -22,13 +22,18 @@ public class CaseFrame {
 		_caseFrame = s;
 	}
 
-	public boolean equals(CaseFrame cf){
-		if(_caseFrame.equalsIgnoreCase(cf.toString()))
+	public boolean equals(Object o){
+		if((o instanceof CaseFrame) && ((CaseFrame) o)._caseFrame.equalsIgnoreCase(_caseFrame))
 			return true;
 		return false;
+	}
+	
+	public int hashCode(){
+		return _caseFrame.hashCode();
 	}
 	
 	public String toString(){
 		return _caseFrame;
 	}
+
 }
