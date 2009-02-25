@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CaseFrameMapToExtractedNoun {
+public class CaseFrameToExtractedNounMap {
 
 	private static final String _cfNameLineRegex = "^CaseFrame:.+[0-9]+$";
 
