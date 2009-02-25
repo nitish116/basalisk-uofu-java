@@ -16,10 +16,6 @@ public class FileHelper {
 	public static String fileToString(File f){
 		String result = "";
 		
-		//Make sure the file exists
-		if(!f.exists()){
-			System.err.println("Trouble opening file: " + f.getAbsolutePath());
-		}
 		
 		Scanner in = null;
 		
