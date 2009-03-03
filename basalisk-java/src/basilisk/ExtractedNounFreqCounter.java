@@ -3,19 +3,7 @@ package basilisk;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.SortedSet;
-import java.util.TreeMap;
-import java.util.Vector;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,7 +25,7 @@ public class ExtractedNounFreqCounter {
 	
 	private static final String _cfNameLineRegex = "^CaseFrame:.+[0-9]+$";
 	
-	public static void printCountSortedListToFile(Hashtable<String, Integer> countTable, String fileName, boolean includeCount){
+	public static void printCountSortedListToFile(Map<String, Integer> countTable, String fileName, boolean includeCount){
 		List<Map.Entry<String, Integer>> sortByValue = new ArrayList<Map.Entry<String, Integer>>(countTable.entrySet());
 		Collections.sort(sortByValue, new Comparator<Map.Entry>(){
 			public int compare(Map.Entry e1, Map.Entry e2){
@@ -73,8 +61,8 @@ public class ExtractedNounFreqCounter {
 		
 	}
 	
-	public static Hashtable<String, Integer> countExtractedNounsFromMultipleFiles(String listFileName){
-		Hashtable<String, Integer> result = new Hashtable<String, Integer>();
+	public static Map<String, Integer> countExtractedNounsFromMultipleFiles(String listFileName){
+		Map<String, Integer> result = new HashMap<String, Integer>();
 		
 		File f = new File(listFileName);
 		
@@ -104,8 +92,8 @@ public class ExtractedNounFreqCounter {
 	}
 	
 
-	private static Hashtable<String, Integer> combineFrequencyCounts(Hashtable<String, Integer> m1, Hashtable<String, Integer> m2) {
-		Hashtable<String, Integer> result = m1;
+	private static Map<String, Integer> combineFrequencyCounts(Map<String, Integer> m1, Map<String, Integer> m2) {
+		Map<String, Integer> result = m1;
 		
 		//Iterate through the 2nd input, seeing if duplicates already exist in the hashtable
 		for(String s: m2.keySet()){
@@ -121,7 +109,7 @@ public class ExtractedNounFreqCounter {
 	}
 
 
-	public static Hashtable<String, Integer> countExtractedNounsFromFile(String fileName){
+	public static Map<String, Integer> countExtractedNounsFromFile(String fileName){
 		File f = new File(fileName);
 		
 		if(!f.exists()){
@@ -133,8 +121,8 @@ public class ExtractedNounFreqCounter {
 		return (countExtractedNounsFromString(FileHelper.fileToString(f)));
 	}
 	
-	public static Hashtable<String, Integer> countExtractedNounsFromString(String input){
-		Hashtable<String, Integer> result = new Hashtable<String, Integer>();
+	public static Map<String, Integer> countExtractedNounsFromString(String input){
+		Map<String, Integer> result = new HashMap<String, Integer>();
 		
 		Scanner in = new Scanner(input);
 		
@@ -146,7 +134,7 @@ public class ExtractedNounFreqCounter {
 				extNounLine = in.nextLine();
 				
 				//Get the noun out of the quotes
-				String noun = extNP(extNounLine);
+				String noun = extNP(extNounLine).toLowerCase();
 				
 				//Add the word to our frequency count
 				if(result.get(noun) != null){

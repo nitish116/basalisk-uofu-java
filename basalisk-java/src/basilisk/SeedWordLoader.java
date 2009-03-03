@@ -1,8 +1,7 @@
 package basilisk;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 public class SeedWordLoader {
 
@@ -14,9 +13,7 @@ public class SeedWordLoader {
 		System.out.println(loadFromFile("location-seeds"));
 	}
 	
-	public static HashSet<String> loadFromFile(String fileName){
-		HashSet<String> result = new HashSet<String>();
-		
+	public static Set<String> loadFromFile(String fileName){
 		File f = new File(fileName);
 		
 		if(!f.exists()){
@@ -27,13 +24,13 @@ public class SeedWordLoader {
 		return loadFromString(FileHelper.fileToString(f));
 	}
 	
-	public static HashSet<String> loadFromString(String input){
-		HashSet<String> result = new HashSet<String>();
+	public static Set<String> loadFromString(String input){
+		Set<String> result = new HashSet<String>();
 		
 		Scanner in = new Scanner(input);
 		
 		while(in.hasNextLine()){
-			result.add(in.nextLine().trim());
+			result.add(in.nextLine().trim().toLowerCase());
 		}
 		return result;
 	}
