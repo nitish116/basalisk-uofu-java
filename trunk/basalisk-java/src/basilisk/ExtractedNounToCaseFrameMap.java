@@ -1,12 +1,8 @@
 package basilisk;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
 
 public class ExtractedNounToCaseFrameMap {
 
@@ -19,8 +15,8 @@ public class ExtractedNounToCaseFrameMap {
 	}
 	private static final String _cfNameLineRegex = "^CaseFrame:.+[0-9]+$";
 	
-	public static HashMap<String, HashSet<CaseFrame>> loadFromMultipleFiles(String listFileName){
-		HashMap<String, HashSet<CaseFrame>> result = new HashMap<String, HashSet<CaseFrame>>();
+	public static Map<String, Set<String>> loadFromMultipleFiles(String listFileName){
+		Map<String, Set<String>> result = new HashMap<String, Set<String>>();
 		
 		File f = new File(listFileName);
 		
@@ -51,8 +47,8 @@ public class ExtractedNounToCaseFrameMap {
 	}
 	
 
-	private static HashMap<String, HashSet<CaseFrame>> combineNounMaps(HashMap<String, HashSet<CaseFrame>> m1, HashMap<String, HashSet<CaseFrame>> m2) {
-		HashMap<String, HashSet<CaseFrame>> result = m1;
+	private static Map<String, Set<String>> combineNounMaps(Map<String, Set<String>> m1, Map<String, Set<String>> m2) {
+		Map<String, Set<String>> result = m1;
 		
 		//Iterate through the 2nd input, seeing if duplicates already exist in the HashMap
 		for(String noun: m2.keySet()){
@@ -68,7 +64,7 @@ public class ExtractedNounToCaseFrameMap {
 	}
 
 
-	public static HashMap<String, HashSet<CaseFrame>> loadFromFile(String fileName){
+	public static Map<String, Set<String>> loadFromFile(String fileName){
 		File f = new File(fileName);
 		
 		if(!f.exists()){
@@ -80,28 +76,28 @@ public class ExtractedNounToCaseFrameMap {
 		return (loadFromString(FileHelper.fileToString(f)));
 	}
 	
-	public static HashMap<String, HashSet<CaseFrame>> loadFromString(String input){
-		HashMap<String, HashSet<CaseFrame>> result = new HashMap<String, HashSet<CaseFrame>>();
+	public static Map<String, Set<String>> loadFromString(String input){
+		Map<String, Set<String>> result = new HashMap<String, Set<String>>();
 		
 		Scanner in = new Scanner(input);
 		
 		while(in.hasNextLine()){
 			String line = in.nextLine();
 			if(isCaseFrameNameLine(line)){
-				CaseFrame cf = new CaseFrame(stripNameFormatting(line));
+				String cf = stripNameFormatting(line).toLowerCase();
 				//Advance the scanner two lines - to the noun line
 				String extNounLine = in.nextLine();
 				extNounLine = in.nextLine();
 				
 				//Get the noun out of the quotes
-				String noun = extNP(extNounLine);
+				String noun = extNP(extNounLine).toLowerCase();
 				
 				//Add the word to our frequency count
 				if(result.get(noun) != null){
 					result.get(noun).add(cf);
 				}
 				else{
-					HashSet<CaseFrame> listCF = new HashSet<CaseFrame>();
+					Set<String> listCF = new HashSet<String>();
 					listCF.add(cf);
 					result.put(noun, listCF);
 				}

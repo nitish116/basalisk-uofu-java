@@ -1,9 +1,7 @@
 package basilisk;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 public class CaseFrameLoader {
 	
@@ -29,20 +27,20 @@ public class CaseFrameLoader {
 		System.out.println(c1.equals(c2));
 	}
 	
-	public static HashSet<CaseFrame> loadFromFile(String caseFrameFileName){
+	public static Set<String> loadFromFile(String caseFrameFileName){
 		File f = new File(caseFrameFileName);
 		return loadFromString(FileHelper.fileToString(f));
 	}
 	
-	public static HashSet<CaseFrame> loadFromString(String input){
-		HashSet<CaseFrame> result = new HashSet<CaseFrame>();
+	public static Set<String> loadFromString(String input){
+		Set<String> result = new HashSet<String>();
 		
 		Scanner in = new Scanner(input);
 		
 		while(in.hasNextLine()){
 			String nextLine = in.nextLine();
 			if(isCaseFrameNameLine(nextLine)){
-				result.add(new CaseFrame(stripNameFormatting(nextLine)));
+				result.add(stripNameFormatting(nextLine).toLowerCase());
 			}
 		}
 		

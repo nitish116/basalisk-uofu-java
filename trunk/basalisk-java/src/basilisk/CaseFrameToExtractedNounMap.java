@@ -1,11 +1,8 @@
 package basilisk;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
 
 public class CaseFrameToExtractedNounMap {
 
@@ -41,8 +38,8 @@ public class CaseFrameToExtractedNounMap {
 		System.out.println(loadFromMultipleFiles("muc3-listfile.cases"));
 	}
 
-	public static HashMap<CaseFrame, HashMap<String, Integer>> loadFromMultipleFiles(String listFile) {
-		HashMap<CaseFrame, HashMap<String, Integer>> result = new HashMap<CaseFrame, HashMap<String, Integer>>();
+	public static Map<String, Map<String, Integer>> loadFromMultipleFiles(String listFile) {
+		Map<String, Map<String, Integer>> result = new HashMap<String, Map<String, Integer>>();
 		
 		File f = new File(listFile);
 		
@@ -72,31 +69,31 @@ public class CaseFrameToExtractedNounMap {
 		return result;
 	}
 
-	private static HashMap<CaseFrame, HashMap<String, Integer>> combineHashMaps(HashMap<CaseFrame, HashMap<String, Integer>> m1, HashMap<CaseFrame, HashMap<String, Integer>> m2) {
-		HashMap<CaseFrame, HashMap<String, Integer>> result = m1;
+	private static Map<String, Map<String, Integer>> combineHashMaps(Map<String, Map<String, Integer>> m1, Map<String, Map<String, Integer>> m2) {
+		Map<String, Map<String, Integer>> result = m1;
 		
 		//Iterate through the 2nd map, adding entries intelligently
-		for(CaseFrame cf: m2.keySet()){
+		for(String cf: m2.keySet()){
 			//If the case frame is already in the existing count dictionary
 			if(result.get(cf) != null){
-				HashMap<String, Integer> currCountDict = result.get(cf);
-				HashMap<String, Integer> newCountDict = m2.get(cf);
+				Map<String, Integer> currCountDict = result.get(cf);
+				Map<String, Integer> newCountDict = m2.get(cf);
 				
-				System.out.println("Combining dictionaries, duplicate caseframes for: " + cf);
-				System.out.println("Count dictionary for curr dictionary: " + currCountDict);
-				System.out.println("Count dictionary for curr dictionary: " + newCountDict);
+				//System.out.println("Combining dictionaries, duplicate caseframes for: " + cf);
+				//System.out.println("Count dictionary for curr dictionary: " + currCountDict);
+				//System.out.println("Count dictionary for curr dictionary: " + newCountDict);
 				
 				//Iterate through all the noun counts, checking to see if they are already in the current Count Dictionary
-				for(String s: newCountDict.keySet()){
+				for(String noun: newCountDict.keySet()){
 					//If the word is already in our count dictionary...add + 1
-					if(currCountDict.get(s) != null){
-						System.out.println("Same case frame extracted same np in two documents: " + cf);
-						System.out.println("Count dictionary for curr dictionary: " + currCountDict);
-						System.out.println("Count dictionary for curr dictionary: " + newCountDict);
-						currCountDict.put(s, currCountDict.get(s) + newCountDict.get(s));
+					if(currCountDict.get(noun) != null){
+						//System.out.println("Same case frame extracted same np in two documents: " + cf);
+						//System.out.println("Count dictionary for curr dictionary: " + currCountDict);
+						//System.out.println("Count dictionary for curr dictionary: " + newCountDict);
+						currCountDict.put(noun, currCountDict.get(noun) + newCountDict.get(noun));
 					}
 					else{
-						currCountDict.put(s, newCountDict.get(s));
+						currCountDict.put(noun, newCountDict.get(noun));
 					}
 				}
 			}
@@ -107,19 +104,19 @@ public class CaseFrameToExtractedNounMap {
 		return result;
 	}
 
-	public static HashMap<CaseFrame, HashMap<String, Integer>> loadFromFile(String extNounFileName){
+	public static Map<String, Map<String, Integer>> loadFromFile(String extNounFileName){
 		File in = new File(extNounFileName);
 		
 		if(!in.exists()){
 			System.err.println("Error parsing .cases file. File could not be found: " + in.getAbsolutePath());
 			return null;
 		}
-		System.out.println("Loading count dictionary from .cases file: " + in.getAbsolutePath());
+		System.out.println("Mapping caseframes to their extracted nouns from file: " + in.getAbsolutePath());
 		return loadFromString(FileHelper.fileToString(in));
 	}
 	
-	public static HashMap<CaseFrame, HashMap<String, Integer>> loadFromString(String input){
-		HashMap<CaseFrame, HashMap<String, Integer>> result = new HashMap<CaseFrame, HashMap<String, Integer>>();
+	public static Map<String, Map<String, Integer>> loadFromString(String input){
+		Map<String, Map<String, Integer>> result = new HashMap<String, Map<String, Integer>>();
 		
 		
 		Scanner in = new Scanner(input);
@@ -127,22 +124,19 @@ public class CaseFrameToExtractedNounMap {
 		while(in.hasNextLine()){
 			String nextLine = in.nextLine();
 			if(isCaseFrameNameLine(nextLine)){
-				CaseFrame cf = new CaseFrame(stripNameFormatting(nextLine));
+				String cf = stripNameFormatting(nextLine).toLowerCase();
 				//The extracted noun should be somewhere two lines after the current line
 				String extNounLine = in.nextLine();
 				extNounLine = in.nextLine();
 				
 				//Get the noun out of the quotes
-				String noun = extNP(extNounLine);
+				String noun = extNP(extNounLine).toLowerCase();
 				
 				//Add the results to our HashMap
 				if(result.get(cf) != null){
 					//System.out.println("CaseFrame: " + cf + " extracted more than one noun");
-					if(cf.equals(new CaseFrame("<subj>_ActVp__REPORTED"))){
-						String s = "";
-					}
 						
-					HashMap<String, Integer> oldCountMap = result.get(cf);
+					Map<String, Integer> oldCountMap = result.get(cf);
 					//Check to see if the noun was already added for this caseframe
 					if(oldCountMap.get(noun) != null){
 						Integer oldCount = oldCountMap.get(noun);
@@ -154,7 +148,7 @@ public class CaseFrameToExtractedNounMap {
 					
 				}
 				else{
-					HashMap<String, Integer> newCountMap = new HashMap<String, Integer>();
+					Map<String, Integer> newCountMap = new HashMap<String, Integer>();
 					newCountMap.put(noun, 1);
 					result.put(cf, newCountMap);
 				}
