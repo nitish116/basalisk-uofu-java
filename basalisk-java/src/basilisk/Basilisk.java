@@ -1,6 +1,8 @@
 package basilisk;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintStream;
 import java.util.*;
 
 public class Basilisk {
@@ -28,20 +30,47 @@ public class Basilisk {
 		_locations = SeedWordLoader.loadFromFile(locationSeedFile);
 		List<String> learnedLocationLexicon = new ArrayList<String>();
 		
-		//Score the caseFrameList
-		Map<String, Double> locationCFToRlogFMap = scoreCaseFrames(_caseFrameToNounMap, _locations);
-		//Select the top rated caseframes
-		Set<String> patternPool = selectTopNCaseFrames(locationCFToRlogFMap, 20);
-		//Form the candidate pool from the pattern pool
-		Set<String> candidateNounPool = selectNounsFromCaseFrames(patternPool, _caseFrameToNounMap);
-		//Score the candidate nouns
-		Map<String, Double> candidateWordToScoreMap = scoreCandidateNouns(candidateNounPool, _nounToCaseFrameMap, _caseFrameToNounMap, _locations);
-		//Add the top 5 candidate nouns to the lexicon
-		learnedLocationLexicon.addAll(selectTopNCandidateWords(candidateWordToScoreMap, 5));
+		
+		//Run the bootstrapping 5 times
+		for(int i = 0; i < 5; i++){
+			//Score the caseFrameList
+			Map<String, Double> locationCFToRlogFMap = scoreCaseFrames(_caseFrameToNounMap, _locations);
+			//Select the top rated caseframes
+			Set<String> patternPool = selectTopNCaseFrames(locationCFToRlogFMap, 20 + i);
+			System.out.println("Pattern pool size: " + patternPool.size());
+			//Form the candidate pool from the pattern pool
+			Set<String> candidateNounPool = selectNounsFromCaseFrames(patternPool, _caseFrameToNounMap);
+			System.out.println(candidateNounPool);
+			System.out.println("Candidate noun pool size: " + candidateNounPool.size());
+			//Score the candidate nouns
+			Map<String, Double> candidateWordToScoreMap = scoreCandidateNouns(candidateNounPool, _nounToCaseFrameMap, _caseFrameToNounMap, _locations);
+			//Add the top 5 candidate nouns to the lexicon
+			List<String> topNewWords = selectTopNNewCandidateWords(candidateWordToScoreMap, 5);
+			
+			System.out.printf("%d new words were added to the lexicon on iteration #%d of bootstrapping.\n", topNewWords.size(), i);
+			
+			_locations.addAll(topNewWords);
+			learnedLocationLexicon.addAll(topNewWords);
+		}
 		System.out.println(learnedLocationLexicon);
+		System.out.println("Learned lexicon size:" + learnedLocationLexicon.size());
+
+		//Print out the list of learned words to a file
+		PrintStream out = null;
+		try {
+			out = new PrintStream("learned-locations.txt");
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+		}
+		
+		for(String learnedWord: learnedLocationLexicon){
+			out.print(learnedWord + "\n");
+		}
+		out.close();
 	}
 
-	private List<String> selectTopNCandidateWords(Map<String, Double> candidateWordToScoreMap, int n) {
+	private List<String> selectTopNNewCandidateWords(Map<String, Double> candidateWordToScoreMap, int n) {
 		List<String> result = new ArrayList<String>();
 		
 		//Sort the list by descending score
@@ -55,10 +84,23 @@ public class Basilisk {
 			}
 		});
 		
-		System.out.println(sortByValue);
-		for(int i = 0; i < n; i++){
-			result.add(sortByValue.get(i).getKey());
+		System.out.println("Top ranked candidate words: " + sortByValue);
+		int i = 0;
+		while(!sortByValue.isEmpty()){
+			String word = sortByValue.remove(0).getKey();
+			if(word.equals("the cauca river")){
+				int temp = 0;
+			}
+			if(!_locations.contains(word) && !result.contains(word)){
+				//System.out.println("Adding new word: " + word);
+				result.add(word);
+				i++;
+				if(i == n)
+					break;
+			}
 		}
+		
+		//System.out.println("Top N words added were:" + result);
 		return result;
 	}
 
@@ -119,7 +161,7 @@ public class Basilisk {
 		for(int i = 0; i < n; i++){
 			result.add(sortByValue.get(i).getKey());
 		}
-		System.out.println(result);
+		//System.out.println(result);
 		return result;
 	}
 
