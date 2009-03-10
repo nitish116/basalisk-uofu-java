@@ -61,6 +61,39 @@ public class ExtractedNounFreqCounter {
 		
 	}
 	
+	public static Map<String, Integer> countExtractedNounsFromSlist(String slist){
+		Map<String, Integer> result = new HashMap<String, Integer>();
+		
+		File f = new File(slist);
+		
+		if (!f.exists()){
+			System.err.println("Error opening list pointing to .cases files while trying to count extracted noun frequency: " + f.getAbsolutePath());
+		}
+		
+		Scanner in = null;
+		
+		try {
+			in = new Scanner(f);
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+		}
+		
+		//First line of the slist contains directory info
+		String dir = in.nextLine();
+		
+		while(in.hasNextLine()){
+			if(result.size() == 0)
+				result = countExtractedNounsFromFile(dir + in.nextLine());
+			else{
+				result = combineFrequencyCounts(result, countExtractedNounsFromFile(dir + in.nextLine()));
+			}
+		}
+		
+		in.close();
+		return result;
+	}
+	
 	public static Map<String, Integer> countExtractedNounsFromMultipleFiles(String listFileName){
 		Map<String, Integer> result = new HashMap<String, Integer>();
 		

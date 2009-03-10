@@ -38,6 +38,39 @@ public class CaseFrameToExtractedNounMap {
 		System.out.println(loadFromMultipleFiles("muc3-listfile.cases"));
 	}
 
+	public static Map<String, Map<String, Integer>> loadFromSlist(String slist){
+		Map<String, Map<String, Integer>> result = new HashMap<String, Map<String, Integer>>();
+		
+		File f = new File(slist);
+		
+		if(!f.exists()){
+			System.err.println("Error proccessing list of Case file. File could not be found: " + f.getAbsolutePath());
+			return null;
+		}
+		
+		Scanner in = null;
+		
+		try{
+			in = new Scanner(f);
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+		}
+		
+		//The first line is the directory information
+		String dir = in.nextLine();
+		
+		while(in.hasNextLine()){
+			if(result.size() == 0){
+				result = loadFromFile(dir + in.nextLine());
+			}
+			else{
+				result = combineHashMaps(result, loadFromFile(dir + in.nextLine()));
+			}
+		}
+		
+		return result;
+	}
 	public static Map<String, Map<String, Integer>> loadFromMultipleFiles(String listFile) {
 		Map<String, Map<String, Integer>> result = new HashMap<String, Map<String, Integer>>();
 		
