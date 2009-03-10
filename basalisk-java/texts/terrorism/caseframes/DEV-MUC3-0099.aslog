@@ -1,0 +1,188 @@
+CF: 
+Name: <subj>_ActVp__ADDED_1516
+Anchor: VP1(ADDED)
+Act_Fcns: active_verb_broad_p(VP1(ADDED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ALLIANCE_BETWEEN_1083
+Anchor: NP1(ALLIANCE)
+Act_Fcns: noun_phrase_broad_p(NP1(ALLIANCE) )
+Slot: PP(BETWEEN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ARREST_OF_1086
+Anchor: NP1(ARREST)
+Act_Fcns: noun_phrase_broad_p(NP1(ARREST) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_ALLIANCE_246
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(ALLIANCE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_THERE_212
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(THERE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_CONSEQUENCE_247
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(CONSEQUENCE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_ATTACK_213
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(ATTACK) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CONSEQUENCE_OF_1085
+Anchor: NP1(CONSEQUENCE)
+Act_Fcns: noun_phrase_broad_p(NP1(CONSEQUENCE) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__CONSUMER_121
+Anchor: NP1(CONSUMER)
+Act_Fcns: contains_possessive_p(NP1(CONSUMER) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DEALT_1515
+Anchor: VP1(DEALT)
+Act_Fcns: active_verb_broad_p(VP1(DEALT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DEALT_TO_862
+Anchor: VP1(DEALT)
+Act_Fcns: active_verb_narrow_p(VP1(DEALT) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DEMONSTRATES_1513
+Anchor: VP1(DEMONSTRATES)
+Act_Fcns: active_verb_broad_p(VP1(DEMONSTRATES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__EFFORT_AGAINST_1084
+Anchor: NP1(EFFORT)
+Act_Fcns: noun_phrase_broad_p(NP1(EFFORT) )
+Slot: PP(AGAINST)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__INCIDENT_AT_1082
+Anchor: NP1(INCIDENT)
+Act_Fcns: noun_phrase_broad_p(NP1(INCIDENT) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__INCLUDING_766
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_narrow_p(VP1(INCLUDING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__INCLUDING_IN_863
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_narrow_p(VP1(INCLUDING) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__INCLUDING_BEFORE_864
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_narrow_p(VP1(INCLUDING) )
+Slot: PP(BEFORE)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__MAKE_1514
+Anchor: VP1(MAKE)
+Act_Fcns: active_verb_broad_p(VP1(MAKE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__MAKE_EFFORT_741
+Anchor: VP1(MAKE)
+Act_Fcns: active_verb_narrow_p(VP1(MAKE) )
+          has_dobj_following_r(VP1(MAKE)  NP1(EFFORT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__MAKE_765
+Anchor: VP1(MAKE)
+Act_Fcns: active_verb_narrow_p(VP1(MAKE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__NEEDS_1517
+Anchor: VP1(NEEDS)
+Act_Fcns: active_verb_broad_p(VP1(NEEDS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__NEEDS_AID_742
+Anchor: VP1(NEEDS)
+Act_Fcns: active_verb_narrow_p(VP1(NEEDS) )
+          has_dobj_following_r(VP1(NEEDS)  NP1(AID) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__NEEDS_767
+Anchor: VP1(NEEDS)
+Act_Fcns: active_verb_narrow_p(VP1(NEEDS) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__NEEDS_FROM_865
+Anchor: VP1(NEEDS)
+Act_Fcns: active_verb_narrow_p(VP1(NEEDS) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SAID_1512
+Anchor: VP1(SAID)
+Act_Fcns: active_verb_broad_p(VP1(SAID) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: InfVp_Prep_<NP>__STRUGGLE_AGAINST_141
+Anchor: VP1(STRUGGLE)
+Act_Fcns: infinitive_verb_p(VP1(STRUGGLE) )
+Slot: PP(AGAINST)
+Stats: frequency = 1
+

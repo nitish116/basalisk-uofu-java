@@ -1,0 +1,163 @@
+CF: 
+Name: <subj>_ActVp__ACCOMPANYING_18098
+Anchor: VP1(ACCOMPANYING)
+Act_Fcns: active_verb_broad_p(VP1(ACCOMPANYING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__ACCOMPANYING_PRESIDENT_9131
+Anchor: VP1(ACCOMPANYING)
+Act_Fcns: active_verb_narrow_p(VP1(ACCOMPANYING) )
+          has_dobj_following_r(VP1(ACCOMPANYING)  NP1(PRESIDENT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__ACCOMPANYING_9131
+Anchor: VP1(ACCOMPANYING)
+Act_Fcns: active_verb_narrow_p(VP1(ACCOMPANYING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__ACCOMPANYING_AT_10364
+Anchor: VP1(ACCOMPANYING)
+Act_Fcns: active_verb_narrow_p(VP1(ACCOMPANYING) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__AMERICA_1396
+Anchor: NP1(AMERICA)
+Act_Fcns: contains_possessive_p(NP1(AMERICA) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ATTACKED_18093
+Anchor: VP1(ATTACKED)
+Act_Fcns: active_verb_broad_p(VP1(ATTACKED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__CHIEF_1397
+Anchor: NP1(CHIEF)
+Act_Fcns: contains_possessive_p(NP1(CHIEF) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CHIEF_OF_12733
+Anchor: NP1(CHIEF)
+Act_Fcns: noun_phrase_broad_p(NP1(CHIEF) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CITED_18097
+Anchor: VP1(CITED)
+Act_Fcns: active_verb_broad_p(VP1(CITED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__CITED_AS_10363
+Anchor: VP1(CITED)
+Act_Fcns: active_verb_narrow_p(VP1(CITED) )
+Slot: PP(AS)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__INJURED_18096
+Anchor: VP1(INJURED)
+Act_Fcns: active_verb_broad_p(VP1(INJURED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__INJURED_IN_10362
+Anchor: VP1(INJURED)
+Act_Fcns: active_verb_narrow_p(VP1(INJURED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__KILLED_18095
+Anchor: VP1(KILLED)
+Act_Fcns: active_verb_broad_p(VP1(KILLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__KNOWN_4141
+Anchor: VP1(KNOWN)
+Act_Fcns: passive_verb_broad_p(VP1(KNOWN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KNOWN_ACCORDING_TO_3333
+Anchor: VP1(KNOWN)
+Act_Fcns: passive_verb_narrow_p(VP1(KNOWN) )
+Slot: PP(ACCORDING_TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__NUMBER_OF_12732
+Anchor: NP1(NUMBER)
+Act_Fcns: noun_phrase_broad_p(NP1(NUMBER) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_18092
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__RESCUED_4140
+Anchor: VP1(RESCUED)
+Act_Fcns: passive_verb_broad_p(VP1(RESCUED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SECURITY_IN_12734
+Anchor: NP1(SECURITY)
+Act_Fcns: noun_phrase_broad_p(NP1(SECURITY) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SUNK_18094
+Anchor: VP1(SUNK)
+Act_Fcns: active_verb_broad_p(VP1(SUNK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__SUNK_BOAT_9130
+Anchor: VP1(SUNK)
+Act_Fcns: active_verb_narrow_p(VP1(SUNK) )
+          has_dobj_following_r(VP1(SUNK)  NP1(BOAT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__SUNK_9130
+Anchor: VP1(SUNK)
+Act_Fcns: active_verb_narrow_p(VP1(SUNK) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__SUNK_IN_10361
+Anchor: VP1(SUNK)
+Act_Fcns: active_verb_narrow_p(VP1(SUNK) )
+Slot: PP(IN)
+Stats: frequency = 1
+

@@ -1,0 +1,57 @@
+CF: 
+Name: <subj>_ActVp__AMBUSHED_1017
+Anchor: VP1(AMBUSHED)
+Act_Fcns: active_verb_broad_p(VP1(AMBUSHED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__AMBUSHED_CONVOY_510
+Anchor: VP1(AMBUSHED)
+Act_Fcns: active_verb_narrow_p(VP1(AMBUSHED) )
+          has_dobj_following_r(VP1(AMBUSHED)  NP1(CONVOY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__AMBUSHED_535
+Anchor: VP1(AMBUSHED)
+Act_Fcns: active_verb_narrow_p(VP1(AMBUSHED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__AMBUSHED_IN_563
+Anchor: VP1(AMBUSHED)
+Act_Fcns: active_verb_narrow_p(VP1(AMBUSHED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GROUP_OF_785
+Anchor: NP1(GROUP)
+Act_Fcns: noun_phrase_broad_p(NP1(GROUP) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__KILLED_268
+Anchor: VP1(KILLED)
+Act_Fcns: passive_verb_broad_p(VP1(KILLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__WOUNDED_269
+Anchor: VP1(WOUNDED)
+Act_Fcns: passive_verb_broad_p(VP1(WOUNDED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__WOUNDED_BY_226
+Anchor: VP1(WOUNDED)
+Act_Fcns: passive_verb_narrow_p(VP1(WOUNDED) )
+Slot: PP(BY)
+Stats: frequency = 1
+

@@ -1,0 +1,192 @@
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_NORMAL_2253
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(NORMAL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_SITUATION_1995
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(SITUATION) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__COMBAT_14504
+Anchor: VP1(COMBAT)
+Act_Fcns: active_verb_broad_p(VP1(COMBAT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__COMMAND_AT_10155
+Anchor: NP1(COMMAND)
+Act_Fcns: noun_phrase_broad_p(NP1(COMMAND) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__DISLODGED_3450
+Anchor: VP1(DISLODGED)
+Act_Fcns: passive_verb_broad_p(VP1(DISLODGED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DISLODGED_FROM_2772
+Anchor: VP1(DISLODGED)
+Act_Fcns: passive_verb_narrow_p(VP1(DISLODGED) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__DISPLACED_3449
+Anchor: VP1(DISPLACED)
+Act_Fcns: passive_verb_broad_p(VP1(DISPLACED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DISPLACED_FROM_2770
+Anchor: VP1(DISPLACED)
+Act_Fcns: passive_verb_narrow_p(VP1(DISPLACED) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DISPLACED_BY_2771
+Anchor: VP1(DISPLACED)
+Act_Fcns: passive_verb_narrow_p(VP1(DISPLACED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DONE_14503
+Anchor: VP1(DONE)
+Act_Fcns: active_verb_broad_p(VP1(DONE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__DONE_JOB_7333
+Anchor: VP1(DONE)
+Act_Fcns: active_verb_narrow_p(VP1(DONE) )
+          has_dobj_following_r(VP1(DONE)  NP1(JOB) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DONE_7358
+Anchor: VP1(DONE)
+Act_Fcns: active_verb_narrow_p(VP1(DONE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DONE_IN_8345
+Anchor: VP1(DONE)
+Act_Fcns: active_verb_narrow_p(VP1(DONE) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__MADE_14502
+Anchor: VP1(MADE)
+Act_Fcns: active_verb_broad_p(VP1(MADE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__MADE_BY_8344
+Anchor: VP1(MADE)
+Act_Fcns: active_verb_narrow_p(VP1(MADE) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__RECOGNIZE_2240
+Anchor: VP1(RECOGNIZE)
+Act_Fcns: infinitive_verb_p(VP1(RECOGNIZE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTS_14499
+Anchor: VP1(REPORTS)
+Act_Fcns: active_verb_broad_p(VP1(REPORTS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__REPORTS_TO_8341
+Anchor: VP1(REPORTS)
+Act_Fcns: active_verb_narrow_p(VP1(REPORTS) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__RESIDENTS_OF_10156
+Anchor: NP1(RESIDENTS)
+Act_Fcns: noun_phrase_broad_p(NP1(RESIDENTS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RETURN_14500
+Anchor: VP1(RETURN)
+Act_Fcns: active_verb_broad_p(VP1(RETURN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__RETURN_TO_8342
+Anchor: VP1(RETURN)
+Act_Fcns: active_verb_narrow_p(VP1(RETURN) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__RETURN_ON_8343
+Anchor: VP1(RETURN)
+Act_Fcns: active_verb_narrow_p(VP1(RETURN) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SITUATION_IN_10157
+Anchor: NP1(SITUATION)
+Act_Fcns: noun_phrase_broad_p(NP1(SITUATION) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__VELASQUEZ_FROM_10154
+Anchor: NP1(VELASQUEZ)
+Act_Fcns: noun_phrase_broad_p(NP1(VELASQUEZ) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WISH_14501
+Anchor: VP1(WISH)
+Act_Fcns: active_verb_broad_p(VP1(WISH) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__WISH_RECOGNIZE_1053
+Anchor: VP1(WISH)
+Act_Fcns: active_infinitive_verb_p(VP1(WISH RECOGNIZE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__WISH_RECOGNIZE_746
+Anchor: VP1(WISH)
+Act_Fcns: active_infinitive_verb_p(VP1(WISH RECOGNIZE) )
+Slot: dobj
+Stats: frequency = 1
+

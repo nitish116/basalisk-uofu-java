@@ -1,0 +1,273 @@
+CF: 
+Name: <subj>_PassVp__CAUSED_4091
+Anchor: VP1(CAUSED)
+Act_Fcns: passive_verb_broad_p(VP1(CAUSED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__CAUSED_IN_3285
+Anchor: VP1(CAUSED)
+Act_Fcns: passive_verb_narrow_p(VP1(CAUSED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__COMPANY_OF_12490
+Anchor: NP1(COMPANY)
+Act_Fcns: noun_phrase_broad_p(NP1(COMPANY) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DESTROYED_17750
+Anchor: VP1(DESTROYED)
+Act_Fcns: active_verb_broad_p(VP1(DESTROYED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__DESTROYED_POLE_8946
+Anchor: VP1(DESTROYED)
+Act_Fcns: active_verb_narrow_p(VP1(DESTROYED) )
+          has_dobj_following_r(VP1(DESTROYED)  NP1(POLE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DESTROYED_8956
+Anchor: VP1(DESTROYED)
+Act_Fcns: active_verb_narrow_p(VP1(DESTROYED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DUE_17746
+Anchor: VP1(DUE)
+Act_Fcns: active_verb_broad_p(VP1(DUE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DUE_TO_10201
+Anchor: VP1(DUE)
+Act_Fcns: active_verb_narrow_p(VP1(DUE) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ELECTRICITY_FOR_12492
+Anchor: NP1(ELECTRICITY)
+Act_Fcns: noun_phrase_broad_p(NP1(ELECTRICITY) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ELECTRICITY_ON_12495
+Anchor: NP1(ELECTRICITY)
+Act_Fcns: noun_phrase_broad_p(NP1(ELECTRICITY) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ELECTRICITY_BETWEEN_12497
+Anchor: NP1(ELECTRICITY)
+Act_Fcns: noun_phrase_broad_p(NP1(ELECTRICITY) )
+Slot: PP(BETWEEN)
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp__FOLLOWS_17751
+Anchor: VP1(FOLLOWS)
+Act_Fcns: active_verb_broad_p(VP1(FOLLOWS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__FOUND_17749
+Anchor: VP1(FOUND)
+Act_Fcns: active_verb_broad_p(VP1(FOUND) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__FOUND_ANY_8945
+Anchor: VP1(FOUND)
+Act_Fcns: active_verb_narrow_p(VP1(FOUND) )
+          has_dobj_following_r(VP1(FOUND)  NP1(ANY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__FOUND_8955
+Anchor: VP1(FOUND)
+Act_Fcns: active_verb_narrow_p(VP1(FOUND) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__HAVE_ELECTRICITY_2823
+Anchor: VP1(ROOT:HAVE)
+Act_Fcns: active_aux_root_p(VP1(HAVE) )
+          has_dobj_following_r(VP1(HAVE)  NP1(ELECTRICITY) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: Subj_AuxVp_<dobj>__HAVE_NEIGHBORHOODS_2491
+Anchor: VP1(ROOT:HAVE)
+Act_Fcns: active_aux_root_p(VP1(HAVE) )
+          has_subj_preceding_r(VP1(HAVE)  NP1(NEIGHBORHOODS) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__HAVE_NEIGHBORHOOD_2492
+Anchor: VP1(ROOT:HAVE)
+Act_Fcns: active_aux_root_p(VP1(HAVE) )
+          has_subj_preceding_r(VP1(HAVE)  NP1(NEIGHBORHOOD) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__HIGHWAY_TO_12498
+Anchor: NP1(HIGHWAY)
+Act_Fcns: noun_phrase_broad_p(NP1(HIGHWAY) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PERCENT_OF_12499
+Anchor: NP1(PERCENT)
+Act_Fcns: noun_phrase_broad_p(NP1(PERCENT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RATIONED_17747
+Anchor: VP1(RATIONED)
+Act_Fcns: active_verb_broad_p(VP1(RATIONED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__RATIONED_ELECTRICITY_8943
+Anchor: VP1(RATIONED)
+Act_Fcns: active_verb_narrow_p(VP1(RATIONED) )
+          has_dobj_following_r(VP1(RATIONED)  NP1(ELECTRICITY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__RATIONED_8953
+Anchor: VP1(RATIONED)
+Act_Fcns: active_verb_narrow_p(VP1(RATIONED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__RATIONED_IN_10202
+Anchor: VP1(RATIONED)
+Act_Fcns: active_verb_narrow_p(VP1(RATIONED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__RATIONING_OF_12494
+Anchor: NP1(RATIONING)
+Act_Fcns: noun_phrase_broad_p(NP1(RATIONING) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_17745
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SABOTAGE_AGAINST_12491
+Anchor: NP1(SABOTAGE)
+Act_Fcns: noun_phrase_broad_p(NP1(SABOTAGE) )
+Slot: PP(AGAINST)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SECTOR_OF_12496
+Anchor: NP1(SECTOR)
+Act_Fcns: noun_phrase_broad_p(NP1(SECTOR) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__SUPPLIED_4092
+Anchor: VP1(SUPPLIED)
+Act_Fcns: passive_verb_broad_p(VP1(SUPPLIED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__SUPPLIED_THROUGH_3286
+Anchor: VP1(SUPPLIED)
+Act_Fcns: passive_verb_narrow_p(VP1(SUPPLIED) )
+Slot: PP(THROUGH)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TOURED_17748
+Anchor: VP1(TOURED)
+Act_Fcns: active_verb_broad_p(VP1(TOURED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__TOURED_CAPITAL_8944
+Anchor: VP1(TOURED)
+Act_Fcns: active_verb_narrow_p(VP1(TOURED) )
+          has_dobj_following_r(VP1(TOURED)  NP1(CAPITAL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__TOURED_8954
+Anchor: VP1(TOURED)
+Act_Fcns: active_verb_narrow_p(VP1(TOURED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__TOURED_AS_10203
+Anchor: VP1(TOURED)
+Act_Fcns: active_verb_narrow_p(VP1(TOURED) )
+Slot: PP(AS)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WORKING_17752
+Anchor: VP1(WORKING)
+Act_Fcns: active_verb_broad_p(VP1(WORKING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__WORKING_WITH_10204
+Anchor: VP1(WORKING)
+Act_Fcns: active_verb_narrow_p(VP1(WORKING) )
+Slot: PP(WITH)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__WORKING_IN_10205
+Anchor: VP1(WORKING)
+Act_Fcns: active_verb_narrow_p(VP1(WORKING) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ZONES_OF_12493
+Anchor: NP1(ZONES)
+Act_Fcns: noun_phrase_broad_p(NP1(ZONES) )
+Slot: PP(OF)
+Stats: frequency = 1
+

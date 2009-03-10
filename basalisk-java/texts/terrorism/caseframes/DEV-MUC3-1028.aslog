@@ -1,0 +1,250 @@
+CF: 
+Name: Np_Prep_<NP>__AIRPLANE_FROM_13590
+Anchor: NP1(AIRPLANE)
+Act_Fcns: noun_phrase_broad_p(NP1(AIRPLANE) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__AIRPLANES_FROM_13593
+Anchor: NP1(AIRPLANES)
+Act_Fcns: noun_phrase_broad_p(NP1(AIRPLANES) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__AIRPORT_OF_13587
+Anchor: NP1(AIRPORT)
+Act_Fcns: noun_phrase_broad_p(NP1(AIRPORT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ARRIVED_19417
+Anchor: VP1(ARRIVED)
+Act_Fcns: active_verb_broad_p(VP1(ARRIVED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__ARRIVED_MEDICINE_9838
+Anchor: VP1(ARRIVED)
+Act_Fcns: active_verb_narrow_p(VP1(ARRIVED) )
+          has_dobj_following_r(VP1(ARRIVED)  NP1(MEDICINE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__ARRIVED_IN_11072
+Anchor: VP1(ARRIVED)
+Act_Fcns: active_verb_narrow_p(VP1(ARRIVED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__ARRIVED_9831
+Anchor: VP1(ARRIVED)
+Act_Fcns: active_verb_narrow_p(VP1(ARRIVED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__BACK_TO_13592
+Anchor: NP1(BACK)
+Act_Fcns: noun_phrase_broad_p(NP1(BACK) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__BATTLEGROUND_FOR_13588
+Anchor: NP1(BATTLEGROUND)
+Act_Fcns: noun_phrase_broad_p(NP1(BATTLEGROUND) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_BATTLEGROUND_3050
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(BATTLEGROUND) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_BASE_2699
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(BASE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__BOMBED_4393
+Anchor: VP1(BOMBED)
+Act_Fcns: passive_verb_broad_p(VP1(BOMBED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__BOMBED_BY_3548
+Anchor: VP1(BOMBED)
+Act_Fcns: passive_verb_narrow_p(VP1(BOMBED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CARGO_OF_13586
+Anchor: NP1(CARGO)
+Act_Fcns: noun_phrase_broad_p(NP1(CARGO) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CLASHES_BETWEEN_13589
+Anchor: NP1(CLASHES)
+Act_Fcns: noun_phrase_broad_p(NP1(CLASHES) )
+Slot: PP(BETWEEN)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__ENTER_2961
+Anchor: VP1(ENTER)
+Act_Fcns: infinitive_verb_p(VP1(ENTER) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__EVACUATED_4392
+Anchor: VP1(EVACUATED)
+Act_Fcns: passive_verb_broad_p(VP1(EVACUATED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__EVACUATED_FROM_3546
+Anchor: VP1(EVACUATED)
+Act_Fcns: passive_verb_narrow_p(VP1(EVACUATED) )
+Slot: PP(FROM)
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__EVACUATED_IN_3547
+Anchor: VP1(EVACUATED)
+Act_Fcns: passive_verb_narrow_p(VP1(EVACUATED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__INCLUDING_19414
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_broad_p(VP1(INCLUDING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__INCLUDING_JALIL_9836
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_narrow_p(VP1(INCLUDING) )
+          has_dobj_following_r(VP1(INCLUDING)  NP1(JALIL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__INCLUDING_9829
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_narrow_p(VP1(INCLUDING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__LAND_IN_1935
+Anchor: VP1(LAND)
+Act_Fcns: infinitive_verb_p(VP1(LAND) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__LAND_AFTER_1936
+Anchor: VP1(LAND)
+Act_Fcns: infinitive_verb_p(VP1(LAND) )
+Slot: PP(AFTER)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__LAND_19419
+Anchor: VP1(LAND)
+Act_Fcns: active_verb_broad_p(VP1(LAND) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__LAND_IN_11074
+Anchor: VP1(LAND)
+Act_Fcns: active_verb_narrow_p(VP1(LAND) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__LANDED_19415
+Anchor: VP1(LANDED)
+Act_Fcns: active_verb_broad_p(VP1(LANDED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__LANDED_CARGO_9837
+Anchor: VP1(LANDED)
+Act_Fcns: active_verb_narrow_p(VP1(LANDED) )
+          has_dobj_following_r(VP1(LANDED)  NP1(CARGO) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__LANDED_9830
+Anchor: VP1(LANDED)
+Act_Fcns: active_verb_narrow_p(VP1(LANDED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__LANDED_AT_11071
+Anchor: VP1(LANDED)
+Act_Fcns: active_verb_narrow_p(VP1(LANDED) )
+Slot: PP(AT)
+Stats: frequency = 2
+
+CF: 
+Name: Np_Prep_<NP>__PURPOSE_OF_13591
+Anchor: NP1(PURPOSE)
+Act_Fcns: noun_phrase_broad_p(NP1(PURPOSE) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_19413
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SAID_19416
+Anchor: VP1(SAID)
+Act_Fcns: active_verb_broad_p(VP1(SAID) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WAITING_19418
+Anchor: VP1(WAITING)
+Act_Fcns: active_verb_broad_p(VP1(WAITING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__WAITING_FOR_11073
+Anchor: VP1(WAITING)
+Act_Fcns: active_verb_narrow_p(VP1(WAITING) )
+Slot: PP(FOR)
+Stats: frequency = 1
+

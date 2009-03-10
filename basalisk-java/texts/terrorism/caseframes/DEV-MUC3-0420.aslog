@@ -1,0 +1,283 @@
+CF: 
+Name: Np_Prep_<NP>__AIRPLANE_UNDER_5087
+Anchor: NP1(AIRPLANE)
+Act_Fcns: noun_phrase_broad_p(NP1(AIRPLANE) )
+Slot: PP(UNDER)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__AIRPORT_OF_5083
+Anchor: NP1(AIRPORT)
+Act_Fcns: noun_phrase_broad_p(NP1(AIRPORT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_CASUALTIES_1158
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(CASUALTIES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_THERE_1014
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(THERE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__BELONGS_7264
+Anchor: VP1(BELONGS)
+Act_Fcns: active_verb_broad_p(VP1(BELONGS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__BELONGS_TO_4152
+Anchor: VP1(BELONGS)
+Act_Fcns: active_verb_narrow_p(VP1(BELONGS) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONTROLS_7270
+Anchor: VP1(CONTROLS)
+Act_Fcns: active_verb_broad_p(VP1(CONTROLS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__DEPARTMENT_OF_5081
+Anchor: NP1(DEPARTMENT)
+Act_Fcns: noun_phrase_broad_p(NP1(DEPARTMENT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DESTROYED_7269
+Anchor: VP1(DESTROYED)
+Act_Fcns: active_verb_broad_p(VP1(DESTROYED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__DESTROYED_PART_3651
+Anchor: VP1(DESTROYED)
+Act_Fcns: active_verb_narrow_p(VP1(DESTROYED) )
+          has_dobj_following_r(VP1(DESTROYED)  NP1(PART) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DESTROYED_3679
+Anchor: VP1(DESTROYED)
+Act_Fcns: active_verb_narrow_p(VP1(DESTROYED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__DYNAMITED_1827
+Anchor: VP1(DYNAMITED)
+Act_Fcns: passive_verb_broad_p(VP1(DYNAMITED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__DYNAMITED_IN_1438
+Anchor: VP1(DYNAMITED)
+Act_Fcns: passive_verb_narrow_p(VP1(DYNAMITED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DYNAMITED_BY_1439
+Anchor: VP1(DYNAMITED)
+Act_Fcns: passive_verb_narrow_p(VP1(DYNAMITED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DYNAMITED_AS_1440
+Anchor: VP1(DYNAMITED)
+Act_Fcns: passive_verb_narrow_p(VP1(DYNAMITED) )
+Slot: PP(AS)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__FLYING_7265
+Anchor: VP1(FLYING)
+Act_Fcns: active_verb_broad_p(VP1(FLYING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__FLYING_TO_4153
+Anchor: VP1(FLYING)
+Act_Fcns: active_verb_narrow_p(VP1(FLYING) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GUARDS_INSIDE_5088
+Anchor: NP1(GUARDS)
+Act_Fcns: noun_phrase_broad_p(NP1(GUARDS) )
+Slot: PP(INSIDE)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__HAD_LAND_504
+Anchor: VP1(HAD)
+Act_Fcns: active_infinitive_verb_p(VP1(HAD LAND) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__HAD_LEAVE_505
+Anchor: VP1(HAD)
+Act_Fcns: active_infinitive_verb_p(VP1(HAD LEAVE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__HAD_LEAVE_356
+Anchor: VP1(HAD)
+Act_Fcns: active_infinitive_verb_p(VP1(HAD LEAVE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__LAND_AT_680
+Anchor: VP1(LAND)
+Act_Fcns: infinitive_verb_p(VP1(LAND) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__LEAVE_1118
+Anchor: VP1(LEAVE)
+Act_Fcns: infinitive_verb_p(VP1(LEAVE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__LEAVE_IN_681
+Anchor: VP1(LEAVE)
+Act_Fcns: infinitive_verb_p(VP1(LEAVE) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__LEAVE_BECAUSE_OF_682
+Anchor: VP1(LEAVE)
+Act_Fcns: infinitive_verb_p(VP1(LEAVE) )
+Slot: PP(BECAUSE_OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__LOCATED_7266
+Anchor: VP1(LOCATED)
+Act_Fcns: active_verb_broad_p(VP1(LOCATED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__LOCATED_FROM_4154
+Anchor: VP1(LOCATED)
+Act_Fcns: active_verb_narrow_p(VP1(LOCATED) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__LOCATED_AFTER_4155
+Anchor: VP1(LOCATED)
+Act_Fcns: active_verb_narrow_p(VP1(LOCATED) )
+Slot: PP(AFTER)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__OCCURRED_7271
+Anchor: VP1(OCCURRED)
+Act_Fcns: active_verb_broad_p(VP1(OCCURRED) )
+Slot: subj
+Stats: frequency = 3
+
+CF: 
+Name: ActVp_Prep_<NP>__OCCURRED_DURING_4157
+Anchor: VP1(OCCURRED)
+Act_Fcns: active_verb_narrow_p(VP1(OCCURRED) )
+Slot: PP(DURING)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PART_OF_5086
+Anchor: NP1(PART)
+Act_Fcns: noun_phrase_broad_p(NP1(PART) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__PLACED_1828
+Anchor: VP1(PLACED)
+Act_Fcns: passive_verb_broad_p(VP1(PLACED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PLANE_IN_5084
+Anchor: NP1(PLANE)
+Act_Fcns: noun_phrase_broad_p(NP1(PLANE) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_7272
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ROUTE_TO_5085
+Anchor: NP1(ROUTE)
+Act_Fcns: noun_phrase_broad_p(NP1(ROUTE) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SAID_7268
+Anchor: VP1(SAID)
+Act_Fcns: active_verb_broad_p(VP1(SAID) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SAT_7267
+Anchor: VP1(SAT)
+Act_Fcns: active_verb_broad_p(VP1(SAT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__SAT_IN_4156
+Anchor: VP1(SAT)
+Act_Fcns: active_verb_narrow_p(VP1(SAT) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SECTION_OF_5082
+Anchor: NP1(SECTION)
+Act_Fcns: noun_phrase_broad_p(NP1(SECTION) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__WATCHMEN_AT_5089
+Anchor: NP1(WATCHMEN)
+Act_Fcns: noun_phrase_broad_p(NP1(WATCHMEN) )
+Slot: PP(AT)
+Stats: frequency = 1
+

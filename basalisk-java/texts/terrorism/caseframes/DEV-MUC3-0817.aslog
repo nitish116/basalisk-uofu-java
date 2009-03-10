@@ -1,0 +1,164 @@
+CF: 
+Name: Np_Prep_<NP>__&&5_OF_10593
+Anchor: NP1(&&5)
+Act_Fcns: noun_phrase_broad_p(NP1(&&5) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ARIAS_ON_10591
+Anchor: NP1(ARIAS)
+Act_Fcns: noun_phrase_broad_p(NP1(ARIAS) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__ARRIVE_AT_1491
+Anchor: VP1(ARRIVE)
+Act_Fcns: infinitive_verb_p(VP1(ARRIVE) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__ARRIVE_AFTER_1492
+Anchor: VP1(ARRIVE)
+Act_Fcns: infinitive_verb_p(VP1(ARRIVE) )
+Slot: PP(AFTER)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_PLANE_2353
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(PLANE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_ARIAS_2083
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(ARIAS) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__DELAYED_3549
+Anchor: VP1(DELAYED)
+Act_Fcns: passive_verb_broad_p(VP1(DELAYED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassInfVp__DELAYED_WAIT_167
+Anchor: VP1(DELAYED)
+Act_Fcns: passive_infinitive_verb_p(VP1(DELAYED WAIT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__DEPARTURE_1167
+Anchor: NP1(DEPARTURE)
+Act_Fcns: contains_possessive_p(NP1(DEPARTURE) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__EVACUATED_3548
+Anchor: VP1(EVACUATED)
+Act_Fcns: passive_verb_broad_p(VP1(EVACUATED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__EVACUATED_FROM_2839
+Anchor: VP1(EVACUATED)
+Act_Fcns: passive_verb_narrow_p(VP1(EVACUATED) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__FUNERAL_OF_10592
+Anchor: NP1(FUNERAL)
+Act_Fcns: noun_phrase_broad_p(NP1(FUNERAL) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__KILLED_3550
+Anchor: VP1(KILLED)
+Act_Fcns: passive_verb_broad_p(VP1(KILLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KILLED_ON_2840
+Anchor: VP1(KILLED)
+Act_Fcns: passive_verb_narrow_p(VP1(KILLED) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__LEFT_15023
+Anchor: VP1(LEFT)
+Act_Fcns: active_verb_broad_p(VP1(LEFT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__LEFT_COUNTRY_7578
+Anchor: VP1(LEFT)
+Act_Fcns: active_verb_narrow_p(VP1(LEFT) )
+          has_dobj_following_r(VP1(LEFT)  NP1(COUNTRY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__LEFT_7598
+Anchor: VP1(LEFT)
+Act_Fcns: active_verb_narrow_p(VP1(LEFT) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__LEFT_AT_8613
+Anchor: VP1(LEFT)
+Act_Fcns: active_verb_narrow_p(VP1(LEFT) )
+Slot: PP(AT)
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__LEFT_FROM_8614
+Anchor: VP1(LEFT)
+Act_Fcns: active_verb_narrow_p(VP1(LEFT) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REASONS_15022
+Anchor: VP1(REASONS)
+Act_Fcns: active_verb_broad_p(VP1(REASONS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__REASONS_IN_8612
+Anchor: VP1(REASONS)
+Act_Fcns: active_verb_narrow_p(VP1(REASONS) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__TODAY_FOR_10590
+Anchor: NP1(TODAY)
+Act_Fcns: noun_phrase_broad_p(NP1(TODAY) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__WAIT_FOR_1490
+Anchor: VP1(WAIT)
+Act_Fcns: infinitive_verb_p(VP1(WAIT) )
+Slot: PP(FOR)
+Stats: frequency = 1
+

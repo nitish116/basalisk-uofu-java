@@ -1,0 +1,128 @@
+CF: 
+Name: <subj>_PassVp__ARRESTED_1409
+Anchor: VP1(ARRESTED)
+Act_Fcns: passive_verb_broad_p(VP1(ARRESTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__ARRESTED_IN_1124
+Anchor: VP1(ARRESTED)
+Act_Fcns: passive_verb_narrow_p(VP1(ARRESTED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ARRESTS_5582
+Anchor: VP1(ARRESTS)
+Act_Fcns: active_verb_broad_p(VP1(ARRESTS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__ARRESTS_POLICE_2834
+Anchor: VP1(ARRESTS)
+Act_Fcns: active_verb_narrow_p(VP1(ARRESTS) )
+          has_dobj_following_r(VP1(ARRESTS)  NP1(POLICE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__ARRESTS_2855
+Anchor: VP1(ARRESTS)
+Act_Fcns: active_verb_narrow_p(VP1(ARRESTS) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__DEALT_1408
+Anchor: VP1(DEALT)
+Act_Fcns: passive_verb_broad_p(VP1(DEALT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DEALT_TO_1122
+Anchor: VP1(DEALT)
+Act_Fcns: passive_verb_narrow_p(VP1(DEALT) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DEALT_IN_1123
+Anchor: VP1(DEALT)
+Act_Fcns: passive_verb_narrow_p(VP1(DEALT) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DISMANTLED_5583
+Anchor: VP1(DISMANTLED)
+Act_Fcns: active_verb_broad_p(VP1(DISMANTLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__DISMANTLED_NETWORK_2835
+Anchor: VP1(DISMANTLED)
+Act_Fcns: active_verb_narrow_p(VP1(DISMANTLED) )
+          has_dobj_following_r(VP1(DISMANTLED)  NP1(NETWORK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DISMANTLED_2856
+Anchor: VP1(DISMANTLED)
+Act_Fcns: active_verb_narrow_p(VP1(DISMANTLED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__PRESENTED_5580
+Anchor: VP1(PRESENTED)
+Act_Fcns: active_verb_broad_p(VP1(PRESENTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__PRESENTED_TO_3252
+Anchor: VP1(PRESENTED)
+Act_Fcns: active_verb_narrow_p(VP1(PRESENTED) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__PRESENTED_1410
+Anchor: VP1(PRESENTED)
+Act_Fcns: passive_verb_broad_p(VP1(PRESENTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__PRESENTED_AT_1125
+Anchor: VP1(PRESENTED)
+Act_Fcns: passive_verb_narrow_p(VP1(PRESENTED) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SAID_5581
+Anchor: VP1(SAID)
+Act_Fcns: active_verb_broad_p(VP1(SAID) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__STRUGGLE_5579
+Anchor: VP1(STRUGGLE)
+Act_Fcns: active_verb_broad_p(VP1(STRUGGLE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__STRUGGLE_AGAINST_3251
+Anchor: VP1(STRUGGLE)
+Act_Fcns: active_verb_narrow_p(VP1(STRUGGLE) )
+Slot: PP(AGAINST)
+Stats: frequency = 1
+

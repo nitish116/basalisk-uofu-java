@@ -1,0 +1,194 @@
+CF: 
+Name: NP_has_<possessive>__ACCEPTANCE_486
+Anchor: NP1(ACCEPTANCE)
+Act_Fcns: contains_possessive_p(NP1(ACCEPTANCE) )
+Slot: possessive_agent
+Stats: frequency = 2
+
+CF: 
+Name: Np_Prep_<NP>__ACCEPTANCE_OF_4479
+Anchor: NP1(ACCEPTANCE)
+Act_Fcns: noun_phrase_broad_p(NP1(ACCEPTANCE) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__AWAITING_6375
+Anchor: VP1(AWAITING)
+Act_Fcns: active_verb_broad_p(VP1(AWAITING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__AWAITING_REPLY_3210
+Anchor: VP1(AWAITING)
+Act_Fcns: active_verb_narrow_p(VP1(AWAITING) )
+          has_dobj_following_r(VP1(AWAITING)  NP1(REPLY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__AWAITING_3238
+Anchor: VP1(AWAITING)
+Act_Fcns: active_verb_narrow_p(VP1(AWAITING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__AWAITING_FROM_3622
+Anchor: VP1(AWAITING)
+Act_Fcns: active_verb_narrow_p(VP1(AWAITING) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_ESTABLISHMENT_1003
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(ESTABLISHMENT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_ACCEPTANCE_881
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(ACCEPTANCE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__BEGAN_6373
+Anchor: VP1(BEGAN)
+Act_Fcns: active_verb_broad_p(VP1(BEGAN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__BEGAN_MURDER_3209
+Anchor: VP1(BEGAN)
+Act_Fcns: active_verb_narrow_p(VP1(BEGAN) )
+          has_dobj_following_r(VP1(BEGAN)  NP1(MURDER) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__BEGAN_ON_3621
+Anchor: VP1(BEGAN)
+Act_Fcns: active_verb_narrow_p(VP1(BEGAN) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__BEGAN_3237
+Anchor: VP1(BEGAN)
+Act_Fcns: active_verb_narrow_p(VP1(BEGAN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ESTABLISHMENT_OF_4480
+Anchor: NP1(ESTABLISHMENT)
+Act_Fcns: noun_phrase_broad_p(NP1(ESTABLISHMENT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__EXCHANGE_FOR_4478
+Anchor: NP1(EXCHANGE)
+Act_Fcns: noun_phrase_broad_p(NP1(EXCHANGE) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__LIFTED_6372
+Anchor: VP1(LIFTED)
+Act_Fcns: active_verb_broad_p(VP1(LIFTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__LIFTED_THEY_3208
+Anchor: VP1(LIFTED)
+Act_Fcns: active_verb_narrow_p(VP1(LIFTED) )
+          has_dobj_following_r(VP1(LIFTED)  NP1(THEY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__LIFTED_3236
+Anchor: VP1(LIFTED)
+Act_Fcns: active_verb_narrow_p(VP1(LIFTED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__MADE_1607
+Anchor: VP1(MADE)
+Act_Fcns: passive_verb_broad_p(VP1(MADE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__MADE_IN_1274
+Anchor: VP1(MADE)
+Act_Fcns: passive_verb_narrow_p(VP1(MADE) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__MEETING_487
+Anchor: NP1(MEETING)
+Act_Fcns: contains_possessive_p(NP1(MEETING) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__MEETING_WITH_4483
+Anchor: NP1(MEETING)
+Act_Fcns: noun_phrase_broad_p(NP1(MEETING) )
+Slot: PP(WITH)
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__MEMBERS_488
+Anchor: NP1(MEMBERS)
+Act_Fcns: contains_possessive_p(NP1(MEMBERS) )
+Slot: possessive_agent
+Stats: frequency = 3
+
+CF: 
+Name: Np_Prep_<NP>__MOST_OF_4484
+Anchor: NP1(MOST)
+Act_Fcns: noun_phrase_broad_p(NP1(MOST) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__MURDER_485
+Anchor: NP1(MURDER)
+Act_Fcns: contains_possessive_p(NP1(MURDER) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RESIGNED_6374
+Anchor: VP1(RESIGNED)
+Act_Fcns: active_verb_broad_p(VP1(RESIGNED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SYSTEM_OF_4482
+Anchor: NP1(SYSTEM)
+Act_Fcns: noun_phrase_broad_p(NP1(SYSTEM) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SYSTEMS_FOR_4481
+Anchor: NP1(SYSTEMS)
+Act_Fcns: noun_phrase_broad_p(NP1(SYSTEMS) )
+Slot: PP(FOR)
+Stats: frequency = 1
+

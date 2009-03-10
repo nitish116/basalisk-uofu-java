@@ -1,0 +1,192 @@
+CF: 
+Name: <subj>_ActVp__ACTING_12325
+Anchor: VP1(ACTING)
+Act_Fcns: active_verb_broad_p(VP1(ACTING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__AREAS_OF_8759
+Anchor: NP1(AREAS)
+Act_Fcns: noun_phrase_broad_p(NP1(AREAS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__ASKED_3081
+Anchor: VP1(ASKED)
+Act_Fcns: passive_verb_broad_p(VP1(ASKED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassInfVp__ASKED_REMAIN_145
+Anchor: VP1(ASKED)
+Act_Fcns: passive_infinitive_verb_p(VP1(ASKED REMAIN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassInfVp_<dobj>__ASKED_REMAIN_103
+Anchor: VP1(ASKED)
+Act_Fcns: passive_infinitive_verb_p(VP1(ASKED REMAIN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__ATTACKED_3077
+Anchor: VP1(ATTACKED)
+Act_Fcns: passive_verb_broad_p(VP1(ATTACKED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_PassVp__CARRIED_OUT_3080
+Anchor: VP1(CARRIED_OUT)
+Act_Fcns: passive_verb_broad_p(VP1(CARRIED_OUT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__CARRIED_OUT_BY_2506
+Anchor: VP1(CARRIED_OUT)
+Act_Fcns: passive_verb_narrow_p(VP1(CARRIED_OUT) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CLEANING_12326
+Anchor: VP1(CLEANING)
+Act_Fcns: active_verb_broad_p(VP1(CLEANING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__CLEANING_UP_7152
+Anchor: VP1(CLEANING)
+Act_Fcns: active_verb_narrow_p(VP1(CLEANING) )
+Slot: PP(UP)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__CONTAINED_3078
+Anchor: VP1(CONTAINED)
+Act_Fcns: passive_verb_broad_p(VP1(CONTAINED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__CONTAINED_BY_2505
+Anchor: VP1(CONTAINED)
+Act_Fcns: passive_verb_narrow_p(VP1(CONTAINED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CREATING_12324
+Anchor: VP1(CREATING)
+Act_Fcns: active_verb_broad_p(VP1(CREATING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CREATING_IMPRESSION_6162
+Anchor: VP1(CREATING)
+Act_Fcns: active_verb_narrow_p(VP1(CREATING) )
+          has_dobj_following_r(VP1(CREATING)  NP1(IMPRESSION) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CREATING_6216
+Anchor: VP1(CREATING)
+Act_Fcns: active_verb_narrow_p(VP1(CREATING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DRIVE_12327
+Anchor: VP1(DRIVE)
+Act_Fcns: active_verb_broad_p(VP1(DRIVE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DRIVE_THROUGH_7153
+Anchor: VP1(DRIVE)
+Act_Fcns: active_verb_narrow_p(VP1(DRIVE) )
+Slot: PP(THROUGH)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__IMPRESSION_OF_8761
+Anchor: NP1(IMPRESSION)
+Act_Fcns: noun_phrase_broad_p(NP1(IMPRESSION) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__INFORM_12323
+Anchor: VP1(INFORM)
+Act_Fcns: active_verb_broad_p(VP1(INFORM) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__INFORM_PEOPLE_6161
+Anchor: VP1(INFORM)
+Act_Fcns: active_verb_narrow_p(VP1(INFORM) )
+          has_dobj_following_r(VP1(INFORM)  NP1(PEOPLE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__INFORM_6215
+Anchor: VP1(INFORM)
+Act_Fcns: active_verb_narrow_p(VP1(INFORM) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__MOST_OF_8760
+Anchor: NP1(MOST)
+Act_Fcns: noun_phrase_broad_p(NP1(MOST) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__REMAIN_1918
+Anchor: VP1(REMAIN)
+Act_Fcns: infinitive_verb_p(VP1(REMAIN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__REMINDED_3079
+Anchor: VP1(REMINDED)
+Act_Fcns: passive_verb_broad_p(VP1(REMINDED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TAKE_12328
+Anchor: VP1(TAKE)
+Act_Fcns: active_verb_broad_p(VP1(TAKE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__TAKE_PRECAUTIONS_6163
+Anchor: VP1(TAKE)
+Act_Fcns: active_verb_narrow_p(VP1(TAKE) )
+          has_dobj_following_r(VP1(TAKE)  NP1(PRECAUTIONS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__TAKE_6217
+Anchor: VP1(TAKE)
+Act_Fcns: active_verb_narrow_p(VP1(TAKE) )
+Slot: dobj
+Stats: frequency = 1
+

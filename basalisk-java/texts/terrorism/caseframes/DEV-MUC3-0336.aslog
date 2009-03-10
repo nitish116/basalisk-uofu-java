@@ -1,0 +1,1065 @@
+CF: 
+Name: <subj>_PassVp__ACHIEVED_1461
+Anchor: VP1(ACHIEVED)
+Act_Fcns: passive_verb_broad_p(VP1(ACHIEVED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__ACHIEVED_WITH_1164
+Anchor: VP1(ACHIEVED)
+Act_Fcns: passive_verb_narrow_p(VP1(ACHIEVED) )
+Slot: PP(WITH)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ACHIEVEMENT_OF_4033
+Anchor: NP1(ACHIEVEMENT)
+Act_Fcns: noun_phrase_broad_p(NP1(ACHIEVEMENT) )
+Slot: PP(OF)
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp__ACHIEVING_5787
+Anchor: VP1(ACHIEVING)
+Act_Fcns: active_verb_broad_p(VP1(ACHIEVING) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__ACHIEVING_CIVILIZED_2934
+Anchor: VP1(ACHIEVING)
+Act_Fcns: active_verb_narrow_p(VP1(ACHIEVING) )
+          has_dobj_following_r(VP1(ACHIEVING)  NP1(CIVILIZED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__ACHIEVING_2953
+Anchor: VP1(ACHIEVING)
+Act_Fcns: active_verb_narrow_p(VP1(ACHIEVING) )
+Slot: dobj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__ACHIEVING_PEACE_2937
+Anchor: VP1(ACHIEVING)
+Act_Fcns: active_verb_narrow_p(VP1(ACHIEVING) )
+          has_dobj_following_r(VP1(ACHIEVING)  NP1(PEACE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ACTIONS_AGAINST_4029
+Anchor: NP1(ACTIONS)
+Act_Fcns: noun_phrase_broad_p(NP1(ACTIONS) )
+Slot: PP(AGAINST)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ADOPTED_5782
+Anchor: VP1(ADOPTED)
+Act_Fcns: active_verb_broad_p(VP1(ADOPTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__ADOPTED_WITHIN_3345
+Anchor: VP1(ADOPTED)
+Act_Fcns: active_verb_narrow_p(VP1(ADOPTED) )
+Slot: PP(WITHIN)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__ADOPTED_AT_3346
+Anchor: VP1(ADOPTED)
+Act_Fcns: active_verb_narrow_p(VP1(ADOPTED) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__AGREE_5778
+Anchor: VP1(AGREE)
+Act_Fcns: active_verb_broad_p(VP1(AGREE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__AGREE_CEASE_383
+Anchor: VP1(AGREE)
+Act_Fcns: active_infinitive_verb_p(VP1(AGREE CEASE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__AGREE_CEASE_273
+Anchor: VP1(AGREE)
+Act_Fcns: active_infinitive_verb_p(VP1(AGREE CEASE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ASSURE_5785
+Anchor: VP1(ASSURE)
+Act_Fcns: active_verb_broad_p(VP1(ASSURE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__ASSURE_YOU_2932
+Anchor: VP1(ASSURE)
+Act_Fcns: active_verb_narrow_p(VP1(ASSURE) )
+          has_dobj_following_r(VP1(ASSURE)  NP1(YOU) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__ASSURE_2951
+Anchor: VP1(ASSURE)
+Act_Fcns: active_verb_narrow_p(VP1(ASSURE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__AWAITING_5784
+Anchor: VP1(AWAITING)
+Act_Fcns: active_verb_broad_p(VP1(AWAITING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__AWAITING_ACHIEVEMENT_2931
+Anchor: VP1(AWAITING)
+Act_Fcns: active_verb_narrow_p(VP1(AWAITING) )
+          has_dobj_following_r(VP1(AWAITING)  NP1(ACHIEVEMENT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__AWAITING_2950
+Anchor: VP1(AWAITING)
+Act_Fcns: active_verb_narrow_p(VP1(AWAITING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_PEACE_912
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(PEACE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_WHAT_801
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(WHAT) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_INSTRUMENT_913
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(INSTRUMENT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_PEACE_802
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(PEACE) )
+Slot: dobj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_INSTRUMENTS_914
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(INSTRUMENTS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_US_803
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(US) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_VICTORY_915
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(VICTORY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__BEGIN_906
+Anchor: VP1(BEGIN)
+Act_Fcns: infinitive_verb_p(VP1(BEGIN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__BEGIN_IN_535
+Anchor: VP1(BEGIN)
+Act_Fcns: infinitive_verb_p(VP1(BEGIN) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__BEGIN_WITH_536
+Anchor: VP1(BEGIN)
+Act_Fcns: infinitive_verb_p(VP1(BEGIN) )
+Slot: PP(WITH)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__BENEFIT_5766
+Anchor: VP1(BENEFIT)
+Act_Fcns: active_verb_broad_p(VP1(BENEFIT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__BENEFIT_SALVADORANS_2925
+Anchor: VP1(BENEFIT)
+Act_Fcns: active_verb_narrow_p(VP1(BENEFIT) )
+          has_dobj_following_r(VP1(BENEFIT)  NP1(SALVADORANS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__BENEFIT_2943
+Anchor: VP1(BENEFIT)
+Act_Fcns: active_verb_narrow_p(VP1(BENEFIT) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__BLESS_5798
+Anchor: VP1(BLESS)
+Act_Fcns: active_verb_broad_p(VP1(BLESS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__BLESS_YOU_2942
+Anchor: VP1(BLESS)
+Act_Fcns: active_verb_narrow_p(VP1(BLESS) )
+          has_dobj_following_r(VP1(BLESS)  NP1(YOU) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__BLESS_2960
+Anchor: VP1(BLESS)
+Act_Fcns: active_verb_narrow_p(VP1(BLESS) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__CEASE_905
+Anchor: VP1(CEASE)
+Act_Fcns: infinitive_verb_p(VP1(CEASE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__COMPONENT_OF_4028
+Anchor: NP1(COMPONENT)
+Act_Fcns: noun_phrase_broad_p(NP1(COMPONENT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CONSEQUENCES_OF_4032
+Anchor: NP1(CONSEQUENCES)
+Act_Fcns: noun_phrase_broad_p(NP1(CONSEQUENCES) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CONTEXT_OF_4031
+Anchor: NP1(CONTEXT)
+Act_Fcns: noun_phrase_broad_p(NP1(CONTEXT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONTRIBUTE_5775
+Anchor: VP1(CONTRIBUTE)
+Act_Fcns: active_verb_broad_p(VP1(CONTRIBUTE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__CONTRIBUTE_STRENGTHEN_382
+Anchor: VP1(CONTRIBUTE)
+Act_Fcns: active_infinitive_verb_p(VP1(CONTRIBUTE STRENGTHEN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__CONTRIBUTE_STRENGTHEN_272
+Anchor: VP1(CONTRIBUTE)
+Act_Fcns: active_infinitive_verb_p(VP1(CONTRIBUTE STRENGTHEN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DEFEATS_5765
+Anchor: VP1(DEFEATS)
+Act_Fcns: active_verb_broad_p(VP1(DEFEATS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DEFEATS_FOR_3336
+Anchor: VP1(DEFEATS)
+Act_Fcns: active_verb_narrow_p(VP1(DEFEATS) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DEMONSTRATE_5779
+Anchor: VP1(DEMONSTRATE)
+Act_Fcns: active_verb_broad_p(VP1(DEMONSTRATE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__DEMONSTRATE_INTENTIONS_2929
+Anchor: VP1(DEMONSTRATE)
+Act_Fcns: active_verb_narrow_p(VP1(DEMONSTRATE) )
+          has_dobj_following_r(VP1(DEMONSTRATE)  NP1(INTENTIONS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DEMONSTRATE_2948
+Anchor: VP1(DEMONSTRATE)
+Act_Fcns: active_verb_narrow_p(VP1(DEMONSTRATE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DEMONSTRATE_BY_3343
+Anchor: VP1(DEMONSTRATE)
+Act_Fcns: active_verb_narrow_p(VP1(DEMONSTRATE) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__DETERMINED_1459
+Anchor: VP1(DETERMINED)
+Act_Fcns: passive_verb_broad_p(VP1(DETERMINED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassInfVp__DETERMINED_WORK_68
+Anchor: VP1(DETERMINED)
+Act_Fcns: passive_infinitive_verb_p(VP1(DETERMINED WORK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__EFFORT_FOR_4040
+Anchor: NP1(EFFORT)
+Act_Fcns: noun_phrase_broad_p(NP1(EFFORT) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__END_5788
+Anchor: VP1(END)
+Act_Fcns: active_verb_broad_p(VP1(END) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__END_TO_3347
+Anchor: VP1(END)
+Act_Fcns: active_verb_narrow_p(VP1(END) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__FRAMEWORK_OF_4039
+Anchor: NP1(FRAMEWORK)
+Act_Fcns: noun_phrase_broad_p(NP1(FRAMEWORK) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__GUARANTEES_5794
+Anchor: VP1(GUARANTEES)
+Act_Fcns: active_verb_broad_p(VP1(GUARANTEES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__GUARANTEES_DEMOCRACY_2939
+Anchor: VP1(GUARANTEES)
+Act_Fcns: active_verb_narrow_p(VP1(GUARANTEES) )
+          has_dobj_following_r(VP1(GUARANTEES)  NP1(DEMOCRACY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__GUARANTEES_2957
+Anchor: VP1(GUARANTEES)
+Act_Fcns: active_verb_narrow_p(VP1(GUARANTEES) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__HAVE_OPPORTUNITIES_916
+Anchor: VP1(ROOT:HAVE)
+Act_Fcns: active_aux_root_p(VP1(HAVE) )
+          has_dobj_following_r(VP1(HAVE)  NP1(OPPORTUNITIES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__HAVE_WE_804
+Anchor: VP1(ROOT:HAVE)
+Act_Fcns: active_aux_root_p(VP1(HAVE) )
+          has_subj_preceding_r(VP1(HAVE)  NP1(WE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__HEAR_5773
+Anchor: VP1(HEAR)
+Act_Fcns: active_verb_broad_p(VP1(HEAR) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__HEAR_CALL_2927
+Anchor: VP1(HEAR)
+Act_Fcns: active_verb_narrow_p(VP1(HEAR) )
+          has_dobj_following_r(VP1(HEAR)  NP1(CALL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__HEAR_2946
+Anchor: VP1(HEAR)
+Act_Fcns: active_verb_narrow_p(VP1(HEAR) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__HELD_1458
+Anchor: VP1(HELD)
+Act_Fcns: passive_verb_broad_p(VP1(HELD) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__HELD_WITHOUT_1163
+Anchor: VP1(HELD)
+Act_Fcns: passive_verb_narrow_p(VP1(HELD) )
+Slot: PP(WITHOUT)
+Stats: frequency = 2
+
+CF: 
+Name: Np_Prep_<NP>__HELP_OF_4036
+Anchor: NP1(HELP)
+Act_Fcns: noun_phrase_broad_p(NP1(HELP) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__HINDER_5790
+Anchor: VP1(HINDER)
+Act_Fcns: active_verb_broad_p(VP1(HINDER) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__HINDER_ACHIEVEMENT_2935
+Anchor: VP1(HINDER)
+Act_Fcns: active_verb_narrow_p(VP1(HINDER) )
+          has_dobj_following_r(VP1(HINDER)  NP1(ACHIEVEMENT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__HINDER_2954
+Anchor: VP1(HINDER)
+Act_Fcns: active_verb_narrow_p(VP1(HINDER) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__HOPE_5772
+Anchor: VP1(HOPE)
+Act_Fcns: active_verb_broad_p(VP1(HOPE) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: Np_Prep_<NP>__INSTRUMENTS_FOR_4034
+Anchor: NP1(INSTRUMENTS)
+Act_Fcns: noun_phrase_broad_p(NP1(INSTRUMENTS) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__INTERESTED_1457
+Anchor: VP1(INTERESTED)
+Act_Fcns: passive_verb_broad_p(VP1(INTERESTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__INTERESTED_IN_1161
+Anchor: VP1(INTERESTED)
+Act_Fcns: passive_verb_narrow_p(VP1(INTERESTED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__INTERESTED_TO_1162
+Anchor: VP1(INTERESTED)
+Act_Fcns: passive_verb_narrow_p(VP1(INTERESTED) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__INTERESTS_OF_4035
+Anchor: NP1(INTERESTS)
+Act_Fcns: noun_phrase_broad_p(NP1(INTERESTS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__INVITE_902
+Anchor: VP1(INVITE)
+Act_Fcns: infinitive_verb_p(VP1(INVITE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__JOIN_903
+Anchor: VP1(JOIN)
+Act_Fcns: infinitive_verb_p(VP1(JOIN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__LAURELS_OF_4025
+Anchor: NP1(LAURELS)
+Act_Fcns: noun_phrase_broad_p(NP1(LAURELS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__LEADERS_OF_4027
+Anchor: NP1(LEADERS)
+Act_Fcns: noun_phrase_broad_p(NP1(LEADERS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__LET_2944
+Anchor: VP1(LET)
+Act_Fcns: active_verb_narrow_p(VP1(LET) )
+Slot: dobj
+Stats: frequency = 4
+
+CF: 
+Name: <subj>_ActVp__LET_5795
+Anchor: VP1(LET)
+Act_Fcns: active_verb_broad_p(VP1(LET) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__LET_US_2940
+Anchor: VP1(LET)
+Act_Fcns: active_verb_narrow_p(VP1(LET) )
+          has_dobj_following_r(VP1(LET)  NP1(US) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__LIKE_5789
+Anchor: VP1(LIKE)
+Act_Fcns: active_verb_broad_p(VP1(LIKE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__LIKE_SEE_385
+Anchor: VP1(LIKE)
+Act_Fcns: active_infinitive_verb_p(VP1(LIKE SEE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__LIKE_SEE_274
+Anchor: VP1(LIKE)
+Act_Fcns: active_infinitive_verb_p(VP1(LIKE SEE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__MADE_5774
+Anchor: VP1(MADE)
+Act_Fcns: active_verb_broad_p(VP1(MADE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__MADE_BY_3341
+Anchor: VP1(MADE)
+Act_Fcns: active_verb_narrow_p(VP1(MADE) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__MEAN_5793
+Anchor: VP1(MEAN)
+Act_Fcns: active_verb_broad_p(VP1(MEAN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__MEAN_SURRENDER_2938
+Anchor: VP1(MEAN)
+Act_Fcns: active_verb_narrow_p(VP1(MEAN) )
+          has_dobj_following_r(VP1(MEAN)  NP1(SURRENDER) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__MEAN_2956
+Anchor: VP1(MEAN)
+Act_Fcns: active_verb_narrow_p(VP1(MEAN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__MEET_5780
+Anchor: VP1(MEET)
+Act_Fcns: active_verb_broad_p(VP1(MEET) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__MEET_WITH_3344
+Anchor: VP1(MEET)
+Act_Fcns: active_verb_narrow_p(VP1(MEET) )
+Slot: PP(WITH)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__OPPORTUNITIES_WITHIN_4038
+Anchor: NP1(OPPORTUNITIES)
+Act_Fcns: noun_phrase_broad_p(NP1(OPPORTUNITIES) )
+Slot: PP(WITHIN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__OVERSEE_5797
+Anchor: VP1(OVERSEE)
+Act_Fcns: active_verb_broad_p(VP1(OVERSEE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__OVERSEE_EFFORT_2941
+Anchor: VP1(OVERSEE)
+Act_Fcns: active_verb_narrow_p(VP1(OVERSEE) )
+          has_dobj_following_r(VP1(OVERSEE)  NP1(EFFORT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__OVERSEE_2958
+Anchor: VP1(OVERSEE)
+Act_Fcns: active_verb_narrow_p(VP1(OVERSEE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__PICK_5769
+Anchor: VP1(PICK)
+Act_Fcns: active_verb_broad_p(VP1(PICK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__PICK_UP_3340
+Anchor: VP1(PICK)
+Act_Fcns: active_verb_narrow_p(VP1(PICK) )
+Slot: PP(UP)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__PLACE_5791
+Anchor: VP1(PLACE)
+Act_Fcns: active_verb_broad_p(VP1(PLACE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__PLACE_INTERESTS_2936
+Anchor: VP1(PLACE)
+Act_Fcns: active_verb_narrow_p(VP1(PLACE) )
+          has_dobj_following_r(VP1(PLACE)  NP1(INTERESTS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__PLACE_2955
+Anchor: VP1(PLACE)
+Act_Fcns: active_verb_narrow_p(VP1(PLACE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__PLACE_ABOVE_3348
+Anchor: VP1(PLACE)
+Act_Fcns: active_verb_narrow_p(VP1(PLACE) )
+Slot: PP(ABOVE)
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__PLURALISM_438
+Anchor: NP1(PLURALISM)
+Act_Fcns: contains_possessive_p(NP1(PLURALISM) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__PRAY_5796
+Anchor: VP1(PRAY)
+Act_Fcns: active_verb_broad_p(VP1(PRAY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PROBLEMS_OF_4026
+Anchor: NP1(PROBLEMS)
+Act_Fcns: noun_phrase_broad_p(NP1(PROBLEMS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PROCESS_OF_4030
+Anchor: NP1(PROCESS)
+Act_Fcns: noun_phrase_broad_p(NP1(PROCESS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__PROCESSES_5776
+Anchor: VP1(PROCESSES)
+Act_Fcns: active_verb_broad_p(VP1(PROCESSES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__PROCESSES_IN_3342
+Anchor: VP1(PROCESSES)
+Act_Fcns: active_verb_narrow_p(VP1(PROCESSES) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REITERATE_5770
+Anchor: VP1(REITERATE)
+Act_Fcns: active_verb_broad_p(VP1(REITERATE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__REITERATE_DETERMINATION_2926
+Anchor: VP1(REITERATE)
+Act_Fcns: active_verb_narrow_p(VP1(REITERATE) )
+          has_dobj_following_r(VP1(REITERATE)  NP1(DETERMINATION) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__REITERATE_2945
+Anchor: VP1(REITERATE)
+Act_Fcns: active_verb_narrow_p(VP1(REITERATE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RESOLVE_5771
+Anchor: VP1(RESOLVE)
+Act_Fcns: active_verb_broad_p(VP1(RESOLVE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__RESOLVE_WORK_381
+Anchor: VP1(RESOLVE)
+Act_Fcns: active_infinitive_verb_p(VP1(RESOLVE WORK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SAVIOR_OF_4041
+Anchor: NP1(SAVIOR)
+Act_Fcns: noun_phrase_broad_p(NP1(SAVIOR) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__SEE_907
+Anchor: VP1(SEE)
+Act_Fcns: infinitive_verb_p(VP1(SEE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SEEK_5764
+Anchor: VP1(SEEK)
+Act_Fcns: active_verb_broad_p(VP1(SEEK) )
+Slot: subj
+Stats: frequency = 5
+
+CF: 
+Name: <subj>_ActVp_Dobj__SEEK_HUMILIATING_2923
+Anchor: VP1(SEEK)
+Act_Fcns: active_verb_narrow_p(VP1(SEEK) )
+          has_dobj_following_r(VP1(SEEK)  NP1(HUMILIATING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__SEEK_2942
+Anchor: VP1(SEEK)
+Act_Fcns: active_verb_narrow_p(VP1(SEEK) )
+Slot: dobj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__SEEK_DEMOCRACY_2924
+Anchor: VP1(SEEK)
+Act_Fcns: active_verb_narrow_p(VP1(SEEK) )
+          has_dobj_following_r(VP1(SEEK)  NP1(DEMOCRACY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__SEEK_IN_3337
+Anchor: VP1(SEEK)
+Act_Fcns: active_verb_narrow_p(VP1(SEEK) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__SEEK_SOLVE_379
+Anchor: VP1(SEEK)
+Act_Fcns: active_infinitive_verb_p(VP1(SEEK SOLVE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__SEEK_SOLVE_270
+Anchor: VP1(SEEK)
+Act_Fcns: active_infinitive_verb_p(VP1(SEEK SOLVE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SET_5777
+Anchor: VP1(SET)
+Act_Fcns: active_verb_broad_p(VP1(SET) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__SET_ATTITUDE_2928
+Anchor: VP1(SET)
+Act_Fcns: active_verb_narrow_p(VP1(SET) )
+          has_dobj_following_r(VP1(SET)  NP1(ATTITUDE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__SET_2947
+Anchor: VP1(SET)
+Act_Fcns: active_verb_narrow_p(VP1(SET) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__SET_1460
+Anchor: VP1(SET)
+Act_Fcns: passive_verb_broad_p(VP1(SET) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__SOLVE_901
+Anchor: VP1(SOLVE)
+Act_Fcns: infinitive_verb_p(VP1(SOLVE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__SOLVE_BY_533
+Anchor: VP1(SOLVE)
+Act_Fcns: infinitive_verb_p(VP1(SOLVE) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__STRENGTHEN_904
+Anchor: VP1(STRENGTHEN)
+Act_Fcns: infinitive_verb_p(VP1(STRENGTHEN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SUFFERING_5783
+Anchor: VP1(SUFFERING)
+Act_Fcns: active_verb_broad_p(VP1(SUFFERING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__SUFFERING_CONSEQUENCES_2930
+Anchor: VP1(SUFFERING)
+Act_Fcns: active_verb_narrow_p(VP1(SUFFERING) )
+          has_dobj_following_r(VP1(SUFFERING)  NP1(CONSEQUENCES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__SUFFERING_2949
+Anchor: VP1(SUFFERING)
+Act_Fcns: active_verb_narrow_p(VP1(SUFFERING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__THANK_2959
+Anchor: VP1(THANK)
+Act_Fcns: active_verb_narrow_p(VP1(THANK) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__UNDERSTAND_5792
+Anchor: VP1(UNDERSTAND)
+Act_Fcns: active_verb_broad_p(VP1(UNDERSTAND) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__VICTORY_OF_4037
+Anchor: NP1(VICTORY)
+Act_Fcns: noun_phrase_broad_p(NP1(VICTORY) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WANT_5786
+Anchor: VP1(WANT)
+Act_Fcns: active_verb_broad_p(VP1(WANT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__WANT_SALVADORANS_2933
+Anchor: VP1(WANT)
+Act_Fcns: active_verb_narrow_p(VP1(WANT) )
+          has_dobj_following_r(VP1(WANT)  NP1(SALVADORANS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__WANT_2952
+Anchor: VP1(WANT)
+Act_Fcns: active_verb_narrow_p(VP1(WANT) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WILLING_5781
+Anchor: VP1(WILLING)
+Act_Fcns: active_verb_broad_p(VP1(WILLING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__WILLING_BEGIN_384
+Anchor: VP1(WILLING)
+Act_Fcns: active_infinitive_verb_p(VP1(WILLING BEGIN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WISH_5767
+Anchor: VP1(WISH)
+Act_Fcns: active_verb_broad_p(VP1(WISH) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__WISH_INVITE_380
+Anchor: VP1(WISH)
+Act_Fcns: active_infinitive_verb_p(VP1(WISH INVITE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__WISH_INVITE_271
+Anchor: VP1(WISH)
+Act_Fcns: active_infinitive_verb_p(VP1(WISH INVITE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WORK_5768
+Anchor: VP1(WORK)
+Act_Fcns: active_verb_broad_p(VP1(WORK) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__WORK_FOR_3338
+Anchor: VP1(WORK)
+Act_Fcns: active_verb_narrow_p(VP1(WORK) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__WORK_IN_3339
+Anchor: VP1(WORK)
+Act_Fcns: active_verb_narrow_p(VP1(WORK) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__WORK_FOR_534
+Anchor: VP1(WORK)
+Act_Fcns: infinitive_verb_p(VP1(WORK) )
+Slot: PP(FOR)
+Stats: frequency = 2
+
+CF: 
+Name: InfVp_Prep_<NP>__WORK_BY_537
+Anchor: VP1(WORK)
+Act_Fcns: infinitive_verb_p(VP1(WORK) )
+Slot: PP(BY)
+Stats: frequency = 1
+
