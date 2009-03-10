@@ -1,0 +1,136 @@
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_REPORT_1310
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(REPORT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_THIS_1154
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(THIS) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__BELIEVED_2139
+Anchor: VP1(BELIEVED)
+Act_Fcns: passive_verb_broad_p(VP1(BELIEVED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__EXPLODED_8446
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_broad_p(VP1(EXPLODED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__EXPLODED_IN_4882
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_narrow_p(VP1(EXPLODED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__EXPLODED_ON_4883
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_narrow_p(VP1(EXPLODED) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__FIRED_8448
+Anchor: VP1(FIRED)
+Act_Fcns: active_verb_broad_p(VP1(FIRED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__FIRED_SHOTS_4225
+Anchor: VP1(FIRED)
+Act_Fcns: active_verb_narrow_p(VP1(FIRED) )
+          has_dobj_following_r(VP1(FIRED)  NP1(SHOTS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__FIRED_4275
+Anchor: VP1(FIRED)
+Act_Fcns: active_verb_narrow_p(VP1(FIRED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__FIRED_AT_4886
+Anchor: VP1(FIRED)
+Act_Fcns: active_verb_narrow_p(VP1(FIRED) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__OCCURRED_8447
+Anchor: VP1(OCCURRED)
+Act_Fcns: active_verb_broad_p(VP1(OCCURRED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__OCCURRED_AT_4884
+Anchor: VP1(OCCURRED)
+Act_Fcns: active_verb_narrow_p(VP1(OCCURRED) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__OCCURRED_IN_4885
+Anchor: VP1(OCCURRED)
+Act_Fcns: active_verb_narrow_p(VP1(OCCURRED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RIDING_8449
+Anchor: VP1(RIDING)
+Act_Fcns: active_verb_broad_p(VP1(RIDING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__RIDING_IN_4887
+Anchor: VP1(RIDING)
+Act_Fcns: active_verb_narrow_p(VP1(RIDING) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TAKEN_8445
+Anchor: VP1(TAKEN)
+Act_Fcns: active_verb_broad_p(VP1(TAKEN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__TAKEN_IN_4881
+Anchor: VP1(TAKEN)
+Act_Fcns: active_verb_narrow_p(VP1(TAKEN) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__TIME_OF_5954
+Anchor: NP1(TIME)
+Act_Fcns: noun_phrase_broad_p(NP1(TIME) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__WOUNDED_2140
+Anchor: VP1(WOUNDED)
+Act_Fcns: passive_verb_broad_p(VP1(WOUNDED) )
+Slot: subj
+Stats: frequency = 1
+

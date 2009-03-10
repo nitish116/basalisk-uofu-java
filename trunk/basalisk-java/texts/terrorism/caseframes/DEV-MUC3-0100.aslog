@@ -1,0 +1,85 @@
+CF: 
+Name: <subj>_PassVp__DERAILED_407
+Anchor: VP1(DERAILED)
+Act_Fcns: passive_verb_broad_p(VP1(DERAILED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DERAILED_BEFORE_342
+Anchor: VP1(DERAILED)
+Act_Fcns: passive_verb_narrow_p(VP1(DERAILED) )
+Slot: PP(BEFORE)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__DERAILED_AFTER_343
+Anchor: VP1(DERAILED)
+Act_Fcns: passive_verb_narrow_p(VP1(DERAILED) )
+Slot: PP(AFTER)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DIED_1518
+Anchor: VP1(DIED)
+Act_Fcns: active_verb_broad_p(VP1(DIED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__DIED_IN_866
+Anchor: VP1(DIED)
+Act_Fcns: active_verb_narrow_p(VP1(DIED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__LIMA_TO_1088
+Anchor: NP1(LIMA)
+Act_Fcns: noun_phrase_broad_p(NP1(LIMA) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_1519
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__RUNNING_FROM_1087
+Anchor: NP1(RUNNING)
+Act_Fcns: noun_phrase_broad_p(NP1(RUNNING) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TOOK_PLACE_1520
+Anchor: VP1(TOOK_PLACE)
+Act_Fcns: active_verb_broad_p(VP1(TOOK_PLACE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__TOOK_PLACE_PAST_743
+Anchor: VP1(TOOK_PLACE)
+Act_Fcns: active_verb_narrow_p(VP1(TOOK_PLACE) )
+          has_dobj_following_r(VP1(TOOK_PLACE)  NP1(PAST) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__TOOK_PLACE_768
+Anchor: VP1(TOOK_PLACE)
+Act_Fcns: active_verb_narrow_p(VP1(TOOK_PLACE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__TOOK_PLACE_IN_867
+Anchor: VP1(TOOK_PLACE)
+Act_Fcns: active_verb_narrow_p(VP1(TOOK_PLACE) )
+Slot: PP(IN)
+Stats: frequency = 1
+

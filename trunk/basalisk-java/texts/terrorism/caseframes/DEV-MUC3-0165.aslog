@@ -1,0 +1,201 @@
+CF: 
+Name: Np_Prep_<NP>__BOMB_ATTACK_ON_1841
+Anchor: NP1(BOMB_ATTACK)
+Act_Fcns: noun_phrase_broad_p(NP1(BOMB_ATTACK) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CALLED_2590
+Anchor: VP1(CALLED)
+Act_Fcns: active_verb_broad_p(VP1(CALLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__CALLED_TO_1511
+Anchor: VP1(CALLED)
+Act_Fcns: active_verb_narrow_p(VP1(CALLED) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CAUSED_2587
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_broad_p(VP1(CAUSED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CAUSED_DAMAGE_1263
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+          has_dobj_following_r(VP1(CAUSED)  NP1(DAMAGE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CAUSED_1292
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CENTER_OF_1844
+Anchor: NP1(CENTER)
+Act_Fcns: noun_phrase_broad_p(NP1(CENTER) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DAMAGED_2589
+Anchor: VP1(DAMAGED)
+Act_Fcns: active_verb_broad_p(VP1(DAMAGED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__DAMAGED_THOSE_1265
+Anchor: VP1(DAMAGED)
+Act_Fcns: active_verb_narrow_p(VP1(DAMAGED) )
+          has_dobj_following_r(VP1(DAMAGED)  NP1(THOSE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DAMAGED_1294
+Anchor: VP1(DAMAGED)
+Act_Fcns: active_verb_narrow_p(VP1(DAMAGED) )
+Slot: dobj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__DAMAGED_CAR_1266
+Anchor: VP1(DAMAGED)
+Act_Fcns: active_verb_narrow_p(VP1(DAMAGED) )
+          has_dobj_following_r(VP1(DAMAGED)  NP1(CAR) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__DESTROYED_675
+Anchor: VP1(DESTROYED)
+Act_Fcns: passive_verb_broad_p(VP1(DESTROYED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__ENTRANCE_215
+Anchor: NP1(ENTRANCE)
+Act_Fcns: contains_possessive_p(NP1(ENTRANCE) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GLASS_IN_1845
+Anchor: NP1(GLASS)
+Act_Fcns: noun_phrase_broad_p(NP1(GLASS) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__INSTITUTE_IN_1842
+Anchor: NP1(INSTITUTE)
+Act_Fcns: noun_phrase_broad_p(NP1(INSTITUTE) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__INVESTIGATING_2591
+Anchor: VP1(INVESTIGATING)
+Act_Fcns: active_verb_broad_p(VP1(INVESTIGATING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__INVESTIGATING_ATTACK_1267
+Anchor: VP1(INVESTIGATING)
+Act_Fcns: active_verb_narrow_p(VP1(INVESTIGATING) )
+          has_dobj_following_r(VP1(INVESTIGATING)  NP1(ATTACK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__INVESTIGATING_1295
+Anchor: VP1(INVESTIGATING)
+Act_Fcns: active_verb_narrow_p(VP1(INVESTIGATING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__LOCATED_673
+Anchor: VP1(LOCATED)
+Act_Fcns: passive_verb_broad_p(VP1(LOCATED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__LOCATED_AT_540
+Anchor: VP1(LOCATED)
+Act_Fcns: passive_verb_narrow_p(VP1(LOCATED) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__LOCATED_IN_541
+Anchor: VP1(LOCATED)
+Act_Fcns: passive_verb_narrow_p(VP1(LOCATED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__PLACED_674
+Anchor: VP1(PLACED)
+Act_Fcns: passive_verb_broad_p(VP1(PLACED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__PLACED_AT_542
+Anchor: VP1(PLACED)
+Act_Fcns: passive_verb_narrow_p(VP1(PLACED) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_2588
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__REPORTED_VICTIMS_1264
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_narrow_p(VP1(REPORTED) )
+          has_dobj_following_r(VP1(REPORTED)  NP1(VICTIMS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__REPORTED_1293
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_narrow_p(VP1(REPORTED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__THOSE_214
+Anchor: NP1(THOSE)
+Act_Fcns: contains_possessive_p(NP1(THOSE) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__THOSE_OF_1843
+Anchor: NP1(THOSE)
+Act_Fcns: noun_phrase_broad_p(NP1(THOSE) )
+Slot: PP(OF)
+Stats: frequency = 1
+

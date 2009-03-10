@@ -1,0 +1,114 @@
+CF: 
+Name: <subj>_AuxVp_Adjp__BE_UNHARMED_1359
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_adjPhrase_following_r(VP1(BE)  ADJ1(UNHARMED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__BELONGING_TO_17255
+Anchor: NP1(BELONGING)
+Act_Fcns: noun_phrase_broad_p(NP1(BELONGING) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GROUP_OF_17254
+Anchor: NP1(GROUP)
+Act_Fcns: noun_phrase_broad_p(NP1(GROUP) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__KILLED_5414
+Anchor: VP1(KILLED)
+Act_Fcns: passive_verb_broad_p(VP1(KILLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PART_OF_17257
+Anchor: NP1(PART)
+Act_Fcns: noun_phrase_broad_p(NP1(PART) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_24232
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__RESIDENCE_OF_17256
+Anchor: NP1(RESIDENCE)
+Act_Fcns: noun_phrase_broad_p(NP1(RESIDENCE) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__STAGED_24233
+Anchor: VP1(STAGED)
+Act_Fcns: active_verb_broad_p(VP1(STAGED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__STAGED_ATTACK_12157
+Anchor: VP1(STAGED)
+Act_Fcns: active_verb_narrow_p(VP1(STAGED) )
+          has_dobj_following_r(VP1(STAGED)  NP1(ATTACK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__STAGED_12147
+Anchor: VP1(STAGED)
+Act_Fcns: active_verb_narrow_p(VP1(STAGED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__STAGED_ON_13876
+Anchor: VP1(STAGED)
+Act_Fcns: active_verb_narrow_p(VP1(STAGED) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TOOK_PLACE_24234
+Anchor: VP1(TOOK_PLACE)
+Act_Fcns: active_verb_broad_p(VP1(TOOK_PLACE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__TOOK_PLACE_IN_13877
+Anchor: VP1(TOOK_PLACE)
+Act_Fcns: active_verb_narrow_p(VP1(TOOK_PLACE) )
+Slot: PP(IN)
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__TOOK_PLACE_ACCORDING_TO_13878
+Anchor: VP1(TOOK_PLACE)
+Act_Fcns: active_verb_narrow_p(VP1(TOOK_PLACE) )
+Slot: PP(ACCORDING_TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__WOUNDED_5415
+Anchor: VP1(WOUNDED)
+Act_Fcns: passive_verb_broad_p(VP1(WOUNDED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__WOUNDED_IN_4452
+Anchor: VP1(WOUNDED)
+Act_Fcns: passive_verb_narrow_p(VP1(WOUNDED) )
+Slot: PP(IN)
+Stats: frequency = 1
+

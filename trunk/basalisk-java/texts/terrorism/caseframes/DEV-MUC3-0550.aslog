@@ -1,0 +1,187 @@
+CF: 
+Name: Np_Prep_<NP>__BOMBINGS_IN_6757
+Anchor: NP1(BOMBINGS)
+Act_Fcns: noun_phrase_broad_p(NP1(BOMBINGS) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CAPTURED_9480
+Anchor: VP1(CAPTURED)
+Act_Fcns: active_verb_broad_p(VP1(CAPTURED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CAPTURED_HIM_4732
+Anchor: VP1(CAPTURED)
+Act_Fcns: active_verb_narrow_p(VP1(CAPTURED) )
+          has_dobj_following_r(VP1(CAPTURED)  NP1(HIM) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CAPTURED_4790
+Anchor: VP1(CAPTURED)
+Act_Fcns: active_verb_narrow_p(VP1(CAPTURED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CAUSED_9476
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_broad_p(VP1(CAUSED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__CAUSED_DAMAGE_4729
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+          has_dobj_following_r(VP1(CAUSED)  NP1(DAMAGE) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_<dobj>__CAUSED_4787
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+Slot: dobj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__CAUSED_TO_5517
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CAUSING_4788
+Anchor: VP1(CAUSING)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__COMMANDER_OF_6758
+Anchor: NP1(COMMANDER)
+Act_Fcns: noun_phrase_broad_p(NP1(COMMANDER) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ENTERED_9479
+Anchor: VP1(ENTERED)
+Act_Fcns: active_verb_broad_p(VP1(ENTERED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__ENTERED_SUPERMARKET_4731
+Anchor: VP1(ENTERED)
+Act_Fcns: active_verb_narrow_p(VP1(ENTERED) )
+          has_dobj_following_r(VP1(ENTERED)  NP1(SUPERMARKET) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__ENTERED_4789
+Anchor: VP1(ENTERED)
+Act_Fcns: active_verb_narrow_p(VP1(ENTERED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__PLACED_2420
+Anchor: VP1(PLACED)
+Act_Fcns: passive_verb_broad_p(VP1(PLACED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__PLACED_AT_1936
+Anchor: VP1(PLACED)
+Act_Fcns: passive_verb_narrow_p(VP1(PLACED) )
+Slot: PP(AT)
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__PLACED_ON_1937
+Anchor: VP1(PLACED)
+Act_Fcns: passive_verb_narrow_p(VP1(PLACED) )
+Slot: PP(ON)
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__PLACED_BY_1939
+Anchor: VP1(PLACED)
+Act_Fcns: passive_verb_narrow_p(VP1(PLACED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RELEASED_9478
+Anchor: VP1(RELEASED)
+Act_Fcns: active_verb_broad_p(VP1(RELEASED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_9477
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__TAKEN_2421
+Anchor: VP1(TAKEN)
+Act_Fcns: passive_verb_broad_p(VP1(TAKEN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__TAKEN_TO_1938
+Anchor: VP1(TAKEN)
+Act_Fcns: passive_verb_narrow_p(VP1(TAKEN) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__TREATED_2422
+Anchor: VP1(TREATED)
+Act_Fcns: passive_verb_broad_p(VP1(TREATED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WOUNDED_9475
+Anchor: VP1(WOUNDED)
+Act_Fcns: active_verb_broad_p(VP1(WOUNDED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__WOUNDED_PERSONS_4728
+Anchor: VP1(WOUNDED)
+Act_Fcns: active_verb_narrow_p(VP1(WOUNDED) )
+          has_dobj_following_r(VP1(WOUNDED)  NP1(PERSONS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__WOUNDED_4786
+Anchor: VP1(WOUNDED)
+Act_Fcns: active_verb_narrow_p(VP1(WOUNDED) )
+Slot: dobj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__WOUNDED_PASSERSBY_4730
+Anchor: VP1(WOUNDED)
+Act_Fcns: active_verb_narrow_p(VP1(WOUNDED) )
+          has_dobj_following_r(VP1(WOUNDED)  NP1(PASSERSBY) )
+Slot: subj
+Stats: frequency = 1
+

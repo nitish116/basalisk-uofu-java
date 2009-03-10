@@ -1,0 +1,214 @@
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_ONE_601
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(ONE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_PORTH_529
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(PORTH) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__CAR_297
+Anchor: NP1(CAR)
+Act_Fcns: contains_possessive_p(NP1(CAR) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__HEADED_3919
+Anchor: VP1(HEADED)
+Act_Fcns: active_verb_broad_p(VP1(HEADED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__HEADED_BY_2294
+Anchor: VP1(HEADED)
+Act_Fcns: active_verb_narrow_p(VP1(HEADED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__INSTALLED_990
+Anchor: VP1(INSTALLED)
+Act_Fcns: passive_verb_broad_p(VP1(INSTALLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__INSTALLED_ON_795
+Anchor: VP1(INSTALLED)
+Act_Fcns: passive_verb_narrow_p(VP1(INSTALLED) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__KILLED_988
+Anchor: VP1(KILLED)
+Act_Fcns: passive_verb_broad_p(VP1(KILLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__LEAVING_3916
+Anchor: VP1(LEAVING)
+Act_Fcns: active_verb_broad_p(VP1(LEAVING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__LEAVING_HOME_1956
+Anchor: VP1(LEAVING)
+Act_Fcns: active_verb_narrow_p(VP1(LEAVING) )
+          has_dobj_following_r(VP1(LEAVING)  NP1(HOME) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__LEAVING_1992
+Anchor: VP1(LEAVING)
+Act_Fcns: active_verb_narrow_p(VP1(LEAVING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__LEAVING_IN_2293
+Anchor: VP1(LEAVING)
+Act_Fcns: active_verb_narrow_p(VP1(LEAVING) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__MACHINEGUNNED_3915
+Anchor: VP1(MACHINEGUNNED)
+Act_Fcns: active_verb_broad_p(VP1(MACHINEGUNNED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__MACHINEGUNNED_CAR_1955
+Anchor: VP1(MACHINEGUNNED)
+Act_Fcns: active_verb_narrow_p(VP1(MACHINEGUNNED) )
+          has_dobj_following_r(VP1(MACHINEGUNNED)  NP1(CAR) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__MACHINEGUNNED_1991
+Anchor: VP1(MACHINEGUNNED)
+Act_Fcns: active_verb_narrow_p(VP1(MACHINEGUNNED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__MACHINEGUNNED_AS_2292
+Anchor: VP1(MACHINEGUNNED)
+Act_Fcns: active_verb_narrow_p(VP1(MACHINEGUNNED) )
+Slot: PP(AS)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__NEIGHBORHOOD_OF_2812
+Anchor: NP1(NEIGHBORHOOD)
+Act_Fcns: noun_phrase_broad_p(NP1(NEIGHBORHOOD) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ONE_OF_2811
+Anchor: NP1(ONE)
+Act_Fcns: noun_phrase_broad_p(NP1(ONE) )
+Slot: PP(OF)
+Stats: frequency = 2
+
+CF: 
+Name: Np_Prep_<NP>__POLITICIANS_IN_2813
+Anchor: NP1(POLITICIANS)
+Act_Fcns: noun_phrase_broad_p(NP1(POLITICIANS) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_3914
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__RUSHED_989
+Anchor: VP1(RUSHED)
+Act_Fcns: passive_verb_broad_p(VP1(RUSHED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__RUSHED_IN_793
+Anchor: VP1(RUSHED)
+Act_Fcns: passive_verb_narrow_p(VP1(RUSHED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__RUSHED_TO_794
+Anchor: VP1(RUSHED)
+Act_Fcns: passive_verb_narrow_p(VP1(RUSHED) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SAID_3917
+Anchor: VP1(SAID)
+Act_Fcns: active_verb_broad_p(VP1(SAID) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__SAVE_603
+Anchor: VP1(SAVE)
+Act_Fcns: infinitive_verb_p(VP1(SAVE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TRYING_3918
+Anchor: VP1(TRYING)
+Act_Fcns: active_verb_broad_p(VP1(TRYING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__TRYING_SAVE_246
+Anchor: VP1(TRYING)
+Act_Fcns: active_infinitive_verb_p(VP1(TRYING SAVE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__TRYING_SAVE_177
+Anchor: VP1(TRYING)
+Act_Fcns: active_infinitive_verb_p(VP1(TRYING SAVE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__WOUNDED_987
+Anchor: VP1(WOUNDED)
+Act_Fcns: passive_verb_broad_p(VP1(WOUNDED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__WOUNDED_DURING_792
+Anchor: VP1(WOUNDED)
+Act_Fcns: passive_verb_narrow_p(VP1(WOUNDED) )
+Slot: PP(DURING)
+Stats: frequency = 1
+

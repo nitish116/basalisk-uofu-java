@@ -1,0 +1,152 @@
+CF: 
+Name: Np_Prep_<NP>__AIM_OF_3501
+Anchor: NP1(AIM)
+Act_Fcns: noun_phrase_broad_p(NP1(AIM) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ANNOUNCEMENT_BY_3500
+Anchor: NP1(ANNOUNCEMENT)
+Act_Fcns: noun_phrase_broad_p(NP1(ANNOUNCEMENT) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_FISHERMEN_744
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(FISHERMEN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_THERE_662
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(THERE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CARRIED_OUT_4862
+Anchor: VP1(CARRIED_OUT)
+Act_Fcns: active_verb_broad_p(VP1(CARRIED_OUT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__CARRIED_OUT_BY_2865
+Anchor: VP1(CARRIED_OUT)
+Act_Fcns: active_verb_narrow_p(VP1(CARRIED_OUT) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CHARGE_OF_3498
+Anchor: NP1(CHARGE)
+Act_Fcns: noun_phrase_broad_p(NP1(CHARGE) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONDEMNED_4861
+Anchor: VP1(CONDEMNED)
+Act_Fcns: active_verb_broad_p(VP1(CONDEMNED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CONDEMNED_ACT_2444
+Anchor: VP1(CONDEMNED)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMNED) )
+          has_dobj_following_r(VP1(CONDEMNED)  NP1(ACT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CONDEMNED_2485
+Anchor: VP1(CONDEMNED)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMNED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__FISHERMEN_FROM_3499
+Anchor: NP1(FISHERMEN)
+Act_Fcns: noun_phrase_broad_p(NP1(FISHERMEN) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__PLACED_4863
+Anchor: VP1(PLACED)
+Act_Fcns: active_verb_broad_p(VP1(PLACED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__PLACED_CHARGE_2445
+Anchor: VP1(PLACED)
+Act_Fcns: active_verb_narrow_p(VP1(PLACED) )
+          has_dobj_following_r(VP1(PLACED)  NP1(CHARGE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__PLACED_2486
+Anchor: VP1(PLACED)
+Act_Fcns: active_verb_narrow_p(VP1(PLACED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__PLACED_UNDER_2866
+Anchor: VP1(PLACED)
+Act_Fcns: active_verb_narrow_p(VP1(PLACED) )
+Slot: PP(UNDER)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__POINTED_1244
+Anchor: VP1(POINTED)
+Act_Fcns: passive_verb_broad_p(VP1(POINTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__PURSUES_4864
+Anchor: VP1(PURSUES)
+Act_Fcns: active_verb_broad_p(VP1(PURSUES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__PURSUES_AIM_2446
+Anchor: VP1(PURSUES)
+Act_Fcns: active_verb_narrow_p(VP1(PURSUES) )
+          has_dobj_following_r(VP1(PURSUES)  NP1(AIM) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__PURSUES_2487
+Anchor: VP1(PURSUES)
+Act_Fcns: active_verb_narrow_p(VP1(PURSUES) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__PURSUES_BETWEEN_2867
+Anchor: VP1(PURSUES)
+Act_Fcns: active_verb_narrow_p(VP1(PURSUES) )
+Slot: PP(BETWEEN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__REACTION_AGAINST_3497
+Anchor: NP1(REACTION)
+Act_Fcns: noun_phrase_broad_p(NP1(REACTION) )
+Slot: PP(AGAINST)
+Stats: frequency = 1
+

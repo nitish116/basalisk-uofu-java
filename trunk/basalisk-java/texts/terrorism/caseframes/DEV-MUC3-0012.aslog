@@ -1,0 +1,115 @@
+CF: 
+Name: Np_Prep_<NP>__ATTACK_AGAINST_150
+Anchor: NP1(ATTACK)
+Act_Fcns: noun_phrase_broad_p(NP1(ATTACK) )
+Slot: PP(AGAINST)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__CAPTURE_34
+Anchor: VP1(CAPTURE)
+Act_Fcns: infinitive_verb_p(VP1(CAPTURE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONDUCTED_206
+Anchor: VP1(CONDUCTED)
+Act_Fcns: active_verb_broad_p(VP1(CONDUCTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CONDUCTED_ATTACK_110
+Anchor: VP1(CONDUCTED)
+Act_Fcns: active_verb_narrow_p(VP1(CONDUCTED) )
+          has_dobj_following_r(VP1(CONDUCTED)  NP1(ATTACK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CONDUCTED_108
+Anchor: VP1(CONDUCTED)
+Act_Fcns: active_verb_narrow_p(VP1(CONDUCTED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONDUCTING_210
+Anchor: VP1(CONDUCTING)
+Act_Fcns: active_verb_broad_p(VP1(CONDUCTING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CONDUCTING_OPERATIONS_112
+Anchor: VP1(CONDUCTING)
+Act_Fcns: active_verb_narrow_p(VP1(CONDUCTING) )
+          has_dobj_following_r(VP1(CONDUCTING)  NP1(OPERATIONS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CONDUCTING_110
+Anchor: VP1(CONDUCTING)
+Act_Fcns: active_verb_narrow_p(VP1(CONDUCTING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GROUP_OF_149
+Anchor: NP1(GROUP)
+Act_Fcns: noun_phrase_broad_p(NP1(GROUP) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__INVESTIGATING_209
+Anchor: VP1(INVESTIGATING)
+Act_Fcns: active_verb_broad_p(VP1(INVESTIGATING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__INVESTIGATING_ATTACK_111
+Anchor: VP1(INVESTIGATING)
+Act_Fcns: active_verb_narrow_p(VP1(INVESTIGATING) )
+          has_dobj_following_r(VP1(INVESTIGATING)  NP1(ATTACK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__INVESTIGATING_109
+Anchor: VP1(INVESTIGATING)
+Act_Fcns: active_verb_narrow_p(VP1(INVESTIGATING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__PASSED_AWAY_208
+Anchor: VP1(PASSED_AWAY)
+Act_Fcns: active_verb_broad_p(VP1(PASSED_AWAY) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RETIRED_207
+Anchor: VP1(RETIRED)
+Act_Fcns: active_verb_broad_p(VP1(RETIRED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__TAKEN_52
+Anchor: VP1(TAKEN)
+Act_Fcns: passive_verb_broad_p(VP1(TAKEN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__TAKEN_TO_46
+Anchor: VP1(TAKEN)
+Act_Fcns: passive_verb_narrow_p(VP1(TAKEN) )
+Slot: PP(TO)
+Stats: frequency = 1
+

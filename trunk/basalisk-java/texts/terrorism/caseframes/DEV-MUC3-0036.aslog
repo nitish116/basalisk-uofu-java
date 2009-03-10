@@ -1,0 +1,475 @@
+CF: 
+Name: Np_Prep_<NP>__ACT_OF_454
+Anchor: NP1(ACT)
+Act_Fcns: noun_phrase_broad_p(NP1(ACT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ADDS_591
+Anchor: VP1(ADDS)
+Act_Fcns: active_verb_broad_p(VP1(ADDS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__ARRIVAL_55
+Anchor: NP1(ARRIVAL)
+Act_Fcns: contains_possessive_p(NP1(ARRIVAL) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ARRIVED_598
+Anchor: VP1(ARRIVED)
+Act_Fcns: active_verb_broad_p(VP1(ARRIVED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__ARRIVED_IN_309
+Anchor: VP1(ARRIVED)
+Act_Fcns: active_verb_narrow_p(VP1(ARRIVED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__ASSASSINATION_OF_449
+Anchor: NP1(ASSASSINATION)
+Act_Fcns: noun_phrase_broad_p(NP1(ASSASSINATION) )
+Slot: PP(OF)
+Stats: frequency = 3
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_REACTION_100
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(REACTION) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_DOCUMENT_84
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(DOCUMENT) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_MEMBER_101
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(MEMBER) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_FLORES_85
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(FLORES) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_COOPERATION_102
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(COOPERATION) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_THERE_86
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(THERE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__BODIES_OF_459
+Anchor: NP1(BODIES)
+Act_Fcns: noun_phrase_broad_p(NP1(BODIES) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CARRYING_OUT_593
+Anchor: VP1(CARRYING_OUT)
+Act_Fcns: active_verb_broad_p(VP1(CARRYING_OUT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CARRYING_OUT_ACTIONS_311
+Anchor: VP1(CARRYING_OUT)
+Act_Fcns: active_verb_narrow_p(VP1(CARRYING_OUT) )
+          has_dobj_following_r(VP1(CARRYING_OUT)  NP1(ACTIONS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CARRYING_OUT_323
+Anchor: VP1(CARRYING_OUT)
+Act_Fcns: active_verb_narrow_p(VP1(CARRYING_OUT) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__CARRYING_OUT_IN_306
+Anchor: VP1(CARRYING_OUT)
+Act_Fcns: active_verb_narrow_p(VP1(CARRYING_OUT) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__CATCH_115
+Anchor: VP1(CATCH)
+Act_Fcns: infinitive_verb_p(VP1(CATCH) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__CATCH_TO_67
+Anchor: VP1(CATCH)
+Act_Fcns: infinitive_verb_p(VP1(CATCH) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONDEMN_590
+Anchor: VP1(CONDEMN)
+Act_Fcns: active_verb_broad_p(VP1(CONDEMN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CONDEMN_ACT_310
+Anchor: VP1(CONDEMN)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMN) )
+          has_dobj_following_r(VP1(CONDEMN)  NP1(ACT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CONDEMN_322
+Anchor: VP1(CONDEMN)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONDEMNED_586
+Anchor: VP1(CONDEMNED)
+Act_Fcns: active_verb_broad_p(VP1(CONDEMNED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CONDEMNED_ASSASSINATION_307
+Anchor: VP1(CONDEMNED)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMNED) )
+          has_dobj_following_r(VP1(CONDEMNED)  NP1(ASSASSINATION) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CONDEMNED_319
+Anchor: VP1(CONDEMNED)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMNED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONDEMNS_588
+Anchor: VP1(CONDEMNS)
+Act_Fcns: active_verb_broad_p(VP1(CONDEMNS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CONDEMNS_ASSASSINATION_308
+Anchor: VP1(CONDEMNS)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMNS) )
+          has_dobj_following_r(VP1(CONDEMNS)  NP1(ASSASSINATION) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CONDEMNS_320
+Anchor: VP1(CONDEMNS)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMNS) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__CONDEMNS_IN_305
+Anchor: VP1(CONDEMNS)
+Act_Fcns: active_verb_narrow_p(VP1(CONDEMNS) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__COOPERATION_BETWEEN_457
+Anchor: NP1(COOPERATION)
+Act_Fcns: noun_phrase_broad_p(NP1(COOPERATION) )
+Slot: PP(BETWEEN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__DEATHS_OF_453
+Anchor: NP1(DEATHS)
+Act_Fcns: noun_phrase_broad_p(NP1(DEATHS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__FOUND_157
+Anchor: VP1(FOUND)
+Act_Fcns: passive_verb_broad_p(VP1(FOUND) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__FOUND_IN_126
+Anchor: VP1(FOUND)
+Act_Fcns: passive_verb_narrow_p(VP1(FOUND) )
+Slot: PP(IN)
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__FOUND_NEAR_127
+Anchor: VP1(FOUND)
+Act_Fcns: passive_verb_narrow_p(VP1(FOUND) )
+Slot: PP(NEAR)
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__FOUND_AFTER_128
+Anchor: VP1(FOUND)
+Act_Fcns: passive_verb_narrow_p(VP1(FOUND) )
+Slot: PP(AFTER)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__FOUND_WITH_130
+Anchor: VP1(FOUND)
+Act_Fcns: passive_verb_narrow_p(VP1(FOUND) )
+Slot: PP(WITH)
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__FOUND_THROUGH_131
+Anchor: VP1(FOUND)
+Act_Fcns: passive_verb_narrow_p(VP1(FOUND) )
+Slot: PP(THROUGH)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GROUPS_OF_458
+Anchor: NP1(GROUPS)
+Act_Fcns: noun_phrase_broad_p(NP1(GROUPS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__KIDNAP_114
+Anchor: VP1(KIDNAP)
+Act_Fcns: infinitive_verb_p(VP1(KIDNAP) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__KIDNAPPED_158
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_broad_p(VP1(KIDNAPPED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__KIDNAPPED_IN_129
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_narrow_p(VP1(KIDNAPPED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KIDNAPPED_BY_132
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_narrow_p(VP1(KIDNAPPED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KIDNAPPED_ACCORDING_TO_133
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_narrow_p(VP1(KIDNAPPED) )
+Slot: PP(ACCORDING_TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__KNEW_595
+Anchor: VP1(KNEW)
+Act_Fcns: active_verb_broad_p(VP1(KNEW) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__KNEW_OF_307
+Anchor: VP1(KNEW)
+Act_Fcns: active_verb_narrow_p(VP1(KNEW) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__MEMBER_OF_456
+Anchor: NP1(MEMBER)
+Act_Fcns: noun_phrase_broad_p(NP1(MEMBER) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__REACTION_TO_455
+Anchor: NP1(REACTION)
+Act_Fcns: noun_phrase_broad_p(NP1(REACTION) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REGRET_589
+Anchor: VP1(REGRET)
+Act_Fcns: active_verb_broad_p(VP1(REGRET) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__REGRET_DEATHS_309
+Anchor: VP1(REGRET)
+Act_Fcns: active_verb_narrow_p(VP1(REGRET) )
+          has_dobj_following_r(VP1(REGRET)  NP1(DEATHS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__REGRET_321
+Anchor: VP1(REGRET)
+Act_Fcns: active_verb_narrow_p(VP1(REGRET) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REGRETS_587
+Anchor: VP1(REGRETS)
+Act_Fcns: active_verb_broad_p(VP1(REGRETS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__RELATIVES_56
+Anchor: NP1(RELATIVES)
+Act_Fcns: contains_possessive_p(NP1(RELATIVES) )
+Slot: possessive_agent
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp__REPORTED_592
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SECRETARY_OF_450
+Anchor: NP1(SECRETARY)
+Act_Fcns: noun_phrase_broad_p(NP1(SECRETARY) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SECRETARY_GENERAL_OF_452
+Anchor: NP1(SECRETARY_GENERAL)
+Act_Fcns: noun_phrase_broad_p(NP1(SECRETARY_GENERAL) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SHOWS_594
+Anchor: VP1(SHOWS)
+Act_Fcns: active_verb_broad_p(VP1(SHOWS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SOCIALIST_INTERNATIONAL_FOR_451
+Anchor: NP1(SOCIALIST_INTERNATIONAL)
+Act_Fcns: noun_phrase_broad_p(NP1(SOCIALIST_INTERNATIONAL) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__STAGED_596
+Anchor: VP1(STAGED)
+Act_Fcns: active_verb_broad_p(VP1(STAGED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__STAGED_OPERATION_312
+Anchor: VP1(STAGED)
+Act_Fcns: active_verb_narrow_p(VP1(STAGED) )
+          has_dobj_following_r(VP1(STAGED)  NP1(OPERATION) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__STAGED_324
+Anchor: VP1(STAGED)
+Act_Fcns: active_verb_narrow_p(VP1(STAGED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TOLD_597
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_broad_p(VP1(TOLD) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__TOLD_EFE_313
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_narrow_p(VP1(TOLD) )
+          has_dobj_following_r(VP1(TOLD)  NP1(EFE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__TOLD_325
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_narrow_p(VP1(TOLD) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__TOLD_IN_308
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_narrow_p(VP1(TOLD) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__TOWN_OF_460
+Anchor: NP1(TOWN)
+Act_Fcns: noun_phrase_broad_p(NP1(TOWN) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__WAY_TO_461
+Anchor: NP1(WAY)
+Act_Fcns: noun_phrase_broad_p(NP1(WAY) )
+Slot: PP(TO)
+Stats: frequency = 1
+

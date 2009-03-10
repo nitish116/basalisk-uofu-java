@@ -1,0 +1,128 @@
+CF: 
+Name: <subj>_ActVp__ADMITTED_1239
+Anchor: VP1(ADMITTED)
+Act_Fcns: active_verb_broad_p(VP1(ADMITTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__ATTACKED_330
+Anchor: VP1(ATTACKED)
+Act_Fcns: passive_verb_broad_p(VP1(ATTACKED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__BATTALLION_IN_916
+Anchor: NP1(BATTALLION)
+Act_Fcns: noun_phrase_broad_p(NP1(BATTALLION) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONFIRMED_1235
+Anchor: VP1(CONFIRMED)
+Act_Fcns: active_verb_broad_p(VP1(CONFIRMED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DENIED_1237
+Anchor: VP1(DENIED)
+Act_Fcns: active_verb_broad_p(VP1(DENIED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__DENIED_REPORTS_622
+Anchor: VP1(DENIED)
+Act_Fcns: active_verb_narrow_p(VP1(DENIED) )
+          has_dobj_following_r(VP1(DENIED)  NP1(REPORTS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DENIED_648
+Anchor: VP1(DENIED)
+Act_Fcns: active_verb_narrow_p(VP1(DENIED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__HEARD_1236
+Anchor: VP1(HEARD)
+Act_Fcns: active_verb_broad_p(VP1(HEARD) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__HEARD_SHOTS_621
+Anchor: VP1(HEARD)
+Act_Fcns: active_verb_narrow_p(VP1(HEARD) )
+          has_dobj_following_r(VP1(HEARD)  NP1(SHOTS) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_<dobj>__HEARD_647
+Anchor: VP1(HEARD)
+Act_Fcns: active_verb_narrow_p(VP1(HEARD) )
+Slot: dobj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__HEARD_NEAR_681
+Anchor: VP1(HEARD)
+Act_Fcns: active_verb_narrow_p(VP1(HEARD) )
+Slot: PP(NEAR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__OBSERVED_331
+Anchor: VP1(OBSERVED)
+Act_Fcns: passive_verb_broad_p(VP1(OBSERVED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__OCCURRED_1238
+Anchor: VP1(OCCURRED)
+Act_Fcns: active_verb_broad_p(VP1(OCCURRED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__OCCURRED_OUTSIDE_682
+Anchor: VP1(OCCURRED)
+Act_Fcns: active_verb_narrow_p(VP1(OCCURRED) )
+Slot: PP(OUTSIDE)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PERSONNEL_OF_913
+Anchor: NP1(PERSONNEL)
+Act_Fcns: noun_phrase_broad_p(NP1(PERSONNEL) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__REPORTED_329
+Anchor: VP1(REPORTED)
+Act_Fcns: passive_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__TROOPS_OF_915
+Anchor: NP1(TROOPS)
+Act_Fcns: noun_phrase_broad_p(NP1(TROOPS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__UNIT_IN_914
+Anchor: NP1(UNIT)
+Act_Fcns: noun_phrase_broad_p(NP1(UNIT) )
+Slot: PP(IN)
+Stats: frequency = 1
+

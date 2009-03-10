@@ -1,0 +1,128 @@
+CF: 
+Name: <subj>_AuxVp_Adjp__BE_UNKNOWN_270
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_adjPhrase_following_r(VP1(BE)  ADJ1(UNKNOWN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DIED_5745
+Anchor: VP1(DIED)
+Act_Fcns: active_verb_broad_p(VP1(DIED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__DIED_AT_3323
+Anchor: VP1(DIED)
+Act_Fcns: active_verb_narrow_p(VP1(DIED) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__ENTER_900
+Anchor: VP1(ENTER)
+Act_Fcns: infinitive_verb_p(VP1(ENTER) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__ENTER_AT_531
+Anchor: VP1(ENTER)
+Act_Fcns: infinitive_verb_p(VP1(ENTER) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: InfVp_Prep_<NP>__ENTER_NEAR_532
+Anchor: VP1(ENTER)
+Act_Fcns: infinitive_verb_p(VP1(ENTER) )
+Slot: PP(NEAR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__IDENTIFIED_1453
+Anchor: VP1(IDENTIFIED)
+Act_Fcns: passive_verb_broad_p(VP1(IDENTIFIED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__IDENTIFIED_AS_1156
+Anchor: VP1(IDENTIFIED)
+Act_Fcns: passive_verb_narrow_p(VP1(IDENTIFIED) )
+Slot: PP(AS)
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__NEIGHBORHOOD_436
+Anchor: NP1(NEIGHBORHOOD)
+Act_Fcns: contains_possessive_p(NP1(NEIGHBORHOOD) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RECEIVED_5746
+Anchor: VP1(RECEIVED)
+Act_Fcns: active_verb_broad_p(VP1(RECEIVED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__RECEIVED_BULLET_WOUNDS_2913
+Anchor: VP1(RECEIVED)
+Act_Fcns: active_verb_narrow_p(VP1(RECEIVED) )
+          has_dobj_following_r(VP1(RECEIVED)  NP1(BULLET_WOUNDS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__RECEIVED_2932
+Anchor: VP1(RECEIVED)
+Act_Fcns: active_verb_narrow_p(VP1(RECEIVED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__SHOT_1451
+Anchor: VP1(SHOT)
+Act_Fcns: passive_verb_broad_p(VP1(SHOT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__TAKEN_1452
+Anchor: VP1(TAKEN)
+Act_Fcns: passive_verb_broad_p(VP1(TAKEN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__TAKEN_TO_1155
+Anchor: VP1(TAKEN)
+Act_Fcns: passive_verb_narrow_p(VP1(TAKEN) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TRIED_5747
+Anchor: VP1(TRIED)
+Act_Fcns: active_verb_broad_p(VP1(TRIED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__TRIED_ENTER_378
+Anchor: VP1(TRIED)
+Act_Fcns: active_infinitive_verb_p(VP1(TRIED ENTER) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__TRIED_ENTER_269
+Anchor: VP1(TRIED)
+Act_Fcns: active_infinitive_verb_p(VP1(TRIED ENTER) )
+Slot: dobj
+Stats: frequency = 1
+

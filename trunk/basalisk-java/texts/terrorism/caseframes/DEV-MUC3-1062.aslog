@@ -1,0 +1,157 @@
+CF: 
+Name: <subj>_AuxVp_Adjp__BE_TRUE_1060
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_adjPhrase_following_r(VP1(BE)  ADJ1(TRUE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_SON_3147
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(SON) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_ESCOBAR_2785
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(ESCOBAR) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CAPITAL_OF_14075
+Anchor: NP1(CAPITAL)
+Act_Fcns: noun_phrase_broad_p(NP1(CAPITAL) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CEMETARY_OF_14074
+Anchor: NP1(CEMETARY)
+Act_Fcns: noun_phrase_broad_p(NP1(CEMETARY) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONFIRMING_20065
+Anchor: VP1(CONFIRMING)
+Act_Fcns: active_verb_broad_p(VP1(CONFIRMING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__CONFIRMING_AT_11458
+Anchor: VP1(CONFIRMING)
+Act_Fcns: active_verb_narrow_p(VP1(CONFIRMING) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__FREED_4513
+Anchor: VP1(FREED)
+Act_Fcns: passive_verb_broad_p(VP1(FREED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__FREED_AT_3645
+Anchor: VP1(FREED)
+Act_Fcns: passive_verb_narrow_p(VP1(FREED) )
+Slot: PP(AT)
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__FREED_IN_3646
+Anchor: VP1(FREED)
+Act_Fcns: passive_verb_narrow_p(VP1(FREED) )
+Slot: PP(IN)
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_PassVp__KIDNAPPED_4512
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_broad_p(VP1(KIDNAPPED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KIDNAPPED_ON_3643
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_narrow_p(VP1(KIDNAPPED) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KIDNAPPED_BY_3644
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_narrow_p(VP1(KIDNAPPED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RECALL_20067
+Anchor: VP1(RECALL)
+Act_Fcns: active_verb_broad_p(VP1(RECALL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__RELEASE_OF_14077
+Anchor: NP1(RELEASE)
+Act_Fcns: noun_phrase_broad_p(NP1(RELEASE) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__RELEASED_20066
+Anchor: VP1(RELEASED)
+Act_Fcns: active_verb_broad_p(VP1(RELEASED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__RELEASED_NEAR_11459
+Anchor: VP1(RELEASED)
+Act_Fcns: active_verb_narrow_p(VP1(RELEASED) )
+Slot: PP(NEAR)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__REPORTS_ON_14076
+Anchor: NP1(REPORTS)
+Act_Fcns: noun_phrase_broad_p(NP1(REPORTS) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REVEAL_20068
+Anchor: VP1(REVEAL)
+Act_Fcns: active_verb_broad_p(VP1(REVEAL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__SECRETARY_1542
+Anchor: NP1(SECRETARY)
+Act_Fcns: contains_possessive_p(NP1(SECRETARY) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SECRETARY_GENERAL_OF_14073
+Anchor: NP1(SECRETARY_GENERAL)
+Act_Fcns: noun_phrase_broad_p(NP1(SECRETARY_GENERAL) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SON_OF_14072
+Anchor: NP1(SON)
+Act_Fcns: noun_phrase_broad_p(NP1(SON) )
+Slot: PP(OF)
+Stats: frequency = 2
+

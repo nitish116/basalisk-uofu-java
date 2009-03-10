@@ -1,0 +1,193 @@
+CF: 
+Name: NP_has_<possessive>__AIRPORT_48
+Anchor: NP1(AIRPORT)
+Act_Fcns: contains_possessive_p(NP1(AIRPORT) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_GROUPS_83
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(GROUPS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_THERE_71
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(THERE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__BODY_47
+Anchor: NP1(BODY)
+Act_Fcns: contains_possessive_p(NP1(BODY) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__BODY_OF_382
+Anchor: NP1(BODY)
+Act_Fcns: noun_phrase_broad_p(NP1(BODY) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__FOUND_139
+Anchor: VP1(FOUND)
+Act_Fcns: passive_verb_broad_p(VP1(FOUND) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: PassVp_Prep_<NP>__FOUND_TO_108
+Anchor: VP1(FOUND)
+Act_Fcns: passive_verb_narrow_p(VP1(FOUND) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__KIDNAPPED_138
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_broad_p(VP1(KIDNAPPED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KIDNAPPED_IN_107
+Anchor: VP1(KIDNAPPED)
+Act_Fcns: passive_verb_narrow_p(VP1(KIDNAPPED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__LEADER_OF_381
+Anchor: NP1(LEADER)
+Act_Fcns: noun_phrase_broad_p(NP1(LEADER) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__LINKED_507
+Anchor: VP1(LINKED)
+Act_Fcns: active_verb_broad_p(VP1(LINKED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__LINKED_TO_276
+Anchor: VP1(LINKED)
+Act_Fcns: active_verb_narrow_p(VP1(LINKED) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__LINKED_IN_277
+Anchor: VP1(LINKED)
+Act_Fcns: active_verb_narrow_p(VP1(LINKED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__NOTIMEX_BECAUSE_OF_383
+Anchor: NP1(NOTIMEX)
+Act_Fcns: noun_phrase_broad_p(NP1(NOTIMEX) )
+Slot: PP(BECAUSE_OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__OQUELI_IN_385
+Anchor: NP1(OQUELI)
+Act_Fcns: noun_phrase_broad_p(NP1(OQUELI) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: NP_has_<possessive>__PARTY_46
+Anchor: NP1(PARTY)
+Act_Fcns: contains_possessive_p(NP1(PARTY) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PERIOD_OF_384
+Anchor: NP1(PERIOD)
+Act_Fcns: noun_phrase_broad_p(NP1(PERIOD) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_503
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TAKING_504
+Anchor: VP1(TAKING)
+Act_Fcns: active_verb_broad_p(VP1(TAKING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__TAKING_HIM_266
+Anchor: VP1(TAKING)
+Act_Fcns: active_verb_narrow_p(VP1(TAKING) )
+          has_dobj_following_r(VP1(TAKING)  NP1(HIM) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__TAKING_277
+Anchor: VP1(TAKING)
+Act_Fcns: active_verb_narrow_p(VP1(TAKING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__TAKING_TO_274
+Anchor: VP1(TAKING)
+Act_Fcns: active_verb_narrow_p(VP1(TAKING) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TOLD_506
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_broad_p(VP1(TOLD) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__TOLD_NOTIMEX_267
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_narrow_p(VP1(TOLD) )
+          has_dobj_following_r(VP1(TOLD)  NP1(NOTIMEX) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__TOLD_278
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_narrow_p(VP1(TOLD) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TRAVEL_505
+Anchor: VP1(TRAVEL)
+Act_Fcns: active_verb_broad_p(VP1(TRAVEL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__TRAVEL_TO_275
+Anchor: VP1(TRAVEL)
+Act_Fcns: active_verb_narrow_p(VP1(TRAVEL) )
+Slot: PP(TO)
+Stats: frequency = 1
+

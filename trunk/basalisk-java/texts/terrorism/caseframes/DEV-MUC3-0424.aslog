@@ -1,0 +1,120 @@
+CF: 
+Name: <subj>_PassVp__CARRIED_OUT_1849
+Anchor: VP1(CARRIED_OUT)
+Act_Fcns: passive_verb_broad_p(VP1(CARRIED_OUT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__CARRIED_OUT_IN_1457
+Anchor: VP1(CARRIED_OUT)
+Act_Fcns: passive_verb_narrow_p(VP1(CARRIED_OUT) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__DEPARTMENT_OF_5156
+Anchor: NP1(DEPARTMENT)
+Act_Fcns: noun_phrase_broad_p(NP1(DEPARTMENT) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GROUP_OF_5153
+Anchor: NP1(GROUP)
+Act_Fcns: noun_phrase_broad_p(NP1(GROUP) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GUERRERO_OF_5155
+Anchor: NP1(GUERRERO)
+Act_Fcns: noun_phrase_broad_p(NP1(GUERRERO) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__KILLED_7355
+Anchor: VP1(KILLED)
+Act_Fcns: active_verb_broad_p(VP1(KILLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__KILLED_GUERRERO_3697
+Anchor: VP1(KILLED)
+Act_Fcns: active_verb_narrow_p(VP1(KILLED) )
+          has_dobj_following_r(VP1(KILLED)  NP1(GUERRERO) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__KILLED_3723
+Anchor: VP1(KILLED)
+Act_Fcns: active_verb_narrow_p(VP1(KILLED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__KILLED_IN_4215
+Anchor: VP1(KILLED)
+Act_Fcns: active_verb_narrow_p(VP1(KILLED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_7354
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SEARCH_OF_5157
+Anchor: NP1(SEARCH)
+Act_Fcns: noun_phrase_broad_p(NP1(SEARCH) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__SHOT_1848
+Anchor: VP1(SHOT)
+Act_Fcns: passive_verb_broad_p(VP1(SHOT) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__SHOT_FROM_1456
+Anchor: VP1(SHOT)
+Act_Fcns: passive_verb_narrow_p(VP1(SHOT) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__WAITING_7356
+Anchor: VP1(WAITING)
+Act_Fcns: active_verb_broad_p(VP1(WAITING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__WAITING_FOR_4216
+Anchor: VP1(WAITING)
+Act_Fcns: active_verb_narrow_p(VP1(WAITING) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__WAITING_IN_FRONT_OF_4217
+Anchor: VP1(WAITING)
+Act_Fcns: active_verb_narrow_p(VP1(WAITING) )
+Slot: PP(IN_FRONT_OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__WIFE_OF_5154
+Anchor: NP1(WIFE)
+Act_Fcns: noun_phrase_broad_p(NP1(WIFE) )
+Slot: PP(OF)
+Stats: frequency = 1
+

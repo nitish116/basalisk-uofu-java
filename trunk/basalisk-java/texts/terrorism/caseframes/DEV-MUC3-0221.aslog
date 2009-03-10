@@ -1,0 +1,120 @@
+CF: 
+Name: <subj>_ActVp__CAUSED_3688
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_broad_p(VP1(CAUSED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__CAUSED_BY_2140
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__CORNER_OF_2668
+Anchor: NP1(CORNER)
+Act_Fcns: noun_phrase_broad_p(NP1(CORNER) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__DAMAGED_3689
+Anchor: VP1(DAMAGED)
+Act_Fcns: active_verb_broad_p(VP1(DAMAGED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__DAMAGED_WINDOWS_1862
+Anchor: VP1(DAMAGED)
+Act_Fcns: active_verb_narrow_p(VP1(DAMAGED) )
+          has_dobj_following_r(VP1(DAMAGED)  NP1(WINDOWS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__DAMAGED_1898
+Anchor: VP1(DAMAGED)
+Act_Fcns: active_verb_narrow_p(VP1(DAMAGED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: infinitive_verb_<dobj>__DETERMINE_578
+Anchor: VP1(DETERMINE)
+Act_Fcns: infinitive_verb_p(VP1(DETERMINE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__EXPLODED_3686
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_broad_p(VP1(EXPLODED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__EXPLODED_ON_2139
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_narrow_p(VP1(EXPLODED) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__EXPLODED_AFTER_2141
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_narrow_p(VP1(EXPLODED) )
+Slot: PP(AFTER)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__LEARNED_920
+Anchor: VP1(LEARNED)
+Act_Fcns: passive_verb_broad_p(VP1(LEARNED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__LEARNED_FROM_744
+Anchor: VP1(LEARNED)
+Act_Fcns: passive_verb_narrow_p(VP1(LEARNED) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__LOCATED_921
+Anchor: VP1(LOCATED)
+Act_Fcns: passive_verb_broad_p(VP1(LOCATED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TRYING_3687
+Anchor: VP1(TRYING)
+Act_Fcns: active_verb_broad_p(VP1(TRYING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActInfVp__TRYING_DETERMINE_232
+Anchor: VP1(TRYING)
+Act_Fcns: active_infinitive_verb_p(VP1(TRYING DETERMINE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActInfVp_<dobj>__TRYING_DETERMINE_167
+Anchor: VP1(TRYING)
+Act_Fcns: active_infinitive_verb_p(VP1(TRYING DETERMINE) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__WINDOWS_OF_2669
+Anchor: NP1(WINDOWS)
+Act_Fcns: noun_phrase_broad_p(NP1(WINDOWS) )
+Slot: PP(OF)
+Stats: frequency = 1
+

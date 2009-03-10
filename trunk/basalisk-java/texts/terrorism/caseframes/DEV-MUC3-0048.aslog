@@ -1,0 +1,209 @@
+CF: 
+Name: NP_has_<possessive>__ATTACK_70
+Anchor: NP1(ATTACK)
+Act_Fcns: contains_possessive_p(NP1(ATTACK) )
+Slot: possessive_agent
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__BASED_763
+Anchor: VP1(BASED)
+Act_Fcns: active_verb_broad_p(VP1(BASED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__BASED_AT_410
+Anchor: VP1(BASED)
+Act_Fcns: active_verb_narrow_p(VP1(BASED) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_OFFICER_141
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(OFFICER) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_MUSIO_117
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(MUSIO) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__COMMAND_OF_592
+Anchor: NP1(COMMAND)
+Act_Fcns: noun_phrase_broad_p(NP1(COMMAND) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__GROUP_OF_593
+Anchor: NP1(GROUP)
+Act_Fcns: noun_phrase_broad_p(NP1(GROUP) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__HEADING_765
+Anchor: VP1(HEADING)
+Act_Fcns: active_verb_broad_p(VP1(HEADING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__HEADING_GROUP_394
+Anchor: VP1(HEADING)
+Act_Fcns: active_verb_narrow_p(VP1(HEADING) )
+          has_dobj_following_r(VP1(HEADING)  NP1(GROUP) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__HEADING_409
+Anchor: VP1(HEADING)
+Act_Fcns: active_verb_narrow_p(VP1(HEADING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__INCLUDING_766
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_broad_p(VP1(INCLUDING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__INCLUDING_OFFICERS_395
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_narrow_p(VP1(INCLUDING) )
+          has_dobj_following_r(VP1(INCLUDING)  NP1(OFFICERS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__INCLUDING_410
+Anchor: VP1(INCLUDING)
+Act_Fcns: active_verb_narrow_p(VP1(INCLUDING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__INJURED_209
+Anchor: VP1(INJURED)
+Act_Fcns: passive_verb_broad_p(VP1(INJURED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__INJURED_ON_188
+Anchor: VP1(INJURED)
+Act_Fcns: passive_verb_narrow_p(VP1(INJURED) )
+Slot: PP(ON)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__INSTALLED_207
+Anchor: VP1(INSTALLED)
+Act_Fcns: passive_verb_broad_p(VP1(INSTALLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__KILLED_208
+Anchor: VP1(KILLED)
+Act_Fcns: passive_verb_broad_p(VP1(KILLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KILLED_DURING_186
+Anchor: VP1(KILLED)
+Act_Fcns: passive_verb_narrow_p(VP1(KILLED) )
+Slot: PP(DURING)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__KILLED_ON_187
+Anchor: VP1(KILLED)
+Act_Fcns: passive_verb_narrow_p(VP1(KILLED) )
+Slot: PP(ON)
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp__OMITTED_768
+Anchor: VP1(OMITTED)
+Act_Fcns: active_verb_broad_p(VP1(OMITTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__REAR_OF_594
+Anchor: NP1(REAR)
+Act_Fcns: noun_phrase_broad_p(NP1(REAR) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPELLING_767
+Anchor: VP1(REPELLING)
+Act_Fcns: active_verb_broad_p(VP1(REPELLING) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__REPELLING_ATTACK_396
+Anchor: VP1(REPELLING)
+Act_Fcns: active_verb_narrow_p(VP1(REPELLING) )
+          has_dobj_following_r(VP1(REPELLING)  NP1(ATTACK) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__REPELLING_411
+Anchor: VP1(REPELLING)
+Act_Fcns: active_verb_narrow_p(VP1(REPELLING) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__REPELLING_FROM_411
+Anchor: VP1(REPELLING)
+Act_Fcns: active_verb_narrow_p(VP1(REPELLING) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPLACES_764
+Anchor: VP1(REPLACES)
+Act_Fcns: active_verb_broad_p(VP1(REPLACES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__REPLACES_CUTIELLO_393
+Anchor: VP1(REPLACES)
+Act_Fcns: active_verb_narrow_p(VP1(REPLACES) )
+          has_dobj_following_r(VP1(REPLACES)  NP1(CUTIELLO) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__REPLACES_408
+Anchor: VP1(REPLACES)
+Act_Fcns: active_verb_narrow_p(VP1(REPLACES) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SECOND_IN_591
+Anchor: NP1(SECOND)
+Act_Fcns: noun_phrase_broad_p(NP1(SECOND) )
+Slot: PP(IN)
+Stats: frequency = 1
+

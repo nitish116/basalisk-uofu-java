@@ -1,0 +1,165 @@
+CF: 
+Name: Np_Prep_<NP>__BATHROOM_OF_13642
+Anchor: NP1(BATHROOM)
+Act_Fcns: noun_phrase_broad_p(NP1(BATHROOM) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CAUSED_19509
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_broad_p(VP1(CAUSED) )
+Slot: subj
+Stats: frequency = 2
+
+CF: 
+Name: <subj>_ActVp_Dobj__CAUSED_DAMAGE_9887
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+          has_dobj_following_r(VP1(CAUSED)  NP1(DAMAGE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CAUSED_9878
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+Slot: dobj
+Stats: frequency = 2
+
+CF: 
+Name: ActVp_Prep_<NP>__CAUSED_TO_11113
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+Slot: PP(TO)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CAUSED_PANIC_9888
+Anchor: VP1(CAUSED)
+Act_Fcns: active_verb_narrow_p(VP1(CAUSED) )
+          has_dobj_following_r(VP1(CAUSED)  NP1(PANIC) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__CONTAINED_19506
+Anchor: VP1(CONTAINED)
+Act_Fcns: active_verb_broad_p(VP1(CONTAINED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__CONTAINED_KG_9885
+Anchor: VP1(CONTAINED)
+Act_Fcns: active_verb_narrow_p(VP1(CONTAINED) )
+          has_dobj_following_r(VP1(CONTAINED)  NP1(KG) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__CONTAINED_9876
+Anchor: VP1(CONTAINED)
+Act_Fcns: active_verb_narrow_p(VP1(CONTAINED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__EXPLODED_19504
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_broad_p(VP1(EXPLODED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__EXPLODED_IN_11111
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_narrow_p(VP1(EXPLODED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__FUEL_19508
+Anchor: VP1(FUEL)
+Act_Fcns: active_verb_broad_p(VP1(FUEL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__FUEL_OIL_9886
+Anchor: VP1(FUEL)
+Act_Fcns: active_verb_narrow_p(VP1(FUEL) )
+          has_dobj_following_r(VP1(FUEL)  NP1(OIL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__FUEL_9877
+Anchor: VP1(FUEL)
+Act_Fcns: active_verb_narrow_p(VP1(FUEL) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__INSTITUTE_AT_13643
+Anchor: NP1(INSTITUTE)
+Act_Fcns: noun_phrase_broad_p(NP1(INSTITUTE) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__KG_OF_13645
+Anchor: NP1(KG)
+Act_Fcns: noun_phrase_broad_p(NP1(KG) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__MADE_19507
+Anchor: VP1(MADE)
+Act_Fcns: active_verb_broad_p(VP1(MADE) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__MADE_OF_11112
+Anchor: VP1(MADE)
+Act_Fcns: active_verb_narrow_p(VP1(MADE) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__REPORTED_19510
+Anchor: VP1(REPORTED)
+Act_Fcns: active_verb_broad_p(VP1(REPORTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__SAID_19505
+Anchor: VP1(SAID)
+Act_Fcns: active_verb_broad_p(VP1(SAID) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__SET_OFF_4406
+Anchor: VP1(SET_OFF)
+Act_Fcns: passive_verb_broad_p(VP1(SET_OFF) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__SET_OFF_BY_3558
+Anchor: VP1(SET_OFF)
+Act_Fcns: passive_verb_narrow_p(VP1(SET_OFF) )
+Slot: PP(BY)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__STUDENTS_IN_13644
+Anchor: NP1(STUDENTS)
+Act_Fcns: noun_phrase_broad_p(NP1(STUDENTS) )
+Slot: PP(IN)
+Stats: frequency = 1
+

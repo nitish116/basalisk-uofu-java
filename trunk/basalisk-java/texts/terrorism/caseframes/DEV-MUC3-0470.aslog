@@ -1,0 +1,187 @@
+CF: 
+Name: Np_Prep_<NP>__ATTACK_AGAINST_5642
+Anchor: NP1(ATTACK)
+Act_Fcns: noun_phrase_broad_p(NP1(ATTACK) )
+Slot: PP(AGAINST)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__ATTACKED_8029
+Anchor: VP1(ATTACKED)
+Act_Fcns: active_verb_broad_p(VP1(ATTACKED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__ATTACKED_STUDIOS_4037
+Anchor: VP1(ATTACKED)
+Act_Fcns: active_verb_narrow_p(VP1(ATTACKED) )
+          has_dobj_following_r(VP1(ATTACKED)  NP1(STUDIOS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__ATTACKED_4076
+Anchor: VP1(ATTACKED)
+Act_Fcns: active_verb_narrow_p(VP1(ATTACKED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_PART_1242
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(PART) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_STATION_1090
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(STATION) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__BROKEN_2029
+Anchor: VP1(BROKEN)
+Act_Fcns: passive_verb_broad_p(VP1(BROKEN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__COMES_8030
+Anchor: VP1(COMES)
+Act_Fcns: active_verb_broad_p(VP1(COMES) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__COMES_AFTER_4631
+Anchor: VP1(COMES)
+Act_Fcns: active_verb_narrow_p(VP1(COMES) )
+Slot: PP(AFTER)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__EXPLODED_8033
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_broad_p(VP1(EXPLODED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__EXPLODED_OUTSIDE_4632
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_narrow_p(VP1(EXPLODED) )
+Slot: PP(OUTSIDE)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__EXPLODED_IN_4633
+Anchor: VP1(EXPLODED)
+Act_Fcns: active_verb_narrow_p(VP1(EXPLODED) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__FACILITIES_OF_5643
+Anchor: NP1(FACILITIES)
+Act_Fcns: noun_phrase_broad_p(NP1(FACILITIES) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__HURLED_8032
+Anchor: VP1(HURLED)
+Act_Fcns: active_verb_broad_p(VP1(HURLED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__HURLED_MOLOTOV_COCKTAIL_4039
+Anchor: VP1(HURLED)
+Act_Fcns: active_verb_narrow_p(VP1(HURLED) )
+          has_dobj_following_r(VP1(HURLED)  NP1(MOLOTOV_COCKTAIL) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__HURLED_4078
+Anchor: VP1(HURLED)
+Act_Fcns: active_verb_narrow_p(VP1(HURLED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__OMITTED_8034
+Anchor: VP1(OMITTED)
+Act_Fcns: active_verb_broad_p(VP1(OMITTED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__PART_OF_5641
+Anchor: NP1(PART)
+Act_Fcns: noun_phrase_broad_p(NP1(PART) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SOURCES_FROM_5644
+Anchor: NP1(SOURCES)
+Act_Fcns: noun_phrase_broad_p(NP1(SOURCES) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__STUDIOS_OF_5640
+Anchor: NP1(STUDIOS)
+Act_Fcns: noun_phrase_broad_p(NP1(STUDIOS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__THROWN_2030
+Anchor: VP1(THROWN)
+Act_Fcns: passive_verb_broad_p(VP1(THROWN) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__THROWN_AT_1620
+Anchor: VP1(THROWN)
+Act_Fcns: passive_verb_narrow_p(VP1(THROWN) )
+Slot: PP(AT)
+Stats: frequency = 1
+
+CF: 
+Name: PassVp_Prep_<NP>__THROWN_NEAR_1621
+Anchor: VP1(THROWN)
+Act_Fcns: passive_verb_narrow_p(VP1(THROWN) )
+Slot: PP(NEAR)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__TOLD_8031
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_broad_p(VP1(TOLD) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__TOLD_PRESENCIA_4038
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_narrow_p(VP1(TOLD) )
+          has_dobj_following_r(VP1(TOLD)  NP1(PRESENCIA) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__TOLD_4077
+Anchor: VP1(TOLD)
+Act_Fcns: active_verb_narrow_p(VP1(TOLD) )
+Slot: dobj
+Stats: frequency = 1
+

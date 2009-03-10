@@ -1,0 +1,87 @@
+CF: 
+Name: <subj>_AuxVp_Dobj__BE_TAMAYO_154
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_dobj_following_r(VP1(BE)  NP1(TAMAYO) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: Subj_AuxVp_<dobj>__BE_POLICEMEN_129
+Anchor: VP1(ROOT:BE)
+Act_Fcns: active_aux_root_p(VP1(BE) )
+          has_subj_preceding_r(VP1(BE)  NP1(POLICEMEN) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_PassVp__BURIED_234
+Anchor: VP1(BURIED)
+Act_Fcns: passive_verb_broad_p(VP1(BURIED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__BURNED_TO_DEATH_871
+Anchor: VP1(BURNED_TO_DEATH)
+Act_Fcns: active_verb_broad_p(VP1(BURNED_TO_DEATH) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__BURNED_TO_DEATH_INSIDE_464
+Anchor: VP1(BURNED_TO_DEATH)
+Act_Fcns: active_verb_narrow_p(VP1(BURNED_TO_DEATH) )
+Slot: PP(INSIDE)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__BURNED_TO_DEATH_IN_465
+Anchor: VP1(BURNED_TO_DEATH)
+Act_Fcns: active_verb_narrow_p(VP1(BURNED_TO_DEATH) )
+Slot: PP(IN)
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_Prep_<NP>__BURNED_TO_DEATH_FROM_466
+Anchor: VP1(BURNED_TO_DEATH)
+Act_Fcns: active_verb_narrow_p(VP1(BURNED_TO_DEATH) )
+Slot: PP(FROM)
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp__INCINERATED_870
+Anchor: VP1(INCINERATED)
+Act_Fcns: active_verb_broad_p(VP1(INCINERATED) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: <subj>_ActVp_Dobj__INCINERATED_MEMBERS_440
+Anchor: VP1(INCINERATED)
+Act_Fcns: active_verb_narrow_p(VP1(INCINERATED) )
+          has_dobj_following_r(VP1(INCINERATED)  NP1(MEMBERS) )
+Slot: subj
+Stats: frequency = 1
+
+CF: 
+Name: ActVp_<dobj>__INCINERATED_464
+Anchor: VP1(INCINERATED)
+Act_Fcns: active_verb_narrow_p(VP1(INCINERATED) )
+Slot: dobj
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__MEMBERS_OF_658
+Anchor: NP1(MEMBERS)
+Act_Fcns: noun_phrase_broad_p(NP1(MEMBERS) )
+Slot: PP(OF)
+Stats: frequency = 1
+
+CF: 
+Name: Np_Prep_<NP>__SEARCH_FOR_657
+Anchor: NP1(SEARCH)
+Act_Fcns: noun_phrase_broad_p(NP1(SEARCH) )
+Slot: PP(FOR)
+Stats: frequency = 1
+
