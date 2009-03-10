@@ -16,17 +16,17 @@ public class Basilisk {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String caseFrameFile = "sample-texts/muc-out/muc-1thru20-cfs.txt";
-		String listFilesWithExtractedNouns = "muc3-listfile.cases";
-		String locationSeedFile = "location-seeds";
-		Basilisk b = new Basilisk(caseFrameFile, listFilesWithExtractedNouns, locationSeedFile);
+		String caseFrameFile = "texts/terrorism/caseframes/all.aslog";
+		String casesSlist = "texts/terrorism/slists/cases.slist";
+		String locationSeedFile = "texts/terrorism/seed-lists/locations.seed";
+		Basilisk b = new Basilisk(caseFrameFile, casesSlist, locationSeedFile);
 		
 	}
 	
-	public Basilisk(String fileWithOnlyCaseFrames, String listOfFilesWithExtractedNouns, String locationSeedFile){
+	public Basilisk(String fileWithOnlyCaseFrames, String casesSlist, String locationSeedFile){
 		//_caseFrameList = CaseFrameLoader.loadFromFile(fileWithOnlyCaseFrames);
-		_caseFrameToNounMap = CaseFrameToExtractedNounMap.loadFromMultipleFiles(listOfFilesWithExtractedNouns);
-		_nounToCaseFrameMap = ExtractedNounToCaseFrameMap.loadFromMultipleFiles(listOfFilesWithExtractedNouns);
+		_caseFrameToNounMap = CaseFrameToExtractedNounMap.loadFromSlist(casesSlist);
+		_nounToCaseFrameMap = ExtractedNounToCaseFrameMap.loadFromSlist(casesSlist);
 		_locations = SeedWordLoader.loadFromFile(locationSeedFile);
 		List<String> learnedLocationLexicon = new ArrayList<String>();
 		

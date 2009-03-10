@@ -15,6 +15,40 @@ public class ExtractedNounToCaseFrameMap {
 	}
 	private static final String _cfNameLineRegex = "^CaseFrame:.+[0-9]+$";
 	
+	public static Map<String, Set<String>> loadFromSlist(String slist){
+		Map<String, Set<String>> result = new HashMap<String, Set<String>>();
+		
+		File f = new File(slist);
+		
+		if (!f.exists()){
+			System.err.println("Error opening list pointing to .cases files while trying to map nouns to caseframes: " + f.getAbsolutePath());
+			return null;
+		}
+		
+		Scanner in = null;
+		
+		try {
+			in = new Scanner(f);
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+		}
+		
+		//The first line of the slist contains directory info
+		String dir = in.nextLine();
+		
+		while(in.hasNextLine()){
+			if(result.size() == 0)
+				result = loadFromFile(dir + in.nextLine());
+			else{
+				result = combineNounMaps(result, loadFromFile(dir + in.nextLine()));
+			}
+		}
+		
+		in.close();
+		return result;
+	} 
+	
 	public static Map<String, Set<String>> loadFromMultipleFiles(String listFileName){
 		Map<String, Set<String>> result = new HashMap<String, Set<String>>();
 		
