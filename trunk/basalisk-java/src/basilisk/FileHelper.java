@@ -11,6 +11,9 @@ public class FileHelper {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(fileToString(new File("muc3-listfile")));
+		
+		String noun = "this painful   moment";
+		System.out.println(noun.split(" +")[noun.split(" +").length - 1]);
 	}
 	
 	public static String fileToString(File f){
