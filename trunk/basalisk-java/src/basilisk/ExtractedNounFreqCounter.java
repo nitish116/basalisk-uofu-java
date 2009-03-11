@@ -20,7 +20,8 @@ public class ExtractedNounFreqCounter {
 		System.out.println(countExtractedNounsFromFile("sample-texts/muc-out/DEV-MUC3-0001.cases"));
 		//System.out.println(countExtractedNounsFromMultipleFiles("muc3-listfile.cases"));
 
-		printCountSortedListToFile(countExtractedNounsFromMultipleFiles("muc3-listfile.cases"), "mucFrequentWords.txt", true);
+		//printCountSortedListToFile(countExtractedNounsFromMultipleFiles("muc3-listfile.cases"), "mucFrequentWords.txt", true);
+		printCountSortedListToFile(countExtractedNounsFromSlist("texts/terrorism/slists/cases.slist"), "texts/terrorism/cases.freq", true);
 	}
 	
 	private static final String _cfNameLineRegex = "^CaseFrame:.+[0-9]+$";
