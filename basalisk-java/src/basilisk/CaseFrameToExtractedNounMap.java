@@ -207,12 +207,12 @@ public class CaseFrameToExtractedNounMap {
 	}
 	
 	private static String extNP(String extNounLine) {
-		Pattern p = Pattern.compile("\"[^\"\r\n]*\"");
-		
-		Matcher m = p.matcher(extNounLine);
-		m.find();
-		
-		String substr = extNounLine.substring(m.start()+1, m.end()-1);
-		return substr;
+//		Pattern p = Pattern.compile("\"[^\"\r\n]*\"");
+//		
+//		Matcher m = p.matcher(extNounLine);
+//		m.find();
+//		
+//		String substr = extNounLine.substring(m.start()+1, m.end()-1);
+		return "";
 	}
 }
