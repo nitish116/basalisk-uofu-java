@@ -102,12 +102,17 @@ public class Basilisk {
 		//Run the bootstrapping 5 times
 		for(int i = 0; i < 1; i++){
 			//Score the caseFrameList
-			_patterns = scorePatterns(_patterns, _seeds);
+			Pattern topP = new Pattern("InfVp_Prep_<NP>__ADVANCE_IN_26");
+			topP.setScore(1.666d);
+			Set<ExtractedNoun> topNouns = _patterns.get(new Pattern("InfVp_Prep_<NP>__ADVANCE_IN_26"));
 			
+			_patterns = scorePatterns(_patterns, _seeds);
+			NavigableMap<Pattern, Set<ExtractedNoun>> rm = _patterns.descendingMap();
+			topNouns = _patterns.get(new Pattern("InfVp_Prep_<NP>__ADVANCE_IN_26"));
 			//Select the top rated caseframes
 			TreeSet<Pattern> patternPool = selectTopNPatterns(_patterns, 20 + i);
 			System.out.println(patternPool.descendingSet());
-//			tracePatternPool(patternPool, trace);
+			tracePatternPool(patternPool, trace);
 //			System.out.println("Pattern pool size: " + patternPool.size());
 //			//Form the candidate pool from the pattern pool
 //			Set<String> candidateNounPool = selectNounsFromCaseFrames(patternPool, _patterns);
@@ -142,7 +147,22 @@ public class Basilisk {
 		trace.close();
 	}
 
-	private void tracePatternPool(Map<String, Double> patternPool, PrintStream trace) {
+	private void tracePatternPool(TreeSet<Pattern> patternPool, PrintStream trace) {
+		trace.format("Pattern pool (%d patterns)\n", patternPool.size());
+		
+		NavigableMap<Pattern, Set<ExtractedNoun>> reverseMap = _patterns.descendingMap();
+		
+		int i = 1;
+		for(Pattern p: patternPool.descendingSet()){
+			trace.format("%3d %s", i, p.toString());
+			trace.append("Extracted nouns: ");
+			Set<ExtractedNoun> en = _patterns.get(p);
+			for(ExtractedNoun extractedNoun: _patterns.get(p)){
+				trace.append(extractedNoun.toString());
+			}
+			
+			i++;
+		}
 //		//Sort the pattern pool by descending rlogf value
 //		List<Map.Entry<String, Double>> sortByValue = new ArrayList<Map.Entry<String, Double>>(patternPool.entrySet());
 //		Collections.sort(sortByValue, new Comparator<Map.Entry>(){
