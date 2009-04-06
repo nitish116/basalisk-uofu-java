@@ -10,8 +10,8 @@ public class Basilisk {
 	private int _iterations;
 	private boolean _initializedProperly;
 	private String _outputPrefix;
-	private TreeMap<Pattern, Set<ExtractedNoun>> _patterns;
-	private TreeMap<ExtractedNoun, Set<Pattern>> _extractedNouns;
+	private HashMap<Pattern, Set<ExtractedNoun>> _patternsToExtractedNounMap;
+	private HashMap<ExtractedNoun, Set<Pattern>> _extractedNounsToPatternsMap;
 	private Set<Noun> _seeds;
 	private Set<Noun> _stopWords;
 
@@ -96,37 +96,36 @@ public class Basilisk {
 		}
 		
 
-		List<String> learnedLexicon = new ArrayList<String>();
+		List<ExtractedNoun> learnedLexicon = new ArrayList<ExtractedNoun>();
 		
 		
 		//Run the bootstrapping 5 times
 		for(int i = 0; i < 1; i++){
-			//Score the caseFrameList
-			Pattern topP = new Pattern("InfVp_Prep_<NP>__ADVANCE_IN_26");
-			topP.setScore(1.666d);
-			Set<ExtractedNoun> topNouns = _patterns.get(new Pattern("InfVp_Prep_<NP>__ADVANCE_IN_26"));
+			System.out.format("Iteration %d\n", i + 1);
+			//Iteration trace header
+			traceIterationHeader(trace, i+1);
 			
-			_patterns = scorePatterns(_patterns, _seeds);
-			NavigableMap<Pattern, Set<ExtractedNoun>> rm = _patterns.descendingMap();
-			topNouns = _patterns.get(new Pattern("InfVp_Prep_<NP>__ADVANCE_IN_26"));
-			//Select the top rated caseframes
-			TreeSet<Pattern> patternPool = selectTopNPatterns(_patterns, 20 + i);
-			System.out.println(patternPool.descendingSet());
-			tracePatternPool(patternPool, trace);
-//			System.out.println("Pattern pool size: " + patternPool.size());
-//			//Form the candidate pool from the pattern pool
-//			Set<String> candidateNounPool = selectNounsFromCaseFrames(patternPool, _patterns);
-//			System.out.println(candidateNounPool);
-//			System.out.println("Candidate noun pool size: " + candidateNounPool.size());
-//			//Score the candidate nouns
-//			Map<String, Double> candidateWordToScoreMap = scoreCandidateNouns(candidateNounPool, _nouns, _patterns, _seeds);
-//			//Add the top 5 candidate nouns to the lexicon
-//			List<String> topNewWords = selectTopNNewCandidateWords(candidateWordToScoreMap, 5);
-//			
-//			System.out.printf("%d new words were added to the lexicon on iteration #%d of bootstrapping.\n", topNewWords.size(), i);
-//			
-//			_seeds.addAll(topNewWords);
-//			learnedLexicon.addAll(topNewWords);
+			//Score the patterns
+			TreeSet<Pattern> scoredPatterns = scorePatterns(_patternsToExtractedNounMap, _seeds);
+			
+			//Select the top patterns
+			TreeSet<Pattern> patternPool = selectTopNPatterns(scoredPatterns, 20 + i);
+			
+			//Trace the top patterns
+			tracePatternPool(trace, patternPool);
+
+			//Gather the nouns that were extracted by the patterns in the pattern pool
+			Set<ExtractedNoun> candidateNounPool = selectNounsFromPatterns(patternPool, _patternsToExtractedNounMap);
+
+			//Score the candidate nouns
+			TreeSet<ExtractedNoun> scoredNouns = scoreCandidateNouns(candidateNounPool, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _seeds);
+			
+			//Select the top extracted nouns
+			TreeSet<ExtractedNoun> topNewWords = selectTopNNewCandidateWords(scoredNouns, 5);
+			System.out.format("%d new words were added to the lexicon on iteration #%d of bootstrapping.\n", topNewWords.size(), i);
+			
+			_seeds.addAll(topNewWords);
+			learnedLexicon.addAll(topNewWords);
 		}
 		System.out.println(learnedLexicon);
 		System.out.println("Learned lexicon size:" + learnedLexicon.size());
@@ -140,45 +139,68 @@ public class Basilisk {
 			System.err.println(e.getMessage());
 		}
 		
-		for(String learnedWord: learnedLexicon){
+		for(ExtractedNoun learnedWord: learnedLexicon){
 			out.print(learnedWord + "\n");
 		}
 		out.close();
 		trace.close();
 	}
 
-	private void tracePatternPool(TreeSet<Pattern> patternPool, PrintStream trace) {
+	private void traceIterationHeader(PrintStream trace, int iteration) {
+		trace.append("************************************************************\n");
+		trace.format("                    Iteration %3d\n", iteration);
+		trace.append("************************************************************\n\n");
+		
+	}
+
+
+	/**
+	 * Appends information about patterns in the pattern pool to the output trace.
+	 * Looks like: 
+	 *   1 PATTERN
+     *		Extracted nouns: a, b, c
+     *		Num Extracted Nouns: x
+     *		Score: x.x
+	 * @param trace - PrintStream where the trace file is being written
+	 * @param patternPool - a Treeset of patterns (patterns are naturally sorted by score
+	 */
+	private void tracePatternPool(PrintStream trace, TreeSet<Pattern> patternPool) {
 		trace.format("Pattern pool (%d patterns)\n", patternPool.size());
 		
-		NavigableMap<Pattern, Set<ExtractedNoun>> reverseMap = _patterns.descendingMap();
+		String infoPadding = "     "; //Padding to indent the information below a pattern
 		
+		//Loop through each pattern in the pattern pool
 		int i = 1;
 		for(Pattern p: patternPool.descendingSet()){
-			trace.format("%3d %s", i, p.toString());
-			trace.append("Extracted nouns: ");
-			Set<ExtractedNoun> en = _patterns.get(p);
-			for(ExtractedNoun extractedNoun: _patterns.get(p)){
-				trace.append(extractedNoun.toString());
-			}
+			//Print: X PATTERNX
+			trace.format("%3d %s \n", i, p.toString());
 			
-			i++;
-		}
-//		//Sort the pattern pool by descending rlogf value
-//		List<Map.Entry<String, Double>> sortByValue = new ArrayList<Map.Entry<String, Double>>(patternPool.entrySet());
-//		Collections.sort(sortByValue, new Comparator<Map.Entry>(){
-//			public int compare(Map.Entry e1, Map.Entry e2){
-//				Double d1 = (Double) e1.getValue();
-//				Double d2 = (Double) e2.getValue();
-//				
-//				return d2.compareTo(d1);
-//			}
-//		});
-//		
-//		System.out.println(sortByValue);
-//		for(int i = 0; i < n; i++){
-//			result.add(sortByValue.get(i).getKey());
-//		}
+			//Print: Extracted nouns:
+			trace.format(infoPadding + "Extracted nouns: ");
 		
+			//Loop through each extracted noun
+			int numNouns = _patternsToExtractedNounMap.get(p).size();
+			Iterator<ExtractedNoun> nounsIt = _patternsToExtractedNounMap.get(p).iterator();
+			for(int j = 0; nounsIt.hasNext(); j++){
+				//Print: extractedNounX
+				trace.append(nounsIt.next().toStringNoScore());
+				
+				//Append a comma after every noun except the last
+				if(j < numNouns - 1)
+					trace.append(", ");
+			}
+			trace.append("\n");		//New line after printing out nouns
+			i++;
+			
+			//Print: Num Extracted Nouns: x
+			trace.format(infoPadding + "Num Extracted Nouns: %d\n", numNouns);
+			
+			//Print: Score: x.x
+			trace.format(infoPadding + "Score: %f\n", p.getScore());
+			
+			//One last new line between patterns
+			trace.append("\n");
+		}
 	}
 
 
@@ -210,48 +232,27 @@ public class Basilisk {
 		
 	}
 
-	private List<String> selectTopNNewCandidateWords(Map<String, Double> candidateWordToScoreMap, int n) {
-		List<String> result = new ArrayList<String>();
+	private TreeSet<ExtractedNoun> selectTopNNewCandidateWords(TreeSet<ExtractedNoun> scoredNouns, int n) {
+		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
 		
-		//Sort the list by descending score
-		List<Map.Entry<String, Double>> sortByValue = new ArrayList<Map.Entry<String, Double>>(candidateWordToScoreMap.entrySet());
-		Collections.sort(sortByValue, new Comparator<Map.Entry>(){
-			public int compare(Map.Entry e1, Map.Entry e2){
-				Double d1 = (Double) e1.getValue();
-				Double d2 = (Double) e2.getValue();
-				
-				return d2.compareTo(d1);
-			}
-		});
-		
-		System.out.println("Top ranked candidate words: " + sortByValue);
-		int i = 0;
-		while(!sortByValue.isEmpty()){
-			String word = sortByValue.remove(0).getKey();
-			if(word.equals("the cauca river")){
-				int temp = 0;
-			}
-			if(!_seeds.contains(word) && !result.contains(word)){
-				//System.out.println("Adding new word: " + word);
-				result.add(word);
-				i++;
-				if(i == n)
-					break;
-			}
+		//Cycle through the scoredNouns, from high to low, adding to the result as we go
+		Iterator<ExtractedNoun> descNounIt = scoredNouns.descendingIterator();
+		while(descNounIt.hasNext()){
+			result.add(descNounIt.next());
 		}
 		
-		//System.out.println("Top N words added were:" + result);
 		return result;
 	}
 
-	private void scoreCandidateNouns(Set<ExtractedNoun> candidateNounPool, 
+	private TreeSet<ExtractedNoun> scoreCandidateNouns(Set<ExtractedNoun> candidateNounPool, 
 													Map<ExtractedNoun, Set<Pattern>> extractedNouns,
 													Map<Pattern, Set<ExtractedNoun>> patterns, 
 													Set<Noun> knownCategoryWords) {
+		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
 		
 		//Score each noun in our candidate pool
 		for(ExtractedNoun candidateNoun: candidateNounPool){
-			double sumLog2 = 0.0; //Sumation of (log2(F+1))
+			double sumLog2 = 0.0; 	//Sumation of (log2(F+1))
 			int numPatterns = 0; 	//P number of patterns that extracted candidate noun
 			
 			//Loop through each pattern that extracted the given noun
@@ -268,32 +269,37 @@ public class Basilisk {
 				numPatterns++;
 			}
 			//Average the nounScore over the number of patterns that contributed to it
-			candidateNoun.setScore((sumLog2/(double) numPatterns));
-		}
-	}
-
-	private Set<String> selectNounsFromCaseFrames(Set<String> patternPool, Map<String, Set<String>> caseFrameToCaseMap) {
-		Set<String> result = new HashSet<String>();
-		for(String cf: patternPool){
-			result.addAll(caseFrameToCaseMap.get(cf));
+			double avgScore = (sumLog2/(double) numPatterns);
+			ExtractedNoun scored = new ExtractedNoun(candidateNoun._noun);
+			scored.setScore(avgScore);
+			result.add(scored);
 		}
 		
 		return result;
 	}
 
-	private TreeSet<Pattern> selectTopNPatterns(TreeMap<Pattern, Set<ExtractedNoun>> patterns, int n) {
+	private Set<ExtractedNoun> selectNounsFromPatterns(Set<Pattern> patternPool, Map<Pattern, Set<ExtractedNoun>> patterns) {
+		Set<ExtractedNoun> result = new HashSet<ExtractedNoun>();
+		for(Pattern p: patternPool){
+			result.addAll(patterns.get(p));
+		}
+		
+		return result;
+	}
+
+	private TreeSet<Pattern> selectTopNPatterns(TreeSet<Pattern> patterns, int n) {
 		TreeSet<Pattern> result = new TreeSet<Pattern>();
 		
-		Iterator<Pattern> it = patterns.descendingMap().keySet().iterator();
+		Iterator<Pattern> it = patterns.descendingIterator();
 		for(int i = 0; i < n; i++){
 			result.add(it.next());
 		}
 		return result;
 	}
 
-	private TreeMap<Pattern, Set<ExtractedNoun>> scorePatterns(Map<Pattern, Set<ExtractedNoun>> patterns, Set<Noun> knownCategoryMembers) {
+	private TreeSet<Pattern> scorePatterns(Map<Pattern, Set<ExtractedNoun>> patterns, Set<Noun> knownCategoryMembers) {
 		
-		TreeMap<Pattern, Set<ExtractedNoun>> result = new TreeMap<Pattern, Set<ExtractedNoun>>();
+		TreeSet<Pattern> result = new TreeSet<Pattern>();
 		//Score each case frame
 		for(Pattern p: patterns.keySet()){
 			if(p.equals(new Pattern("Np_Prep_<NP>__JOURNALISTS_IN_1039"))){
@@ -325,18 +331,18 @@ public class Basilisk {
 			if(Double.compare(rLogF, Double.NaN) == 0)
 				rLogF = -1.0;
 			
-			//Set the patterns score
+			//Store the pattern (with it's new score) into the result
 			Pattern scored = new Pattern(p._caseFrame);
 			scored.setScore(rLogF);
-			result.put(scored, patterns.get(scored));
+			result.add(scored);
 		}		
 		return result;
 	}
 	
 	public boolean generateMaps(String allCasesFile){
-		//Initialize both maps. Note: default odering is ascending (lower scores first).
-		_patterns = new TreeMap<Pattern, Set<ExtractedNoun>>();
-		_extractedNouns = new TreeMap<ExtractedNoun, Set<Pattern>>();
+		//Initialize both maps. 
+		_patternsToExtractedNounMap = new HashMap<Pattern, Set<ExtractedNoun>>();
+		_extractedNounsToPatternsMap = new HashMap<ExtractedNoun, Set<Pattern>>();
 		
 		
 		//Read in the cases file
@@ -352,40 +358,33 @@ public class Basilisk {
 				String noun = line.split("\\*")[0].trim();
 				String cf = line.split("\\*")[1].trim();
 				
-//				if(cf.equalsIgnoreCase("Np_Prep_<NP>__SECTOR_OF_434"))
-//					System.out.println("parsing known country extractor");
-				
 				//Process the caseframe
-				Pattern p = new Pattern(cf);
-				
-				
+				Pattern p = new Pattern(cf);								
 				
 				//Process the noun
 				noun = noun.replaceAll(" [oO][fF] .+", ""); //Elimante any attached "of" phrases
-				String[] words = noun.split(" +"); //Grab the right most word (head noun)
+				String[] words = noun.split(" +"); 			//Grab the right most word (head noun)
 				noun = words[words.length - 1].trim();
 				ExtractedNoun n = new ExtractedNoun(noun);
-//				if(n.equals(new ExtractedNoun("country")))
-//					System.out.println("Country extracted as noun");
 				
 				//Add it if it isn't a stopword
 				if(!_stopWords.contains(n)){
 					//Map CFs to Cases
-					Set<ExtractedNoun> nouns = _patterns.get(p);
+					Set<ExtractedNoun> nouns = _patternsToExtractedNounMap.get(p);
 					if(nouns == null){
 						nouns = new HashSet<ExtractedNoun>();
 					}
 					nouns.add(n);
-					_patterns.put(p, nouns);
+					_patternsToExtractedNounMap.put(p, nouns);
 				
 					
 					//Map Cases to CFs
-					Set<Pattern> patterns = _extractedNouns.get(n);
+					Set<Pattern> patterns = _extractedNounsToPatternsMap.get(n);
 					if(patterns == null)
 						patterns = new HashSet<Pattern>();
 					patterns.add(p);
-					_extractedNouns.put(n, patterns);
-					if(n.equals(new ExtractedNoun("country")) && _extractedNouns.get(new ExtractedNoun("country")) != null){
+					_extractedNounsToPatternsMap.put(n, patterns);
+					if(n.equals(new ExtractedNoun("country")) && _extractedNounsToPatternsMap.get(new ExtractedNoun("country")) != null){
 						//System.out.println(_extractedNouns.get(new ExtractedNoun("country")));
 					}
 				}
@@ -396,7 +395,7 @@ public class Basilisk {
 			System.err.println(e.getMessage());
 			return false;
 		}
-		if(_extractedNouns.get(new ExtractedNoun("country")) != null)
+		if(_extractedNounsToPatternsMap.get(new ExtractedNoun("country")) != null)
 				System.out.println("country detected in noun map");
 		return true;
 	}

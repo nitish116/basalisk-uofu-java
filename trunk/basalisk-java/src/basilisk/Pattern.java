@@ -47,6 +47,10 @@ public class Pattern implements Comparable<Pattern> {
 		return _caseFrame + ", Score: " + _score;
 	}
 	
+	public String toStringNoScore(){
+		return _caseFrame;
+	}
+	
 	/**
 	 * Highest scores come first
 	 */
@@ -60,6 +64,10 @@ public class Pattern implements Comparable<Pattern> {
 		else if(_score > p2._score)
 			return 1;
 		else return 0;
+	}
+	
+	public double getScore(){
+		return _score;
 	}
 
 
