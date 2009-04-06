@@ -122,7 +122,7 @@ public class Basilisk {
 			
 			//Select the top extracted nouns
 			TreeSet<ExtractedNoun> topNewWords = selectTopNNewCandidateWords(scoredNouns, 5);
-			System.out.format("%d new words were added to the lexicon on iteration #%d of bootstrapping.\n", topNewWords.size(), i);
+			System.out.format("%d new words were added to the lexicon on iteration #%d of bootstrapping.\n", topNewWords.size(), i + 1);
 			
 			_seeds.addAll(topNewWords);
 			learnedLexicon.addAll(topNewWords);
@@ -237,10 +237,13 @@ public class Basilisk {
 		
 		//Cycle through the scoredNouns, from high to low, adding to the result as we go
 		Iterator<ExtractedNoun> descNounIt = scoredNouns.descendingIterator();
-		while(descNounIt.hasNext()){
-			result.add(descNounIt.next());
+		for(int i = 0; descNounIt.hasNext() && i < n;){
+			ExtractedNoun en = descNounIt.next();
+			if(!_seeds.contains(en)){
+				result.add(en);
+				i++;
+			}
 		}
-		
 		return result;
 	}
 
@@ -302,18 +305,6 @@ public class Basilisk {
 		TreeSet<Pattern> result = new TreeSet<Pattern>();
 		//Score each case frame
 		for(Pattern p: patterns.keySet()){
-			if(p.equals(new Pattern("Np_Prep_<NP>__JOURNALISTS_IN_1039"))){
-				System.out.println("2nd to top pattern in iteration one reached: Np_Prep_<NP>__JOURNALISTS_IN_1039");
-				System.out.println(patterns.get(p));
-			}
-			if(p.equals(new Pattern("InfVp_Prep_<NP>__ADVANCE_IN_26"))){
-				System.out.println("1st to top pattern in iteration one reached: InfVp_Prep_<NP>__ADVANCE_IN_26" );
-				System.out.println(patterns.get(p));
-			}
-			if(p.equals(new Pattern("ActVp_Prep_<NP>__LAUNCHED_THROUGHOUT_2342"))){
-				System.out.println("2nd pattern for me in first iterations: ActVp_Prep_<NP>__LAUNCHED_THROUGHOUT_2342" );
-				System.out.println(patterns.get(p));
-			}
 			int f = 0;	//total number of known category members extracted
 			int n = 0; 	//total words extracted by pattern
 			
