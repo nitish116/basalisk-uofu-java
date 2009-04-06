@@ -56,6 +56,10 @@ public class ExtractedNoun extends Noun {
 		_score = s;
 	}
 	
+	public String toStringNoScore(){
+		return _noun;
+	}
+	
 //	@Override
 //	public boolean equals(Object o){
 //		if(this == o)
