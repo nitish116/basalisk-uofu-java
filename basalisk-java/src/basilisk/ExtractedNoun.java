@@ -53,8 +53,16 @@ public class ExtractedNoun extends Noun {
 		_score = -1.0;
 	}
 	
+	public double getScore(){
+		return _score;
+	}
 	public void setScore(double s){
 		_score = s;
+	}
+	
+	@Override
+	public String toString(){
+		return _noun + ", " + _score;
 	}
 	
 	public String toStringNoScore(){
