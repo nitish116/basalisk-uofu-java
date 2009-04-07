@@ -13,6 +13,8 @@ public class Basilisk {
 	private HashMap<Pattern, Set<ExtractedNoun>> _patternsToExtractedNounMap;
 	private HashMap<ExtractedNoun, Set<Pattern>> _extractedNounsToPatternsMap;
 	private Set<Noun> _seeds;
+	private ArrayList<Set<Noun>> _knownCategoryLists;
+	private ArrayList<String> _outputPrefixList;
 	private Set<Noun> _stopWords;
 
 	
@@ -20,14 +22,14 @@ public class Basilisk {
 	 * Initialize basilisk.
 	 * 
 	 * Input arg ordering:
-	 *    <seed_file> <all_cases_file>
+	 *    <category_seeds_slist> <all_cases_file> 
 	 *    			-n <num_iterations>
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		//Check input arguments
 		if(args.length < 2){
-			System.err.println("Missing input arguments: <seed_file> <all_cases_file>");
+			System.err.println("Missing input arguments: <category_seeds_slist> <all_cases_file>");
 			return;
 		}
 		String seedFile = args[0];
@@ -74,16 +76,19 @@ public class Basilisk {
 		//Generate the seed list and the stopword list
 		System.out.println("Loading data.\n");
 		_seeds = loadSet(seedFile);
+		//_knownCategoryLists = loadCategoriesFromSList(categorySList);
 		_stopWords = loadSet(_stopWordsFile);
 		
 		//Map caseframes to cases and vice versa
 		System.out.println("Generating dictionary files");
 		if(!generateMaps(allCasesFile))
-				_initializedProperly = false;	
+				_initializedProperly = false;
 		_initializedProperly = true;
 	}
 	
-	
+	/**
+	 * After a new instance of Basilisk has been created, this method is used to initialize the bootstrapping process.
+	 */
 	public void bootstrap(){
 		System.out.println("Starting bootstrapping.\n");
 		//Initialize the trace printstream writer
@@ -100,7 +105,7 @@ public class Basilisk {
 		
 		
 		//Run the bootstrapping 5 times
-		for(int i = 0; i < 1; i++){
+		for(int i = 0; i < 5; i++){
 			System.out.format("Iteration %d\n", i + 1);
 			//Iteration trace header
 			traceIterationHeader(trace, i+1);
@@ -119,16 +124,26 @@ public class Basilisk {
 
 			//Score the candidate nouns
 			TreeSet<ExtractedNoun> scoredNouns = scoreCandidateNouns(candidateNounPool, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _seeds);
-			
+
 			//Select the top extracted nouns
 			TreeSet<ExtractedNoun> topNewWords = selectTopNNewCandidateWords(scoredNouns, 5);
-			System.out.format("%d new words were added to the lexicon on iteration #%d of bootstrapping.\n", topNewWords.size(), i + 1);
 			
+			//Trace the top nouns
+			traceNewNouns(trace, topNewWords);
+			System.out.format("Adding %d new words to the lexicon.\n", topNewWords.size());
+			
+			//Print out new words to the console
+			for(ExtractedNoun en: topNewWords.descendingSet()){
+				System.out.println("\t" + en.toStringNoScore());
+			}
+			System.out.println("");
+			
+			//Add the new words to the known category member list
 			_seeds.addAll(topNewWords);
+			
+			//Add the new words to the list containing all new words
 			learnedLexicon.addAll(topNewWords);
 		}
-		System.out.println(learnedLexicon);
-		System.out.println("Learned lexicon size:" + learnedLexicon.size());
 
 		//Print out the list of learned words to a file
 		PrintStream out = null;
@@ -145,6 +160,40 @@ public class Basilisk {
 		out.close();
 		trace.close();
 	}
+
+	private void traceNewNouns(PrintStream trace, TreeSet<ExtractedNoun> topNewWords) {
+		//Append header
+		trace.format("Top %d Candidate Nouns\n\n", topNewWords.size());
+		
+		//Loop through each new extracted noun in the list
+		Iterator<ExtractedNoun> nnIt = topNewWords.descendingIterator();
+		while(nnIt.hasNext()){
+			ExtractedNoun newNoun = nnIt.next();
+			trace.format("\tNoun: %s\n", newNoun.toStringNoScore());
+			trace.format("\tPattern: num_known_words_extracted: log2(1+num_known_words_extracted)\n");
+			
+			//Loop through each pattern that extracted the new noun
+			for(Pattern newNounExtractor: _extractedNounsToPatternsMap.get(newNoun)){
+				//Count how many known category members the pattern extracted
+				int knownExtractions = 0;
+				for(ExtractedNoun possibleKnownMember: _patternsToExtractedNounMap.get(newNounExtractor)){
+					if(_seeds.contains(possibleKnownMember))
+						knownExtractions++;
+				}
+				
+				//Print out each pattern, and the number of known category members it extracted
+				trace.format("\t\t%40s :%3d : %f\n",  newNounExtractor.toStringNoScore(), knownExtractions, Math.log(1+knownExtractions)/Math.log(2));
+			}
+			
+			//Print out the number of patterns that extracted this new noun
+			trace.format("\tNum of patterns: %d\n", _extractedNounsToPatternsMap.get(newNoun).size());
+			
+			//Print out the score of this new noun
+			trace.format("\tScore: %f\n\n", newNoun.getScore());
+		}
+		
+	}
+
 
 	private void traceIterationHeader(PrintStream trace, int iteration) {
 		trace.append("************************************************************\n");
@@ -255,6 +304,8 @@ public class Basilisk {
 		
 		//Score each noun in our candidate pool
 		for(ExtractedNoun candidateNoun: candidateNounPool){
+			if(candidateNoun._noun.equalsIgnoreCase("spots"))
+				System.out.println("Scoring spot");
 			double sumLog2 = 0.0; 	//Sumation of (log2(F+1))
 			int numPatterns = 0; 	//P number of patterns that extracted candidate noun
 			
@@ -276,6 +327,9 @@ public class Basilisk {
 			ExtractedNoun scored = new ExtractedNoun(candidateNoun._noun);
 			scored.setScore(avgScore);
 			result.add(scored);
+			
+			if(scored._noun.equalsIgnoreCase("spots"))
+				System.out.println("Spot noun reached, score: " + scored.getScore());
 		}
 		
 		return result;
@@ -345,12 +399,12 @@ public class Basilisk {
 			while((line = br.readLine()) != null){
 				line = line.trim();
 				
-				//An asteric separates the extracted noun from the caseframe that extracted it
+				//An asteric separates the extracted noun from the pattern that extracted it
 				String noun = line.split("\\*")[0].trim();
-				String cf = line.split("\\*")[1].trim();
+				String pattern = line.split("\\*")[1].trim();
 				
-				//Process the caseframe
-				Pattern p = new Pattern(cf);								
+				//Process the pattern
+				Pattern p = new Pattern(pattern);								
 				
 				//Process the noun
 				noun = noun.replaceAll(" [oO][fF] .+", ""); //Elimante any attached "of" phrases
@@ -360,7 +414,7 @@ public class Basilisk {
 				
 				//Add it if it isn't a stopword
 				if(!_stopWords.contains(n)){
-					//Map CFs to Cases
+					//Map patterns to extracted nouns
 					Set<ExtractedNoun> nouns = _patternsToExtractedNounMap.get(p);
 					if(nouns == null){
 						nouns = new HashSet<ExtractedNoun>();
@@ -369,15 +423,12 @@ public class Basilisk {
 					_patternsToExtractedNounMap.put(p, nouns);
 				
 					
-					//Map Cases to CFs
+					//Map extracted nouns to patterns
 					Set<Pattern> patterns = _extractedNounsToPatternsMap.get(n);
 					if(patterns == null)
 						patterns = new HashSet<Pattern>();
 					patterns.add(p);
 					_extractedNounsToPatternsMap.put(n, patterns);
-					if(n.equals(new ExtractedNoun("country")) && _extractedNounsToPatternsMap.get(new ExtractedNoun("country")) != null){
-						//System.out.println(_extractedNouns.get(new ExtractedNoun("country")));
-					}
 				}
 			}
 			br.close();
@@ -386,8 +437,6 @@ public class Basilisk {
 			System.err.println(e.getMessage());
 			return false;
 		}
-		if(_extractedNounsToPatternsMap.get(new ExtractedNoun("country")) != null)
-				System.out.println("country detected in noun map");
 		return true;
 	}
 
