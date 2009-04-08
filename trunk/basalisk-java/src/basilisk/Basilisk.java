@@ -130,24 +130,36 @@ public class Basilisk {
 	 */
 	public void bootstrap(){
 		System.out.println("Starting bootstrapping.\n");
-		//Initialize the trace printstream writer
-		PrintStream trace = null;
-		try {
-			trace = new PrintStream(_outputPrefix + ".trace");
+		
+		//Initialize a list of traces - one for each lexicon (which can be gathered from the output prefix list
+		ArrayList<PrintStream> tracesList = new ArrayList<PrintStream>();
+		for(String outputPrefix: _outputPrefixList){
+			PrintStream newTrace = null;
+			try{
+				newTrace = new PrintStream(outputPrefix + ".trace");
+				tracesList.add(newTrace);
+			}
+			catch (Exception e){
+				System.err.println(e.getMessage());
+			}
 		}
-		catch (Exception e){
-			System.err.println(e.getMessage());
+
+		//Initialize a list to keep track of all the new words for each category
+		ArrayList<List<ExtractedNoun>> learnedLexicons = new ArrayList<List<ExtractedNoun>>();
+		for(int j = 0; j < _listsOfKnownCategoryWords.size(); j++){
+			learnedLexicons.add(new ArrayList<ExtractedNoun>());
 		}
 		
-
-		List<ExtractedNoun> learnedLexicon = new ArrayList<ExtractedNoun>();
 		
 		
 		//Run the bootstrapping 5 times
 		for(int i = 0; i < 5; i++){
 			System.out.format("Iteration %d\n", i + 1);
+			
 			//Iteration trace header
-			traceIterationHeader(trace, i+1);
+			for(PrintStream trace: tracesList){
+				traceIterationHeader(trace, i+1);
+			}			
 			
 			//Score the patterns for each category
 			ArrayList<TreeSet<Pattern>> listsOfScoredPatterns = new ArrayList<TreeSet<Pattern>>();
@@ -157,12 +169,13 @@ public class Basilisk {
 			
 			//Select the top patterns for each category
 			ArrayList<TreeSet<Pattern>> listsOfPatternPools = new ArrayList<TreeSet<Pattern>>();
-			for(TreeSet<Pattern> scoredPatterns: listsOfScoredPatterns){
+			for(int j = 0; j < listsOfScoredPatterns.size(); j++){
+				TreeSet<Pattern> scoredPatterns = listsOfScoredPatterns.get(j);
 				TreeSet<Pattern> patternPool = selectTopNPatterns(scoredPatterns, 20 + i);
 				listsOfPatternPools.add(patternPool);
 				
 				//Trace the top patterns
-				tracePatternPool(trace, patternPool);
+				tracePatternPool(tracesList.get(j), patternPool);
 			}
 
 			//Gather the nouns that were extracted by the patterns in each pattern pool
@@ -184,13 +197,14 @@ public class Basilisk {
 			for(int j = 0; j < listsOfScoredNouns.size(); j++){
 				HashSet<ExtractedNoun> scoredNouns = listsOfScoredNouns.get(j);
 				
-				TreeSet<ExtractedNoun> topNewWords = selectTopNNewCandidateWords(scoredNouns,  listsOfScoredNouns, 5);
-				listsOfTopNewWords.add(selectTopNNewCandidateWords(scoredNouns,  listsOfScoredNouns, 5));
+				//Select the top nouns from the current scored list of nouns
+				TreeSet<ExtractedNoun> topNewWords = avgDiffSelectTopNNewCandidateWords(scoredNouns, j, listsOfScoredNouns, 5);
+				listsOfTopNewWords.add(topNewWords);
 				
 				//Trace the top nouns
-				traceNewNouns(trace, topNewWords,_listsOfKnownCategoryWords.get(j));
+				traceNewNouns(tracesList.get(j), topNewWords,_listsOfKnownCategoryWords.get(j));
 
-				System.out.format("Adding %d new words to the lexicon.\n", topNewWords.size());
+				System.out.format("Adding %d new words to the %s lexicon.\n", topNewWords.size(), _outputPrefixList.get(j));
 				
 				//Print out new words to the console
 				for(ExtractedNoun en: topNewWords.descendingSet()){
@@ -203,25 +217,111 @@ public class Basilisk {
 				
 
 				//Add the new words to the list containing all new words
-				learnedLexicon.addAll(topNewWords);
+				learnedLexicons.get(j).addAll(topNewWords);
 			}	
 		}
 
-		//Print out the list of learned words to a file
-		PrintStream out = null;
-		try {
-			out = new PrintStream("learned-locations.txt");
-		}
-		catch (Exception e){
-			System.err.println(e.getMessage());
+		//Print out the list of learned words to their own files
+		for(int j = 0; j < _listsOfKnownCategoryWords.size(); j++){
+			PrintStream out = null; 
+			try {
+				out = new PrintStream(_outputPrefixList.get(j) + ".lexicon");
+			}
+			catch (Exception e){
+				System.err.println(e.getMessage());
+			}
+			
+			for(ExtractedNoun learnedWord: learnedLexicons.get(j)){
+				out.print(learnedWord + "\n");
+			}
 		}
 		
-		for(ExtractedNoun learnedWord: learnedLexicon){
-			out.print(learnedWord + "\n");
+		//Close the traces
+		for(PrintStream trace: tracesList){
+			trace.close();
 		}
-		out.close();
-		trace.close();
 	}
+
+	/**
+	 * Uses the avgDiff selection criteria to try and guide the selection process for words that are strongly favored by one
+	 * category. 
+	 *  Each word wi in the candidate word pool receives a score for category ca based on the following formula: 
+	 *  	diff(wi,ca) = AvgLog(wi,ca) - max (AvgLog(wi,cb)), where a != b
+	 *  
+	 *  Essentially takes a given word, recomputes it's score if it's been found and scored by other categories, and only 
+	 *  returns the word if it's strongly associated with it's given category.
+	 *  
+	 * @param scoredNouns - List of scored nouns for which we want to recompute the diff score value
+	 * @param catNumber - Category number associated with this list of scored nouns. Since category lists are generated in order
+	 * 						category list at index 0, should always be associated with the same category
+	 * @param listsOfScoredNouns - List containing all of the scored candidate nouns, used to calculate the different score
+	 * @param n - number of nouns to return in this list
+	 * @return - List of the top scored nouns in this list.
+	 */
+	private TreeSet<ExtractedNoun> avgDiffSelectTopNNewCandidateWords( 	HashSet<ExtractedNoun> scoredNouns, int catNumber, 
+																		ArrayList<HashSet<ExtractedNoun>> listsOfScoredNouns, 
+																		int n) {
+//		Look at a word
+//		Cycle through all the other sets, calculating maximum score
+//		Set new score in result, as currScore-maxScore
+//		Take the top words, as long as the score > 0
+		
+		TreeSet<ExtractedNoun> diffScoredNouns = new TreeSet<ExtractedNoun>();
+		
+		//Examine each word in the current set to rescore it
+		for(ExtractedNoun en: scoredNouns){
+			//Cycle every OTHER set (i.e., sets that don't have the same category number) to compute max score in other cats
+			double maxScore = 0.0;
+			for(int i = 0; i < listsOfScoredNouns.size(); i++){
+				if(i == catNumber)
+					continue;
+				
+				//Check to see if the other sets even contain the given word
+				if(listsOfScoredNouns.get(i).contains(en)){
+					//If they do, find out it's score, and update maxscore
+					for(ExtractedNoun otherNoun: listsOfScoredNouns.get(i)){
+						if(otherNoun.equals(en)){
+							maxScore = Math.max(maxScore, otherNoun.getScore());
+						}
+					}
+				}
+			}
+			
+			//Finally, add the oldScore-newScore to the diffScore list
+			ExtractedNoun diffScored = new ExtractedNoun(en._noun);
+			diffScored.setScore(en.getScore() - maxScore);
+			diffScoredNouns.add(diffScored);
+		}
+		
+		
+		//Finally, choose the top N words from the diff scored list, so long as they are greater than 0 and not already known
+		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
+		Iterator<ExtractedNoun> diffScoreIt = diffScoredNouns.descendingIterator();
+		for(int wordsAdded = 0; wordsAdded < n && diffScoreIt.hasNext();){
+			ExtractedNoun diffScored = diffScoreIt.next();
+			
+			//Check to see if it's in the list of known words
+			boolean alreadyKnown = false;
+			for(Set<Noun> knownWords: _listsOfKnownCategoryWords){
+				//If it is, continue to the next word
+				if(knownWords.contains(diffScored)){
+					alreadyKnown = true;
+					break;
+				}	
+			}
+			//If so, continue to the next word
+			if(alreadyKnown)
+				continue;
+			
+			//If it's not, and it's score > 0, add it to the result
+			if(diffScored.getScore() > 0){
+				result.add(diffScored);
+				wordsAdded++;
+			}
+		}
+		return result;
+	}
+
 
 	/**
 	 *  Take the list of scored words. Sort it. Start from the top. Take the highest scored word, and compare 
@@ -539,6 +639,11 @@ public class Basilisk {
 				noun = noun.replaceAll(" [oO][fF] .+", ""); //Elimante any attached "of" phrases
 				String[] words = noun.split(" +"); 			//Grab the right most word (head noun)
 				noun = words[words.length - 1].trim();
+				
+				//Check to see if the extracted noun was a number (encoded by && preceding the digits)..if so, continue to next word
+				if(noun.contains("&&")){
+					continue;
+				}
 				ExtractedNoun n = new ExtractedNoun(noun);
 				
 				//Add it if it isn't a stopword
