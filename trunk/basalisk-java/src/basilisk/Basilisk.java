@@ -43,7 +43,7 @@ public class Basilisk {
 		//Set default values
 		int iterations = 5;
 		
-		while ((argsSeen + 2) < args.length){
+		while ((argsSeen + 2) <= args.length){
 			if(args[argsSeen].equals("-n"))
 				iterations = Integer.parseInt(args[argsSeen+1]);
 			else{
@@ -153,7 +153,7 @@ public class Basilisk {
 		
 		
 		//Run the bootstrapping 5 times
-		for(int i = 0; i < 5; i++){
+		for(int i = 0; i < _iterations; i++){
 			System.out.format("Iteration %d\n", i + 1);
 			
 			//Iteration trace header
