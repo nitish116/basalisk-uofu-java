@@ -62,11 +62,11 @@ public class ExtractedNoun extends Noun {
 	
 	@Override
 	public String toString(){
-		return _noun + ", " + _score;
+		return _noun;
 	}
 	
-	public String toStringNoScore(){
-		return _noun;
+	public String toStringWithScore(){
+		return _noun  + ", " + _score;
 	}
 	
 //	@Override
