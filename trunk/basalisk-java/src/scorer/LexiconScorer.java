@@ -9,6 +9,7 @@ public class LexiconScorer {
 	 * Entry point for the lexicon learner
 	 * @param args Input args, ordered as such:
 	 * 				<semantic_keyfile> <slist_of_lexicons_to_score>
+	 * 					-o OutputDir/
 	 */
 	public static void main(String[] args) {
 		if(args.length < 2){
@@ -16,12 +17,27 @@ public class LexiconScorer {
 			return;
 		}
 		
+		//Check for optional input arguments
+		int argsSeen = 2;
+		
+		//Set default values
+		String outputDir = "";
+		
+		while ((argsSeen + 2) <= args.length){
+			if(args[argsSeen].equalsIgnoreCase("-o"))
+				outputDir = args[argsSeen+1];
+			else{
+				System.err.println("Unknown input options: " + args[argsSeen] + args[argsSeen+1]);
+			}
+			argsSeen += 2;
+		}
+		
 		//Initialize the lexicon scorer
-		LexiconScorer ls = new LexiconScorer(args[0], args[1]);
+		LexiconScorer ls = new LexiconScorer(args[0], args[1], outputDir);
 
 	}
 	
-	public LexiconScorer(String semKeyFileName, String lexiconSlistFileName){
+	public LexiconScorer(String semKeyFileName, String lexiconSlistFileName, String outputDir){
 		//Load up our semantic key dictionary
 		Map<String, Set<String>> semKeyDictionary = loadSemKeyDictionary(semKeyFileName);
 		
@@ -36,7 +52,7 @@ public class LexiconScorer {
 			//Create a printstream to record the results of the score
 			PrintStream scoreOutput = null;
 			try{
-				scoreOutput = new PrintStream(category + ".score");
+				scoreOutput = new PrintStream(outputDir + category + ".score");
 				System.out.format("Creating a score file for the %s category\n", category);
 			}
 			catch (Exception e){
@@ -49,7 +65,7 @@ public class LexiconScorer {
 			//Create a printstream to record all of the words that weren't in any key (meaning we extracted a non-headnoun
 			PrintStream unlabeledOutput = null;
 			try{
-				unlabeledOutput = new PrintStream(category + ".unlabeled");
+				unlabeledOutput = new PrintStream(outputDir + category + ".unlabeled");
 			}
 			catch (Exception e){
 				System.err.println(e.getMessage());
