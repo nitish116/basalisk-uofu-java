@@ -31,6 +31,62 @@ public class LexiconScorer {
 		//Score each lexicon
 		for(String category: lexicons.keySet()){
 			Set<String> lexicon = lexicons.get(category);
+			Set<String> correctLexicon = semKeyDictionary.get(category);
+			
+			//Create a printstream to record the results of the score
+			PrintStream scoreOutput = null;
+			try{
+				scoreOutput = new PrintStream(category + ".score");
+				System.out.format("Creating a score file for the %s category\n", category);
+			}
+			catch (Exception e){
+				System.err.println(e.getMessage());
+				continue;
+			}
+			scoreOutput.format("#Score output for the %s category\n", category);
+			scoreOutput.format("#%20s %20s", "CorrectEntries", "TotalEntries");
+			
+			//Create a printstream to record all of the words that weren't in any key (meaning we extracted a non-headnoun
+			PrintStream unlabeledOutput = null;
+			try{
+				unlabeledOutput = new PrintStream(category + ".unlabeled");
+			}
+			catch (Exception e){
+				System.err.println(e.getMessage());
+				continue;
+			}
+			unlabeledOutput.format("Entries in the %s category that weren't found in any key:\n", category);
+			
+			//Compare each word in the lexicon against the appropriate key
+			int correct = 0;		//Correctly labeled lexicon entries
+			int total = 0;			//Total lexicon entries seen
+			System.out.format("Beginning to score the %s category\n", category);
+			
+			for(String lexiconMember: lexicon){
+				total++;
+				
+				if(correctLexicon.contains(lexiconMember)){
+					correct++;
+				}
+				scoreOutput.format("%20d %20d\n", correct, total);
+				
+				//Check to see if the key exists in at least one key
+				boolean inAtLeastOneKey = false;
+				for(Set<String> keyLexicon: semKeyDictionary.values()){
+					if(keyLexicon.contains(lexiconMember)){
+						inAtLeastOneKey = true;
+						break;
+					}
+				}
+				//If it doesn't, record the member as being unlabeled
+				unlabeledOutput.println(lexiconMember);
+				
+			}
+			
+			//Close the printstream
+			System.out.format("Finished scoring the %s category\n\n");
+			scoreOutput.close();
+			unlabeledOutput.close();
 		}
 	}
 
