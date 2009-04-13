@@ -313,8 +313,8 @@ public class Basilisk {
 			if(alreadyKnown)
 				continue;
 			
-			//If it's not, and it's score > 0, add it to the result
-			if(diffScored.getScore() > 0){
+			//If it's not, and it's score >= 0, add it to the result
+			if(diffScored.getScore() >= 0){
 				result.add(diffScored);
 				wordsAdded++;
 			}
@@ -556,9 +556,6 @@ public class Basilisk {
 			ExtractedNoun scored = new ExtractedNoun(candidateNoun._noun);
 			scored.setScore(avgScore);
 			result.add(scored);
-			
-			if(scored._noun.equalsIgnoreCase("spots"))
-				System.out.println("Spot noun reached, score: " + scored.getScore());
 		}
 		
 		return result;
