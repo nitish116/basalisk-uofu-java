@@ -27,10 +27,16 @@ public class LexiconScorer {
 		
 		//Load up the lexicon map
 		Map<String, Set<String>> lexicons = loadMultipleLexicons(lexiconSlistFileName);
+		
+		//Score each lexicon
+		for(String category: lexicons.keySet()){
+			Set<String> lexicon = lexicons.get(category);
+		}
 	}
 
 	/**
 	 * Creates a map from each category, the lexicon of words learned by those categories. Loads the map from an slist of lexicon files.
+	 * Category names are converted into lower case words by default.
 	 * 
 	 * NOTE: Each lexicon file should be named appropriately according to it's semantic category. This file assumes that the proper name
 	 * for each semantic category is the name (minus the extension) of each file. For example, if a file is called "pizza.lexicon", then
@@ -38,6 +44,7 @@ public class LexiconScorer {
 	 * name for categories as does the file name for each lexicon. If the key identifies words as belong to the "pizzas" (plural) 
 	 * category, but the lexicon file is "pizza.lexicon", then it won't be able to match the "pizza" category with the "pizzas" 
 	 * category to check for correctness.
+	 * 
 	 * 
 	 * @param lexiconSlistFileName - An slist of the lexicon files. The slist is a file where the first line is the directory, and
 	 * 									each subsequent line contains the name of a lexicon inside of that directory.
@@ -123,7 +130,7 @@ public class LexiconScorer {
 
 	/**
 	 * Loads up the semantic key dictionary from a file. This is just a set of strings (categories) that map to a list of other strings (the 
-	 * words that belong to each category). 	 * 
+	 * words that belong to each category). Category names and category members are all converted to lower case by default.	  
 	 * 
 	 * @param semKeyFileName - File name of the semantic key. Each line of the file should be of the form: CATEGORYMEMBER CATEGORY
 	 * @return A map relating strings (categories) to sets of other strings (category members) 
