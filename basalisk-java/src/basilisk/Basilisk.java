@@ -24,6 +24,7 @@ public class Basilisk {
 	 * Input arg ordering:
 	 *    <category_seeds_slist> <all_cases_file> 
 	 *    			-n <num_iterations>
+	 *    			-o output-dir/
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -42,10 +43,13 @@ public class Basilisk {
 		
 		//Set default values
 		int iterations = 5;
+		String outputDir = "";
 		
 		while ((argsSeen + 2) <= args.length){
-			if(args[argsSeen].equals("-n"))
+			if(args[argsSeen].equalsIgnoreCase("-n"))
 				iterations = Integer.parseInt(args[argsSeen+1]);
+			else if(args[argsSeen].equalsIgnoreCase("-o"))
+				outputDir = args[argsSeen+1];
 			else{
 				System.err.println("Unknown input options: " + args[argsSeen] + args[argsSeen+1]);
 			}
@@ -58,7 +62,7 @@ public class Basilisk {
 		if(!b1._initializedProperly)
 			return;
 		//Start the bootstrapping
-		b1.bootstrap();
+		b1.bootstrap(outputDir);
 
 		
 	}
@@ -128,7 +132,7 @@ public class Basilisk {
 	/**
 	 * After a new instance of Basilisk has been created, this method is used to initialize the bootstrapping process.
 	 */
-	public void bootstrap(){
+	public void bootstrap(String outputDir){
 		System.out.println("Starting bootstrapping.\n");
 		
 		//Initialize a list of traces - one for each lexicon (which can be gathered from the output prefix list
@@ -136,7 +140,7 @@ public class Basilisk {
 		for(String outputPrefix: _outputPrefixList){
 			PrintStream newTrace = null;
 			try{
-				newTrace = new PrintStream(outputPrefix + ".trace");
+				newTrace = new PrintStream(outputDir + outputPrefix + ".trace");
 				tracesList.add(newTrace);
 			}
 			catch (Exception e){
@@ -225,7 +229,7 @@ public class Basilisk {
 		for(int j = 0; j < _listsOfKnownCategoryWords.size(); j++){
 			PrintStream out = null; 
 			try {
-				out = new PrintStream(_outputPrefixList.get(j) + ".lexicon");
+				out = new PrintStream(outputDir + _outputPrefixList.get(j) + ".lexicon");
 			}
 			catch (Exception e){
 				System.err.println(e.getMessage());
