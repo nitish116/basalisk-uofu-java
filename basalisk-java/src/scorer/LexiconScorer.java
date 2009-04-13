@@ -23,8 +23,102 @@ public class LexiconScorer {
 	
 	public LexiconScorer(String semKeyFileName, String lexiconSlistFileName){
 		//Load up our semantic key dictionary
-		Map<String, Set<String>> semKeyDictionary = new HashMap<String, Set<String>>();
-		semKeyDictionary = loadSemKeyDictionary(semKeyFileName);
+		Map<String, Set<String>> semKeyDictionary = loadSemKeyDictionary(semKeyFileName);
+		
+		//Load up the lexicon map
+		Map<String, Set<String>> lexicons = loadMultipleLexicons(lexiconSlistFileName);
+	}
+
+	/**
+	 * Creates a map from each category, the lexicon of words learned by those categories. Loads the map from an slist of lexicon files.
+	 * 
+	 * NOTE: Each lexicon file should be named appropriately according to it's semantic category. This file assumes that the proper name
+	 * for each semantic category is the name (minus the extension) of each file. For example, if a file is called "pizza.lexicon", then
+	 * this method will assume it is gathering words from the "pizza" category. It is essential that the semKey file have the same
+	 * name for categories as does the file name for each lexicon. If the key identifies words as belong to the "pizzas" (plural) 
+	 * category, but the lexicon file is "pizza.lexicon", then it won't be able to match the "pizza" category with the "pizzas" 
+	 * category to check for correctness.
+	 * 
+	 * @param lexiconSlistFileName - An slist of the lexicon files. The slist is a file where the first line is the directory, and
+	 * 									each subsequent line contains the name of a lexicon inside of that directory.
+	 * 								E.g: /example-dir/
+	 * 									 category.lexicon	
+	 * 							
+	 * @return
+	 */
+	private Map<String, Set<String>> loadMultipleLexicons(String lexiconSlistFileName) {
+		//Create a file wrapper for the slist file
+		File slistFile = new File(lexiconSlistFileName);
+		if(!slistFile.exists()){
+			System.err.println("Error: could not find slist file. Slist file: " + slistFile.getAbsolutePath());
+			return null;
+		}
+		
+		//Create a scanner to read the slist
+		Scanner slistScanner = null;
+		try{
+			slistScanner = new Scanner(slistFile);
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+			return null;
+		}
+		
+		//The directory of each lexicon file is the first line of the slist file
+		String dir = slistScanner.nextLine();
+		
+		//Create the lexiconmap
+		Map<String, Set<String>> lexiconMap = new HashMap<String, Set<String>>();
+		
+		//Create an entry in the map for each file entry in the slist
+		while(slistScanner.hasNext()){
+			//Each lexicon filename is stored on a separate line
+			String fileName = slistScanner.nextLine();
+			
+			//Read the set of words for each category
+			Set<String> lexicon = loadSingleLexicon(dir + fileName);
+			
+			//Determine the category of the file
+			String category = fileName.replaceAll("\\.+", "").trim().toLowerCase();
+			
+			//Put the category and it's lexicon in the map
+			lexiconMap.put(category, lexicon);
+		};
+		
+		return lexiconMap;
+	}
+
+	/**
+	 * Given the string of the filename of a lexicon file, this method will return a Set<String> containing all of the words from that
+	 * file. Each lexicon file is assumed to contain one word on each line.
+	 * @param lexiconFileName - A file containing one category word per line.
+	 * @return Set<String> - a set containing all of the words that belong to that category.
+	 */
+	private Set<String> loadSingleLexicon(String lexiconFileName) {
+		//Create a file wrapper for the lexicon file
+		File lexiconFile = new File(lexiconFileName);
+		if(!lexiconFile.exists()){
+			System.err.println("Lexicon file could not be read. File: " + lexiconFile.getAbsolutePath());
+			return null;
+		}
+		
+		//Create a scanner for the lexicon file
+		Scanner lexiconScanner = null;
+		try{
+			lexiconScanner = new Scanner(lexiconFile);
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+			return null;
+		}
+		
+		//Scan through the file, storing each line as a word member of the category
+		Set<String> lexicon = new HashSet<String>();
+		while(lexiconScanner.hasNext()){
+			String catMember = lexiconScanner.nextLine().trim().toLowerCase();
+			lexicon.add(catMember);
+		}
+		return lexicon;
 	}
 
 	/**
