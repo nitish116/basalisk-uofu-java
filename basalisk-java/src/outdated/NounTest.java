@@ -1,4 +1,4 @@
-package basilisk;
+package outdated;
 
 public class NounTest implements Comparable<NounTest> {
 

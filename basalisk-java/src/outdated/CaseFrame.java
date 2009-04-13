@@ -1,4 +1,4 @@
-package basilisk;
+package outdated;
 
 /**
  * Entity representing a CaseFrame.

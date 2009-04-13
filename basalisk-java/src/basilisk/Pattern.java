@@ -44,11 +44,11 @@ public class Pattern implements Comparable<Pattern> {
 	}
 	
 	public String toString(){
-		return _caseFrame + ", Score: " + _score;
+		return _caseFrame;
 	}
 	
-	public String toStringNoScore(){
-		return _caseFrame;
+	public String toStringWithScore(){
+		return _caseFrame  + ", Score: " + _score;
 	}
 	
 	/**

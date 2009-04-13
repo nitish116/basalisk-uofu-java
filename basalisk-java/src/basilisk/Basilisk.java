@@ -208,7 +208,7 @@ public class Basilisk {
 				
 				//Print out new words to the console
 				for(ExtractedNoun en: topNewWords.descendingSet()){
-					System.out.println("\t" + en.toStringNoScore());
+					System.out.println("\t" + en.toString());
 				}
 				System.out.println("");
 				
@@ -400,7 +400,7 @@ public class Basilisk {
 		Iterator<ExtractedNoun> nnIt = topNewWords.descendingIterator();
 		while(nnIt.hasNext()){
 			ExtractedNoun newNoun = nnIt.next();
-			trace.format("\tNoun: %s\n", newNoun.toStringNoScore());
+			trace.format("\tNoun: %s\n", newNoun.toString());
 			trace.format("\tPattern: num_known_words_extracted: log2(1+num_known_words_extracted)\n");
 			
 			//Loop through each pattern that extracted the new noun
@@ -413,7 +413,7 @@ public class Basilisk {
 				}
 				
 				//Print out each pattern, and the number of known category members it extracted
-				trace.format("\t\t%40s :%3d : %f\n",  newNounExtractor.toStringNoScore(), knownExtractions, Math.log(1+knownExtractions)/Math.log(2));
+				trace.format("\t\t%40s :%3d : %f\n",  newNounExtractor.toString(), knownExtractions, Math.log(1+knownExtractions)/Math.log(2));
 			}
 			
 			//Print out the number of patterns that extracted this new noun
@@ -463,7 +463,7 @@ public class Basilisk {
 			Iterator<ExtractedNoun> nounsIt = _patternsToExtractedNounMap.get(p).iterator();
 			for(int j = 0; nounsIt.hasNext(); j++){
 				//Print: extractedNounX
-				trace.append(nounsIt.next().toStringNoScore());
+				trace.append(nounsIt.next().toString());
 				
 				//Append a comma after every noun except the last
 				if(j < numNouns - 1)

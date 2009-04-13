@@ -1,4 +1,4 @@
-package basilisk;
+package word_tools;
 
 import java.io.File;
 import java.util.Scanner;
