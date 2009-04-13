@@ -44,7 +44,7 @@ public class LexiconScorer {
 				continue;
 			}
 			scoreOutput.format("#Score output for the %s category\n", category);
-			scoreOutput.format("#%20s %20s", "CorrectEntries", "TotalEntries");
+			scoreOutput.format("#%20s %20s\n", "CorrectEntries", "TotalEntries");
 			
 			//Create a printstream to record all of the words that weren't in any key (meaning we extracted a non-headnoun
 			PrintStream unlabeledOutput = null;
@@ -63,6 +63,9 @@ public class LexiconScorer {
 			System.out.format("Beginning to score the %s category\n", category);
 			
 			for(String lexiconMember: lexicon){
+				if(lexiconMember.equalsIgnoreCase("ring")){
+					System.out.println("ring found as lexicon member");
+				}
 				total++;
 				
 				if(correctLexicon.contains(lexiconMember)){
@@ -72,19 +75,21 @@ public class LexiconScorer {
 				
 				//Check to see if the key exists in at least one key
 				boolean inAtLeastOneKey = false;
-				for(Set<String> keyLexicon: semKeyDictionary.values()){
+				for(String keyCategory: semKeyDictionary.keySet()){
+					Set<String> keyLexicon = semKeyDictionary.get(keyCategory);
 					if(keyLexicon.contains(lexiconMember)){
 						inAtLeastOneKey = true;
 						break;
 					}
 				}
 				//If it doesn't, record the member as being unlabeled
-				unlabeledOutput.println(lexiconMember);
+				if(!inAtLeastOneKey)
+					unlabeledOutput.println(lexiconMember);
 				
 			}
 			
 			//Close the printstream
-			System.out.format("Finished scoring the %s category\n\n");
+			System.out.format("Finished scoring the %s category\n\n", category);
 			scoreOutput.close();
 			unlabeledOutput.close();
 		}
@@ -142,7 +147,7 @@ public class LexiconScorer {
 			Set<String> lexicon = loadSingleLexicon(dir + fileName);
 			
 			//Determine the category of the file
-			String category = fileName.replaceAll("\\.+", "").trim().toLowerCase();
+			String category = fileName.replaceAll("\\..*", "").trim().toLowerCase();
 			
 			//Put the category and it's lexicon in the map
 			lexiconMap.put(category, lexicon);
@@ -226,7 +231,6 @@ public class LexiconScorer {
 				memberList.add(catMember);
 				result.put(category, memberList);
 			}
-			System.out.println(category + " : " + catMember);
 		}
 		return result;
 	}
