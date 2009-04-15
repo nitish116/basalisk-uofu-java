@@ -7,23 +7,13 @@ public class Basilisk {
 
 	private static String _stopWordsFile = "stopwords.dat";
 	
-	private int _iterations;
-	private boolean _initializedProperly;
-	private String _outputPrefix;
-	private HashMap<Pattern, Set<ExtractedNoun>> _patternsToExtractedNounMap;
-	private HashMap<ExtractedNoun, Set<Pattern>> _extractedNounsToPatternsMap;
-	private Set<Noun> _seeds;
-	private ArrayList<Set<Noun>> _listsOfKnownCategoryWords;
-	private ArrayList<String> _outputPrefixList;
-	private Set<Noun> _stopWords;
-
-	
 	/**
 	 * Initialize basilisk.
 	 * 
 	 * Input arg ordering:
 	 *    <category_seeds_slist> <all_cases_file> 
 	 *    			-n <num_iterations>
+	 *    			-c 0/1 (0: simple conflict resolution; 1: improved conflict resolution
 	 *    			-o output-dir/
 	 * @param args
 	 */
@@ -44,34 +34,55 @@ public class Basilisk {
 		//Set default values
 		int iterations = 5;
 		String outputDir = "";
+		boolean useImprovedConflictResolution = false;
 		
 		while ((argsSeen + 2) <= args.length){
 			if(args[argsSeen].equalsIgnoreCase("-n"))
 				iterations = Integer.parseInt(args[argsSeen+1]);
 			else if(args[argsSeen].equalsIgnoreCase("-o"))
 				outputDir = args[argsSeen+1];
+			else if(args[argsSeen].equalsIgnoreCase("-c"))
+				if(Integer.parseInt(args[argsSeen+1]) == 1)
+					useImprovedConflictResolution = true;
+				else useImprovedConflictResolution = false;
 			else{
-				System.err.println("Unknown input options: " + args[argsSeen] + args[argsSeen+1]);
+				System.err.println("Unknown input options: " + args[argsSeen] + " " + args[argsSeen+1]);
 			}
 			argsSeen += 2;
 		}
 
 
-		//Initialize the data
-		Basilisk b1 = new Basilisk(categorySeedsSlistFile, allCasesFile, iterations);
-		if(!b1._initializedProperly)
-			return;
-		//Start the bootstrapping
-		b1.bootstrap(outputDir);
-
-		
+		//Initialize basilisk
+		Basilisk b1 = new Basilisk(categorySeedsSlistFile, allCasesFile, iterations, outputDir, useImprovedConflictResolution);
 	}
+	private int _iterations;
+	private boolean _useImprovedConflictResolution;
+	private boolean _initializedProperly;
+	private String _outputPrefix;
+	private HashMap<Pattern, Set<ExtractedNoun>> _patternsToExtractedNounMap;
+	private HashMap<ExtractedNoun, Set<Pattern>> _extractedNounsToPatternsMap;
+	private Set<Noun> _seeds;
+	private ArrayList<Set<Noun>> _listsOfKnownCategoryWords;
+	private ArrayList<String> _outputPrefixList;
+
+	
+	private Set<Noun> _stopWords;
 	
 	
-	public Basilisk(String categorySeedsSlistFile, String allCasesFile, int iterations){
+	public Basilisk(String categorySeedsSlistFile, 
+					String allCasesFile, 
+					int iterations, 
+					String outputDir, 
+					boolean useImprovedConflictResolution){
+		
 		_iterations = iterations;
 		System.out.println("Bootstrapping iterations: " + _iterations);
 		
+		_useImprovedConflictResolution = useImprovedConflictResolution;
+		if(_useImprovedConflictResolution)
+			System.out.println("Using improved multiple category conflict resolution");
+		else 
+			System.out.println("Using simple multiple category conflict resolution");
 		//Initialize the output prefix list
 		_outputPrefixList = new ArrayList<String>();
 		
@@ -81,54 +92,20 @@ public class Basilisk {
 		_listsOfKnownCategoryWords = loadCategoriesFromSList(categorySeedsSlistFile);
 		_stopWords = loadSet(_stopWordsFile);
 		
-		//Map caseframes to cases and vice versa
-		System.out.println("Generating dictionary files");
-		if(!generateMaps(allCasesFile))
-				_initializedProperly = false;
-		_initializedProperly = true;
+		//Map nouns to patterns and vice versa
+		System.out.println("Attempting to read input files.");
+		if(!generateMaps(allCasesFile)){
+			System.out.println("Unable to initialize basilisk data properly. Check the formatting of input files");
+			return;
+		}
+		else{
+			System.out.println("Finished reading input files.");
+			System.out.format("Discovered %d head nouns and %d patterns\n", _extractedNounsToPatternsMap.size(), _patternsToExtractedNounMap.size());
+		}
+		
+		bootstrap(outputDir);
 	}
 	
-	private ArrayList<Set<Noun>> loadCategoriesFromSList(String categorySeedsSlistFile) {
-		ArrayList<Set<Noun>> result = new ArrayList<Set<Noun>>();
-		
-		File f = new File(categorySeedsSlistFile);
-		
-		if(!f.exists()){
-			System.err.println("Error proccessing list of seed files. File could not be found: " + f.getAbsolutePath());
-			return null;
-		}
-		
-		Scanner in = null;
-		
-		try{
-			in = new Scanner(f);
-		}
-		catch (Exception e){
-			System.err.println(e.getMessage());
-		}
-		
-		//The first line is the directory information
-		String dir = in.nextLine().trim();
-		
-		while(in.hasNextLine()){
-			//Grab the file name from the slist
-			String fileName = in.nextLine().trim();
-			
-			//Record the output prefix
-			String outputPrefix = fileName.replaceAll(".*/", ""); 	//remove subdirectories if specified
-			outputPrefix =  outputPrefix.replaceAll("\\..+", ""); //remove extensions
-			
-			//Record the output in the output list
-			_outputPrefixList.add(outputPrefix);
-			
-			//Load the set from the file
-			result.add(loadSet(dir + fileName));
-		}
-		
-		return result;
-	}
-
-
 	/**
 	 * After a new instance of Basilisk has been created, this method is used to initialize the bootstrapping process.
 	 */
@@ -156,7 +133,7 @@ public class Basilisk {
 		
 		
 		
-		//Run the bootstrapping 5 times
+		//Run the bootstrapping _iteration times
 		for(int i = 0; i < _iterations; i++){
 			System.out.format("Iteration %d\n", i + 1);
 			
@@ -192,18 +169,38 @@ public class Basilisk {
 			ArrayList<HashSet<ExtractedNoun>> listsOfScoredNouns = new ArrayList<HashSet<ExtractedNoun>>();
 			for(int j = 0; j <  listsOfCandidateNounPools.size(); j++){
 				Set<ExtractedNoun> candidateNounPool = listsOfCandidateNounPools.get(j);
-				listsOfScoredNouns.add(scoreCandidateNouns(candidateNounPool, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _listsOfKnownCategoryWords.get(j)));
+				listsOfScoredNouns.add(scoreAllNouns(candidateNounPool,  _listsOfKnownCategoryWords.get(j)));
 			}
-
-			//Select the top extracted nouns from each list - one category per sense
-			//Once we're done, add the new words to the parallel list of known words
-			ArrayList<TreeSet<ExtractedNoun>> listsOfTopNewWords = new ArrayList<TreeSet<ExtractedNoun>>();
+			
+			//Resolve conflicts
+			ArrayList<HashSet<ExtractedNoun>> listsOfConflictResolvedNouns = new ArrayList<HashSet<ExtractedNoun>>();
 			for(int j = 0; j < listsOfScoredNouns.size(); j++){
 				HashSet<ExtractedNoun> scoredNouns = listsOfScoredNouns.get(j);
 				
+				//Create a list to store the results of removing conflicts
+				HashSet<ExtractedNoun> noConflictNouns = new HashSet<ExtractedNoun>();
+
+				//Remove nouns that have already been added to the lexicon in previous iterations
+				noConflictNouns = removeAlreadyKnownWords(scoredNouns);
+				
+				//Resolve any remaining conflicts with either simple conflict resolution or improved conflict resolution
+				if(_useImprovedConflictResolution){
+					noConflictNouns = diffScoreAllNouns(noConflictNouns, j, _listsOfKnownCategoryWords);
+				}
+				else{
+					noConflictNouns = resolveSimpleConflicts(noConflictNouns, listsOfScoredNouns);
+				}
+				
+				listsOfConflictResolvedNouns.add(noConflictNouns);
+			}
+
+			//Select the top extracted nouns from each list of conflict resolved nouns
+			//Once we're done, add the new words to the parallel list of known words
+			for(int j = 0; j < listsOfConflictResolvedNouns.size(); j++){
+				HashSet<ExtractedNoun> resolvedNouns = listsOfConflictResolvedNouns.get(j);
+				
 				//Select the top nouns from the current scored list of nouns
-				TreeSet<ExtractedNoun> topNewWords = avgDiffSelectTopNNewCandidateWords(scoredNouns, j, listsOfScoredNouns, 5);
-				listsOfTopNewWords.add(topNewWords);
+				TreeSet<ExtractedNoun> topNewWords = selectTopNNewCandidateNouns(resolvedNouns, 5);
 				
 				//Trace the top nouns
 				traceNewNouns(tracesList.get(j), topNewWords,_listsOfKnownCategoryWords.get(j));
@@ -245,6 +242,444 @@ public class Basilisk {
 			trace.close();
 		}
 	}
+	
+	private HashSet<ExtractedNoun> diffScoreAllNouns(	Set<ExtractedNoun> candidateNounPool, 
+															int catNumber,
+															ArrayList<Set<Noun>> listsOfKnownCategoryWords){
+		
+		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
+		
+		//Examine each word in the current set to score it
+		for(ExtractedNoun candidateNoun: candidateNounPool){
+			double score = 0.0;
+			double maxOtherScore = 0.0;
+			
+			Iterator<Set<Noun>> listItt = listsOfKnownCategoryWords.iterator();
+			for(int i = 0; listItt.hasNext(); i++){
+				Set<Noun> knownCategoryWords = listItt.next();
+				//Check to see if we're scoring against the current category
+				if(i == catNumber)
+					score = scoreCandidateNoun(candidateNoun, knownCategoryWords);
+				else
+					maxOtherScore = Math.max(maxOtherScore, scoreCandidateNoun(candidateNoun, knownCategoryWords));
+			}
+			
+			score = score - maxOtherScore;
+			ExtractedNoun diffScored = new ExtractedNoun(candidateNoun._noun);
+			diffScored.setScore(score);
+			result.add(diffScored);
+		}
+		
+		return result;
+		
+	}
+
+
+	public boolean generateMaps(String allCasesFile){
+		//Initialize both maps. 
+		_patternsToExtractedNounMap = new HashMap<Pattern, Set<ExtractedNoun>>();
+		_extractedNounsToPatternsMap = new HashMap<ExtractedNoun, Set<Pattern>>();
+		
+		
+		//Read in the cases file
+		try{
+			BufferedReader br = new BufferedReader(new FileReader(allCasesFile));
+			
+			String line = null;
+			
+			while((line = br.readLine()) != null){
+				line = line.trim();
+				
+				//An asteric separates the extracted noun from the pattern that extracted it
+				String nounPhrase = line.split("\\*")[0].trim();
+				String pattern = line.split("\\*")[1].trim();
+				
+				//Process the pattern
+				Pattern p = new Pattern(pattern);								
+				
+				//Identify the head nouns in the noun phrase
+				ArrayList<ExtractedNoun> headNouns = identifyHeadNouns(nounPhrase);
+				
+				//Create a new word for each headnoun of the and phrase
+				for(ExtractedNoun noun: headNouns){
+					//Map patterns to extracted nouns
+					Set<ExtractedNoun> nouns = _patternsToExtractedNounMap.get(p);
+					if(nouns == null){
+						nouns = new HashSet<ExtractedNoun>();
+					}
+					nouns.add(noun);
+					_patternsToExtractedNounMap.put(p, nouns);
+				
+					
+					//Map extracted nouns to patterns
+					Set<Pattern> patterns = _extractedNounsToPatternsMap.get(noun);
+					if(patterns == null)
+						patterns = new HashSet<Pattern>();
+					patterns.add(p);
+					_extractedNounsToPatternsMap.put(noun, patterns);
+				}
+
+			}
+			br.close();
+		}
+		catch (IOException e){
+			System.err.println(e.getMessage());
+			return false;
+		}
+		return true;
+	}
+
+	private ArrayList<ExtractedNoun> identifyHeadNouns(String nounPhrase){
+		ArrayList<ExtractedNoun> result = new ArrayList<ExtractedNoun>();
+		
+		//Eliminate any attached "of" phrases
+		nounPhrase = nounPhrase.replaceAll(" [oO][fF] .+", ""); 
+		
+		//Split the remaining phrase around known conjunctions
+		String[] conjunctionSplit = nounPhrase.split("(?i)((and)|(>COMMA))");
+		
+		//Cycle through each subConjuction
+		for(int i = 0; i < conjunctionSplit.length; i++){
+			if(conjunctionSplit[i].trim().equals(""))
+				continue;
+			
+			//Grab the right most word (head noun)
+			String[] words = conjunctionSplit[i].split(" +"); 			
+			String noun = words[words.length - 1].trim();
+			
+			//Sanity check
+			if(!noun.equals("")){
+				ExtractedNoun n = new ExtractedNoun(noun);
+				
+				//As long as it isn't a stop word, add it to the result
+				if(!_stopWords.contains(n))
+					result.add(n);
+			}
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Returns true if any given extracted noun consists of only a sequence of ampersands, digits, periods, dashes, commas or colons.
+	 * For example, matches:
+	 * 		&&63, 14, 1999-2008
+	 * @param en - ExtractedNoun to be checked for being a number
+	 * @return true iff en is a number
+	 */
+	private boolean isNumber(ExtractedNoun en) {
+		java.util.regex.Pattern numPattern = java.util.regex.Pattern.compile("[&\\d\\.\\-,:]+");
+		java.util.regex.Matcher m = numPattern.matcher(en._noun);
+		
+		return m.matches();
+	}
+
+
+	/**
+	 * Returns true if any given extracted noun starts with the @ symbol.
+	 * 
+	 * @param en - ExtractedNoun to be checked for being possessive
+	 * @return true if en is possessive
+	 */
+	private boolean isPossessive(ExtractedNoun en) {
+		java.util.regex.Pattern numPattern = java.util.regex.Pattern.compile("^@.*");
+		java.util.regex.Matcher m = numPattern.matcher(en._noun);
+		
+		return m.matches();
+	}
+
+
+	private ArrayList<Set<Noun>> loadCategoriesFromSList(String categorySeedsSlistFile) {
+		ArrayList<Set<Noun>> result = new ArrayList<Set<Noun>>();
+		
+		File f = new File(categorySeedsSlistFile);
+		
+		if(!f.exists()){
+			System.err.println("Error proccessing list of seed files. File could not be found: " + f.getAbsolutePath());
+			return null;
+		}
+		
+		Scanner in = null;
+		
+		try{
+			in = new Scanner(f);
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+		}
+		
+		//The first line is the directory information
+		String dir = in.nextLine().trim();
+		
+		while(in.hasNextLine()){
+			//Grab the file name from the slist
+			String fileName = in.nextLine().trim();
+			
+			//Record the output prefix
+			String outputPrefix = fileName.replaceAll(".*/", ""); 	//remove subdirectories if specified
+			outputPrefix =  outputPrefix.replaceAll("\\..+", ""); //remove extensions
+			
+			//Record the output in the output list
+			_outputPrefixList.add(outputPrefix);
+			
+			//Load the set from the file
+			result.add(loadSet(dir + fileName));
+		}
+		
+		return result;
+	}
+
+
+
+
+/*	private TreeSet<ExtractedNoun> selectTopNNewCandidateWords(TreeSet<ExtractedNoun> scoredNouns, int n) {
+		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
+		
+		//Cycle through the scoredNouns, from high to low, adding to the result as we go
+		Iterator<ExtractedNoun> descNounIt = scoredNouns.descendingIterator();
+		for(int i = 0; descNounIt.hasNext() && i < n;){
+			ExtractedNoun en = descNounIt.next();
+			if(!_seeds.contains(en)){
+				result.add(en);
+				i++;
+			}
+		}
+		return result;
+	}*/
+	
+	private Set<Noun> loadSet(String listOfWords) {
+		File f = new File(listOfWords);
+		
+		if(!f.exists()){
+			System.err.println("Input file could not be found: " + f.getAbsolutePath());
+			return null;
+		}
+		
+		Set<Noun> result = new HashSet<Noun>();
+		
+		Scanner in = null;
+		
+		try{
+			in = new Scanner(f);
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+			return null;
+		}
+		
+		while(in.hasNextLine()){
+			result.add(new Noun(in.nextLine().toLowerCase().trim()));
+		}
+		
+		return result;
+		
+	}
+	
+	/**
+	 * Returns a new set of scored nouns that will have removed all of the words that are in the learned lexicons.
+	 * 
+	 * @param scoredNouns - List of scored nouns from which to remove already known words
+	 * @return Set of scored nouns that is guaranteed to contain no members from the set of already known words
+	 */
+	private HashSet<ExtractedNoun> removeAlreadyKnownWords(Set<ExtractedNoun> scoredNouns){
+		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
+		result.addAll(scoredNouns);
+		
+		for(Set<Noun> knownCategoryWords: _listsOfKnownCategoryWords){
+			result.removeAll(knownCategoryWords);
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Checks the current list of scored nouns against other lists of scored nouns to see if their are conflicting words, i.e. two 
+	 * categories trying to add the same word. If such a conflict exists, retain the current noun only if it has the highest
+	 * score compared to any other category that is also trying to add the given word.
+	 * 
+	 * @param scoredNouns - set of scored nouns to be checked for conflicts with other categories
+	 * @param listsOfScoredNouns
+	 * @return
+	 */
+	private HashSet<ExtractedNoun> resolveSimpleConflicts(	Set<ExtractedNoun> scoredNouns, 
+														ArrayList<HashSet<ExtractedNoun>> listsOfScoredNouns){
+		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
+		
+		//Check to make sure each word has the highest (or tied for highest) score compared to all other known scored words 
+		for(ExtractedNoun en: scoredNouns){
+			boolean hasHighestScore = true;
+			for(HashSet<ExtractedNoun> otherScoredNouns: listsOfScoredNouns){
+				//Check to see if there is even a conflict
+				if(otherScoredNouns.contains(en)){
+					//Iterate through the list until we find the match (damn java - no "get" method for hashsets)
+					for(ExtractedNoun otherNoun: otherScoredNouns){
+						if(otherNoun.equals(en)){
+							if(en.getScore() < otherNoun.getScore()){
+								hasHighestScore = false;
+								break;
+							}
+						}
+					}
+					if(!hasHighestScore) break;
+				}
+			}
+			
+			//If it doesn't have the highest score, continue to the next word
+			if(!hasHighestScore) continue;
+			
+			//Otherwise, we're looking at a new, highest scoring word !!Add it to the result already
+			result.add(en);
+		}
+
+		
+		return result;
+	}
+
+	/**
+	 * Scores all of the candidate nouns in a given candidate noun pool using the AvgLog scoring function. 
+	 * 
+	 * @see scoreCandidateNoun for details on the AvgLog scoring function
+	 * @param candidateNounPool - Set of candidate nouns to be scored by the AvgLog Function
+	 * @param knownCategoryWords - Set of known category words for a particular category
+	 * @return
+	 */
+	private HashSet<ExtractedNoun> scoreAllNouns(Set<ExtractedNoun> candidateNounPool, 
+													Set<Noun> knownCategoryWords) {
+		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
+		
+		//Score each noun in our candidate pool
+		for(ExtractedNoun candidateNoun: candidateNounPool){
+			double avgScore = scoreCandidateNoun(candidateNoun, knownCategoryWords);
+			ExtractedNoun scored = new ExtractedNoun(candidateNoun._noun);
+			scored.setScore(avgScore);
+			result.add(scored);
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Scores a particular word for a given category. The score for a noun is defined by the forumula
+	 * 			AvgLog(word) = SUM[log2(F+1)]/N, where F is the number of known words also extracted by each of the 
+	 * 											 patterns that extracted this given noun, and N is the number of patterns
+	 * 											that extracted the given noun.
+	 * @param noun - Extracted noun to be scored
+	 * @param knownCategoryMembers - List of already known category words for the given category
+	 * @return - score for the extracted noun
+	 */
+	public double scoreCandidateNoun(ExtractedNoun candidateNoun, Set<Noun> knownCategoryMembers){
+		double sumLog2 = 0.0; 	//Sumation of (log2(F+1))
+		int numPatterns = 0; 	//P number of patterns that extracted candidate noun
+		
+		//Loop through each pattern that extracted the given noun
+		//Incrementing the score by log2(F+1), where F is the number of known
+		//category words that pattern extracted
+		for(Pattern candidatePattern: _extractedNounsToPatternsMap.get(candidateNoun)){
+			int FPlusOne = 1;
+			//Loop through each noun extracted by the pattern, checking to see if it's a known word
+			for(ExtractedNoun extractedNoun: _patternsToExtractedNounMap.get(candidatePattern)){
+				if(knownCategoryMembers.contains(extractedNoun))
+					FPlusOne++;
+			}
+			sumLog2 += Math.log(FPlusOne)/Math.log(2);
+			numPatterns++;
+		}
+		//Average the nounScore over the number of patterns that contributed to it
+		double avgScore = (sumLog2/(double) numPatterns);
+		return avgScore;
+	}
+	
+	private TreeSet<Pattern> scorePatterns(Map<Pattern, Set<ExtractedNoun>> patterns, Set<Noun> knownCategoryMembers) {
+		
+		TreeSet<Pattern> result = new TreeSet<Pattern>();
+		//Score each case frame
+		for(Pattern p: patterns.keySet()){
+			int f = 0;	//total number of known category members extracted
+			int n = 0; 	//total words extracted by pattern
+			
+			//Loop through each noun extracted by the caseframe
+			for(ExtractedNoun noun: patterns.get(p)){
+				if(knownCategoryMembers.contains(noun)){
+					f++;
+				}
+				n++; 
+			}
+			
+			double rLogF = (f/(double) n)*(Math.log(f)/Math.log(2));
+			
+			//If we get -infinity as a result, change it to -1
+			if(Double.compare(rLogF, Double.NaN) == 0)
+				rLogF = -1.0;
+			
+			//Store the pattern (with it's new score) into the result
+			Pattern scored = new Pattern(p._caseFrame);
+			scored.setScore(rLogF);
+			result.add(scored);
+		}		
+		return result;
+	}
+
+	private Set<ExtractedNoun> selectNounsFromPatterns(Set<Pattern> patternPool, Map<Pattern, Set<ExtractedNoun>> patterns) {
+		Set<ExtractedNoun> result = new HashSet<ExtractedNoun>();
+		for(Pattern p: patternPool){
+			for(ExtractedNoun en: patterns.get(p)){
+				if(!isNumber(en) && !isPossessive(en))
+					result.add(en);
+			}
+		}
+		
+		return result;
+	}
+
+	/**
+	 *  Simply takes a hashset of scored nouns, sorts them, and returns N nouns with with the highest score.
+	 *  NOTE: Use some sort of conflict resolution before selecting the top nouns. Otherwise this will blindly chose the top scored
+	 *  nouns, some of which might have been learned already or some of which might be claimed by another category with a high score
+	 * 
+	 * @param scoredNouns - List of scored words to choose the best n words from
+	 * @param n - number of best words to return
+	 * @return List of the top n scored new words
+	 */
+	private TreeSet<ExtractedNoun> selectTopNNewCandidateNouns( HashSet<ExtractedNoun> scoredNouns,
+																int n) {
+
+		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
+		
+		//Sort the list of extracted nouns that we are currently examining. 
+		TreeSet<ExtractedNoun> sortedScoredNouns = new TreeSet<ExtractedNoun>();
+		sortedScoredNouns.addAll(scoredNouns);
+		
+		//Iterate through the list of sorted extracted nouns, starting with the one with the highest score
+		for(ExtractedNoun en: sortedScoredNouns.descendingSet()){
+			result.add(en);
+			
+			//If we've filled up our list, break out of the loop
+			if(result.size() == n )
+				break;
+		}
+		return result;
+	}
+
+	private TreeSet<Pattern> selectTopNPatterns(Set<Pattern> patterns, int n) {
+		TreeSet<Pattern> result = new TreeSet<Pattern>();
+		
+		TreeSet<Pattern> sortedPatterns = new TreeSet<Pattern>();
+		sortedPatterns.addAll(patterns);
+		
+		Iterator<Pattern> it = sortedPatterns.descendingIterator();
+		for(int i = 0; i < n; i++){
+			result.add(it.next());
+		}
+		return result;
+	}
+
+
+	private void traceIterationHeader(PrintStream trace, int iteration) {
+		trace.append("************************************************************\n");
+		trace.format("                    Iteration %3d\n", iteration);
+		trace.append("************************************************************\n\n");
+		
+	}
 
 	/**
 	 * Uses the avgDiff selection criteria to try and guide the selection process for words that are strongly favored by one
@@ -262,7 +697,7 @@ public class Basilisk {
 	 * @param n - number of nouns to return in this list
 	 * @return - List of the top scored nouns in this list.
 	 */
-	private TreeSet<ExtractedNoun> avgDiffSelectTopNNewCandidateWords( 	HashSet<ExtractedNoun> scoredNouns, int catNumber, 
+/*	private TreeSet<ExtractedNoun> avgDiffSelectTopNNewCandidateWords( 	HashSet<ExtractedNoun> scoredNouns, int catNumber, 
 																		ArrayList<HashSet<ExtractedNoun>> listsOfScoredNouns, 
 																		int n) {
 //		Look at a word
@@ -324,76 +759,10 @@ public class Basilisk {
 			}
 		}
 		return result;
-	}
+	}*/
+	
 
 
-	/**
-	 *  Take the list of scored words. Sort it. Start from the top. Take the highest scored word, and compare 
-	 *	it against all the known category words. If it's already known, continue to the next word. If not, check the word against 
-	 *	all the other scored words in other lists. Make sure that score is greater than equal to the score in all other 
-	 *	scored words lists. If not, continue to the next word. If it is, add that word to the list. Repeat until we have i words.
-	 * 
-	 * @param scoredNouns - List of scored words to choose the best i words from
-	 * @param listsOfScoredNouns - Lists of all the other scored nouns, to make sure we have the highest scored word
-	 * @param i - number of best words to return
-	 * @return List of the top i scored new words, with no duplicates and no words that have already been learned before.
-	 */
-	private TreeSet<ExtractedNoun> selectTopNNewCandidateWords( HashSet<ExtractedNoun> scoredNouns,
-																ArrayList<HashSet<ExtractedNoun>> listsOfScoredNouns, 
-																int i) {
-
-		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
-		
-		//Sort the list of extracted nouns that we are currently examining. 
-		TreeSet<ExtractedNoun> sortedScoredNouns = new TreeSet<ExtractedNoun>();
-		for(ExtractedNoun en: scoredNouns){
-			sortedScoredNouns.add(en);
-		}
-		
-		//Iterate through the list of sorted extracted nouns, starting with the one with the highest score
-		for(ExtractedNoun en: sortedScoredNouns.descendingSet()){
-			boolean alreadyKnown = false;
-			
-			//Check to see if it's in the list of known words
-			for(Set<Noun> knownWords: _listsOfKnownCategoryWords){
-				//If it is, continue to the next word
-				if(knownWords.contains(en)){
-					alreadyKnown = true;
-					break;
-				}	
-			}
-			
-			//If the word is already known, continue to the next word
-			if(alreadyKnown) continue;
-			
-			//Otherwise, check to make sure the word has the highest (or tied for highest) score compared to all other known scored words 
-			//for this iteration
-			boolean hasHighestScore = true;
-			for(HashSet<ExtractedNoun> otherScoredNouns: listsOfScoredNouns){
-				//Iterate through the list until we find the match (damn java - no "get" method for hashsets)
-				for(ExtractedNoun otherNoun: otherScoredNouns){
-					if(otherNoun.equals(en)){
-						if(en.getScore() < otherNoun.getScore()){
-							hasHighestScore = false;
-							break;
-						}
-					}
-				}
-				if(!hasHighestScore) break;
-			}
-			
-			//If it doesn't have the highest score, continue to the next word
-			if(!hasHighestScore) continue;
-			
-			//Otherwise, we're looking at a new, highest scoring word !!Add it to the set already
-			result.add(en);
-			
-			//If we've filled up our list, break out of the loop
-			if(result.size() == i )
-				break;
-		}
-		return result;
-	}
 
 
 	private void traceNewNouns(PrintStream trace, TreeSet<ExtractedNoun> topNewWords, Set<Noun> knownCategoryMembers) {
@@ -428,16 +797,7 @@ public class Basilisk {
 		}
 		
 	}
-
-
-	private void traceIterationHeader(PrintStream trace, int iteration) {
-		trace.append("************************************************************\n");
-		trace.format("                    Iteration %3d\n", iteration);
-		trace.append("************************************************************\n\n");
-		
-	}
-
-
+	
 	/**
 	 * Appends information about patterns in the pattern pool to the output trace.
 	 * Looks like: 
@@ -485,194 +845,6 @@ public class Basilisk {
 			//One last new line between patterns
 			trace.append("\n");
 		}
-	}
-
-
-	private Set<Noun> loadSet(String listOfWords) {
-		File f = new File(listOfWords);
-		
-		if(!f.exists()){
-			System.err.println("Input file could not be found: " + f.getAbsolutePath());
-			return null;
-		}
-		
-		Set<Noun> result = new HashSet<Noun>();
-		
-		Scanner in = null;
-		
-		try{
-			in = new Scanner(f);
-		}
-		catch (Exception e){
-			System.err.println(e.getMessage());
-			return null;
-		}
-		
-		while(in.hasNextLine()){
-			result.add(new Noun(in.nextLine().toLowerCase().trim()));
-		}
-		
-		return result;
-		
-	}
-
-	private TreeSet<ExtractedNoun> selectTopNNewCandidateWords(TreeSet<ExtractedNoun> scoredNouns, int n) {
-		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
-		
-		//Cycle through the scoredNouns, from high to low, adding to the result as we go
-		Iterator<ExtractedNoun> descNounIt = scoredNouns.descendingIterator();
-		for(int i = 0; descNounIt.hasNext() && i < n;){
-			ExtractedNoun en = descNounIt.next();
-			if(!_seeds.contains(en)){
-				result.add(en);
-				i++;
-			}
-		}
-		return result;
-	}
-
-	private HashSet<ExtractedNoun> scoreCandidateNouns(Set<ExtractedNoun> candidateNounPool, 
-													Map<ExtractedNoun, Set<Pattern>> extractedNouns,
-													Map<Pattern, Set<ExtractedNoun>> patterns, 
-													Set<Noun> knownCategoryWords) {
-		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
-		
-		//Score each noun in our candidate pool
-		for(ExtractedNoun candidateNoun: candidateNounPool){
-			double sumLog2 = 0.0; 	//Sumation of (log2(F+1))
-			int numPatterns = 0; 	//P number of patterns that extracted candidate noun
-			
-			//Loop through each pattern that extracted the given noun
-			//Incrementing the score by log2(F+1), where F is the number of known
-			//category words that pattern extracted
-			for(Pattern candidatePattern: extractedNouns.get(candidateNoun)){
-				int FPlusOne = 1;
-				//Loop through each noun extracted by the pattern, checking to see if it's a known word
-				for(ExtractedNoun extractedNoun: patterns.get(candidatePattern)){
-					if(knownCategoryWords.contains(extractedNoun))
-						FPlusOne++;
-				}
-				sumLog2 += Math.log(FPlusOne)/Math.log(2);
-				numPatterns++;
-			}
-			//Average the nounScore over the number of patterns that contributed to it
-			double avgScore = (sumLog2/(double) numPatterns);
-			ExtractedNoun scored = new ExtractedNoun(candidateNoun._noun);
-			scored.setScore(avgScore);
-			result.add(scored);
-		}
-		
-		return result;
-	}
-
-	private Set<ExtractedNoun> selectNounsFromPatterns(Set<Pattern> patternPool, Map<Pattern, Set<ExtractedNoun>> patterns) {
-		Set<ExtractedNoun> result = new HashSet<ExtractedNoun>();
-		for(Pattern p: patternPool){
-			result.addAll(patterns.get(p));
-		}
-		
-		return result;
-	}
-
-	private TreeSet<Pattern> selectTopNPatterns(TreeSet<Pattern> patterns, int n) {
-		TreeSet<Pattern> result = new TreeSet<Pattern>();
-		
-		Iterator<Pattern> it = patterns.descendingIterator();
-		for(int i = 0; i < n; i++){
-			result.add(it.next());
-		}
-		return result;
-	}
-
-	private TreeSet<Pattern> scorePatterns(Map<Pattern, Set<ExtractedNoun>> patterns, Set<Noun> knownCategoryMembers) {
-		
-		TreeSet<Pattern> result = new TreeSet<Pattern>();
-		//Score each case frame
-		for(Pattern p: patterns.keySet()){
-			int f = 0;	//total number of known category members extracted
-			int n = 0; 	//total words extracted by pattern
-			
-			//Loop through each noun extracted by the caseframe
-			for(ExtractedNoun noun: patterns.get(p)){
-				if(knownCategoryMembers.contains(noun)){
-					f++;
-				}
-				n++; 
-			}
-			
-			double rLogF = (f/(double) n)*(Math.log(f)/Math.log(2));
-			
-			//If we get -infinity as a result, change it to -1
-			if(Double.compare(rLogF, Double.NaN) == 0)
-				rLogF = -1.0;
-			
-			//Store the pattern (with it's new score) into the result
-			Pattern scored = new Pattern(p._caseFrame);
-			scored.setScore(rLogF);
-			result.add(scored);
-		}		
-		return result;
-	}
-	
-	public boolean generateMaps(String allCasesFile){
-		//Initialize both maps. 
-		_patternsToExtractedNounMap = new HashMap<Pattern, Set<ExtractedNoun>>();
-		_extractedNounsToPatternsMap = new HashMap<ExtractedNoun, Set<Pattern>>();
-		
-		
-		//Read in the cases file
-		try{
-			BufferedReader br = new BufferedReader(new FileReader(allCasesFile));
-			
-			String line = null;
-			
-			while((line = br.readLine()) != null){
-				line = line.trim();
-				
-				//An asteric separates the extracted noun from the pattern that extracted it
-				String noun = line.split("\\*")[0].trim();
-				String pattern = line.split("\\*")[1].trim();
-				
-				//Process the pattern
-				Pattern p = new Pattern(pattern);								
-				
-				//Process the noun
-				noun = noun.replaceAll(" [oO][fF] .+", ""); //Elimante any attached "of" phrases
-				String[] words = noun.split(" +"); 			//Grab the right most word (head noun)
-				noun = words[words.length - 1].trim();
-				
-				//Check to see if the extracted noun was a number (encoded by && preceding the digits)..if so, continue to next word
-				if(noun.contains("&&")){
-					continue;
-				}
-				ExtractedNoun n = new ExtractedNoun(noun);
-				
-				//Add it if it isn't a stopword
-				if(!_stopWords.contains(n)){
-					//Map patterns to extracted nouns
-					Set<ExtractedNoun> nouns = _patternsToExtractedNounMap.get(p);
-					if(nouns == null){
-						nouns = new HashSet<ExtractedNoun>();
-					}
-					nouns.add(n);
-					_patternsToExtractedNounMap.put(p, nouns);
-				
-					
-					//Map extracted nouns to patterns
-					Set<Pattern> patterns = _extractedNounsToPatternsMap.get(n);
-					if(patterns == null)
-						patterns = new HashSet<Pattern>();
-					patterns.add(p);
-					_extractedNounsToPatternsMap.put(n, patterns);
-				}
-			}
-			br.close();
-		}
-		catch (IOException e){
-			System.err.println(e.getMessage());
-			return false;
-		}
-		return true;
 	}
 
 }
