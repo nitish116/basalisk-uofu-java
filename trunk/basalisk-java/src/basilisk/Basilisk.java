@@ -109,7 +109,7 @@ public class Basilisk {
 	/**
 	 * After a new instance of Basilisk has been created, this method is used to initialize the bootstrapping process.
 	 */
-	public void bootstrap(String outputDir){
+	private void bootstrap(String outputDir){
 		System.out.println("Starting bootstrapping.\n");
 		
 		//Initialize a list of traces - one for each lexicon (which can be gathered from the output prefix list
@@ -275,7 +275,7 @@ public class Basilisk {
 	}
 
 
-	public boolean generateMaps(String allCasesFile){
+	private boolean generateMaps(String allCasesFile){
 		//Initialize both maps. 
 		_patternsToExtractedNounMap = new HashMap<Pattern, Set<ExtractedNoun>>();
 		_extractedNounsToPatternsMap = new HashMap<ExtractedNoun, Set<Pattern>>();
@@ -295,7 +295,7 @@ public class Basilisk {
 				String pattern = line.split("\\*")[1].trim();
 				
 				//Process the pattern
-				Pattern p = new Pattern(pattern);								
+				Pattern p = new Pattern(pattern);		
 				
 				//Identify the head nouns in the noun phrase
 				ArrayList<ExtractedNoun> headNouns = identifyHeadNouns(nounPhrase);
@@ -336,7 +336,7 @@ public class Basilisk {
 		nounPhrase = nounPhrase.replaceAll(" [oO][fF] .+", ""); 
 		
 		//Split the remaining phrase around known conjunctions
-		String[] conjunctionSplit = nounPhrase.split("(?i)((and)|(>COMMA))");
+		String[] conjunctionSplit = nounPhrase.split("(?i)(( and )|(>COMMA))");
 		
 		//Cycle through each subConjuction
 		for(int i = 0; i < conjunctionSplit.length; i++){
@@ -595,7 +595,7 @@ public class Basilisk {
 	 * @param knownCategoryMembers - List of already known category words for the given category
 	 * @return - score for the extracted noun
 	 */
-	public double scoreCandidateNoun(ExtractedNoun candidateNoun, Set<Noun> knownCategoryMembers){
+	private double scoreCandidateNoun(ExtractedNoun candidateNoun, Set<Noun> knownCategoryMembers){
 		double sumLog2 = 0.0; 	//Sumation of (log2(F+1))
 		int numPatterns = 0; 	//P number of patterns that extracted candidate noun
 		
