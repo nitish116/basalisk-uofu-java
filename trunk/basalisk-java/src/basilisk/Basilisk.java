@@ -376,6 +376,34 @@ public class Basilisk {
 
 
 	/**
+	 *  Checks a pattern to see if all of it's nouns have already been added to lexicons and/or if all of it's nouns are on the
+	 * non-candidate nouns (numbers and posssessive nouns)
+	 * 
+	 * @param p - Pattern to check and see if it's depleted  
+	 * @return true iff the given pattern is depleted
+	 */
+	private boolean isPatternDepleted(Pattern p) {
+		boolean isDepleted = true;	//Assume the pattern is depelted, check to prove otherwise
+		for(ExtractedNoun en: _patternsToExtractedNounMap.get(p)){
+			//Assume the word is unknown. Check all lists of known words to prove this assumption wrong
+			boolean isKnown = false;
+			for(Set<Noun> knownCategoryWords: _listsOfKnownCategoryWords){
+				if(knownCategoryWords.contains(en)){
+					//If even a single list of known words contains this word, then it's known
+					isKnown = true;
+					break;
+				}
+			}
+			//If the word isn't known, isn't a number, and isn't possessive, then the pattern still has some life left in it
+			if (!isKnown && !isNumber(en) && !isPossessive(en)){
+				isDepleted = false;
+				break;
+			}
+		}
+		return isDepleted;
+	}
+
+	/**
 	 * Returns true if any given extracted noun starts with the @ symbol.
 	 * 
 	 * @param en - ExtractedNoun to be checked for being possessive
@@ -667,8 +695,13 @@ public class Basilisk {
 		sortedPatterns.addAll(patterns);
 		
 		Iterator<Pattern> it = sortedPatterns.descendingIterator();
-		for(int i = 0; i < n; i++){
-			result.add(it.next());
+		for(int i = 0; i < n && it.hasNext();){
+			Pattern nextPattern = it.next();
+			//Check to make sure the pattern isn't depleted
+			if(!isPatternDepleted(nextPattern)){
+				result.add(it.next());
+				i++;
+			}
 		}
 		return result;
 	}
