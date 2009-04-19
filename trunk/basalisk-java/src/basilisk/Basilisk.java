@@ -77,11 +77,9 @@ public class Basilisk {
 	}
 	private int _iterations;
 	private boolean _useImprovedConflictResolution;
-	private boolean _initializedProperly;
-	private String _outputPrefix;
 	private HashMap<Pattern, Set<ExtractedNoun>> _patternsToExtractedNounMap;
 	private HashMap<ExtractedNoun, Set<Pattern>> _extractedNounsToPatternsMap;
-	private ArrayList<HashSet<Noun>> _listsOfKnownCategoryWords;
+	private HashMap<String, HashSet<Noun>> _listsOfKnownCategoryWords;
 	private ArrayList<String> _outputPrefixList;
 
 	
@@ -447,8 +445,8 @@ public class Basilisk {
 	}
 
 
-	public ArrayList<HashSet<Noun>> loadCategoriesFromSList(String categorySeedsSlistFile) {
-		ArrayList<HashSet<Noun>> result = new ArrayList<HashSet<Noun>>();
+	public HashMap<String, HashSet<Noun>> loadCategoriesFromSList(String categorySeedsSlistFile) {
+		HashMap<String, HashSet<Noun>> result = new HashMap<String, HashSet<Noun>>();
 		
 		File f = new File(categorySeedsSlistFile);
 		
