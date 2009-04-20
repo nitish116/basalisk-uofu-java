@@ -14,11 +14,9 @@ import org.junit.Test;
 public class BasiliskTest {
 
 	
-	private HashMap<Pattern, Set<ExtractedNoun>> _patternsToExtractedNounMap;
-	private HashMap<ExtractedNoun, Set<Pattern>> _extractedNounsToPatternsMap;
-	private Set<Noun> _seeds;
-	private ArrayList<HashSet<Noun>> _listsOfKnownCategoryWords;
-	private ArrayList<String> _outputPrefixList;
+	private HashMap<Pattern, HashSet<ExtractedNoun>> _patternsToExtractedNounMap;
+	private HashMap<ExtractedNoun, HashSet<Pattern>> _extractedNounsToPatternsMap;
+	private HashMap<String, HashSet<Noun>> _listsOfKnownCategoryWords;
 
 	
 	private Set<Noun> _stopWords;
@@ -27,15 +25,16 @@ public class BasiliskTest {
 	public static void setUpBeforeClass() throws Exception {
 		
 		//Create our "seeds"
-		Noun building = new Noun("human");	
-		Noun event = new Noun("embassy");
-		Noun human = new Noun("people"); 
-		Noun location = new Noun("country");
-		Noun time = new Noun("november");		
-		Noun vehicle = new Noun("plane");	
-		Noun weapon = new Noun("BOMB");	
+		Noun building1 = new Noun("human");	
+		Noun event1 = new Noun("embassy");
+		Noun human1 = new Noun("people"); 
+		Noun location1 = new Noun("country");
+		Noun time1 = new Noun("november");		
+		Noun vehicle1 = new Noun("plane");	
+		Noun weapon1 = new Noun("BOMB");	
 		
 		//Create lists to hold seeds
+		HashSet<Noun> buildingList = new HashSet<Noun>();
 
 	}
 
