@@ -36,11 +36,6 @@ public class BasiliskTest {
 		Noun weapon = new Noun("BOMB");	
 		
 		//Create lists to hold seeds
-		ArrayList
-		
-		Noun n5 = new 
-		
-		ExtractedNoun en1 = 
 
 	}
 
