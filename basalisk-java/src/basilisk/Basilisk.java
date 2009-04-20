@@ -67,6 +67,10 @@ public class Basilisk {
 	
 	private HashSet<Noun> _stopWords;
 	
+	//Used for debugging
+	protected Basilisk(){
+	
+	}
 	
 	public Basilisk(String categorySeedsSlistFile, 
 					String allCasesFile, 
