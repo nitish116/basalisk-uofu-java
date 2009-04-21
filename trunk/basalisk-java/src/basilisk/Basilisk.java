@@ -126,6 +126,18 @@ public class Basilisk {
 				System.err.println(e.getMessage());
 			}
 		}
+		
+		//Create an error trace
+		PrintStream afterConflictErrorTrace = null;
+		PrintStream alreadyKnownErrorTrace = null;
+		try{
+			afterConflictErrorTrace = new PrintStream(outputDir + "afterConflictError.trace");
+			alreadyKnownErrorTrace = new PrintStream(outputDir + "alreadyKnownError.trace");
+		}
+		catch(Exception e){
+			System.err.println(e.getMessage());
+			return;
+		}
 
 		//Initialize a list to keep track of all the new words for each category
 		HashMap<String, List<ExtractedNoun>> learnedLexicons = new HashMap<String, List<ExtractedNoun>>();	
@@ -137,10 +149,7 @@ public class Basilisk {
 		//Run the bootstrapping _iteration times
 		for(int i = 0; i < _iterations; i++){
 			System.out.format("Iteration %d\n", i + 1);
-			if(i == 66){
-				System.out.println("Why aren't you adding any buildings?");
-			}
-			
+
 			//Iteration trace header
 			for(PrintStream trace: tracesList.values()){
 				traceIterationHeader(trace, i+1);
@@ -184,20 +193,56 @@ public class Basilisk {
 				HashSet<ExtractedNoun> scoredNouns = listsOfScoredNouns.get(category);
 				
 				//Create a list to store the results of removing conflicts
-				HashSet<ExtractedNoun> noConflictNouns = new HashSet<ExtractedNoun>();
+				HashSet<ExtractedNoun> unknownNouns = new HashSet<ExtractedNoun>();
 
 				//Remove nouns that have already been added to the lexicon in previous iterations
-				noConflictNouns = removeAlreadyKnownWords(scoredNouns, _listsOfKnownCategoryWords);
+				unknownNouns = removeAlreadyKnownWords(scoredNouns, _listsOfKnownCategoryWords);
+				if(unknownNouns.size() == 0){
+					alreadyKnownErrorTrace.format("No conflict nouns was empty on iteration %d\n", i);
+					alreadyKnownErrorTrace.println("**************List of all known words:*************");
+					for(HashSet<Noun> knownWords: _listsOfKnownCategoryWords.values()){
+						for(Noun word: knownWords)
+							alreadyKnownErrorTrace.println(word);
+					}
+					alreadyKnownErrorTrace.format("\n**********List of all scored nouns for the %s category*********\n", category);
+					for(ExtractedNoun en: scoredNouns){
+						alreadyKnownErrorTrace.println(en + ", " + en.getScore());
+					}
+				}
 				
 				//Resolve any remaining conflicts with either simple conflict resolution or improved conflict resolution
+				HashSet<ExtractedNoun> noConflictNouns = new HashSet<ExtractedNoun>();
 				if(_useImprovedConflictResolution){
-					noConflictNouns = diffScoreAllNouns(noConflictNouns, category, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _listsOfKnownCategoryWords);
+					noConflictNouns = diffScoreAllNouns(unknownNouns, category, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _listsOfKnownCategoryWords);
 				}
 				else{
-					noConflictNouns = resolveSimpleConflicts(noConflictNouns, listsOfScoredNouns);
+					noConflictNouns = resolveSimpleConflicts(unknownNouns, category, listsOfScoredNouns);
 				}
 				
 				listsOfConflictResolvedNouns.put(category, noConflictNouns);
+				if(noConflictNouns.size() == 0){
+					afterConflictErrorTrace.format("No conflict nouns was empty on iteration %d\n", i);
+					afterConflictErrorTrace.println("**************List of all known words:*************");
+					for(HashSet<Noun> knownWords: _listsOfKnownCategoryWords.values()){
+						for(Noun word: knownWords)
+							afterConflictErrorTrace.println(word);
+					}
+					afterConflictErrorTrace.format("\n**********List of all unknown scored nouns for the %s category*********\n", category);
+					for(ExtractedNoun en: unknownNouns){
+						afterConflictErrorTrace.println(en + ", " + en.getScore());
+						for(String categoryOther: listsOfScoredNouns.keySet()){
+							if(categoryOther.equals(category))
+								continue;
+							else if(listsOfScoredNouns.get(categoryOther).contains(en)){
+								for(ExtractedNoun otherEn: listsOfScoredNouns.get(categoryOther)){
+									if(otherEn.equals(en)){
+										afterConflictErrorTrace.format("     %s category: %s, %f\n", categoryOther, otherEn, otherEn.getScore());
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 
 			//Select the top extracted nouns from each list of conflict resolved nouns
@@ -247,6 +292,8 @@ public class Basilisk {
 		for(PrintStream trace: tracesList.values()){
 			trace.close();
 		}
+		afterConflictErrorTrace.close();
+		alreadyKnownErrorTrace.close();
 	}
 	
 	public HashSet<ExtractedNoun> diffScoreAllNouns(HashSet<ExtractedNoun> candidateNounPool, 
@@ -542,14 +589,16 @@ public class Basilisk {
 	 * @param listsOfScoredNouns
 	 * @return
 	 */
-	public HashSet<ExtractedNoun> resolveSimpleConflicts(HashSet<ExtractedNoun> scoredNouns, 
+	public HashSet<ExtractedNoun> resolveSimpleConflicts(HashSet<ExtractedNoun> scoredNouns, String category,
 														 HashMap<String, HashSet<ExtractedNoun>> listsOfScoredNouns){
 		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
 		
 		//Check to make sure each word has the highest (or tied for highest) score compared to all other known scored words 
 		for(ExtractedNoun en: scoredNouns){
 			boolean hasHighestScore = true;
-			for(HashSet<ExtractedNoun> otherScoredNouns: listsOfScoredNouns.values()){
+			for(String otherCategory: listsOfScoredNouns.keySet()){
+				if(category.equalsIgnoreCase(otherCategory)) continue;
+				HashSet<ExtractedNoun> otherScoredNouns = listsOfScoredNouns.get(otherCategory);
 				//Check to see if there is even a conflict
 				if(otherScoredNouns.contains(en)){
 					//Iterate through the list until we find the match (damn java - no "get" method for hashsets)
@@ -562,8 +611,8 @@ public class Basilisk {
 							}
 						}
 					}
-					if(!hasHighestScore) break;
 				}
+				if(!hasHighestScore) break;
 			}
 			
 			//If it doesn't have the highest score, continue to the next word
