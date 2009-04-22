@@ -3,6 +3,9 @@ set title "Event"
 set xlabel "Total Lexicon Entries"
 set ylabel "Correct Lexicon Entries"
 set term postscript
+set key left top
 set output "event-plot.ps"
-cd "../../lexicon-scores/mcat/"
-plot "event.score" every 5 using 2:1 title 'Event' with points
+cd "../../lexicon-scores/terrorism/"
+plot "event-scat.score" every 10 using 2:1 title 'ba-1' with linespoints, \
+     "event-mcat.score" every 10 using 2:1 title 'ba-m' with linespoints, \
+     "event-mcat-plus.score" every 10 using 2:1 title 'ba-m+' with linespoints
