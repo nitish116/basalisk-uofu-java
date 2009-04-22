@@ -632,6 +632,9 @@ public class Basilisk {
 									break;
 								}
 						}
+						//If we've removed an item from the list, no need to check the other list of words
+						if(hasChanged)
+							break;
 					}
 				}				
 			}

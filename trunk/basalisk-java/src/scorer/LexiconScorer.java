@@ -45,33 +45,35 @@ public class LexiconScorer {
 		Map<String, Set<String>> lexicons = loadMultipleLexicons(lexiconSlistFileName);
 		
 		//Score each lexicon
-		for(String category: lexicons.keySet()){
-			Set<String> lexicon = lexicons.get(category);
+		for(String categoryAndSuffix: lexicons.keySet()){
+			String category = categoryAndSuffix.replaceAll("-.*", "");
+			
+			Set<String> lexicon = lexicons.get(categoryAndSuffix);
 			Set<String> correctLexicon = semKeyDictionary.get(category);
 			
 			//Create a printstream to record the results of the score
 			PrintStream scoreOutput = null;
 			try{
-				scoreOutput = new PrintStream(outputDir + category + ".score");
+				scoreOutput = new PrintStream(outputDir + categoryAndSuffix + ".score");
 				System.out.format("Creating a score file for the %s category\n", category);
 			}
 			catch (Exception e){
 				System.err.println(e.getMessage());
 				continue;
 			}
-			scoreOutput.format("#Score output for the %s category\n", category);
+			scoreOutput.format("#Score output for the %s.lexicon file\n", categoryAndSuffix);
 			scoreOutput.format("#%20s %20s\n", "CorrectEntries", "TotalEntries");
 			
 			//Create a printstream to record all of the words that weren't in any key (meaning we extracted a non-headnoun
 			PrintStream unlabeledOutput = null;
 			try{
-				unlabeledOutput = new PrintStream(outputDir + category + ".unlabeled");
+				unlabeledOutput = new PrintStream(outputDir + categoryAndSuffix + ".unlabeled");
 			}
 			catch (Exception e){
 				System.err.println(e.getMessage());
 				continue;
 			}
-			unlabeledOutput.format("Entries in the %s category that weren't found in any key:\n", category);
+			unlabeledOutput.format("Entries in the %s.lexicon file that weren't found in any key:\n", categoryAndSuffix);
 			
 			//Compare each word in the lexicon against the appropriate key
 			int correct = 0;		//Correctly labeled lexicon entries
@@ -79,9 +81,6 @@ public class LexiconScorer {
 			System.out.format("Beginning to score the %s category\n", category);
 			
 			for(String lexiconMember: lexicon){
-				if(lexiconMember.equalsIgnoreCase("ring")){
-					System.out.println("ring found as lexicon member");
-				}
 				total++;
 				
 				if(correctLexicon.contains(lexiconMember)){
@@ -121,6 +120,9 @@ public class LexiconScorer {
 	 * name for categories as does the file name for each lexicon. If the key identifies words as belong to the "pizzas" (plural) 
 	 * category, but the lexicon file is "pizza.lexicon", then it won't be able to match the "pizza" category with the "pizzas" 
 	 * category to check for correctness.
+	 * 
+	 * NOTE: It is acceptable to suffix the category name with a description of how it was extracted. So, pizza-mcat.lexicon is an 
+	 * acceptable way to label the "pizza" lexicon as well.
 	 * 
 	 * 
 	 * @param lexiconSlistFileName - An slist of the lexicon files. The slist is a file where the first line is the directory, and
@@ -163,10 +165,10 @@ public class LexiconScorer {
 			Set<String> lexicon = loadSingleLexicon(dir + fileName);
 			
 			//Determine the category of the file
-			String category = fileName.replaceAll("\\..*", "").trim().toLowerCase();
+			String categoryAndSuffix = fileName.replaceAll("\\..*", "").trim().toLowerCase();
 			
 			//Put the category and it's lexicon in the map
-			lexiconMap.put(category, lexicon);
+			lexiconMap.put(categoryAndSuffix, lexicon);
 		};
 		
 		return lexiconMap;
