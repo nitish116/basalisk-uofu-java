@@ -6,6 +6,7 @@ import java.util.*;
 public class Basilisk {
 
 	private static String _stopWordsFile = "stopwords.dat";
+	private static boolean useEmptyTracer = false;
 	
 	/**
 	 * Initialize basilisk.
@@ -114,12 +115,23 @@ public class Basilisk {
 	public void bootstrap(String outputDir){
 		System.out.println("Starting bootstrapping.\n");
 		
+		String outPutSuffix = "";
+		if(_listsOfKnownCategoryWords.size() == 1){
+			outPutSuffix = "-scat";
+		}
+		else if(_useImprovedConflictResolution){
+			outPutSuffix = "-mcat-plus";
+		}
+		else{
+			outPutSuffix = "-mcat";
+		}
+		
 		//Initialize a list of traces - one for each lexicon (which can be gathered from the output prefix list
 		HashMap<String, PrintStream> tracesList = new HashMap<String, PrintStream>();
 		for(String outputPrefix: _outputPrefixList){
 			PrintStream newTrace = null;
 			try{
-				newTrace = new PrintStream(outputDir + outputPrefix + ".trace");
+				newTrace = new PrintStream(outputDir + outputPrefix + outPutSuffix + ".trace");
 				tracesList.put(outputPrefix, newTrace);
 			}
 			catch (Exception e){
@@ -131,8 +143,10 @@ public class Basilisk {
 		PrintStream afterConflictErrorTrace = null;
 		PrintStream alreadyKnownErrorTrace = null;
 		try{
-			afterConflictErrorTrace = new PrintStream(outputDir + "afterConflictError.trace");
-			alreadyKnownErrorTrace = new PrintStream(outputDir + "alreadyKnownError.trace");
+			if(useEmptyTracer){
+				afterConflictErrorTrace = new PrintStream(outputDir + "afterConflictError" + outPutSuffix + ".trace");
+				alreadyKnownErrorTrace = new PrintStream(outputDir + "alreadyKnownError." + outPutSuffix + ".trace");
+			}
 		}
 		catch(Exception e){
 			System.err.println(e.getMessage());
@@ -187,8 +201,8 @@ public class Basilisk {
 				listsOfScoredNouns.put(category, scoreAllNouns(candidateNounPool, _extractedNounsToPatternsMap,_patternsToExtractedNounMap,  _listsOfKnownCategoryWords.get(category)));
 			}
 			
-			//Resolve conflicts
-			HashMap<String, HashSet<ExtractedNoun>> listsOfConflictResolvedNouns = new HashMap<String, HashSet<ExtractedNoun>>();
+			//Remove already learned words
+			HashMap<String, HashSet<ExtractedNoun>> listsOfUnknownNouns = new HashMap<String, HashSet<ExtractedNoun>>();
 			for(String category: listsOfScoredNouns.keySet()){
 				HashSet<ExtractedNoun> scoredNouns = listsOfScoredNouns.get(category);
 				
@@ -197,52 +211,31 @@ public class Basilisk {
 
 				//Remove nouns that have already been added to the lexicon in previous iterations
 				unknownNouns = removeAlreadyKnownWords(scoredNouns, _listsOfKnownCategoryWords);
-				if(unknownNouns.size() == 0){
-					alreadyKnownErrorTrace.format("No conflict nouns was empty on iteration %d\n", i);
-					alreadyKnownErrorTrace.println("**************List of all known words:*************");
-					for(HashSet<Noun> knownWords: _listsOfKnownCategoryWords.values()){
-						for(Noun word: knownWords)
-							alreadyKnownErrorTrace.println(word);
-					}
-					alreadyKnownErrorTrace.format("\n**********List of all scored nouns for the %s category*********\n", category);
-					for(ExtractedNoun en: scoredNouns){
-						alreadyKnownErrorTrace.println(en + ", " + en.getScore());
-					}
-				}
 				
-				//Resolve any remaining conflicts with either simple conflict resolution or improved conflict resolution
-				HashSet<ExtractedNoun> noConflictNouns = new HashSet<ExtractedNoun>();
-				if(_useImprovedConflictResolution){
+				//Trace empty nouns?
+				if(unknownNouns.size() == 0 && useEmptyTracer){
+					traceEmptyNounsAfterRemovingAlreadyKnown(alreadyKnownErrorTrace, i, category, scoredNouns);
+				}				
+				listsOfUnknownNouns.put(category, unknownNouns);
+			}
+			
+			//Resolve Conflicts
+			HashMap<String, HashSet<ExtractedNoun>> listsOfConflictResolvedNouns = new HashMap<String, HashSet<ExtractedNoun>>();
+			if(_useImprovedConflictResolution){
+				//Improved conflict resolution involves scoring each set separately
+				for(String category: listsOfUnknownNouns.keySet()){
+					HashSet<ExtractedNoun> unknownNouns = listsOfUnknownNouns.get(category);
+					
+					//Resolve any remaining conflicts with either simple conflict resolution or improved conflict resolution
+					HashSet<ExtractedNoun> noConflictNouns = new HashSet<ExtractedNoun>();
 					noConflictNouns = diffScoreAllNouns(unknownNouns, category, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _listsOfKnownCategoryWords);
+
+					listsOfConflictResolvedNouns.put(category, noConflictNouns);
 				}
-				else{
-					noConflictNouns = resolveSimpleConflicts(unknownNouns, category, listsOfScoredNouns);
-				}
-				
-				listsOfConflictResolvedNouns.put(category, noConflictNouns);
-				if(noConflictNouns.size() == 0){
-					afterConflictErrorTrace.format("No conflict nouns was empty on iteration %d\n", i);
-					afterConflictErrorTrace.println("**************List of all known words:*************");
-					for(HashSet<Noun> knownWords: _listsOfKnownCategoryWords.values()){
-						for(Noun word: knownWords)
-							afterConflictErrorTrace.println(word);
-					}
-					afterConflictErrorTrace.format("\n**********List of all unknown scored nouns for the %s category*********\n", category);
-					for(ExtractedNoun en: unknownNouns){
-						afterConflictErrorTrace.println(en + ", " + en.getScore());
-						for(String categoryOther: listsOfScoredNouns.keySet()){
-							if(categoryOther.equals(category))
-								continue;
-							else if(listsOfScoredNouns.get(categoryOther).contains(en)){
-								for(ExtractedNoun otherEn: listsOfScoredNouns.get(categoryOther)){
-									if(otherEn.equals(en)){
-										afterConflictErrorTrace.format("     %s category: %s, %f\n", categoryOther, otherEn, otherEn.getScore());
-									}
-								}
-							}
-						}
-					}
-				}
+			}
+			//Simple conflict resolution looks at the entire set as a whole
+			else{
+				listsOfConflictResolvedNouns = resolveSimpleConflicts(listsOfUnknownNouns);
 			}
 
 			//Select the top extracted nouns from each list of conflict resolved nouns
@@ -277,7 +270,7 @@ public class Basilisk {
 		for(String category: _listsOfKnownCategoryWords.keySet()){
 			PrintStream out = null; 
 			try {
-				out = new PrintStream(outputDir + category + ".lexicon");
+				out = new PrintStream(outputDir + category + outPutSuffix + ".lexicon");
 			}
 			catch (Exception e){
 				System.err.println(e.getMessage());
@@ -292,10 +285,16 @@ public class Basilisk {
 		for(PrintStream trace: tracesList.values()){
 			trace.close();
 		}
-		afterConflictErrorTrace.close();
-		alreadyKnownErrorTrace.close();
+		if(useEmptyTracer){
+			afterConflictErrorTrace.close();
+			alreadyKnownErrorTrace.close();
+		}
 	}
 	
+
+
+
+
 	public HashSet<ExtractedNoun> diffScoreAllNouns(HashSet<ExtractedNoun> candidateNounPool, 
 													String category,
 													HashMap<ExtractedNoun, HashSet<Pattern>> nounToPatternMap,
@@ -589,11 +588,66 @@ public class Basilisk {
 	 * @param listsOfScoredNouns
 	 * @return
 	 */
-	public HashSet<ExtractedNoun> resolveSimpleConflicts(HashSet<ExtractedNoun> scoredNouns, String category,
-														 HashMap<String, HashSet<ExtractedNoun>> listsOfScoredNouns){
-		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
+	public HashMap<String, HashSet<ExtractedNoun>> resolveSimpleConflicts( HashMap<String, HashSet<ExtractedNoun>> listsOfUnknownNouns){
 		
-		//Check to make sure each word has the highest (or tied for highest) score compared to all other known scored words 
+		
+		//Create a sorted list for all the scored nouns
+		HashMap<String, TreeSet<ExtractedNoun>> listsOfSortedNouns = new HashMap<String, TreeSet<ExtractedNoun>>();
+		for(String category: listsOfUnknownNouns.keySet()){
+			TreeSet<ExtractedNoun> sortedNouns = new TreeSet<ExtractedNoun>();
+			sortedNouns.addAll(listsOfUnknownNouns.get(category));
+			listsOfSortedNouns.put(category, sortedNouns);
+		}
+		
+		boolean hasChanged = true;
+		while(hasChanged){
+			hasChanged = false;
+			
+			//Go through every category
+			for(String currCategory: listsOfSortedNouns.keySet()){
+				//Go through it's top 5 nouns
+				TreeSet<ExtractedNoun> currSortedNouns = listsOfSortedNouns.get(currCategory);
+				Iterator<ExtractedNoun> currItt = currSortedNouns.descendingIterator();
+				for(int i = 0; i < 5 && currItt.hasNext(); i++){
+					ExtractedNoun currProposedNoun = currItt.next();
+					//Compare it's top 5 nouns to every other top five
+					for(String otherCategory: listsOfSortedNouns.keySet()){
+						//Make sure we're looking at a separate category
+						if(currCategory.equalsIgnoreCase(otherCategory)) continue;
+						
+						//Iterator to cycle through the top 5 nouns of every other category
+						TreeSet<ExtractedNoun> otherSortedNouns = listsOfSortedNouns.get(otherCategory);
+						Iterator<ExtractedNoun> otherItt = otherSortedNouns.descendingIterator();
+						for(int j = 0; j < 5 && otherItt.hasNext(); j++){
+							ExtractedNoun otherProposedNoun = otherItt.next();
+							//If both nouns equal eachother
+							if(currProposedNoun.equals(otherProposedNoun))
+								//If the current noun's score is less than the other nouns score, remove the current noun
+								if(currProposedNoun.getScore() <= otherProposedNoun.getScore()){
+									//Remove it from the list
+									currItt.remove();
+									//And note that the current list is unstable - meaning we could've introduced
+									//a new top 5 noun (previously 6th place) that competes with another top 5 noun.
+									hasChanged = true;
+									break;
+								}
+						}
+					}
+				}				
+			}
+		}
+		
+		//Put the words back into a hashset
+		HashMap<String, HashSet<ExtractedNoun>> result = new HashMap<String, HashSet<ExtractedNoun>>();
+		for(String category: listsOfSortedNouns.keySet()){
+			HashSet<ExtractedNoun> resultNouns = new HashSet<ExtractedNoun>();
+			resultNouns.addAll(listsOfSortedNouns.get(category));
+			result.put(category, resultNouns);
+		}
+		
+		return result;
+		
+/*		//Check to make sure each word has the highest (or tied for highest) score compared to all other known scored words 
 		for(ExtractedNoun en: scoredNouns){
 			boolean hasHighestScore = true;
 			for(String otherCategory: listsOfScoredNouns.keySet()){
@@ -623,7 +677,7 @@ public class Basilisk {
 		}
 
 		
-		return result;
+		return result;*/
 	}
 
 	/**
@@ -790,6 +844,46 @@ public class Basilisk {
 		return result;
 	}
 
+	private void traceEmptyNounsAfterRemovingAlreadyKnown(PrintStream alreadyKnownErrorTrace, int iteration, String category, HashSet<ExtractedNoun> scoredNouns) {
+		alreadyKnownErrorTrace.format("No conflict nouns was empty on iteration %d\n", iteration);
+		alreadyKnownErrorTrace.println("**************List of all known words:*************");
+		for(HashSet<Noun> knownWords: _listsOfKnownCategoryWords.values()){
+			for(Noun word: knownWords)
+				alreadyKnownErrorTrace.println(word);
+		}
+		alreadyKnownErrorTrace.format("\n**********List of all scored nouns for the %s category*********\n", category);
+		for(ExtractedNoun en: scoredNouns){
+			alreadyKnownErrorTrace.println(en + ", " + en.getScore());
+		}
+		
+	}
+	
+	private void traceEmptyNounsAfterConflictResolution(
+			PrintStream afterConflictErrorTrace, int iteration, String category,
+			HashSet<ExtractedNoun> unknownNouns, HashMap<String, HashSet<ExtractedNoun>> listsOfScoredNouns) {
+		afterConflictErrorTrace.format("No conflict nouns was empty on iteration %d\n", iteration);
+		afterConflictErrorTrace.println("**************List of all known words:*************");
+		for(HashSet<Noun> knownWords: _listsOfKnownCategoryWords.values()){
+			for(Noun word: knownWords)
+				afterConflictErrorTrace.println(word);
+		}
+		afterConflictErrorTrace.format("\n**********List of all unknown scored nouns for the %s category*********\n", category);
+		for(ExtractedNoun en: unknownNouns){
+			afterConflictErrorTrace.println(en + ", " + en.getScore());
+			for(String categoryOther: listsOfScoredNouns.keySet()){
+				if(categoryOther.equals(category))
+					continue;
+				else if(listsOfScoredNouns.get(categoryOther).contains(en)){
+					for(ExtractedNoun otherEn: listsOfScoredNouns.get(categoryOther)){
+						if(otherEn.equals(en)){
+							afterConflictErrorTrace.format("     %s category: %s, %f\n", categoryOther, otherEn, otherEn.getScore());
+						}
+					}
+				}
+			}
+		}
+		
+	}
 
 	private void traceIterationHeader(PrintStream trace, int iteration) {
 		trace.append("************************************************************\n");
