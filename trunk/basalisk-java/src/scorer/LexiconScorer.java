@@ -64,6 +64,17 @@ public class LexiconScorer {
 			scoreOutput.format("#Score output for the %s.lexicon file\n", categoryAndSuffix);
 			scoreOutput.format("#%20s %20s\n", "CorrectEntries", "TotalEntries");
 			
+			//Create a printstream to record all of the incorrectly labeled words
+			PrintStream incorrectOutput = null;
+			try{
+				incorrectOutput = new PrintStream(outputDir + categoryAndSuffix + ".incorrect");
+			}
+			catch (Exception e){
+				System.err.println(e.getMessage());
+				continue;
+			}
+			incorrectOutput.format("Entries in the %s.lexicon file that were incorrectly labeled:\n", categoryAndSuffix);
+			
 			//Create a printstream to record all of the words that weren't in any key (meaning we extracted a non-headnoun
 			PrintStream unlabeledOutput = null;
 			try{
@@ -91,10 +102,12 @@ public class LexiconScorer {
 				//Check to see if the key exists in at least one key
 				boolean inAtLeastOneKey = false;
 				for(String keyCategory: semKeyDictionary.keySet()){
+					//Make sure we're looking at a different category
+					if(keyCategory.equalsIgnoreCase(category)) continue;
 					Set<String> keyLexicon = semKeyDictionary.get(keyCategory);
 					if(keyLexicon.contains(lexiconMember)){
 						inAtLeastOneKey = true;
-						break;
+						incorrectOutput.format("%s %s\n", lexiconMember, keyCategory);
 					}
 				}
 				//If it doesn't, record the member as being unlabeled
