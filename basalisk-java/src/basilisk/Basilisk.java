@@ -16,6 +16,7 @@ public class Basilisk {
 	 *    			-n <num_iterations>
 	 *    			-c 0/1 (0: simple conflict resolution; 1: improved conflict resolution
 	 *    			-o output-dir/
+	 *              -s 0/1 (Only selects top scorer from each category, letting a strong category snowball)
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -37,6 +38,7 @@ public class Basilisk {
 		int iterations = 5;
 		String outputDir = "";
 		boolean useImprovedConflictResolution = false;
+		boolean useSnowball = false;
 		
 		while ((argsSeen + 2) <= args.length){
 			if(args[argsSeen].equalsIgnoreCase("-n"))
@@ -47,6 +49,9 @@ public class Basilisk {
 				if(Integer.parseInt(args[argsSeen+1]) == 1)
 					useImprovedConflictResolution = true;
 				else useImprovedConflictResolution = false;
+			else if(args[argsSeen].equalsIgnoreCase("-s"))
+				if(Integer.parseInt(args[argsSeen+1]) == 1)
+					useSnowball =true;
 			else{
 				System.err.println("Unknown input options: " + args[argsSeen] + " " + args[argsSeen+1]);
 			}
@@ -55,11 +60,17 @@ public class Basilisk {
 
 
 		//Initialize basilisk
-		Basilisk b1 = new Basilisk(categorySeedsSlistFile, allCasesFile, iterations, outputDir, useImprovedConflictResolution);
+		Basilisk b1 = new Basilisk(categorySeedsSlistFile, 
+								   allCasesFile, 
+								   iterations, 
+								   outputDir, 
+								   useImprovedConflictResolution, 
+								   useSnowball);
 	}
 	
 	private int _iterations;
 	private boolean _useImprovedConflictResolution;
+	private boolean _useSnowball;
 	private HashMap<Pattern, HashSet<ExtractedNoun>> _patternsToExtractedNounMap;
 	private HashMap<ExtractedNoun, HashSet<Pattern>> _extractedNounsToPatternsMap;
 	private HashMap<String, HashSet<Noun>> _listsOfKnownCategoryWords;
@@ -77,15 +88,23 @@ public class Basilisk {
 					String allCasesFile, 
 					int iterations, 
 					String outputDir, 
-					boolean useImprovedConflictResolution){
+					boolean useImprovedConflictResolution,
+					boolean useSnowball){
 		_iterations = iterations;
 		System.out.println("Bootstrapping iterations: " + _iterations);
 		
+		//Improved conflict resolution?
 		_useImprovedConflictResolution = useImprovedConflictResolution;
 		if(_useImprovedConflictResolution)
 			System.out.println("Using improved multiple category conflict resolution");
 		else 
 			System.out.println("Using simple multiple category conflict resolution");
+		
+		//Snowball?
+		_useSnowball = useSnowball;
+		if(_useSnowball)
+			System.out.println("Using snowballing - only selecting the top word from all categories");
+		
 		//Initialize the output prefix list
 		_outputPrefixList = new ArrayList<String>();
 		
@@ -126,12 +145,16 @@ public class Basilisk {
 			outPutSuffix = "-mcat";
 		}
 		
+		String snowBallSuffix = "";
+		if(_useSnowball){
+			snowBallSuffix = "-snowball";
+		}
 		//Initialize a list of traces - one for each lexicon (which can be gathered from the output prefix list
 		HashMap<String, PrintStream> tracesList = new HashMap<String, PrintStream>();
 		for(String outputPrefix: _outputPrefixList){
 			PrintStream newTrace = null;
 			try{
-				newTrace = new PrintStream(outputDir + outputPrefix + outPutSuffix + ".trace");
+				newTrace = new PrintStream(outputDir + outputPrefix + outPutSuffix + snowBallSuffix + ".trace");
 				tracesList.put(outputPrefix, newTrace);
 			}
 			catch (Exception e){
@@ -144,8 +167,8 @@ public class Basilisk {
 		PrintStream alreadyKnownErrorTrace = null;
 		try{
 			if(useEmptyTracer){
-				afterConflictErrorTrace = new PrintStream(outputDir + "afterConflictError" + outPutSuffix + ".trace");
-				alreadyKnownErrorTrace = new PrintStream(outputDir + "alreadyKnownError." + outPutSuffix + ".trace");
+				afterConflictErrorTrace = new PrintStream(outputDir + "afterConflictError" + outPutSuffix + snowBallSuffix + ".trace");
+				alreadyKnownErrorTrace = new PrintStream(outputDir + "alreadyKnownError." + outPutSuffix + snowBallSuffix + ".trace");
 			}
 		}
 		catch(Exception e){
@@ -159,7 +182,6 @@ public class Basilisk {
 			learnedLexicons.put(category, new ArrayList<ExtractedNoun>());
 		}
 		
-		
 		//Run the bootstrapping _iteration times
 		for(int i = 0; i < _iterations; i++){
 			System.out.format("Iteration %d\n", i + 1);
@@ -170,81 +192,42 @@ public class Basilisk {
 			}			
 			
 			//Score the patterns for each category
-			HashMap<String, HashSet<Pattern>> listsOfScoredPatterns = new HashMap<String, HashSet<Pattern>>();
-			for(String category: _listsOfKnownCategoryWords.keySet()){
-				HashSet<Noun> knownWords = _listsOfKnownCategoryWords.get(category);
-				listsOfScoredPatterns.put(category, scorePatterns(_patternsToExtractedNounMap, knownWords));
-			}
+			HashMap<String, HashSet<Pattern>> listsOfScoredPatterns = scorePatternsInEachCategory(_listsOfKnownCategoryWords, _patternsToExtractedNounMap);
 			
 			//Select the top patterns for each category
-			HashMap<String, HashSet<Pattern>> listsOfPatternPools = new HashMap<String, HashSet<Pattern>>();
-			for(String category: listsOfScoredPatterns.keySet()){
-				HashSet<Pattern> scoredPatterns = listsOfScoredPatterns.get(category);
-				HashSet<Pattern> patternPool = selectTopNPatterns(scoredPatterns, 20 + i, _patternsToExtractedNounMap, _listsOfKnownCategoryWords);
-				listsOfPatternPools.put(category, patternPool);
-				
-				//Trace the top patterns
-				tracePatternPool(tracesList.get(category), patternPool);
-			}
+			HashMap<String, HashSet<Pattern>> listsOfPatternPools = selectTopNPatternsInEachCategory(listsOfScoredPatterns, 20 + i, _patternsToExtractedNounMap, _listsOfKnownCategoryWords, tracesList);
 
 			//Gather the nouns that were extracted by the patterns in each pattern pool
-			HashMap<String, HashSet<ExtractedNoun>> listsOfCandidateNounPools = new HashMap<String, HashSet<ExtractedNoun>>();
-			for(String category: listsOfPatternPools.keySet()){
-				HashSet<Pattern> patternPool = listsOfPatternPools.get(category);
-				listsOfCandidateNounPools.put(category, selectNounsFromPatterns(patternPool, _patternsToExtractedNounMap));
-			}
+			HashMap<String, HashSet<ExtractedNoun>> listsOfCandidateNounPools = selectNounsFromPatternsInEachCategory(listsOfPatternPools, _patternsToExtractedNounMap);
 
 			//Score the candidate nouns inside of each candidate noun pool
-			HashMap<String, HashSet<ExtractedNoun>> listsOfScoredNouns = new HashMap<String, HashSet<ExtractedNoun>>();
-			for(String category: listsOfCandidateNounPools.keySet()){
-				HashSet<ExtractedNoun> candidateNounPool = listsOfCandidateNounPools.get(category);
-				listsOfScoredNouns.put(category, scoreAllNouns(candidateNounPool, _extractedNounsToPatternsMap,_patternsToExtractedNounMap,  _listsOfKnownCategoryWords.get(category)));
-			}
+			HashMap<String, HashSet<ExtractedNoun>> listsOfScoredNouns = scoreNounsInEachCategory(listsOfCandidateNounPools, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _listsOfKnownCategoryWords);
 			
 			//Remove already learned words
-			HashMap<String, HashSet<ExtractedNoun>> listsOfUnknownNouns = new HashMap<String, HashSet<ExtractedNoun>>();
-			for(String category: listsOfScoredNouns.keySet()){
-				HashSet<ExtractedNoun> scoredNouns = listsOfScoredNouns.get(category);
-				
-				//Create a list to store the results of removing conflicts
-				HashSet<ExtractedNoun> unknownNouns = new HashSet<ExtractedNoun>();
-
-				//Remove nouns that have already been added to the lexicon in previous iterations
-				unknownNouns = removeAlreadyKnownWords(scoredNouns, _listsOfKnownCategoryWords);
-				
-				//Trace empty nouns?
-				if(unknownNouns.size() == 0 && useEmptyTracer){
-					traceEmptyNounsAfterRemovingAlreadyKnown(alreadyKnownErrorTrace, i, category, scoredNouns);
-				}				
-				listsOfUnknownNouns.put(category, unknownNouns);
-			}
+			HashMap<String, HashSet<ExtractedNoun>> listsOfUnknownNouns = removeAlreadyKnownWordsInEachCategory(listsOfScoredNouns, _listsOfKnownCategoryWords);
 			
 			//Resolve Conflicts
 			HashMap<String, HashSet<ExtractedNoun>> listsOfConflictResolvedNouns = new HashMap<String, HashSet<ExtractedNoun>>();
+			//Improved conflict resolution
 			if(_useImprovedConflictResolution){
-				//Improved conflict resolution involves scoring each set separately
-				for(String category: listsOfUnknownNouns.keySet()){
-					HashSet<ExtractedNoun> unknownNouns = listsOfUnknownNouns.get(category);
-					
-					//Resolve any remaining conflicts with either simple conflict resolution or improved conflict resolution
-					HashSet<ExtractedNoun> noConflictNouns = new HashSet<ExtractedNoun>();
-					noConflictNouns = diffScoreAllNouns(unknownNouns, category, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _listsOfKnownCategoryWords);
-
-					listsOfConflictResolvedNouns.put(category, noConflictNouns);
-				}
+				listsOfConflictResolvedNouns = diffScoreNounsInEachCategory(listsOfUnknownNouns, _extractedNounsToPatternsMap, _patternsToExtractedNounMap, _listsOfKnownCategoryWords);
 			}
 			//Simple conflict resolution looks at the entire set as a whole
 			else{
-				listsOfConflictResolvedNouns = resolveSimpleConflicts(listsOfUnknownNouns);
+				listsOfConflictResolvedNouns = resolveSimpleConflictsInEachCategory(listsOfUnknownNouns);
 			}
+			
+			//Select the top N words from each list
+			HashMap<String, TreeSet<ExtractedNoun>> listsOfTopNCandidateNouns = selectTopNCandidateNounsInEachCategory(listsOfConflictResolvedNouns, 5, _listsOfKnownCategoryWords);
+
+			//If we've chosen to snowball, remove everything but the noun with the highest score
+			if(_useSnowball)
+				listsOfTopNCandidateNouns = retainOnlyHighestScoringNoun(listsOfTopNCandidateNouns);
 
 			//Select the top extracted nouns from each list of conflict resolved nouns
-			//Once we're done, add the new words to the parallel list of known words
-			for(String category: listsOfConflictResolvedNouns.keySet()){
-				HashSet<ExtractedNoun> resolvedNouns = listsOfConflictResolvedNouns.get(category);
-				
-				//Select the top nouns from the current scored list of nouns
-				TreeSet<ExtractedNoun> topNewWords = selectTopNNewCandidateNouns(resolvedNouns, 5, _listsOfKnownCategoryWords);
+			//Once we're done, add the new words to the list of known words
+			for(String category: listsOfTopNCandidateNouns.keySet()){
+				TreeSet<ExtractedNoun> topNewWords = listsOfTopNCandidateNouns.get(category);
 				
 				//Trace the top nouns
 				traceNewNouns(tracesList.get(category), topNewWords,_listsOfKnownCategoryWords.get(category));
@@ -259,7 +242,6 @@ public class Basilisk {
 				
 				//Add the new words to the known category member list
 				_listsOfKnownCategoryWords.get(category).addAll(topNewWords);
-				
 
 				//Add the new words to the list containing all new words
 				learnedLexicons.get(category).addAll(topNewWords);
@@ -269,8 +251,10 @@ public class Basilisk {
 		//Print out the list of learned words to their own files
 		for(String category: _listsOfKnownCategoryWords.keySet()){
 			PrintStream out = null; 
+			PrintStream outPlusScore = null;
 			try {
-				out = new PrintStream(outputDir + category + outPutSuffix + ".lexicon");
+				out = new PrintStream(outputDir + category + outPutSuffix + snowBallSuffix + ".lexicon");
+				outPlusScore = new PrintStream(outputDir + category + outPutSuffix + snowBallSuffix + ".lexicon-and-score");
 			}
 			catch (Exception e){
 				System.err.println(e.getMessage());
@@ -278,6 +262,7 @@ public class Basilisk {
 			
 			for(ExtractedNoun learnedWord: learnedLexicons.get(category)){
 				out.print(learnedWord + "\n");
+				outPlusScore.format("%s %f\n", learnedWord, learnedWord.getScore());
 			}
 		}
 		
@@ -290,12 +275,22 @@ public class Basilisk {
 			alreadyKnownErrorTrace.close();
 		}
 	}
-	
 
-
-
-
-	public HashSet<ExtractedNoun> diffScoreAllNouns(HashSet<ExtractedNoun> candidateNounPool, 
+	/**
+	 * Computes the diffScore for each noun, where the diff score is defined as:
+	 * DiffScore(noun) = AvgLog(noun) - max[ AvgLog(noun, in all other categories)]
+	 * 
+	 * So, if "Billy Bob" receives a score of 2.0 for the Human category, and it's highest other score is in the Location category, with
+	 * a score of 1.0, it's final computed score will be 2.0 - 1.0 = 1.0.
+	 * 
+	 * @param candidateNounPool
+	 * @param category
+	 * @param nounToPatternMap
+	 * @param patternToNounMap
+	 * @param listsOfKnownCategoryWords
+	 * @return
+	 */
+	public HashSet<ExtractedNoun> diffScoreNouns(HashSet<ExtractedNoun> candidateNounPool, 
 													String category,
 													HashMap<ExtractedNoun, HashSet<Pattern>> nounToPatternMap,
 												    HashMap<Pattern, HashSet<ExtractedNoun>> patternToNounMap,
@@ -325,6 +320,36 @@ public class Basilisk {
 		
 		return result;
 		
+	}
+	
+	/**
+	 * Uses the diff score algorithm to score the unknown candidate nouns in each category. Essentially calls diffScoreNouns
+	 * for each category. 
+	 * 
+	 * @see diffScoreNouns
+	 * @param listsOfUnknownNouns - Lists of candidate nouns that have not been learned for each category
+	 * @param extractedNounsToPatternsMap - Map from extracted nouns to the set of patterns that extracted each noun
+	 * @param patternsToExtractedNounMap - Map from each pattern to the set of nouns that it extracted
+	 * @param listsOfKnownCategoryWords - Lists of the learned words for each category
+	 * 
+	 * @return - A map from each category go the set of nouns that have been diff scored for that category
+	 */
+	public HashMap<String, HashSet<ExtractedNoun>> diffScoreNounsInEachCategory(
+			HashMap<String, HashSet<ExtractedNoun>> listsOfUnknownNouns,
+			HashMap<ExtractedNoun, HashSet<Pattern>> extractedNounsToPatternsMap,
+			HashMap<Pattern, HashSet<ExtractedNoun>> patternsToExtractedNounMap,
+			HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords) {
+		
+		HashMap<String, HashSet<ExtractedNoun>> result = new HashMap<String, HashSet<ExtractedNoun>>();
+		
+		//Diff score each list of unknown nouns
+		for(String category: listsOfUnknownNouns.keySet()){
+			HashSet<ExtractedNoun> unknownNouns = listsOfUnknownNouns.get(category);
+			HashSet<ExtractedNoun> noConflictNouns = new HashSet<ExtractedNoun>();
+			noConflictNouns = diffScoreNouns(unknownNouns, category, extractedNounsToPatternsMap, patternsToExtractedNounMap, listsOfKnownCategoryWords);
+			result.put(category, noConflictNouns);
+		}
+		return result;
 	}
 
 
@@ -579,6 +604,27 @@ public class Basilisk {
 		return result;
 	}
 	
+	public HashMap<String, HashSet<ExtractedNoun>> removeAlreadyKnownWordsInEachCategory(
+			HashMap<String, HashSet<ExtractedNoun>> listsOfScoredNouns,
+			HashMap<String, HashSet<Noun>> ofKnownCategoryWords) {
+		
+		HashMap<String, HashSet<ExtractedNoun>> result = new HashMap<String, HashSet<ExtractedNoun>>();
+		
+		for(String category: listsOfScoredNouns.keySet()){
+			HashSet<ExtractedNoun> scoredNouns = listsOfScoredNouns.get(category);
+			
+			//Create a list to store the results of removing conflicts
+			HashSet<ExtractedNoun> unknownNouns = new HashSet<ExtractedNoun>();
+
+			//Remove nouns that have already been added to the lexicon in previous iterations
+			unknownNouns = removeAlreadyKnownWords(scoredNouns, _listsOfKnownCategoryWords);
+		
+			result.put(category, unknownNouns);
+		}
+		
+		return result;
+	}
+	
 	/**
 	 * Checks the current list of scored nouns against other lists of scored nouns to see if their are conflicting words, i.e. two 
 	 * categories trying to add the same word. If such a conflict exists, retain the current noun only if it has the highest
@@ -588,7 +634,7 @@ public class Basilisk {
 	 * @param listsOfScoredNouns
 	 * @return
 	 */
-	public HashMap<String, HashSet<ExtractedNoun>> resolveSimpleConflicts( HashMap<String, HashSet<ExtractedNoun>> listsOfUnknownNouns){
+	public HashMap<String, HashSet<ExtractedNoun>> resolveSimpleConflictsInEachCategory( HashMap<String, HashSet<ExtractedNoun>> listsOfUnknownNouns){
 		
 		
 		//Create a sorted list for all the scored nouns
@@ -649,40 +695,44 @@ public class Basilisk {
 		}
 		
 		return result;
+	}	
+
+	/**
+	 * Examines the list of top scored nouns for each category, determining which noun has the maximum score and removing all of 
+	 * the nouns except for the maximum scoring noun from the lists. 
+	 * 
+	 * @param listsOfTopNCandidateNouns
+	 * @return
+	 */
+	public HashMap<String, TreeSet<ExtractedNoun>> retainOnlyHighestScoringNoun(
+			HashMap<String, TreeSet<ExtractedNoun>> listsOfTopNCandidateNouns) {
 		
-/*		//Check to make sure each word has the highest (or tied for highest) score compared to all other known scored words 
-		for(ExtractedNoun en: scoredNouns){
-			boolean hasHighestScore = true;
-			for(String otherCategory: listsOfScoredNouns.keySet()){
-				if(category.equalsIgnoreCase(otherCategory)) continue;
-				HashSet<ExtractedNoun> otherScoredNouns = listsOfScoredNouns.get(otherCategory);
-				//Check to see if there is even a conflict
-				if(otherScoredNouns.contains(en)){
-					//Iterate through the list until we find the match (damn java - no "get" method for hashsets)
-					//Once we find the match, compare scores and set the flag appropriately 
-					for(ExtractedNoun otherNoun: otherScoredNouns){
-						if(otherNoun.equals(en)){
-							if(en.getScore() < otherNoun.getScore()){
-								hasHighestScore = false;
-								break;
-							}
-						}
-					}
+		HashMap<String, TreeSet<ExtractedNoun>> result = new HashMap<String, TreeSet<ExtractedNoun>>();
+		
+		//Find the noun with the maximum score
+		ExtractedNoun maximumNoun = new ExtractedNoun("");
+		String maximumCategory = "";
+		for(String category: listsOfTopNCandidateNouns.keySet()){
+			Iterator<ExtractedNoun> topNounItt = listsOfTopNCandidateNouns.get(category).descendingIterator();
+			for(int i = 0; i < 1 && topNounItt.hasNext(); i++){
+				ExtractedNoun topNoun = topNounItt.next();
+				if(topNoun.getScore() > maximumNoun.getScore()){
+					maximumNoun = topNoun;
+					maximumCategory = category;
 				}
-				if(!hasHighestScore) break;
 			}
 			
-			//If it doesn't have the highest score, continue to the next word
-			if(!hasHighestScore) continue;
-			
-			//Otherwise, we're looking at a new, highest scoring word !!Add it to the result already
-			result.add(en);
+			//Insert an empty list into the result for each category
+			TreeSet<ExtractedNoun> emptyList = new TreeSet<ExtractedNoun>();
+			result.put(category, emptyList);
 		}
-
 		
-		return result;*/
-	}
+		//Now insert the maximum noun into the appropriate category
+		result.get(maximumCategory).add(maximumNoun);
 
+		return result;
+	}
+	
 	/**
 	 * Scores all of the candidate nouns in a given candidate noun pool using the AvgLog scoring function. 
 	 * 
@@ -742,6 +792,31 @@ public class Basilisk {
 		return avgScore;
 	}
 	
+	/**
+	 * Scores the set of candidate nouns for each given category. Essentially calls the scoreAllNouns method.
+	 * 
+	 * @param listsOfCandidateNounPools - List of candidate nouns for each category
+	 * @param extractedNounsToPatternsMap - Map from nouns to the set of patterns that extracted them
+	 * @param patternsToExtractedNounMap - Map from a pattern to the set of nouns that it extracted
+	 * @param listsOfKnownCategoryWords - Set of the known words in each category
+	 * @return - Map from each category to the list of scored candidate nouns
+	 */
+	public HashMap<String, HashSet<ExtractedNoun>> scoreNounsInEachCategory(
+			HashMap<String, HashSet<ExtractedNoun>> listsOfCandidateNounPools,
+			HashMap<ExtractedNoun, HashSet<Pattern>> extractedNounsToPatternsMap,
+			HashMap<Pattern, HashSet<ExtractedNoun>> patternsToExtractedNounMap,
+			HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords) {
+		
+		HashMap<String, HashSet<ExtractedNoun>> result = new HashMap<String, HashSet<ExtractedNoun>>();
+		
+		for(String category: listsOfCandidateNounPools.keySet()){
+			HashSet<ExtractedNoun> candidateNounPool = listsOfCandidateNounPools.get(category);
+			result.put(category, scoreAllNouns(candidateNounPool, extractedNounsToPatternsMap, patternsToExtractedNounMap,  listsOfKnownCategoryWords.get(category)));
+		}
+		
+		return result;
+	}
+	
 	public HashSet<Pattern> scorePatterns(HashMap<Pattern, HashSet<ExtractedNoun>> patterns, HashSet<Noun> knownCategoryMembers) {
 		
 		HashSet<Pattern> result = new HashSet<Pattern>();
@@ -771,6 +846,24 @@ public class Basilisk {
 		}		
 		return result;
 	}
+	
+	/**
+	 * Used to score patterns from multiple categories. Essentially just calls the scorePatterns method for each category.
+	 * 
+	 * @param listsofKnownCategoryWords - Map from each category to the list of words known for each category
+	 * @param patternsToExtractedNounMap - map of patterns to the set of nouns that they extracted
+	 * @return map from each category (string) to the set of scored patterns for that category
+	 */
+	public HashMap<String, HashSet<Pattern>> scorePatternsInEachCategory(HashMap<String, HashSet<Noun>> listsofKnownCategoryWords,
+																		 HashMap<Pattern, HashSet<ExtractedNoun>> patternsToExtractedNounMap) {
+		HashMap<String, HashSet<Pattern>> result = new HashMap<String, HashSet<Pattern>>();
+		for(String category: listsofKnownCategoryWords.keySet()){
+			HashSet<Noun> knownWords = listsofKnownCategoryWords.get(category);
+			result.put(category, scorePatterns(patternsToExtractedNounMap, knownWords));
+		}
+		
+		return result;
+	}
 
 	public HashSet<ExtractedNoun> selectNounsFromPatterns(HashSet<Pattern> patternPool, HashMap<Pattern, HashSet<ExtractedNoun>> patterns) {
 		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
@@ -779,6 +872,28 @@ public class Basilisk {
 				if(!isNumber(en) && !isPossessive(en))
 					result.add(en);
 			}
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * For each category, gathers the nouns that were extracted by the given set of patterns. Essentially just calls the 
+	 * selectNounsFromPatterns method.
+	 * 
+	 * @see selectNounsFromPatterns
+	 * @param listsOfPatternPools
+	 * @param patternsToExtractedNounMap
+	 * @return
+	 */
+	public HashMap<String, HashSet<ExtractedNoun>> selectNounsFromPatternsInEachCategory(
+			HashMap<String, HashSet<Pattern>> listsOfPatternPools,
+			HashMap<Pattern, HashSet<ExtractedNoun>> patternsToExtractedNounMap) {
+		
+		HashMap<String, HashSet<ExtractedNoun>> result = new HashMap<String, HashSet<ExtractedNoun>>();
+		for(String category: listsOfPatternPools.keySet()){
+			HashSet<Pattern> patternPool = listsOfPatternPools.get(category);
+			result.put(category, selectNounsFromPatterns(patternPool, patternsToExtractedNounMap));
 		}
 		
 		return result;
@@ -793,7 +908,7 @@ public class Basilisk {
 	 * @param n - number of best words to return
 	 * @return List of the top n scored new words
 	 */
-	public TreeSet<ExtractedNoun> selectTopNNewCandidateNouns(HashSet<ExtractedNoun> scoredNouns,
+	public TreeSet<ExtractedNoun> selectTopNCandidateNouns(HashSet<ExtractedNoun> scoredNouns,
 															  int n,
 														 	   HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords) {
 
@@ -825,6 +940,33 @@ public class Basilisk {
 		}
 		return result;
 	}
+	
+	/**
+	 * Selects the top N candidate nouns for each category of candidate nouns.
+	 * 
+	 * @param listsOfConflictResolvedNouns - Lists of candidate nouns for each category that has had conflicting nouns resolved
+	 * @param n - Number of top candidate nouns to select for each category
+	 * @param listsOfKnownCategoryWords - List of learned nouns for each category
+	 * @return - A map from each category to a sorted list of the top nouns from each category
+	 */
+	public HashMap<String, TreeSet<ExtractedNoun>> selectTopNCandidateNounsInEachCategory(
+			HashMap<String, HashSet<ExtractedNoun>> listsOfConflictResolvedNouns,
+			int i, HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords) {
+		
+		HashMap<String, TreeSet<ExtractedNoun>> result = new HashMap<String, TreeSet<ExtractedNoun>>();
+		//Select the top extracted nouns from each list of conflict resolved nouns
+		//Once we're done, add the new words to the list of known words
+		for(String category: listsOfConflictResolvedNouns.keySet()){
+			HashSet<ExtractedNoun> resolvedNouns = listsOfConflictResolvedNouns.get(category);
+			
+			//Select the top nouns from the current scored list of nouns
+			TreeSet<ExtractedNoun> topNewWords = selectTopNCandidateNouns(resolvedNouns, 5, _listsOfKnownCategoryWords);
+			
+			result.put(category, topNewWords);
+		}	
+		
+		return result;
+	}
 
 	public HashSet<Pattern> selectTopNPatterns(HashSet<Pattern> patterns, 
 											   int n, 
@@ -844,6 +986,36 @@ public class Basilisk {
 				i++;
 			}
 		}
+		return result;
+	}
+	
+	/**
+	 * Essentially calls the selectTopNPatterns method for each category. 
+	 * 
+	 * @param listsOfScoredPatterns - List of scored patterns for each category
+	 * @param i - Number of patterns to select for each category
+	 * @param patternsToExtractedNounMap - Map from each pattern to the set of nouns that it extracted
+	 * @param listsOfKnownCategoryWords - List for the known words in each category
+	 * @param tracesList - Map from each category to the trace output stream that is recording information about that category
+	 * @return
+	 */
+	public HashMap<String, HashSet<Pattern>> selectTopNPatternsInEachCategory(
+			HashMap<String, HashSet<Pattern>> listsOfScoredPatterns, int i,
+			HashMap<Pattern, HashSet<ExtractedNoun>> patternsToExtractedNounMap,
+			HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords,
+			HashMap<String, PrintStream> tracesList) {
+		// TODO Auto-generated method stub
+		HashMap<String, HashSet<Pattern>> result = new HashMap<String, HashSet<Pattern>>();
+		
+		for(String category: listsOfScoredPatterns.keySet()){
+			HashSet<Pattern> scoredPatterns = listsOfScoredPatterns.get(category);
+			HashSet<Pattern> patternPool = selectTopNPatterns(scoredPatterns, i, patternsToExtractedNounMap, listsOfKnownCategoryWords);
+			result.put(category, patternPool);
+			
+			//Trace the top patterns
+			tracePatternPool(tracesList.get(category), patternPool);
+		}
+		
 		return result;
 	}
 
