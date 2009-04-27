@@ -11,7 +11,9 @@ public class scorerScratch {
 		String category = categoryAndSuffix.replaceAll("-.*", "");
 		String suffix = categoryAndSuffix.substring(categoryAndSuffix.indexOf("-"), categoryAndSuffix.indexOf("."));
 		System.out.println("Category: " + category + " suffix: " + suffix);
-
+		
+		if(2.0 < 2.4)
+			System.out.println("double comparison success");
 	}
 
 }
