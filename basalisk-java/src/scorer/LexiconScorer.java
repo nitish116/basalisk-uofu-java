@@ -42,13 +42,13 @@ public class LexiconScorer {
 		Map<String, Set<String>> semKeyDictionary = loadSemKeyDictionary(semKeyFileName);
 		
 		//Load up the lexicon map
-		Map<String, Set<String>> lexicons = loadMultipleLexicons(lexiconSlistFileName);
+		Map<String, List<String>> lexicons = loadMultipleLexicons(lexiconSlistFileName);
 		
 		//Score each lexicon
 		for(String categoryAndSuffix: lexicons.keySet()){
 			String category = categoryAndSuffix.replaceAll("-.*", "");
 			
-			Set<String> lexicon = lexicons.get(categoryAndSuffix);
+			List<String> lexicon = lexicons.get(categoryAndSuffix);
 			Set<String> correctLexicon = semKeyDictionary.get(category);
 			
 			//Create a printstream to record the results of the score
@@ -145,7 +145,7 @@ public class LexiconScorer {
 	 * 							
 	 * @return
 	 */
-	private Map<String, Set<String>> loadMultipleLexicons(String lexiconSlistFileName) {
+	private Map<String, List<String>> loadMultipleLexicons(String lexiconSlistFileName) {
 		//Create a file wrapper for the slist file
 		File slistFile = new File(lexiconSlistFileName);
 		if(!slistFile.exists()){
@@ -167,7 +167,7 @@ public class LexiconScorer {
 		String dir = slistScanner.nextLine();
 		
 		//Create the lexiconmap
-		Map<String, Set<String>> lexiconMap = new HashMap<String, Set<String>>();
+		Map<String, List<String>> lexiconMap = new HashMap<String, List<String>>();
 		
 		//Create an entry in the map for each file entry in the slist
 		while(slistScanner.hasNext()){
@@ -175,7 +175,7 @@ public class LexiconScorer {
 			String fileName = slistScanner.nextLine();
 			
 			//Read the set of words for each category
-			Set<String> lexicon = loadSingleLexicon(dir + fileName);
+			List<String> lexicon = loadSingleLexicon(dir + fileName);
 			
 			//Determine the category of the file
 			String categoryAndSuffix = fileName.replaceAll("\\..*", "").trim().toLowerCase();
@@ -193,7 +193,7 @@ public class LexiconScorer {
 	 * @param lexiconFileName - A file containing one category word per line.
 	 * @return Set<String> - a set containing all of the words that belong to that category.
 	 */
-	private Set<String> loadSingleLexicon(String lexiconFileName) {
+	private List<String> loadSingleLexicon(String lexiconFileName) {
 		//Create a file wrapper for the lexicon file
 		File lexiconFile = new File(lexiconFileName);
 		if(!lexiconFile.exists()){
@@ -212,7 +212,7 @@ public class LexiconScorer {
 		}
 		
 		//Scan through the file, storing each line as a word member of the category
-		Set<String> lexicon = new HashSet<String>();
+		List<String> lexicon = new ArrayList<String>();
 		while(lexiconScanner.hasNext()){
 			String catMember = lexiconScanner.nextLine().trim().toLowerCase();
 			lexicon.add(catMember);
