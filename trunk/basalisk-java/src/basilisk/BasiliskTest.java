@@ -328,7 +328,7 @@ public class BasiliskTest {
 		candidateNouns.add(lowButUnknown);
 		candidateNouns.add(highButKnown);
 		
-		TreeSet<ExtractedNoun> topNoun = _bas.selectTopNNewCandidateNouns(candidateNouns, 1, _listsOfKnownCategoryWords);
+		TreeSet<ExtractedNoun> topNoun = _bas.selectTopNCandidateNouns(candidateNouns, 1, _listsOfKnownCategoryWords);
 		for(ExtractedNoun en: topNoun){
 			assertEquals(new ExtractedNoun("billybob"), en);
 		}

@@ -46,7 +46,7 @@ public class ExtractedNoun extends Noun {
 	
 	public ExtractedNoun(String s){
 		super(s);
-		_score = -1; 	//default score
+		_score = -2.0; 	//default score
 	}
 
 	public void clearScore(){
