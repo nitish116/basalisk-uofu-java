@@ -1,5 +1,8 @@
 package scorer;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class scorerScratch {
 
 	/**
@@ -14,6 +17,7 @@ public class scorerScratch {
 		
 		if(2.0 < 2.4)
 			System.out.println("double comparison success");
+		
 	}
 
 }

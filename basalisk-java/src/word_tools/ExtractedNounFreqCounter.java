@@ -1,11 +1,16 @@
 package word_tools;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import basilisk.*;
+
+
 
 
 
@@ -16,188 +21,86 @@ public class ExtractedNounFreqCounter {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(countExtractedNounsFromString("CaseFrame: <subj>_ActVp__REPORTED_3\nTrigger(s): (REPORTED)\nSUBJ_Extraction = \"THE ARCE BATTALION COMMAND\" [OTHER-STATEMENT]"));
-		System.out.println(countExtractedNounsFromFile("sample-texts/muc-out/DEV-MUC3-0001.cases"));
-		//System.out.println(countExtractedNounsFromMultipleFiles("muc3-listfile.cases"));
-
-		//printCountSortedListToFile(countExtractedNounsFromMultipleFiles("muc3-listfile.cases"), "mucFrequentWords.txt", true);
-		printCountSortedListToFile(countExtractedNounsFromSlist("texts/terrorism/slists/cases.slist"), "texts/terrorism/cases.freq", true);
+		Basilisk b = new Basilisk();
+		ExtractedNounFreqCounter c = new ExtractedNounFreqCounter(b);
 	}
+
+	public HashSet<ExtractedNoun> _nounList;
+	private HashSet<Noun> _stopWords;
+	public Basilisk _b;
 	
-	private static final String _cfNameLineRegex = "^CaseFrame:.+[0-9]+$";
-	
-	public static void printCountSortedListToFile(Map<String, Integer> countTable, String fileName, boolean includeCount){
-		List<Map.Entry<String, Integer>> sortByValue = new ArrayList<Map.Entry<String, Integer>>(countTable.entrySet());
-		Collections.sort(sortByValue, new Comparator<Map.Entry>(){
-			public int compare(Map.Entry e1, Map.Entry e2){
-				Integer i1 = (Integer) e1.getValue();
-				Integer i2 = (Integer) e2.getValue();
-				return i2.compareTo(i1);
-			}
-		});
+	public ExtractedNounFreqCounter(Basilisk b){
+		_b = b;
+		_stopWords = b.loadSet("stopwords.dat");
+		System.out.println("Reading case file");
+		generateNounList("all.cases");
+		System.out.println("Finished reading case file.");
 		
-//      System.out.println("letter - freq");
-//      System.out.println("-------------");
-//      for(Map.Entry e : sortByValue) {
-//          System.out.printf("%-15s%d%n", e.getKey(), e.getValue());
-//      }
+		System.out.println("Sorting the counted words");
+		TreeSet<ExtractedNoun> sortedNouns = new TreeSet<ExtractedNoun>();
+		for(ExtractedNoun noun: _nounList){
+			sortedNouns.add(noun);
+		}
 		
-		//Create a file writer to print word count
+		System.out.println("Printing the sorted files to a list");
 		PrintStream out = null;
 		try{
-			out = new PrintStream(fileName);
+			out = new PrintStream("freq-count.txt");
+		}
+		catch(Exception e){
+			System.err.println(e.getMessage());
+		}
+		for(ExtractedNoun noun: sortedNouns.descendingSet()){
+			out.format("%20s %20f\n", noun, noun.getScore());
+		}
+		out.close();
+	}
+	
+	public boolean generateNounList(String allCasesFile){
+		
+		_nounList = new HashSet<ExtractedNoun>();
+		
+		
+		//Read in the cases file
+		try{
+			BufferedReader br = new BufferedReader(new FileReader(allCasesFile));
 			
-			System.out.println("Writing frequency count to file: " + fileName);
-	        for(Map.Entry e : sortByValue) {
-	        	if(!includeCount)
-	        		out.print(e.getKey().toString()  + "\n");
-	        	else
-	        		out.printf("%-25s%d%n", e.getKey(), e.getValue());
-	        }
-			out.close();
-		}
-		catch (Exception e){
-			System.out.println(e.getMessage());
-		}
-		
-	}
-	
-	public static Map<String, Integer> countExtractedNounsFromSlist(String slist){
-		Map<String, Integer> result = new HashMap<String, Integer>();
-		
-		File f = new File(slist);
-		
-		if (!f.exists()){
-			System.err.println("Error opening list pointing to .cases files while trying to count extracted noun frequency: " + f.getAbsolutePath());
-		}
-		
-		Scanner in = null;
-		
-		try {
-			in = new Scanner(f);
-		}
-		catch (Exception e){
-			System.err.println(e.getMessage());
-		}
-		
-		//First line of the slist contains directory info
-		String dir = in.nextLine();
-		
-		while(in.hasNextLine()){
-			if(result.size() == 0)
-				result = countExtractedNounsFromFile(dir + in.nextLine());
-			else{
-				result = combineFrequencyCounts(result, countExtractedNounsFromFile(dir + in.nextLine()));
-			}
-		}
-		
-		in.close();
-		return result;
-	}
-	
-	public static Map<String, Integer> countExtractedNounsFromMultipleFiles(String listFileName){
-		Map<String, Integer> result = new HashMap<String, Integer>();
-		
-		File f = new File(listFileName);
-		
-		if (!f.exists()){
-			System.err.println("Error opening list pointing to .cases files while trying to count extracted noun frequency: " + f.getAbsolutePath());
-		}
-		
-		Scanner in = null;
-		
-		try {
-			in = new Scanner(f);
-		}
-		catch (Exception e){
-			System.err.println(e.getMessage());
-		}
-		
-		while(in.hasNextLine()){
-			if(result.size() == 0)
-				result = countExtractedNounsFromFile(in.nextLine());
-			else{
-				result = combineFrequencyCounts(result, countExtractedNounsFromFile(in.nextLine()));
-			}
-		}
-		
-		in.close();
-		return result;
-	}
-	
-
-	private static Map<String, Integer> combineFrequencyCounts(Map<String, Integer> m1, Map<String, Integer> m2) {
-		Map<String, Integer> result = m1;
-		
-		//Iterate through the 2nd input, seeing if duplicates already exist in the hashtable
-		for(String s: m2.keySet()){
-			if(result.get(s) != null){
-				result.put(s, result.get(s) + m2.get(s));
-			}
-			else {
-				result.put(s, m2.get(s));
-			}
-		}
-		
-		return result;
-	}
-
-
-	public static Map<String, Integer> countExtractedNounsFromFile(String fileName){
-		File f = new File(fileName);
-		
-		if(!f.exists()){
-			System.err.println("Error opening .cases file to count extracted nouns: " + f.getAbsolutePath());
-			return null;
-		}
-		
-		System.out.println("Counting frequency of extracted nouns in file: " + f.getAbsolutePath());
-		return (countExtractedNounsFromString(FileHelper.fileToString(f)));
-	}
-	
-	public static Map<String, Integer> countExtractedNounsFromString(String input){
-		Map<String, Integer> result = new HashMap<String, Integer>();
-		
-		Scanner in = new Scanner(input);
-		
-		while(in.hasNextLine()){
-			String line = in.nextLine();
-			if(isCaseFrameNameLine(line)){
-				//Advance the scanner two lines
-				String extNounLine = in.nextLine();
-				extNounLine = in.nextLine();
+			String line = null;
+			
+			while((line = br.readLine()) != null){
+				line = line.trim();
 				
-				//Get the noun out of the quotes
-				String noun = extNP(extNounLine).toLowerCase();
+				//An asteric separates the extracted noun from the pattern that extracted it
+				String nounPhrase = line.split("\\*")[0].trim();
+				String pattern = line.split("\\*")[1].trim();
 				
-				//Add the word to our frequency count
-				if(result.get(noun) != null){
-					result.put(noun, result.get(noun) + 1);
+				
+				//Identify the head nouns in the noun phrase
+				ArrayList<ExtractedNoun> headNouns = _b.identifyHeadNouns(nounPhrase, _stopWords);
+				
+				//Create a new word for each headnoun of the and phrase
+				for(ExtractedNoun noun: headNouns){
+					//Map patterns to extracted nouns
+					if(_nounList.contains(noun)){
+						for(ExtractedNoun seenNoun: _nounList){
+							if(seenNoun.equals(noun)){
+								seenNoun.setScore(seenNoun.getScore() + 1.0);
+							}
+						}
+					}
+					else{
+						noun.setScore(1.0);
+						_nounList.add(noun);
+					}
 				}
-				else{
-					result.put(noun, 1);
-				}
-			}
-		}
-		
-		return result;
-	}
-	
-	public static boolean isCaseFrameNameLine(String line){
-		if(line.matches(_cfNameLineRegex))
-			return true;
-		return false;
-	}
-	
-	private static String extNP(String extNounLine) {
-		Pattern p = Pattern.compile("\"[^\"\r\n]*\"");
-		
-		Matcher m = p.matcher(extNounLine);
-		m.find();
-		
-		String substr = extNounLine.substring(m.start()+1, m.end()-1);
-		return substr;
-	}
-	
 
+			}
+			br.close();
+		}
+		catch (IOException e){
+			System.err.println(e.getMessage());
+			return false;
+		}
+		return true;
+	}
 }
