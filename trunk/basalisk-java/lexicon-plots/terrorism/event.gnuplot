@@ -7,5 +7,6 @@ set key left top
 set output "event-plot.ps"
 cd "../../lexicon-scores/terrorism/"
 plot "event-scat.score" every 10 using 2:1 title 'ba-1' with linespoints, \
-     "event-mcat.score" every 10 using 2:1 title 'ba-m' with linespoints, \
-     "event-mcat-plus.score" every 10 using 2:1 title 'ba-m+' with linespoints
+     "event-behltvw.score" every 10 using 2:1 title 'ba-m' with linespoints, \
+     "event-behltvw-diffscore.score" every 10 using 2:1 title 'ba-m+' with linespoints, \
+     "event-behlntvw-diffscore.score" every 10 using 2:1 title 'ba-m+-none' with linespoints
