@@ -80,7 +80,7 @@ public class Basilisk {
 	private HashSet<Noun> _stopWords;
 	
 	//Used for debugging
-	protected Basilisk(){
+	public Basilisk(){
 	
 	}
 	
@@ -139,10 +139,10 @@ public class Basilisk {
 			outPutSuffix = "-scat";
 		}
 		else if(_useImprovedConflictResolution){
-			outPutSuffix = "-mcat-plus";
+			outPutSuffix = "-" + mcatSuffix() + "-diffScore";
 		}
 		else{
-			outPutSuffix = "-mcat";
+			outPutSuffix = "-" + mcatSuffix();
 		}
 		
 		String snowBallSuffix = "";
@@ -538,24 +538,6 @@ public class Basilisk {
 		
 		return result;
 	}
-
-
-
-
-/*	private TreeSet<ExtractedNoun> selectTopNNewCandidateWords(TreeSet<ExtractedNoun> scoredNouns, int n) {
-		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
-		
-		//Cycle through the scoredNouns, from high to low, adding to the result as we go
-		Iterator<ExtractedNoun> descNounIt = scoredNouns.descendingIterator();
-		for(int i = 0; descNounIt.hasNext() && i < n;){
-			ExtractedNoun en = descNounIt.next();
-			if(!_seeds.contains(en)){
-				result.add(en);
-				i++;
-			}
-		}
-		return result;
-	}*/
 	
 	public HashSet<Noun> loadSet(String listOfWords) {
 		File f = new File(listOfWords);
@@ -583,6 +565,18 @@ public class Basilisk {
 		
 		return result;
 		
+	}
+	
+	private String mcatSuffix() {
+		ArrayList<String> firstLetters = new ArrayList<String>();
+		for(String category: _listsOfKnownCategoryWords.keySet())
+			firstLetters.add(category.substring(0, 1));
+		Collections.sort(firstLetters);
+		
+		String result = "";
+		for(String letter: firstLetters)
+			result = result + letter;
+		return result;
 	}
 	
 	/**
