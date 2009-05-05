@@ -7,5 +7,6 @@ set key left top
 set output "human-plot.ps"
 cd "../../lexicon-scores/terrorism/"
 plot "human-scat.score" every 10 using 2:1 title 'ba-1' with linespoints, \
-     "human-mcat.score" every 10 using 2:1 title 'ba-m' with linespoints, \
-     "human-mcat-plus.score" every 10 using 2:1 title 'ba-m+' with linespoints
+     "human-behltvw.score" every 10 using 2:1 title 'ba-m' with linespoints, \
+     "human-behltvw-diffscore.score" every 10 using 2:1 title 'ba-m+' with linespoints, \
+     "human-behlntvw-diffscore.score" every 10 using 2:1 title 'ba-m+-none' with linespoints
