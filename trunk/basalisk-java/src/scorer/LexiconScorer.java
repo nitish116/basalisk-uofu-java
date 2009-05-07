@@ -63,6 +63,17 @@ public class LexiconScorer {
 			}
 			scoreOutput.format("#Score output for the %s.lexicon file\n", categoryAndSuffix);
 			scoreOutput.format("#%20s %20s\n", "CorrectEntries", "TotalEntries");
+
+			//Create a printstream to record all of the incorrectly labeled words
+			PrintStream correctOutput = null;
+			try{
+				correctOutput = new PrintStream(outputDir + categoryAndSuffix + ".correct");
+			}
+			catch (Exception e){
+				System.err.println(e.getMessage());
+				continue;
+			}
+			correctOutput.format("Entries in the %s.lexicon file that were correctly labeled:\n", categoryAndSuffix);
 			
 			//Create a printstream to record all of the incorrectly labeled words
 			PrintStream incorrectOutput = null;
@@ -96,6 +107,7 @@ public class LexiconScorer {
 				
 				if(correctLexicon.contains(lexiconMember)){
 					correct++;
+					correctOutput.println(lexiconMember);
 				}
 				scoreOutput.format("%20d %20d\n", correct, total);
 				
