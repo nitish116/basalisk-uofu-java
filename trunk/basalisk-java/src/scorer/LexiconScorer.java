@@ -104,15 +104,18 @@ public class LexiconScorer {
 			
 			for(String lexiconMember: lexicon){
 				total++;
+				if(lexiconMember.equals("bogota"))
+					System.out.println("Debug point reached");
 				
+				boolean inAtLeastOneKey = false;
 				if(correctLexicon.contains(lexiconMember)){
 					correct++;
 					correctOutput.println(lexiconMember);
+					inAtLeastOneKey = true;
 				}
 				scoreOutput.format("%20d %20d\n", correct, total);
 				
-				//Check to see if the key exists in at least one key
-				boolean inAtLeastOneKey = false;
+				//Check to see if the key exists in at least one other key
 				for(String keyCategory: semKeyDictionary.keySet()){
 					//Make sure we're looking at a different category
 					if(keyCategory.equalsIgnoreCase(category)) continue;
