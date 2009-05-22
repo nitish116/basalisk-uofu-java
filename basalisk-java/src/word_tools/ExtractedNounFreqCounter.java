@@ -33,7 +33,7 @@ public class ExtractedNounFreqCounter {
 		_b = b;
 		_stopWords = b.loadSet("stopwords.dat");
 		System.out.println("Reading case file");
-		generateNounList("promed-training-all.cases");
+		generateNounList("promed-training-500-all.cases");
 		System.out.println("Finished reading case file.");
 		
 		System.out.println("Sorting the counted words");
@@ -45,7 +45,7 @@ public class ExtractedNounFreqCounter {
 		System.out.println("Printing the sorted files to a list");
 		PrintStream out = null;
 		try{
-			out = new PrintStream("promed-freq-count.txt");
+			out = new PrintStream("promed-500-freq-count.txt");
 		}
 		catch(Exception e){
 			System.err.println(e.getMessage());
