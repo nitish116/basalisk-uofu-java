@@ -642,14 +642,20 @@ public class Basilisk {
 	/**
 	 * Used to load seeds from a given seeds slist. The category slist should look something like:
 	 * <pre>
-	 *  -----------------------------
-	 *	|seeds/MUC4-terrorism/      | directory in which seed files are located
-	 *	|human.seeds                | name of seed file
-	 *	|vehicles.seeds             | name of seed file
-	 *	|weapon.seeds               | name of seed file
-	 *	-----------------------------
-	 * </pre>
-	 * @param categorySeedsSlistFile - Slist file that points to the seeds for each semantic category.
+	 *-----------------------------
+	 *|seeds/MUC4-terrorism/      | directory in which seed files are located
+	 *|human.seeds                | name of seed file
+	 *|vehicles.seeds             | name of seed file
+	 *|weapon.seeds               | name of seed file
+	 *-----------------------------
+	 * </pre><br/>
+	 * Note: the name of this file is used to identify the semantic "category" of the file. This is mainly
+	 * only used to determine the name of the file that results are stored in for each category, and for
+	 * comparison purposes for some scoring methods. 
+	 * 
+	 * @param categorySeedsSlistFile - Slist file that points to the seed files for each semantic category.
+	 * @return A HashMap that maps each category (the name of the file) to the set of words contained by 
+	 *   		that file. 
 	 */
 	public HashMap<String, HashSet<Noun>> loadCategoriesFromSList(String categorySeedsSlistFile) {
 		HashMap<String, HashSet<Noun>> result = new HashMap<String, HashSet<Noun>>();
@@ -699,6 +705,13 @@ public class Basilisk {
 		return result;
 	}
 	
+	/**
+	 * Helper method that reads a file of line separated words and stores them inside a HashSet. Used 
+	 * to read in a list of seed words.
+	 * 
+	 * @param listOfWords - A file that contains one word per line. 
+	 * @return
+	 */
 	public HashSet<Noun> loadSet(String listOfWords) {
 		File f = new File(listOfWords);
 		
@@ -730,6 +743,11 @@ public class Basilisk {
 		
 	}
 	
+	/**
+	 * Helper method used for determining the suffix to append to the name of results files when
+	 * Basilisk is running in multiple-category mode. 
+	 * @return
+	 */
 	private String mcatSuffix() {
 		ArrayList<String> firstLetters = new ArrayList<String>();
 		for(String category: _listsOfKnownCategoryWords.keySet())
