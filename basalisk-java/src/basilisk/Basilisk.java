@@ -28,7 +28,7 @@ import java.util.*;
  *		Comprehensive list of all of the patterns and noun phrases extracted by autoslog on the target corpus.
  *
  *		To generate the necessary extraction pattern info that Basilisk needs, you first 
- *		need to run 3 things (notes copied from Ellen Riloff's perl implementation of basilisk):
+ *		need to take 4 steps (notes copied from Ellen Riloff's perl implementation of basilisk):
  *
  *		1) Run AutoSlog over the training corpus to generate extraction patterns
  *
@@ -42,12 +42,13 @@ import java.util.*;
  *			Example:
  *			union-caseframes.pl terror-caseframes/*.aslog > terror-dev1300-all.caseframes		
  * 
- *		3) Run Sundance in extraction mode to generate extraction info
+ *		3) Run Sundance in extraction mode to generate extraction info. Use the -p shepherd option to combine the output
+ *			into one neat file (Basilisk relies on this formatting to function properly).
  * 
  *			Example: 
  *			nlp -ext -d terror -c terror-dev1300-all.caseframes -o cases/ -l terror-dev1300.slist -p shepherd
  *
- *		4) Concatenate the .cases files produced by Sundance.
+ *		4) Concatenate the contents of each .case file produced by Sundance.
  * 
  *			Example:
  *			cat cases/*.cases > terror-dev1300-all.cases
@@ -55,7 +56,7 @@ import java.util.*;
  *		The resulting file (e.g., terror-dev1300-all.cases) is the pattern data file 
  *		that should be given to Basilisk as input. 
  * 
- *		The pattern file should look something like: 
+ *		An (very short) example pattern file should look something like: 
  *		-------------------------------------------------------------
  *		|THE ARCE BATTALION COMMAND * (subj)_ActVp__REPORTED_1      |
  *		|SAN MIGUEL DEPARTMENT * Np_Prep_(NP)__PEASANTS_IN_1993     |
@@ -77,8 +78,47 @@ import java.util.*;
  *                                  Default is to not use this feature.
  * 
  * </pre>
+ * <strong>Convention for the naming of output files</strong><br/><br/>
  * 
- * @author John Tabet, john.tabet@gmail.com
+ * As far as output is concerned, Basilisk will generate multiple output files, two file for each category that Basilisk was run on.
+ * The first output file for each category will contain the list of words that was learned for that category, in the order that 
+ * those words were learned by Basilisk. This file ends with the ".lexicon" extension. <br/><br/>
+ * 
+ * The second output file for each category will contain an identical list, but, additionally, the
+ * file will contain the score, separated by a space, that each word received from Basilisk when it was added to the lexicon of learned
+ * words. This file ends with the ".lexicon-and-score" extension.<br/><br/> 
+ * 
+ * The prefix of both files is created following a particular convention, depending on which mode Basilisk was run in. 
+ * For explanation purposes, let us assume that Basilisk has the following two input seed files: "animal.seeds" and "fruit.seeds" 
+ * (the extension of the input files does not affect the name of the output files). <br/><br/>
+ * 
+ * The output files will always begin with the prefix of the input files, no matter which mode Basilisk is run in. Using our example
+ * files, this means the output files would always begin with either "animal" and "fruit".<br/><br/>
+ * 
+ * The next string that Basilisk appends to the file name depends on whether Basilisk was learning a single category or 
+ * multiple categories simultaneously. <br/><br/>
+ * 
+ * If Basilisk received only "animal.seeds" as its input, then the output file would be named:<br/>
+ * "animal-scat.lexicon"<br/><br/>
+ * 
+ * If Basilisk received both "animal.seeds" and "fruit.seeds" as input files, and was hence running in multiple category mode, 
+ * then the output files would be named: <br/>
+ * "animal-af.lexicon" and "fruit-af.lexicon"<br/><br/>
+ * 
+ * The "-af" label indicates that Basilisk was learning both the "animal" ('a') and "fruit" ('f') category at the same time. In creating
+ * this label, Basilisk organizes the first letter of each category alphabetically and attaches to the file name. Running Basilisk with
+ * "dog", "cloud", and "parrot" categories would generate a "-cdp" label on the file name.<br/><br/>
+ * 
+ * Next, Basilisk will attach a "-diffScore" label if it was run with improved conflict resolution. This would make our example files
+ * look something like:<br/>
+ * "animal-af-diffScore.lexicon" and "fruit-af-diffScore.lexicon"<br/><br/>
+ * 
+ * Finally, Basilisk will attach a "-snowball" label if Basilisk was run in "snowball" mode. This would make our example output files
+ * look like: <br/>
+ * "animal-af-diffScore-snowball.lexicon" and "fruit-af-diffScore-snowball.lexicon"
+ * 
+ * @author John Tabet, john.tabet@gmail.com (feel free to email me for support questions)
+ * @version 1.0
  *
  */
 public class Basilisk {
@@ -159,10 +199,10 @@ public class Basilisk {
 
 	
 	private HashSet<Noun> _stopWords;
-	
+
 	/**
-	 * Used for debugging puproses, especially for the JUNIT test frame. Note: this method does not initialize
-	 * anything essential for running the basilisk algorithm. In particular, this constructor fails to load
+	 * Used for debugging purposes, especially for the JUNIT test frame. Note: this method does not initialize
+	 * anything essential for running the Basilisk algorithm. In particular, this constructor fails to load
 	 * the stop word file, the seed word file, and the patterns file. 
 	 */
 	public Basilisk(){
@@ -236,7 +276,7 @@ public class Basilisk {
 	}
 	
 	/**
-	 * This method begins the bootstrapping iterations for learning new words within each semeantic category. This method
+	 * This method begins the bootstrapping iterations for learning new words within each semantic category. This method
 	 * is the heart of the Basilisk class. This method calls on all other helper methods to make computations,
 	 * store results, and finally, to write the final results to files. This method is also responsible
 	 * for generating the run-time traces that record the calculations that Basilisk makes on every iteration.
@@ -401,7 +441,7 @@ public class Basilisk {
 	 * @param nounToPatternMap - Map that connects head nouns to the patterns that extracted them.
 	 * @param patternToNounMap - Map that connects patterns to the head nouns that they extracted.
 	 * @param listsOfKnownCategoryWords - Comprehensive list of all words that have already been learned by Basilisk.
-	 * @return
+	 * @return A HashSet containing all of the extracted nouns with their Score attribute having been set properly.
 	 */
 	public HashSet<ExtractedNoun> diffScoreNouns(HashSet<ExtractedNoun> candidateNounPool, 
 													String category,
@@ -475,7 +515,7 @@ public class Basilisk {
 	 * @param allCasesFile - For a particular corpus, the file that contains all of the patterns
 	 * 						 and head nouns extracted by these patterns. See the general notes for this
 	 * 						 class for information about generating this file. 
-	 * @return
+	 * @return True if the maps were generated properly. This boolean flag should be used for error checking.
 	 */
 	private boolean generateMaps(String allCasesFile){
 		//Initialize both maps. 
@@ -542,13 +582,13 @@ public class Basilisk {
 	 * First, any attached "of" prepositional phrase is stripped from the given input 
 	 * (e.g. "the bananas and apples of guatemala" - > "the bananas and apples").
 	 * <br/><br/>
-	 * Finally, the phrase is split around commas and the word "and", and the rightmost word is 
-	 * determined to be the head noun.
+	 * Finally, the phrase is split around commas and the word "and", and the rightmost word of each of these 
+	 * sub-phrases is determined to be the head noun.
 	 * (e.g. "the bananas and apples" -> (bananas) HeadNoun1 (apples) HeadNoun2
 	 * 
 	 * @param nounPhrase - Input string from which we need to extract the head nouns.
 	 * @param stopWords - List of stop words from which a head noun can not come from.
-	 * @return
+	 * @return An ArrayList containing all of the head nouns from the input noun phrase. 
 	 */
 	public ArrayList<ExtractedNoun> identifyHeadNouns(String nounPhrase, HashSet<Noun> stopWords){
 		ArrayList<ExtractedNoun> result = new ArrayList<ExtractedNoun>();
@@ -583,10 +623,13 @@ public class Basilisk {
 	
 	/**
 	 * Returns true if any given extracted noun consists of only a sequence of ampersands, digits, periods, dashes, commas or colons.
-	 * For example, matches:
+	 * For example, matches: <br/>
 	 * 		&&63, 14, 1999-2008
+	 * <br/><br/>
+	 * The && is markup specific to output from Sundance. 
+	 * 
 	 * @param en - ExtractedNoun to be checked for being a number
-	 * @return true iff en is a number
+	 * @return True iff the input string is a number.
 	 */
 	public boolean isNumber(ExtractedNoun en) {
 		java.util.regex.Pattern numPattern = java.util.regex.Pattern.compile("[&\\d\\.\\-,:]+");
@@ -598,10 +641,13 @@ public class Basilisk {
 
 	/**
 	 *  Checks a pattern to see if all of it's nouns have already been added to lexicons and/or if all of it's nouns are on the
-	 * non-candidate nouns (numbers and posssessive nouns)
+	 * non-candidate nouns (numbers and possessive nouns)
 	 * 
-	 * @param p - Pattern to check and see if it's depleted  
-	 * @return true iff the given pattern is depleted
+	 * @param p - Pattern to check and see if it's depleted 
+	 * @param  patternToNounMap - HashMap that contains the mapping from all Patterns to the nouns that the pattern extracted.
+	 * @param listsOfKnownCategoryWords - HashMap that maps each category (String) to the set of words that have been "learned" 
+	 * 										for that category.
+	 * @return True iff the given pattern is depleted.
 	 */
 	public boolean isPatternDepleted(Pattern p, 
 									 HashMap<Pattern, HashSet<ExtractedNoun>> patternToNounMap, 
@@ -627,10 +673,11 @@ public class Basilisk {
 	}
 
 	/**
-	 * Returns true if any given extracted noun starts with the @ symbol.
+	 * Returns true if the extracted noun given as input starts with the @ symbol. The "@" notation is markup that Sundance attaches
+	 * to its output.
 	 * 
-	 * @param en - ExtractedNoun to be checked for being possessive
-	 * @return true if en is possessive
+	 * @param en - ExtractedNoun to be checked for being possessive.
+	 * @return True if en is possessive (marked with a "@" at the beginning of the ExtractedNoun).
 	 */
 	public boolean isPossessive(ExtractedNoun en) {
 		java.util.regex.Pattern numPattern = java.util.regex.Pattern.compile("^@.*");
@@ -644,17 +691,17 @@ public class Basilisk {
 	 * <pre>
 	 *-----------------------------
 	 *|seeds/MUC4-terrorism/      | directory in which seed files are located
-	 *|human.seeds                | name of seed file
-	 *|vehicles.seeds             | name of seed file
-	 *|weapon.seeds               | name of seed file
+	 *|human.seeds                | name of seed file1
+	 *|vehicles.seeds             | name of seed file2
+	 *|weapon.seeds               | name of seed file3
 	 *-----------------------------
 	 * </pre><br/>
 	 * Note: the name of this file is used to identify the semantic "category" of the file. This is mainly
-	 * only used to determine the name of the file that results are stored in for each category, and for
-	 * comparison purposes for some scoring methods. 
+	 * only used to determine the name of the output file that the results are stored in for each category, and for
+	 * comparison purposes between categories for certain scoring methods. 
 	 * 
 	 * @param categorySeedsSlistFile - Slist file that points to the seed files for each semantic category.
-	 * @return A HashMap that maps each category (the name of the file) to the set of words contained by 
+	 * @return A HashMap that maps each category (the name of the file, a String) to the HashSet of Nouns contained by 
 	 *   		that file. 
 	 */
 	public HashMap<String, HashSet<Noun>> loadCategoriesFromSList(String categorySeedsSlistFile) {
@@ -710,7 +757,7 @@ public class Basilisk {
 	 * to read in a list of seed words.
 	 * 
 	 * @param listOfWords - A file that contains one word per line. 
-	 * @return
+	 * @return A HashSet of Noun's, one noun for each line within the input file. 
 	 */
 	public HashSet<Noun> loadSet(String listOfWords) {
 		File f = new File(listOfWords);
