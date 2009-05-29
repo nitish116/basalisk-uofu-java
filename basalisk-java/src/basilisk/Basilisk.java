@@ -792,8 +792,9 @@ public class Basilisk {
 	
 	/**
 	 * Helper method used for determining the suffix to append to the name of results files when
-	 * Basilisk is running in multiple-category mode. 
-	 * @return
+	 * Basilisk is running in multiple-category mode. Takes the 
+	 * 
+	 * @return A string containing the first letter 
 	 */
 	private String mcatSuffix() {
 		ArrayList<String> firstLetters = new ArrayList<String>();
