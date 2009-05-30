@@ -1237,7 +1237,7 @@ public class Basilisk {
 	 */
 	public HashMap<String, TreeSet<ExtractedNoun>> selectTopNCandidateNounsInEachCategory(
 			HashMap<String, HashSet<ExtractedNoun>> listsOfConflictResolvedNouns,
-			int i, HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords) {
+			int n, HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords) {
 		
 		HashMap<String, TreeSet<ExtractedNoun>> result = new HashMap<String, TreeSet<ExtractedNoun>>();
 		//Select the top extracted nouns from each list of conflict resolved nouns
@@ -1246,7 +1246,7 @@ public class Basilisk {
 			HashSet<ExtractedNoun> resolvedNouns = listsOfConflictResolvedNouns.get(category);
 			
 			//Select the top nouns from the current scored list of nouns
-			TreeSet<ExtractedNoun> topNewWords = selectTopNCandidateNouns(resolvedNouns, 5, _listsOfKnownCategoryWords);
+			TreeSet<ExtractedNoun> topNewWords = selectTopNCandidateNouns(resolvedNouns, n, _listsOfKnownCategoryWords);
 			
 			result.put(category, topNewWords);
 		}	
