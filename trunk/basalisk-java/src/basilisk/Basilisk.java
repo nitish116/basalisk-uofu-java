@@ -831,9 +831,9 @@ public class Basilisk {
 	 * Returns a map from each category to a set of words that is guaranteed not to have any the wards that are already in the 
 	 * learned lexicon. Essentially calls the removeAlreadyKnownWords method for each category of words.
 	 * 
-	 * @param listsOfScoredNouns - Hashmap that relates categories (strings) with the list of nouns that have been scored for that
+	 * @param listsOfScoredNouns Hashmap that relates categories (strings) with the list of nouns that have been scored for that
 	 * 								category.
-	 * @param listsOfKnownCategoryWords - Hashmap that relates categories (strings) with the list of Noun's that have already
+	 * @param listsOfKnownCategoryWords Hashmap that relates categories (strings) with the list of Noun's that have already
 	 * 										been learned for each category.
 	 * @return A HashMap that relates categories (strings) to the ExtractedNoun's that each category extracted this iteration. 
 	 * 			Each set of ExtractedNoun's within each category is guaranteed to contain words that have not already been learned
@@ -871,7 +871,7 @@ public class Basilisk {
 	 * repeated, with only the highest scoring noun being retained. This process continues until an iteration is reached in which
 	 * no deletions have occurred, and the lists can be said to be stable (or possibly empty).
 	 * 
-	 * @param listsOfUnknownNouns - Set ExtractedNoun's that are scored and haven't yet been added to the lexicon. This list of nouns
+	 * @param listsOfUnknownNouns Set ExtractedNoun's that are scored and haven't yet been added to the lexicon. This list of nouns
 	 * 								is the raw list of nouns that might still contain conflicts.
 	 * @return A Hashmap that relates categories (strings) with the nouns that were extracted (ExtractedNoun's) 
 	 * 			during a given itereation. This HashMap is guaranteed not to contain any conflicts for the top 5 nouns within each
@@ -949,7 +949,7 @@ public class Basilisk {
 	 * 
 	 * This method is used when the "snoballing" flag has been set.
 	 * 
-	 * @param listsOfTopNCandidateNouns - A Hashmap relating categories (strings) to the nouns that they extracted for a particular iteration.
+	 * @param listsOfTopNCandidateNouns A Hashmap relating categories (strings) to the nouns that they extracted for a particular iteration.
 	 * 									  The selectTopNCandidateNounsInEachCategory() method should have been used to narrow this list
 	 * 									  down to a limited N number of nouns for each category (though this isn't required).
 	 * @return A hashmap relating categories (strings) to the lists of nouns that they extracted for a given iteration. However, each
@@ -989,8 +989,8 @@ public class Basilisk {
 	 * scoreCandidateNoun function for details on this scoring function.
 	 * 
 	 * @see Basilisk#scoreCandidateNoun scoreCandidateNoun method for details on the AvgLog scoring function.
-	 * @param candidateNounPool - Set of candidate nouns to be scored by the AvgLog Function
-	 * @param knownCategoryWords - Set of known category words for a particular category
+	 * @param candidateNounPool Set of candidate nouns to be scored by the AvgLog Function
+	 * @param knownCategoryWords Set of known category words for a particular category
 	 * @return a HashSet containing all of the ExtractedNouns, with each noun having been scored by the AvgLog scoring function.
 	 */
 	public HashSet<ExtractedNoun> scoreAllNouns(HashSet<ExtractedNoun> candidateNounPool, 
@@ -1073,6 +1073,16 @@ public class Basilisk {
 		return result;
 	}
 	
+	/**
+	 * Scores a set of Pattern's for a given category. The score for a given pattern is determined by the rLogF formula, which is:</br>
+	 * <pre>    rLogF = (f/n)*log2(f)</pre><br/>
+	 * Where f is the total number of known category members extracted by the pattern, 
+	 * and n is the total number of words extracted by the pattern. 
+	 * 
+	 * @param patterns - Set of Patterns that need to be scored for a given category.
+	 * @param knownCategoryMembers - Set of Noun's that have already been learned for a given category.
+	 * @return A set of Pattern's that have been scored for a given category.
+	 */
 	public HashSet<Pattern> scorePatterns(HashMap<Pattern, HashSet<ExtractedNoun>> patterns, HashSet<Noun> knownCategoryMembers) {
 		
 		HashSet<Pattern> result = new HashSet<Pattern>();
@@ -1106,9 +1116,10 @@ public class Basilisk {
 	/**
 	 * Used to score patterns from multiple categories. Essentially just calls the scorePatterns method for each category.
 	 * 
-	 * @param listsofKnownCategoryWords - Map from each category to the list of words known for each category
-	 * @param patternsToExtractedNounMap - map of patterns to the set of nouns that they extracted
-	 * @return map from each category (string) to the set of scored patterns for that category
+	 * @see Basilisk#scorePatterns scorePatterns method
+	 * @param listsofKnownCategoryWords Map from each category to the list of words known for each category.
+	 * @param patternsToExtractedNounMap Map from patterns to the set of nouns that they extracted.
+	 * @return Map from each category (string) to the set of scored patterns for that category.
 	 */
 	public HashMap<String, HashSet<Pattern>> scorePatternsInEachCategory(HashMap<String, HashSet<Noun>> listsofKnownCategoryWords,
 																		 HashMap<Pattern, HashSet<ExtractedNoun>> patternsToExtractedNounMap) {
@@ -1121,10 +1132,26 @@ public class Basilisk {
 		return result;
 	}
 
-	public HashSet<ExtractedNoun> selectNounsFromPatterns(HashSet<Pattern> patternPool, HashMap<Pattern, HashSet<ExtractedNoun>> patterns) {
+	/**
+	 * Used to query the PatternToNoun map for the set of Nouns that were extracted by a set of patterns. In the bootstrapping process,
+	 * first a pool of candidate Patterns is selected according to a scoring metric. So, after Basilisk has selected the top Pattern's
+	 * for a given category, this method is used to gather all of the Noun's that were extracted by that set of Pattern's.<br/><br/>  
+	 * 
+	 * Additionally, this method only returns Noun's that are non-possessive and not a number (numbers 
+	 * that pass the !isNumber() and !isPossessive() helper methods
+	 * 
+	 * @see Basilisk#isNumber isNumber method
+	 * @see Basilisk#isPossessive isPattern method
+	 * 
+	 * @param patternPool Set of Patterns from which this method is to gather all of the Noun's that were extracted by the Pattern's.
+	 * @param patternsToExtractedNounMap Map that relates a Pattern to the noun that it extracted (ExtractedNoun)
+	 * 
+	 * @return A set of ExtractedNoun's that were extracted by the given set of input Pattern's.
+	 */
+	public HashSet<ExtractedNoun> selectNounsFromPatterns(HashSet<Pattern> patternPool, HashMap<Pattern, HashSet<ExtractedNoun>> patternsToExtractedNounMap) {
 		HashSet<ExtractedNoun> result = new HashSet<ExtractedNoun>();
 		for(Pattern p: patternPool){
-			for(ExtractedNoun en: patterns.get(p)){
+			for(ExtractedNoun en: patternsToExtractedNounMap.get(p)){
 				if(!isNumber(en) && !isPossessive(en))
 					result.add(en);
 			}
@@ -1137,10 +1164,11 @@ public class Basilisk {
 	 * For each category, gathers the nouns that were extracted by the given set of patterns. Essentially just calls the 
 	 * selectNounsFromPatterns method.
 	 * 
-	 * @see selectNounsFromPatterns
+	 * @see Basilisk#selectNounsFromPatterns selectNounsFromPatterns method
 	 * @param listsOfPatternPools
 	 * @param patternsToExtractedNounMap
-	 * @return
+	 * @return A map from each category (String) to a set of ExtractedNoun's that were extracted by the given input Pattern's for
+	 * 			the same category.
 	 */
 	public HashMap<String, HashSet<ExtractedNoun>> selectNounsFromPatternsInEachCategory(
 			HashMap<String, HashSet<Pattern>> listsOfPatternPools,
@@ -1156,7 +1184,7 @@ public class Basilisk {
 	}
 
 	/**
-	 *  Simply takes a hashset of scored nouns, sorts them, and returns N nouns with with the highest score.
+	 *  Simply takes a hashset of scored nouns, sorts them, and returns N nouns with with the highest score.<br/>
 	 *  NOTE: Use some sort of conflict resolution before selecting the top nouns. Otherwise this will blindly chose the top scored
 	 *  nouns, some of which might have been learned already or some of which might be claimed by another category with a high score
 	 * 
@@ -1198,12 +1226,14 @@ public class Basilisk {
 	}
 	
 	/**
-	 * Selects the top N candidate nouns for each category of candidate nouns.
+	 * Selects the top N candidate nouns for each category of candidate nouns. Essentially calls the selectTopNCandidateNouns method
+	 * once for each semantic category.
 	 * 
-	 * @param listsOfConflictResolvedNouns - Lists of candidate nouns for each category that has had conflicting nouns resolved
-	 * @param n - Number of top candidate nouns to select for each category
-	 * @param listsOfKnownCategoryWords - List of learned nouns for each category
-	 * @return - A map from each category to a sorted list of the top nouns from each category
+	 * @see Basilisk#selectTopNCandidateNouns selectTopNCandidateNouns method
+	 * @param listsOfConflictResolvedNouns - Lists of candidate nouns for each category that has had conflicting nouns resolved.
+	 * @param n - Number of top candidate nouns to select for each category.
+	 * @param listsOfKnownCategoryWords - List of learned nouns for each category.
+	 * @return - A map from each category to a sorted list of the top nouns from each category.
 	 */
 	public HashMap<String, TreeSet<ExtractedNoun>> selectTopNCandidateNounsInEachCategory(
 			HashMap<String, HashSet<ExtractedNoun>> listsOfConflictResolvedNouns,
@@ -1224,6 +1254,21 @@ public class Basilisk {
 		return result;
 	}
 
+	/**
+	 * Given an input of scored Pattern's, this method sorts those Pattern's in descending order, from highest score to lowest score.
+	 * It then selects the top N patterns, making sure that the Pattern is not depleted before adding it to the result. A depleted 
+	 * pattern is one that passes the isPatternDepleted method, which essentially checks to see that the Pattern has extracted nouns
+	 * that haven't been learned by Basilisk yet.
+	 * 
+	 * @see Basilisk#isPatternDepleted isPatternDepleted method
+	 * @param patterns - Set of scored patterns from which to select the top N patterns from.
+	 * @param n - Number of top score patterns to select.
+	 * @param patternsToNounsMap - Map that relates Pattern's to the set of Noun's that they extracted.
+	 * @param listsOfKnownCategoryWords - Map that relates semantic categories (String's) to the set of Noun's that have already
+	 * 										been learned by that category.
+	 * @return - A set of Patterns that is a subset of the original input set of Pattern's. Contains only the N highest scoring 
+	 * 			 Pattern's.
+	 */
 	public HashSet<Pattern> selectTopNPatterns(HashSet<Pattern> patterns, 
 											   int n, 
 											   HashMap<Pattern, HashSet<ExtractedNoun>> patternsToNounsMap,
@@ -1248,19 +1293,20 @@ public class Basilisk {
 	/**
 	 * Essentially calls the selectTopNPatterns method for each category. 
 	 * 
-	 * @param listsOfScoredPatterns - List of scored patterns for each category
-	 * @param i - Number of patterns to select for each category
-	 * @param patternsToExtractedNounMap - Map from each pattern to the set of nouns that it extracted
-	 * @param listsOfKnownCategoryWords - List for the known words in each category
-	 * @param tracesList - Map from each category to the trace output stream that is recording information about that category
-	 * @return
+	 * @see Basilisk#selectTopNPatterns selectTopNPatterns method
+	 * @param listsOfScoredPatterns - List of scored patterns for each category.
+	 * @param i - Number of patterns to select for each category.
+	 * @param patternsToExtractedNounMap - Map from each pattern to the set of nouns that it extracted.
+	 * @param listsOfKnownCategoryWords - List for the known words in each category.
+	 * @param tracesList - Map from each category to the trace output stream that is recording information about that category.
+	 * @return A map from each semantic category (String) to the set of N highest scoring Pattern's for that category.
 	 */
 	public HashMap<String, HashSet<Pattern>> selectTopNPatternsInEachCategory(
 			HashMap<String, HashSet<Pattern>> listsOfScoredPatterns, int i,
 			HashMap<Pattern, HashSet<ExtractedNoun>> patternsToExtractedNounMap,
 			HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords,
 			HashMap<String, PrintStream> tracesList) {
-		// TODO Auto-generated method stub
+		
 		HashMap<String, HashSet<Pattern>> result = new HashMap<String, HashSet<Pattern>>();
 		
 		for(String category: listsOfScoredPatterns.keySet()){
@@ -1275,6 +1321,14 @@ public class Basilisk {
 		return result;
 	}
 
+	/**
+	 * Debugging method. Used when trying to figure out why Basilisk wasn't learning any new words. Can probably be deleted.
+	 * 
+	 * @param alreadyKnownErrorTrace
+	 * @param iteration
+	 * @param category
+	 * @param scoredNouns
+	 */
 	private void traceEmptyNounsAfterRemovingAlreadyKnown(PrintStream alreadyKnownErrorTrace, int iteration, String category, HashSet<ExtractedNoun> scoredNouns) {
 		alreadyKnownErrorTrace.format("No conflict nouns was empty on iteration %d\n", iteration);
 		alreadyKnownErrorTrace.println("**************List of all known words:*************");
@@ -1289,6 +1343,15 @@ public class Basilisk {
 		
 	}
 	
+	/**
+	 * Debugging method for use when Basilisk wasn't learning any new words. Can probably be deleted.
+	 * 
+	 * @param afterConflictErrorTrace
+	 * @param iteration
+	 * @param category
+	 * @param unknownNouns
+	 * @param listsOfScoredNouns
+	 */
 	private void traceEmptyNounsAfterConflictResolution(
 			PrintStream afterConflictErrorTrace, int iteration, String category,
 			HashSet<ExtractedNoun> unknownNouns, HashMap<String, HashSet<ExtractedNoun>> listsOfScoredNouns) {
@@ -1316,97 +1379,23 @@ public class Basilisk {
 		
 	}
 
+	/**
+	 * Helper method that prints iteration header information inside of the trace files. Prints out which iteration 
+	 * Basilisk is currently at (e.g., "Iteration 5", "Iteration 200") 
+	 * 
+	 * @param trace - Output stream to which the header should be printed.
+	 * @param iteration - Iteration number to be printed to the header.
+	 */
 	private void traceIterationHeader(PrintStream trace, int iteration) {
 		trace.append("************************************************************\n");
 		trace.format("                    Iteration %3d\n", iteration);
 		trace.append("************************************************************\n\n");
 		
 	}
-
-	/**
-	 * Uses the avgDiff selection criteria to try and guide the selection process for words that are strongly favored by one
-	 * category. 
-	 *  Each word wi in the candidate word pool receives a score for category ca based on the following formula: 
-	 *  	diff(wi,ca) = AvgLog(wi,ca) - max (AvgLog(wi,cb)), where a != b
-	 *  
-	 *  Essentially takes a given word, recomputes it's score if it's been found and scored by other categories, and only 
-	 *  returns the word if it's strongly associated with it's given category.
-	 *  
-	 * @param scoredNouns - List of scored nouns for which we want to recompute the diff score value
-	 * @param catNumber - Category number associated with this list of scored nouns. Since category lists are generated in order
-	 * 						category list at index 0, should always be associated with the same category
-	 * @param listsOfScoredNouns - List containing all of the scored candidate nouns, used to calculate the different score
-	 * @param n - number of nouns to return in this list
-	 * @return - List of the top scored nouns in this list.
-	 */
-/*	private TreeSet<ExtractedNoun> avgDiffSelectTopNNewCandidateWords( 	HashSet<ExtractedNoun> scoredNouns, int catNumber, 
-																		ArrayList<HashSet<ExtractedNoun>> listsOfScoredNouns, 
-																		int n) {
-//		Look at a word
-//		Cycle through all the other sets, calculating maximum score
-//		Set new score in result, as currScore-maxScore
-//		Take the top words, as long as the score > 0
-		
-		TreeSet<ExtractedNoun> diffScoredNouns = new TreeSet<ExtractedNoun>();
-		
-		//Examine each word in the current set to rescore it
-		for(ExtractedNoun en: scoredNouns){
-			//Cycle every OTHER set (i.e., sets that don't have the same category number) to compute max score in other cats
-			double maxScore = 0.0;
-			for(int i = 0; i < listsOfScoredNouns.size(); i++){
-				if(i == catNumber)
-					continue;
-				
-				//Check to see if the other sets even contain the given word
-				if(listsOfScoredNouns.get(i).contains(en)){
-					//If they do, find out it's score, and update maxscore
-					for(ExtractedNoun otherNoun: listsOfScoredNouns.get(i)){
-						if(otherNoun.equals(en)){
-							maxScore = Math.max(maxScore, otherNoun.getScore());
-						}
-					}
-				}
-			}
-			
-			//Finally, add the oldScore-newScore to the diffScore list
-			ExtractedNoun diffScored = new ExtractedNoun(en._noun);
-			diffScored.setScore(en.getScore() - maxScore);
-			diffScoredNouns.add(diffScored);
-		}
-		
-		
-		//Finally, choose the top N words from the diff scored list, so long as they are greater than 0 and not already known
-		TreeSet<ExtractedNoun> result = new TreeSet<ExtractedNoun>();
-		Iterator<ExtractedNoun> diffScoreIt = diffScoredNouns.descendingIterator();
-		for(int wordsAdded = 0; wordsAdded < n && diffScoreIt.hasNext();){
-			ExtractedNoun diffScored = diffScoreIt.next();
-			
-			//Check to see if it's in the list of known words
-			boolean alreadyKnown = false;
-			for(Set<Noun> knownWords: _listsOfKnownCategoryWords){
-				//If it is, continue to the next word
-				if(knownWords.contains(diffScored)){
-					alreadyKnown = true;
-					break;
-				}	
-			}
-			//If so, continue to the next word
-			if(alreadyKnown)
-				continue;
-			
-			//If it's not, and it's score >= 0, add it to the result
-			if(diffScored.getScore() >= 0){
-				result.add(diffScored);
-				wordsAdded++;
-			}
-		}
-		return result;
-	}*/
 	
-
-
-
-
+	/**
+	 * Prints out information to the trace file about the new words that were learned for a particular iterarion.
+	 */
 	private void traceNewNouns(PrintStream trace, TreeSet<ExtractedNoun> topNewWords, Set<Noun> knownCategoryMembers) {
 		//Append header
 		trace.format("Top %d Candidate Nouns\n\n", topNewWords.size());
