@@ -13,6 +13,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * Unit test frame work for Basilisk class. Could be significantly more robust.
+ * 
+ * @author John Tabet
+ */
 public class BasiliskTest {
 
 	
