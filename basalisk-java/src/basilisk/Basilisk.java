@@ -431,7 +431,7 @@ public class Basilisk {
 
 	/**
 	 * Computes the diffScore for each noun within a given category, where the diff score is defined as:<br/>
-	 * <pre>DiffScore(noun) = AvgLog(noun) - max[ AvgLog(noun, in all other categories)]</pre><br/>
+	 * <pre>DiffScore(noun) = AvgLog(noun) - max[ AvgLog(noun, in all other categories)]</pre><br/><br/>
 	 * 
 	 * So, if "Billy Bob" receives a score of 2.0 for the Human category, and it's highest other score is in the Location category, with
 	 * a score of 1.0, it's final computed score will be 2.0 - 1.0 = 1.0.
@@ -479,7 +479,7 @@ public class Basilisk {
 	 * Uses the diff score algorithm to score the unknown candidate nouns in each category. Essentially calls diffScoreNouns
 	 * for each category. 
 	 * 
-	 * @see diffScoreNouns
+	 * @see Basilisk#diffScoreNouns diffScoreNouns
 	 * @param listsOfUnknownNouns - Lists of candidate nouns that have not been learned for each category
 	 * @param extractedNounsToPatternsMap - Map from extracted nouns to the set of patterns that extracted each noun
 	 * @param patternsToExtractedNounMap - Map from each pattern to the set of nouns that it extracted
@@ -574,16 +574,16 @@ public class Basilisk {
 	/**
 	 * Responsible for determining the head noun of a particular noun phrase. Since Basilisk uses the static
 	 * output from autoslog, and since autoslog often outputs more than just the head nouns extracted by
-	 * each pattern, this method is essential for determining the head nouns of each noun phrase. 
-	 * <br/><br/>
+	 * each pattern, this method is essential for determining the head nouns of each noun phrase.  <br/><br/>
+	 * 
 	 * This method uses a very simple heuristic for determining the head noun of each noun phrase, a simple
-	 * heuristic that could definitely be improved. 
-	 * <br/><br/>
-	 * First, any attached "of" prepositional phrase is stripped from the given input 
-	 * (e.g. "the bananas and apples of guatemala" - > "the bananas and apples").
-	 * <br/><br/>
+	 * heuristic that could definitely be improved. <br/><br/>
+	 * 
+	 * First, any attached "of" prepositional phrase is stripped from the given input <br/>
+	 * (e.g. "the bananas and apples of guatemala" - > "the bananas and apples").<br/><br/>
+	 * 
 	 * Finally, the phrase is split around commas and the word "and", and the rightmost word of each of these 
-	 * sub-phrases is determined to be the head noun.
+	 * sub-phrases is determined to be the head noun.<br/>
 	 * (e.g. "the bananas and apples" -> (bananas) HeadNoun1 (apples) HeadNoun2
 	 * 
 	 * @param nounPhrase - Input string from which we need to extract the head nouns.
@@ -827,9 +827,21 @@ public class Basilisk {
 		return result;
 	}
 	
+	/**
+	 * Returns a map from each category to a set of words that is guaranteed not to have any the wards that are already in the 
+	 * learned lexicon. Essentially calls the removeAlreadyKnownWords method for each category of words.
+	 * 
+	 * @param listsOfScoredNouns - Hashmap that relates categories (strings) with the list of nouns that have been scored for that
+	 * 								category.
+	 * @param listsOfKnownCategoryWords - Hashmap that relates categories (strings) with the list of Noun's that have already
+	 * 										been learned for each category.
+	 * @return A HashMap that relates categories (strings) to the ExtractedNoun's that each category extracted this iteration. 
+	 * 			Each set of ExtractedNoun's within each category is guaranteed to contain words that have not already been learned
+	 * 			on previous iterations.
+	 */
 	public HashMap<String, HashSet<ExtractedNoun>> removeAlreadyKnownWordsInEachCategory(
 			HashMap<String, HashSet<ExtractedNoun>> listsOfScoredNouns,
-			HashMap<String, HashSet<Noun>> ofKnownCategoryWords) {
+			HashMap<String, HashSet<Noun>> listsOfKnownCategoryWords) {
 		
 		HashMap<String, HashSet<ExtractedNoun>> result = new HashMap<String, HashSet<ExtractedNoun>>();
 		
@@ -849,13 +861,22 @@ public class Basilisk {
 	}
 	
 	/**
-	 * Checks the current list of scored nouns against other lists of scored nouns to see if their are conflicting words, i.e. two 
-	 * categories trying to add the same word. If such a conflict exists, retain the current noun only if it has the highest
-	 * score compared to any other category that is also trying to add the given word.
+	 * Checks the current list of the top 5 scored nouns against other lists of top 5 scored nouns to see if their are conflicting word, 
+	 * i.e. two categories trying to add the same word. If such a conflict exists, retain the current noun only if it has the highest
+	 * score compared to any other category that is also trying to add the given word.<br/><br/>
 	 * 
-	 * @param scoredNouns - set of scored nouns to be checked for conflicts with other categories
-	 * @param listsOfScoredNouns
-	 * @return
+	 * This is a continuous process, that will continue removing nouns until the list of top 5 nouns is "stable", that is, removing
+	 * a noun from one list would mean that the 6th best noun for that category will become the 5th best noun for that category.
+	 * This 5th best noun might, in turn, be the same noun in another category. So, the conflict resolution process needs to be 
+	 * repeated, with only the highest scoring noun being retained. This process continues until an iteration is reached in which
+	 * no deletions have occurred, and the lists can be said to be stable (or possibly empty).
+	 * 
+	 * @param listsOfUnknownNouns - Set ExtractedNoun's that are scored and haven't yet been added to the lexicon. This list of nouns
+	 * 								is the raw list of nouns that might still contain conflicts.
+	 * @return A Hashmap that relates categories (strings) with the nouns that were extracted (ExtractedNoun's) 
+	 * 			during a given itereation. This HashMap is guaranteed not to contain any conflicts for the top 5 nouns within each
+	 * 			category, e.g., the top 5 nouns within each category will be unique and gauranteed to have received a higher score
+	 * 			than for any other category it may have been extracted by.
 	 */
 	public HashMap<String, HashSet<ExtractedNoun>> resolveSimpleConflictsInEachCategory( HashMap<String, HashSet<ExtractedNoun>> listsOfUnknownNouns){
 		
@@ -922,13 +943,20 @@ public class Basilisk {
 
 	/**
 	 * Examines the list of top scored nouns for each category, determining which noun has the maximum score and removing all of 
-	 * the nouns except for the maximum scoring noun from the lists. 
+	 * the nouns except for the maximum scoring noun from the lists. For example, if category ABC has a noun with a score of 10.0, 
+	 * and every other category has nouns with scores of less then 10.0, this method will return empty noun lists for every other
+	 * category, and a list with one noun for category ABC.<br/><br/> 
 	 * 
-	 * @param listsOfTopNCandidateNouns
-	 * @return
+	 * This method is used when the "snoballing" flag has been set.
+	 * 
+	 * @param listsOfTopNCandidateNouns - A Hashmap relating categories (strings) to the nouns that they extracted for a particular iteration.
+	 * 									  The selectTopNCandidateNounsInEachCategory() method should have been used to narrow this list
+	 * 									  down to a limited N number of nouns for each category (though this isn't required).
+	 * @return A hashmap relating categories (strings) to the lists of nouns that they extracted for a given iteration. However, each
+	 * 		 	list of nouns will be empty except for one category. This one category will contain only one word, the word that has
+	 * 			a higher score than for any other category.
 	 */
-	public HashMap<String, TreeSet<ExtractedNoun>> retainOnlyHighestScoringNoun(
-			HashMap<String, TreeSet<ExtractedNoun>> listsOfTopNCandidateNouns) {
+	public HashMap<String, TreeSet<ExtractedNoun>> retainOnlyHighestScoringNoun( HashMap<String, TreeSet<ExtractedNoun>> listsOfTopNCandidateNouns) {
 		
 		HashMap<String, TreeSet<ExtractedNoun>> result = new HashMap<String, TreeSet<ExtractedNoun>>();
 		
@@ -957,12 +985,13 @@ public class Basilisk {
 	}
 	
 	/**
-	 * Scores all of the candidate nouns in a given candidate noun pool using the AvgLog scoring function. 
+	 * Scores all of the candidate nouns in a given candidate noun pool using the AvgLog scoring function. See the 
+	 * scoreCandidateNoun function for details on this scoring function.
 	 * 
-	 * @see scoreCandidateNoun for details on the AvgLog scoring function
+	 * @see Basilisk#scoreCandidateNoun scoreCandidateNoun method for details on the AvgLog scoring function.
 	 * @param candidateNounPool - Set of candidate nouns to be scored by the AvgLog Function
 	 * @param knownCategoryWords - Set of known category words for a particular category
-	 * @return
+	 * @return a HashSet containing all of the ExtractedNouns, with each noun having been scored by the AvgLog scoring function.
 	 */
 	public HashSet<ExtractedNoun> scoreAllNouns(HashSet<ExtractedNoun> candidateNounPool, 
 											    HashMap<ExtractedNoun, HashSet<Pattern>> nounToPatternMap,
@@ -982,13 +1011,16 @@ public class Basilisk {
 	}
 	
 	/**
-	 * Scores a particular word for a given category. The score for a noun is defined by the forumula
-	 * 			AvgLog(word) = SUM[log2(F+1)]/N, where F is the number of known words also extracted by each of the 
-	 * 											 patterns that extracted this given noun, and N is the number of patterns
-	 * 											that extracted the given noun.
-	 * @param noun - Extracted noun to be scored
-	 * @param knownCategoryMembers - List of already known category words for the given category
-	 * @return - score for the extracted noun
+	 * Scores a particular word for a given category. The score for a noun is defined by the forumula: <br/>
+	 * <pre> AvgLog(word) = SUM[log2(F+1)]/N</pre><br/>, 
+	 *  where F is the number of known words also extracted by each of the patterns that extracted this given noun, 
+	 * 	and N is the number of patterns that extracted the given noun.
+	 * @param candidateNoun - Extracted noun to be scored
+	 * @param nounToPatternMap - Map that relates each ExtractedNoun to the set of Pattern's that the ExtractedNoun
+	 * @param patternToNounMap - Map that relates each Pattern to the set of ExtractedNoun's that the pattern extracted.
+	 * @param knownCategoryMembers - List of words that have already been learned and added to the lexicon for the given category
+	 * 								 that the candidateNoun belongs to.
+	 * @return Score for the extracted noun.
 	 */
 	public double scoreCandidateNoun(ExtractedNoun candidateNoun, 
 									 HashMap<ExtractedNoun, HashSet<Pattern>> nounToPatternMap,
@@ -1016,8 +1048,9 @@ public class Basilisk {
 	}
 	
 	/**
-	 * Scores the set of candidate nouns for each given category. Essentially calls the scoreAllNouns method.
+	 * Scores the set of candidate nouns for each given category. Essentially calls the scoreAllNouns method for each category.
 	 * 
+	 * @see Basilisk#scoreAllNouns scoreAllNouns method
 	 * @param listsOfCandidateNounPools - List of candidate nouns for each category
 	 * @param extractedNounsToPatternsMap - Map from nouns to the set of patterns that extracted them
 	 * @param patternsToExtractedNounMap - Map from a pattern to the set of nouns that it extracted
