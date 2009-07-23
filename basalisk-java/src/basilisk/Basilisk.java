@@ -73,9 +73,12 @@ import java.util.*;
  *      -o  [directory]             Output directory.
  *                                  Default is the root directory.
  *
- *      -s  [0 or 1]                Runs Basilisk in "Snowball" mode. That is, Basilisk will only select
+ *      -s  		                Runs Basilisk in "Snowball" mode. That is, Basilisk will only select
  *                                  the top scorer from each category.
  *                                  Default is to not use this feature.
+ *                                  
+ *      -t                          Also writes a trace file outlining the words and their scoring during each
+ *                                  iteration of basilisk.                            
  * 
  * </pre>
  * <strong>Convention for the naming of output files</strong><br/><br/>
@@ -125,6 +128,7 @@ public class Basilisk {
 	
 	private static String _stopWordsFile = "stopwords.dat";
 	private static boolean useEmptyTracer = false;
+	private static boolean _printTrace = false;
 	
 	/**
 	 * Initializes basilisk with the given input arguments. Loads default arguments for optional arguments
@@ -136,7 +140,8 @@ public class Basilisk {
 	 *    			-n <num_iterations>
 	 *    			-c 0/1 (0: simple conflict resolution; 1: improved conflict resolution
 	 *    			-o output-dir/
-	 *              -s 0/1 (Only selects top scorer from each category, letting a strong category snowball)
+	 *              -s Only selects top scorer from each category, letting a strong category snowball)
+	 *              -t Print trace information for each iteration
 	 * </pre>
 	 * @param args
 	 */
@@ -162,21 +167,32 @@ public class Basilisk {
 		boolean useSnowball = false;
 		
 		while ((argsSeen + 2) <= args.length){
-			if(args[argsSeen].equalsIgnoreCase("-n"))
+			if(args[argsSeen].equalsIgnoreCase("-n")){
 				iterations = Integer.parseInt(args[argsSeen+1]);
-			else if(args[argsSeen].equalsIgnoreCase("-o"))
+				argsSeen += 2;
+			}
+			else if(args[argsSeen].equalsIgnoreCase("-o")){
 				outputDir = args[argsSeen+1];
-			else if(args[argsSeen].equalsIgnoreCase("-c"))
+				argsSeen += 2;
+			}
+			else if(args[argsSeen].equalsIgnoreCase("-c")){
 				if(Integer.parseInt(args[argsSeen+1]) == 1)
 					useImprovedConflictResolution = true;
 				else useImprovedConflictResolution = false;
-			else if(args[argsSeen].equalsIgnoreCase("-s"))
-				if(Integer.parseInt(args[argsSeen+1]) == 1)
+				argsSeen += 2;
+			}
+			else if(args[argsSeen].equalsIgnoreCase("-s")){
 					useSnowball =true;
+					argsSeen += 1;
+			}
+			else if(args[argsSeen].equalsIgnoreCase("-t")){
+					_printTrace =true;
+					argsSeen += 1;
+			}
 			else{
 				System.err.println("Unknown input options: " + args[argsSeen] + " " + args[argsSeen+1]);
+				return;
 			}
-			argsSeen += 2;
 		}
 
 
@@ -186,7 +202,8 @@ public class Basilisk {
 								   iterations, 
 								   outputDir, 
 								   useImprovedConflictResolution, 
-								   useSnowball);
+								   useSnowball,
+								   _printTrace);
 	}
 	
 	private int _iterations;
@@ -230,7 +247,8 @@ public class Basilisk {
 					int iterations, 
 					String outputDir, 
 					boolean useImprovedConflictResolution,
-					boolean useSnowball){
+					boolean useSnowball,
+					boolean printTrace){
 		_iterations = iterations;
 		System.out.println("Bootstrapping iterations: " + _iterations);
 		
@@ -272,7 +290,7 @@ public class Basilisk {
 			System.out.format("Discovered %d head nouns and %d patterns\n", _extractedNounsToPatternsMap.size(), _patternsToExtractedNounMap.size());
 		}
 		
-		bootstrap(outputDir);
+		bootstrap(outputDir, printTrace);
 	}
 	
 	/**
@@ -284,7 +302,7 @@ public class Basilisk {
 	 * @param outputDir - Directory in which final results will be stored. Default directory is the 
 	 * 					  root directory from which this file is run.
 	 */
-	public void bootstrap(String outputDir){
+	public void bootstrap(String outputDir, boolean printTrace){
 		System.out.println("Starting bootstrapping.\n");
 		
 		String outPutSuffix = "";
@@ -304,14 +322,16 @@ public class Basilisk {
 		}
 		//Initialize a list of traces - one for each lexicon (which can be gathered from the output prefix list
 		HashMap<String, PrintStream> tracesList = new HashMap<String, PrintStream>();
-		for(String outputPrefix: _outputPrefixList){
-			PrintStream newTrace = null;
-			try{
-				newTrace = new PrintStream(outputDir + outputPrefix + outPutSuffix + snowBallSuffix + ".trace");
-				tracesList.put(outputPrefix, newTrace);
-			}
-			catch (Exception e){
-				System.err.println(e.getMessage());
+		if(printTrace){
+			for(String outputPrefix: _outputPrefixList){
+				PrintStream newTrace = null;
+				try{
+					newTrace = new PrintStream(outputDir + outputPrefix + outPutSuffix + snowBallSuffix + ".trace");
+					tracesList.put(outputPrefix, newTrace);
+				}
+				catch (Exception e){
+					System.err.println(e.getMessage());
+				}
 			}
 		}
 		
@@ -340,9 +360,11 @@ public class Basilisk {
 			System.out.format("Iteration %d\n", i + 1);
 
 			//Iteration trace header
-			for(PrintStream trace: tracesList.values()){
-				traceIterationHeader(trace, i+1);
-			}			
+			if(printTrace){
+				for(PrintStream trace: tracesList.values()){
+					traceIterationHeader(trace, i+1);
+				}			
+			}
 			
 			//Score the patterns for each category
 			HashMap<String, HashSet<Pattern>> listsOfScoredPatterns = scorePatternsInEachCategory(_listsOfKnownCategoryWords, _patternsToExtractedNounMap);
@@ -383,8 +405,10 @@ public class Basilisk {
 				TreeSet<ExtractedNoun> topNewWords = listsOfTopNCandidateNouns.get(category);
 				
 				//Trace the top nouns
-				traceNewNouns(tracesList.get(category), topNewWords,_listsOfKnownCategoryWords.get(category));
-
+				if(printTrace){
+					traceNewNouns(tracesList.get(category), topNewWords,_listsOfKnownCategoryWords.get(category));
+				}
+				
 				System.out.format("Adding %d new words to the %s lexicon.\n", topNewWords.size(), category);
 				
 				//Print out new words to the console
@@ -404,10 +428,10 @@ public class Basilisk {
 		//Print out the list of learned words to their own files
 		for(String category: _listsOfKnownCategoryWords.keySet()){
 			PrintStream out = null; 
-			PrintStream outPlusScore = null;
+			//PrintStream outPlusScore = null;
 			try {
 				out = new PrintStream(outputDir + category + outPutSuffix + snowBallSuffix + ".lexicon");
-				outPlusScore = new PrintStream(outputDir + category + outPutSuffix + snowBallSuffix + ".lexicon-and-score");
+				//outPlusScore = new PrintStream(outputDir + category + outPutSuffix + snowBallSuffix + ".lexicon-and-score");
 			}
 			catch (Exception e){
 				System.err.println(e.getMessage());
@@ -415,13 +439,15 @@ public class Basilisk {
 			
 			for(ExtractedNoun learnedWord: learnedLexicons.get(category)){
 				out.print(learnedWord + "\n");
-				outPlusScore.format("%s %f\n", learnedWord, learnedWord.getScore());
+				//outPlusScore.format("%s %f\n", learnedWord, learnedWord.getScore());
 			}
 		}
 		
 		//Close the traces
-		for(PrintStream trace: tracesList.values()){
-			trace.close();
+		if(printTrace){
+			for(PrintStream trace: tracesList.values()){
+				trace.close();
+			}
 		}
 		if(useEmptyTracer){
 			afterConflictErrorTrace.close();
@@ -536,6 +562,10 @@ public class Basilisk {
 				String nounPhrase = line.split("\\*")[0].trim();
 				String pattern = line.split("\\*")[1].trim();
 				
+				//Remove the useless number at the end of the pattern
+				//e.g. "4496" in ActVp_Prep_<NP>__ADDED_FOR_4496
+				pattern = pattern.replaceAll("_[0-9]+", "");
+				
 				//Process the pattern
 				Pattern p = new Pattern(pattern);		
 				
@@ -635,7 +665,10 @@ public class Basilisk {
 		java.util.regex.Pattern numPattern = java.util.regex.Pattern.compile("[&\\d\\.\\-,:]+");
 		java.util.regex.Matcher m = numPattern.matcher(en._noun);
 		
-		return m.matches();
+		
+		java.util.regex.Pattern datePattern = java.util.regex.Pattern.compile("\\d\\d?/\\d\\d?(/\\d\\d(\\d\\d)?)?");
+		java.util.regex.Matcher dateMatcher = datePattern.matcher(en._noun);
+		return (m.matches() || dateMatcher.matches());
 	}
 
 
@@ -1315,7 +1348,8 @@ public class Basilisk {
 			result.put(category, patternPool);
 			
 			//Trace the top patterns
-			tracePatternPool(tracesList.get(category), patternPool);
+			if(_printTrace)
+				tracePatternPool(tracesList.get(category), patternPool);
 		}
 		
 		return result;
