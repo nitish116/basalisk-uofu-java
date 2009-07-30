@@ -22,18 +22,23 @@ public class ExtractedNounFreqCounter {
 	 */
 	public static void main(String[] args) {
 		Basilisk b = new Basilisk();
-		ExtractedNounFreqCounter c = new ExtractedNounFreqCounter(b);
+		if(args.length < 1){
+			System.err.println("Missing input argument: <all-cases-file>");
+			return;
+		}
+		String allCasesFileName = args[0];
+		ExtractedNounFreqCounter c = new ExtractedNounFreqCounter(b, allCasesFileName);
 	}
 
 	public HashSet<ExtractedNoun> _nounList;
 	private HashSet<Noun> _stopWords;
 	public Basilisk _b;
 	
-	public ExtractedNounFreqCounter(Basilisk b){
+	public ExtractedNounFreqCounter(Basilisk b, String allCasesFileName){
 		_b = b;
 		_stopWords = b.loadSet("stopwords.dat");
 		System.out.println("Reading case file");
-		generateNounList("promed-training-500-all.cases");
+		generateNounList(allCasesFileName);
 		System.out.println("Finished reading case file.");
 		
 		System.out.println("Sorting the counted words");
@@ -45,7 +50,9 @@ public class ExtractedNounFreqCounter {
 		System.out.println("Printing the sorted files to a list");
 		PrintStream out = null;
 		try{
-			out = new PrintStream("promed-500-freq-count.txt");
+			String outName = allCasesFileName.replaceAll("\\..+", ".frequencyCount");
+			out = new PrintStream(outName);
+			System.out.println("Finished writing file: " + outName);
 		}
 		catch(Exception e){
 			System.err.println(e.getMessage());
