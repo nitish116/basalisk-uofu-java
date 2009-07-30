@@ -146,7 +146,6 @@ public class Basilisk {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
 		//Check input arguments
 		if(args.length < 2){
 			System.err.println("Missing input arguments: <category_seeds_slist> <all_cases_file>");
@@ -348,6 +347,20 @@ public class Basilisk {
 			System.err.println(e.getMessage());
 			return;
 		}
+		
+		//Create traces to print the new words to
+		Map<String, PrintStream> newWordPrintLists = new HashMap<String, PrintStream>();
+		for(String category: _listsOfKnownCategoryWords.keySet()){
+			PrintStream out = null; 
+			//PrintStream outPlusScore = null;
+			try {
+				out = new PrintStream(outputDir + category + outPutSuffix + snowBallSuffix + ".lexicon");
+				newWordPrintLists.put(category, out);
+			}
+			catch (Exception e){
+				System.err.println(e.getMessage());
+			}
+		}
 
 		//Initialize a list to keep track of all the new words for each category
 		HashMap<String, List<ExtractedNoun>> learnedLexicons = new HashMap<String, List<ExtractedNoun>>();	
@@ -411,9 +424,11 @@ public class Basilisk {
 				
 				System.out.format("Adding %d new words to the %s lexicon.\n", topNewWords.size(), category);
 				
-				//Print out new words to the console
+				//Print out new words to the console and to the file
+				PrintStream wordList = newWordPrintLists.get(category);
 				for(ExtractedNoun en: topNewWords.descendingSet()){
 					System.out.println("\t" + en.toString());
+					wordList.println(en.toString());
 				}
 				System.out.println("");
 				
@@ -425,22 +440,9 @@ public class Basilisk {
 			}	
 		}
 
-		//Print out the list of learned words to their own files
-		for(String category: _listsOfKnownCategoryWords.keySet()){
-			PrintStream out = null; 
-			//PrintStream outPlusScore = null;
-			try {
-				out = new PrintStream(outputDir + category + outPutSuffix + snowBallSuffix + ".lexicon");
-				//outPlusScore = new PrintStream(outputDir + category + outPutSuffix + snowBallSuffix + ".lexicon-and-score");
-			}
-			catch (Exception e){
-				System.err.println(e.getMessage());
-			}
-			
-			for(ExtractedNoun learnedWord: learnedLexicons.get(category)){
-				out.print(learnedWord + "\n");
-				//outPlusScore.format("%s %f\n", learnedWord, learnedWord.getScore());
-			}
+		//Close the print streams that were recording the new words to files
+		for(PrintStream newWordPrintStream: newWordPrintLists.values()){
+			newWordPrintStream.close(); 
 		}
 		
 		//Close the traces
